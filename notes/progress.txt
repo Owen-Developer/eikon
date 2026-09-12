@@ -1,7 +1,8 @@
 
 EIKON BIBLE
 
-- colour theme
 - bible loading -> bible navigation
+- change translations
 - note adding
 - highlights?
+- colour theme

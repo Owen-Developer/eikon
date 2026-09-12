@@ -1,5 +1,10 @@
 
 
+let url = "";
+let currentTranslation = "kjv";
+let currentBook = "Genesis";
+let currentChapterIdx = 0;
+
 document.querySelector(".bib-left-open").addEventListener("click", () => {
     document.querySelector(".bib-left").classList.add("bib-left-show");
 });
@@ -93,3 +98,19 @@ document.querySelector(".bib-opt-spacing").querySelectorAll(".bib-opt-btn").forE
         document.querySelectorAll(".bib-verse").forEach(verse => verse.style.lineHeight = 1.25 + (.25 * idx));
     });
 });
+
+async function loadBible(){
+    try {
+        const response = await fetch(`${url}/bible_translations/${currentTranslation}.json`, {
+            method: 'GET',
+            credentials: 'include',
+            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        });
+        const data = await response.json(); 
+
+        console.log(data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+loadBible();
