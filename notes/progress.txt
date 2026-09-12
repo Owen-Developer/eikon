@@ -1,0 +1,7 @@
+
+EIKON BIBLE
+
+- colour theme
+- bible loading -> bible navigation
+- note adding
+- highlights?
