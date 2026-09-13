@@ -1,8 +1,0 @@
-
-EIKON BIBLE
-
-- bible loading -> bible navigation
-- change translations
-- note adding
-- highlights?
-- colour theme
