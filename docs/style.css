@@ -65,6 +65,16 @@ img {
     align-items: center;
     justify-content: space-between;
     padding: 16px 30px;
+}
+.bib-header.light-theme {
+    background-color: hsl(33, 45%, 92%);
+    border-bottom: 1px solid hsl(33, 45%, 85%);
+}
+.bib-header.sepia-theme {
+    background-color: #dcc2a2;
+    border-bottom: 1px solid hsl(33, 45%, 65%);
+}
+.bib-header.dark-theme {
     background-color: #dcc2a2;
     border-bottom: 1px solid hsl(33, 45%, 65%);
 }
@@ -489,8 +499,8 @@ i.bib-right-close:hover {
 
 .bib-opt {
     z-index: 1;
-    position: absolute;
-    top: 12px;
+    position: fixed;
+    top: 90px;
     right: calc(340px + 12px);
     width: 350px;
     padding: 15px 15px 20px;
@@ -543,7 +553,7 @@ i.bib-opt-close:hover {
     width: 100%;
     accent-color: #4b6653;
 }
-.bib-opt-btn {
+.bib-opt-btn, .bib-opt-pill {
     cursor: pointer;
     border-radius: 4px;
     padding: 10px 0px;
@@ -559,10 +569,10 @@ i.bib-opt-close:hover {
     justify-content: center;
     transition: 0.2s ease;
 }
-.bib-opt-btn:hover {
+.bib-opt-btn:hover, .bib-opt-pill:hover {
     background-color: hsl(0, 0%, 97%);
 }
-.bib-opt-btn-active, .bib-opt-btn-active:hover {
+.bib-opt-btn-active, .bib-opt-btn-active:hover, .bib-opt-pill-active, .bib-opt-pill-active:hover {
     border: 1px solid transparent;
     background-color: hsl(138, 15%, 35%);
     color: white;
@@ -605,4 +615,12 @@ i.bib-opt-close:hover {
 .bib-opt-col-active .bib-opt-theme-txt {
     color: hsl(0, 0%, 20%);
     font-weight: 500;
+} 
+.bib-opt-tran {
+    flex-wrap: wrap;
+}
+.bib-opt-pill {
+    font-size: 14px;
+    width: auto;
+    padding: 5px 12px;
 }

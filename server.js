@@ -89,8 +89,6 @@ app.post("/api/bible", async (req, res) => {
     );
     const chapter = await response.json();
 
-    console.log(wholeBook);
-
     return res.json({ chapter: chapter, amountOfChapters: wholeBook.data.length });
 });
 
