@@ -67,19 +67,31 @@ app.use(express.static(path.join(__dirname, "docs")));
 
 ////////////////////////// APIS ROUTES //////////////////////////
 app.post("/api/bible", async (req, res) => {
-    let { translation, book, chapter } = req.body;
+    let { translation, book, chapterIdx } = req.body;
 
-    const response = await fetch(
-        `https://api.youversion.com/v1/bibles/${translation}/passages/${book}.${chapter}?format=html&include_headings=true`,
+    const bookResponse = await fetch(
+        `https://api.youversion.com/v1/bibles/${translation}/books/${book}/chapters`,
         {
             headers: {
                 "X-YVP-App-Key": process.env.YOUVERSION_KEY
             }
         }
     );
-    const data = await response.json();
+    const wholeBook = await bookResponse.json();
 
-    return res.json({ data: data });
+    const response = await fetch(
+        `https://api.youversion.com/v1/bibles/${translation}/passages/${book}.${chapterIdx}?format=html&include_headings=true`,
+        {
+            headers: {
+                "X-YVP-App-Key": process.env.YOUVERSION_KEY
+            }
+        }
+    );
+    const chapter = await response.json();
+
+    console.log(wholeBook);
+
+    return res.json({ chapter: chapter, amountOfChapters: wholeBook.data.length });
 });
 
 

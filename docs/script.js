@@ -2,7 +2,7 @@
 
 let url = "";
 let currentTranslation = "3034";
-let currentBook = "Psalm";
+let currentBook = "Psalms";
 let currentChapterIdx = 22;
 
 document.querySelector(".bib-left-open").addEventListener("click", () => {
@@ -100,7 +100,7 @@ document.querySelector(".bib-opt-spacing").querySelectorAll(".bib-opt-btn").forE
 });
 
 async function loadBible(){
-    const dataToSend = { translation: currentTranslation, book: currentBook.replace(/ /g, "").toUpperCase().slice(0, 3), chapter: currentChapterIdx + 1 };
+    const dataToSend = { translation: currentTranslation, book: currentBook.replace(/ /g, "").toUpperCase().slice(0, 3), chapterIdx: currentChapterIdx + 1 };
     try {
         const response = await fetch(url + `/api/bible`, {
             method: 'POST',
@@ -117,9 +117,13 @@ async function loadBible(){
         }
 
         const data = await response.json();
+        let chapter = data.chapter;
+        let amountOfChapters = data.amountOfChapters;
 
         document.querySelector(".bib-mid-title").innerHTML = currentBook + " " + Number(currentChapterIdx + 1) + "<span></span>";
-        document.querySelector(".bib-txt").innerHTML = data.data.content;
+        document.querySelector(".bib-txt").innerHTML = chapter.content;
+        document.querySelector(".bib-book-txt").textContent = currentBook;
+        document.querySelector(".bib-chap-txt").textContent = Number(currentChapterIdx + 1) + " Chapters";
 
     } catch (error) {
         console.error('Error posting data:', error);
