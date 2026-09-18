@@ -535,6 +535,634 @@ const chapterHeadings = [
         ]
     },
 
+    {
+        "name": "Job",
+        "headings": [
+  "Job's Character and Testing",
+  "Job's First Trial",
+  "Job's Lament",
+  "Eliphaz Speaks",
+  "Eliphaz Continues His Speech",
+    "Job Responds to Eliphaz",
+  "Bildad Speaks",
+  "Job Responds to Bildad",
+  "Job Continues His Response",
+  "Job Questions God's Justice",
+    "Zophar Speaks",
+  "Job Responds to His Friends",
+  "Job Continues His Response",
+  "Job's Hope in God",
+  "Eliphaz Speaks Again",
+    "Job Responds to His Friends",
+  "Job's Confidence in His Redeemer",
+  "Bildad Speaks of the Wicked",
+  "Job Responds to Bildad",
+  "Zophar Speaks of the Wicked",
+    "Job Questions the Prosperity of the Wicked",
+  "Eliphaz Accuses Job of Sin",
+  "Job Longs to Present His Case Before God",
+  "Job Describes the Wicked",
+  "Bildad Speaks of God's Greatness",
+    "Job Describes God's Greatness",
+  "Job's Final Defense",
+  "Job Remembers His Former Honor",
+  "Job's Present Suffering",
+  "Job's Final Appeal",
+    "Job's Final Appeal",
+  "Elihu Speaks",
+  "Elihu Declares God's Justice",
+  "Elihu Rebukes Job",
+  "Elihu Continues His Speech",
+    "Elihu Proclaims God's Greatness",
+  "Elihu Describes God's Wonders",
+  "God Speaks to Job",
+  "God Questions Job About Creation",
+  "God Describes His Power",
+    "God Describes Leviathan",
+  "Job Repents and Is Restored"
+        ]
+    },
+
+    {
+        "name": "Psalms",
+        "headings": [
+  "The Way of the Righteous and the Wicked", 
+  "The Reign of God's Anointed King", 
+  "A Prayer for Protection Against Enemies", 
+  "A Prayer for Help and Guidance", 
+  "A Prayer for God's Favor",
+    "A Prayer for Mercy",
+  "The Lord Is a Righteous Judge",
+  "God's Glory and Human Dignity",
+  "A Prayer for Justice",
+  "The Lord Is a Refuge for the Oppressed",
+    "The Lord Tests the Righteous",
+  "A Prayer Against Deceitful People",
+  "A Prayer of Trust in God's Mercy",
+  "The Fool Says There Is No God",
+  "The Character of Those Who Dwell With God",
+    "The Joy of God's Presence",
+  "A Prayer for Protection",
+  "The King of Glory",
+  "A Prayer for Victory",
+  "Thanksgiving for Victory",
+    "The King Rejoices in God's Strength",
+  "The Suffering Servant's Cry",
+  "The Lord Is My Shepherd",
+  "The King of Glory Enters",
+  "A Prayer for Guidance and Forgiveness",
+    "A Prayer of Integrity and Trust",
+  "The Lord Is My Light and Salvation",
+  "A Prayer for Help",
+  "A Call to Worship the Lord",
+  "Thanksgiving for Deliverance",
+    "A Prayer of Trust in God",
+  "The Joy of Forgiveness",
+  "Praise to the Creator",
+  "A Prayer for Deliverance",
+  "The Goodness of God",
+    "The Wickedness of Man and the Love of God",
+  "Do Not Fret Because of Evildoers",
+  "The Suffering of the Righteous",
+  "A Prayer for God's Help",
+  "A Prayer of Patience and Trust",
+    "Blessed Are Those Who Care for the Poor",
+  "A Longing for God",
+  "A Prayer for Deliverance",
+  "A Song of Praise to God",
+  "A Royal Wedding Song",
+    "God Is Our Refuge and Strength",
+  "The Lord Is King Over All the Earth",
+  "The Glory of Mount Zion",
+  "The Folly of Trusting in Riches",
+  "A Call to True Worship",
+    "A Prayer for Forgiveness",
+  "The Wickedness of the Proud",
+  "Trust in God's Unfailing Love",
+  "The Foolishness of the Wicked",
+  "A Prayer for Deliverance from Enemies",
+    "A Prayer for Protection from Enemies",
+  "A Prayer for Deliverance from the Wicked",
+  "A Prayer for Refuge in God",
+  "A Prayer for God's Mercy",
+  "A Prayer for Victory and Deliverance",
+    "A Prayer for Protection",
+  "A Prayer for God's Justice",
+  "Rest in God Alone",
+  "Praise for God's Blessings",
+  "A Song of Praise for God's Goodness",
+    "A Call to Praise God",
+  "God's Universal Reign",
+  "A Song of Triumph",
+  "A Prayer for Deliverance",
+  "A Prayer for God's Help",
+    "A Prayer for God's Protection in Old Age",
+  "The Reign of the Righteous King",
+  "The Prosperity of the Wicked",
+  "A Prayer for the Sanctuary",
+  "God Is the Judge",
+    "God Is Known in Judah",
+  "A Call to Remember God's Works",
+  "God's Faithfulness to Israel",
+  "A Prayer for Restoration",
+  "The Shepherd of Israel",
+    "A Call to Celebrate God's Faithfulness",
+  "God Judges the Rulers",
+  "A Prayer Against Israel's Enemies",
+  "The Joy of Dwelling in God's House",
+  "A Prayer for Restoration and Peace",
+    "A Prayer for God's Mercy",
+  "The Glory of Zion",
+  "A Prayer of Lament",
+  "God's Covenant with David",
+  "A Prayer for God's Mercy and Guidance",
+    "He Who Dwells in the Shelter of the Most High",
+  "A Song of Praise for God's Faithfulness",
+  "The Majesty of the Lord",
+  "The Lord Reigns in Majesty",
+  "A Call to Worship and Obey God",
+    "Sing to the Lord a New Song",
+  "The Lord Reigns in Righteousness",
+  "The Lord Is King",
+  "A Call to Worship the Lord",
+  "A Psalm of Thanksgiving",
+    "A Vow of Integrity",
+  "The Eternal Love of the Lord",
+  "A Prayer for Restoration",
+  "The Lord's Faithfulness to His People",
+  "Remembering God's Covenant with Abraham",
+    "God's Mercy and Israel's Rebellion",
+  "Thanksgiving for God's Deliverance",
+  "A Call to Give Thanks to the Lord",
+  "The Lord Is Exalted in Zion",
+  "The Lord's Anointed King",
+    "Praise for God's Great Works",
+  "The Blessings of the Righteous",
+  "The Majesty and Mercy of God",
+  "God's Deliverance of Israel",
+  "The Glory of God Over Idols",
+    "The Glory of God Over Idols",
+  "Thanksgiving for Deliverance",
+  "A Song of Love and Gratitude",
+  "Praise for God's Faithfulness",
+  "A Prayer for Deliverance",
+  "A Song of Ascents",
+    "The Lord Watches Over His People",
+  "A Song of Ascents",
+  "The Lord Builds the House",
+  "A Song of Ascents",
+  "Those Who Trust in the Lord",
+    "The Lord Has Done Great Things",
+  "Unless the Lord Builds the House",
+  "Children Are a Heritage from the Lord",
+  "Blessed Are Those Who Fear the Lord",
+  "Out of the Depths I Cry to You",
+    "A Prayer of Humility and Contentment",
+  "The Lord's Chosen Dwelling Place",
+  "The Blessing of Unity",
+  "A Call to Praise the Lord",
+  "Praise for God's Greatness and Love",
+    "God's Steadfast Love Endures Forever",
+  "By the Rivers of Babylon",
+  "The Lord's Greatness and Faithfulness",
+  "A Prayer for God's Protection",
+  "A Prayer for Deliverance from the Wicked",
+    "A Prayer for Protection from Sin",
+  "A Prayer for Deliverance from Persecution",
+  "A Prayer for Mercy and Guidance",
+  "A Prayer for Victory and Blessing",
+  "A Psalm of Praise to God",
+    "Praise the Lord, O My Soul",
+  "Praise the Lord for His Goodness",
+  "Praise the Lord, O Jerusalem",
+  "Praise the Lord for His Greatness",
+  "Let Everything Praise the Lord"
+        ]
+    },
+
+    {
+        "name": "Job",
+        "headings": [
+
+        ]
+    },
+
+    {
+        "name": "Proverbs",
+        "headings": [
+  "The Purpose of Proverbs",
+  "The Beginning of Wisdom",
+  "Trust in the Lord",
+  "The Path of Wisdom",
+  "Warning Against Adultery",
+    "Warnings Against Folly",
+  "The Call of Wisdom",
+  "Warning Against Adultery",
+  "The Way of Wisdom",
+  "The Proverbs of Solomon",
+    "The Righteous and the Wicked",
+  "The Value of Wisdom",
+  "The Wise and the Foolish",
+  "A Gentle Answer Turns Away Wrath",
+  "A Wise Son Makes a Glad Father",
+    "The Lord's Sovereignty",
+  "The Lord Tests the Heart",
+  "The Value of Wisdom",
+  "Better Is a Little With Righteousness",
+  "Wine Is a Mocker",
+    "The Lord Examines the Heart",
+  "A Good Name Is Better Than Riches",
+  "Train Up a Child",
+  "Do Not Rob the Poor",
+  "These Also Are Proverbs of Solomon",
+    "The Fool and His Folly",
+  "Boasting About Tomorrow",
+  "The Way of the Wicked",
+  "Sayings of Agur",
+  "The Words of King Lemuel",
+    "The Virtuous Woman"
+        ]
+    },
+
+    {
+        "name": "Ecclesiastes",
+        "headings": [
+  "Everything Is Meaningless",
+  "The Vanity of Pleasure and Wisdom",
+  "A Time for Everything",
+  "The Vanity of Oppression and Toil",
+  "Approaching God with Reverence",
+    "The Vanity of Riches and Life",
+  "The Value of Wisdom",
+  "The Contrast Between Wisdom and Folly",
+  "Wisdom and Folly in Leadership",
+  "Wisdom for Life",
+    "Cast Your Bread Upon the Waters",
+  "Remember Your Creator in Youth"
+        ]
+    },
+
+    {
+        "name": "Isiah",
+        "headings": [
+  "The Rebellion of God's People",
+  "The Mountain of the Lord",
+  "Judgment on Jerusalem and Judah",
+  "The Branch of the Lord",
+  "The Song of the Vineyard",
+    "Isaiah's Vision and Calling",
+  "The Sign of Immanuel",
+  "The Coming of the Great Light",
+  "The Lord's Anger Against Israel",
+  "The Lord's Judgment on Assyria",
+    "The Branch from Jesse",
+  "Songs of Praise and Salvation",
+  "The Lord's Judgment on Babylon",
+  "The Fall of the King of Babylon",
+  "The Judgment on Moab",
+    "The Judgment on Moab",
+  "The Judgment on Damascus and Israel",
+  "The Judgment on Cush",
+  "The Judgment on Egypt",
+  "Isaiah Walks Barefoot as a Sign",
+    "The Fall of Babylon",
+  "The Valley of Vision",
+  "The Judgment on Shebna",
+  "The Judgment on Tyre",
+  "A Song of Praise for God's Salvation",
+    "A Song of Trust in God",
+  "The Lord's Judgment and Restoration",
+  "Woe to Ephraim and Jerusalem",
+  "The Judgment on Jerusalem",
+  "Woe to the Rebellious Nation",
+    "Woe to Those Who Rely on Egypt",
+  "The Righteous King",
+  "The Spirit Poured Out on God's People",
+  "The Judgment of the Nations",
+  "The Joy of the Redeemed",
+    "Sennacherib Threatens Jerusalem",
+  "Hezekiah Prays for Deliverance",
+  "Hezekiah's Illness and Recovery",
+  "Hezekiah Shows His Treasures",
+  "Comfort for God's People",
+    "God Helps Israel",
+  "The Servant of the Lord",
+  "Israel's Redemption",
+  "The Creator and Redeemer",
+  "God's Sovereignty and Salvation",
+    "Babylon's Idols and the Living God",
+  "The Fall of Babylon Foretold",
+  "Israel's Stubbornness and God's Promise",
+  "The Servant of the Lord",
+  "The Servant's Obedience and Trust",
+    "Comfort for God's People",
+  "The Lord's Salvation and Righteousness",
+  "The Lord's Redeemed People",
+  "The Suffering Servant Exalted",
+  "An Invitation to Abundant Life",
+    "Salvation for All People",
+  "Israel's Sin and Redemption",
+  "The Sins of God's People",
+  "The Redeemer Comes to Zion",
+  "The Glory of Zion",
+    "The Year of the Lord's Favor",
+  "The Glory of Zion",
+  "The Day of Vengeance",
+  "God's Mercy and Judgment",
+  "The New Heavens and New Earth",
+    "The Lord's Judgment and the Glory of Zion"
+        ]
+    },
+
+    {
+        "name": "Jeremiah",
+        "headings": [
+  "The Call of Jeremiah",
+  "Judgment on Judah",
+  "Israel's Unfaithfulness",
+  "The Coming Judgment",
+  "Jerusalem's Sin and Rebellion",
+    "The Coming Destruction of Jerusalem",
+  "The Temple Sermon",
+  "Judgment and Mourning",
+  "The Covenant Is Broken",
+  "The Folly of Idolatry",
+    "The Broken Covenant",
+  "Jeremiah Questions God's Justice",
+  "The Sign of the Linen Waistband",
+  "The Drought and the People's Sin",
+  "The Lord Rejects Intercession",
+    "The Coming Judgment and Exile",
+  "The Sin of Judah",
+  "The Potter and the Clay",
+  "Jeremiah's Prayer Against His Enemies",
+  "The Broken Pot and the Coming Judgment",
+    "The Lord Rejects Zedekiah's Request",
+  "The Righteous King",
+  "The Coming Judgment on Judah",
+  "The Two Baskets of Figs",
+  "The Seventy Years of Captivity",
+    "Jeremiah Threatened with Death",
+  "The Yoke of Babylon",
+  "Hananiah's False Prophecy",
+  "Jeremiah's Letter to the Exiles",
+  "The Restoration of Israel",
+    "The New Covenant",
+  "Jeremiah Buys a Field",
+  "The Promise of Restoration",
+  "Zedekiah Breaks the Covenant",
+  "The Obedience of the Rechabites",
+    "Jehoiakim Burns Jeremiah's Scroll",
+  "The Siege of Jerusalem",
+  "Jeremiah in the Courtyard Prison",
+  "The Fall of Jerusalem",
+  "Jeremiah Freed by Nebuzaradan",
+    "The Assassination of Gedaliah",
+  "Jeremiah's Warning Against Going to Egypt",
+  "Johanan Takes the Remnant to Egypt",
+  "Judgment on the Jews in Egypt",
+  "God's Promise to Baruch",
+    "The Judgment on Egypt",
+  "The Judgment on the Philistines",
+  "The Judgment on Moab",
+  "Judgment on the Nations",
+  "The Judgment on Babylon",
+    "The Fall of Babylon",
+  "The Fall of Jerusalem"
+        ]
+    },
+
+    {
+        "name": "Lamentations",
+        "headings": [
+  "The Suffering of Jerusalem",
+  "The Lord's Anger Against Jerusalem",
+  "Hope in God's Faithfulness",
+  "The Siege and Fall of Jerusalem",
+  "A Prayer for Restoration"
+        ]
+    },
+
+    {
+        "name": "Ezekiel",
+        "headings": [
+  "Ezekiel's Vision of the Living Creatures",
+  "Ezekiel's Call to Be a Prophet",
+  "The Siege of Jerusalem Portrayed",
+  "The Sign of the Barley Bread",
+  "Judgment Against Jerusalem",
+    "Judgment Against the Mountains of Israel",
+  "The End Has Come",
+  "The Glory of the Lord Departs",
+  "The Vision of the Abominations",
+  "The Cherubim and the Glory of the Lord",
+    "Judgment on the Wicked Leaders",
+  "Ezekiel's Exile Symbol",
+  "False Prophets Condemned",
+  "Idolatry and Judgment",
+  "Jerusalem as a Useless Vine",
+    "Jerusalem's Unfaithfulness",
+  "The Parable of the Two Eagles",
+  "The Soul Who Sins Shall Die",
+  "A History of Israel's Rebellion",
+  "The Lord's Judgment Against Israel",
+    "The Sword of the Lord",
+  "The Sins of Jerusalem",
+  "The Two Adulterous Sisters",
+  "The Boiling Pot",
+  "Judgment on the Nations",
+    "The Judgment Against Tyre",
+  "Lament Over Tyre",
+  "The Prince of Tyre",
+  "The Judgment Against Sidon",
+  "The Judgment Against Egypt",
+    "Pharaoh Like a Great Cedar",
+  "A Lament Over Pharaoh",
+  "A Lament Over Pharaoh and Egypt",
+  "The Watchman of Israel",
+  "Judgment Against the Shepherds of Israel",
+    "The Restoration of Israel",
+  "The Valley of Dry Bones",
+  "The Defeat of Gog",
+  "The Glory of God Returns",
+  "The Vision of the Temple",
+    "The Inner Temple",
+  "The Temple Chambers",
+  "The Temple Area",
+  "The River Flowing from the Temple",
+  "The Sacred Offerings",
+    "The Prince's Worship and Offerings",
+  "The Tribal Allotments",
+  "The New Name of the City"
+        ]
+    },
+
+    {
+        "name": "Daniel",
+        "headings": [
+  "Daniel and His Friends in Babylon",
+  "Nebuchadnezzar's Dream",
+  "The Fiery Furnace",
+  "Nebuchadnezzar's Humiliation",
+  "The Writing on the Wall",
+    "Daniel in the Lions' Den",
+  "Daniel's Vision of Four Beasts",
+  "Daniel's Vision of the Ram and the Goat",
+  "Daniel's Prayer for Jerusalem",
+  "Daniel's Vision of the Heavenly Messenger",
+    "The Kings of the North and the South",
+  "The Time of the End"
+        ]
+    },
+
+    {
+        "name": "Hosea",
+        "headings": [
+  "Hosea's Marriage to Gomer",
+  "Israel's Unfaithfulness",
+  "Israel's Judgment and Restoration",
+  "The Lord's Charges Against Israel",
+  "Judgment Against Israel and Judah",
+    "Israel's Unfaithfulness and God's Desire for Mercy",
+  "Israel's Corruption and Idolatry",
+  "Israel Reaps the Consequences of Sin",
+  "Israel's Idolatry and Judgment",
+  "Israel's Empty Vine and Coming Judgment",
+    "God's Love for Israel",
+  "Israel's Sin and God's Faithfulness",
+  "Israel's Guilt and Coming Judgment",
+  "A Call to Repentance and Restoration"
+        ]
+    },
+
+    {
+        "name": "Joel",
+        "headings": [
+  "The Plague of Locusts",
+  "The Day of the Lord",
+  "The Outpouring of God's Spirit"
+        ]
+    },
+
+    {
+        "name": "Amos",
+        "headings": [
+  "Judgment on the Nations",
+  "Judgment on Israel",
+  "A Lament for Israel",
+  "The Coming Judgment",
+  "Seek the Lord and Live",
+    "Woe to Those at Ease in Zion",
+  "The Visions of Amos",
+  "The Basket of Summer Fruit",
+  "The Restoration of Israel"
+        ]
+    },
+
+    {
+        "name": "Obadiah",
+        "headings": [
+  "The Judgment of Edom"
+        ]
+    },
+
+    {
+        "name": "Jonah",
+        "headings": [
+  "Jonah Flees from the Lord",
+  "Jonah's Prayer from the Fish",
+  "Jonah Preaches to Nineveh",
+  "Jonah's Anger and God's Mercy"
+        ]
+    },
+
+    {
+        "name": "Micah",
+        "headings": [
+  "Judgment Against Samaria and Jerusalem",
+  "Woe to the Oppressors",
+  "Leaders Condemned",
+  "The Mountain of the Lord",
+  "The Ruler from Bethlehem",
+    "The Lord's Case Against Israel",
+  "A Prayer for God's Mercy"
+        ]
+    },
+
+    {
+        "name": "Nahum",
+        "headings": [
+  "The Lord's Wrath Against Nineveh",
+  "The Siege of Nineveh",
+  "The Fall of Nineveh"
+        ]
+    },
+
+    {
+        "name": "Habakkuk",
+        "headings": [
+  "Habakkuk's First Complaint",
+  "Habakkuk's Second Complaint",
+  "Habakkuk's Prayer of Trust"
+        ]
+    },
+
+    {
+        "name": "Zephaniah",
+        "headings": [
+  "The Day of the Lord",
+  "Judgment on the Nations",
+  "The Restoration of God's People"
+        ]
+    },
+
+    {
+        "name": "Haggai",
+        "headings": [
+  "The Call to Rebuild the Temple",
+  "The Glory of the New Temple"
+        ]
+    },
+
+    {
+        "name": "Zechariah",
+        "headings": [
+  "The Call to Return to the Lord",
+  "The Four Horns and Four Craftsmen",
+  "The Man with the Measuring Line",
+  "The Vision of Joshua the High Priest",
+  "The Gold Lampstand and Two Olive Trees",
+    "The Vision of the Four Chariots",
+  "The Crown for Joshua",
+  "The Call to Justice and Mercy",
+  "The Coming Salvation of Zion",
+  "The Coming King and the Restoration of Israel",
+    "The Rejected Shepherd",
+  "The Future Glory of Jerusalem",
+  "The Fountain for Sin and Impurity",
+  "The Lord Comes and Reigns"
+        ]
+    },
+
+    {
+        "name": "Malachi",
+        "headings": [
+  "God's Love for Israel",
+  "The Priests' Corruption",
+  "The Priests' Unfaithfulness",
+  "The Day of the Lord"
+        ]
+    },
+
+    //////////////////////////////////////
+
+    {
+        "name": "Matthew",
+        "headings": [
+
+        ]
+    },
+
 
 ];
 
@@ -561,6 +1189,8 @@ const translations = [
     },
 ]
 let currentTranslation = translations[0];
+
+// 
 
 
 
