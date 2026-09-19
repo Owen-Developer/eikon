@@ -9,6 +9,7 @@ const chapterHeadings = [
         "name": "Genesis",
         "headings": [
         "The Creation",
+        "Adam and Eve",
         "The Fall of Man",
         "Cain and Abel",
         "The Generations of Adam",
@@ -17,7 +18,6 @@ const chapterHeadings = [
             "The Floodwaters",
             "The Covenant with Noah",
             "The Nations from Noah",
-            "The Tower of Babel",
         "The Tower of Babel",
         "The Call of Abram",
         "Abram in Egypt",
@@ -584,7 +584,7 @@ const chapterHeadings = [
     },
 
     {
-        "name": "Psalms",
+        "name": "Psalm",
         "headings": [
   "The Way of the Righteous and the Wicked", 
   "The Reign of God's Anointed King", 
@@ -1159,6 +1159,647 @@ const chapterHeadings = [
     {
         "name": "Matthew",
         "headings": [
+"The Genealogy and Birth of Jesus",
+
+"The Birth of Jesus and the Flight to Egypt",
+
+"John the Baptist Prepares the Way",
+
+"Jesus Is Tempted in the Wilderness",
+
+"Jesus Begins His Ministry and Teaches the Crowd",
+
+"The Sermon on the Mount",
+
+"Jesus Heals and Calls His Disciples",
+
+"Jesus Sends Out the Twelve",
+
+"John the Baptist and the Invitation of Jesus",
+
+"Jesus Sends Out the Twelve and Faces Opposition",
+
+"The Ministry and Message of Jesus",
+
+"Jesus and the Pharisees",
+
+"Parables of the Kingdom",
+
+"Jesus Performs Miracles",
+
+"Jesus Feeds the Five Thousand and Walks on Water",
+
+"The Confession of Peter and the Transfiguration",
+
+"Jesus Teaches About Humility and Forgiveness",
+
+"Jesus Teaches About Marriage and Eternal Life",
+
+"Jesus Teaches About Greatness and Grace",
+
+"Jesus Enters Jerusalem and Teaches About Servanthood",
+
+"The Triumphal Entry and Jesus Cleanses the Temple",
+
+"Jesus Teaches in the Temple",
+
+"Parables and Warnings Against the Pharisees",
+
+"Jesus Teaches About the Destruction of the Temple",
+
+"The Olivet Discourse and the Coming of the Son of Man",
+
+"The Last Supper and Jesus Is Arrested",
+
+"Jesus Is Tried and Crucified",
+
+"The Resurrection and the Great Commission",
+
+        ]
+    },
+
+    {
+        "name": "Mark",
+        "headings": [
+"The Beginning of the Gospel of Jesus Christ",
+
+"Jesus Heals and Teaches with Authority",
+
+"Jesus Heals the Paralytic and Calls Levi",
+
+"Parables and Miracles of Jesus",
+
+"Jesus Delivers the Demon-Possessed Man",
+"The Rejection of Jesus and the Sending of the Twelve",
+
+"Jesus Feeds the Five Thousand and Walks on Water",
+
+"Jesus Teaches About True Cleanliness",
+
+"Jesus Heals and Feeds the Four Thousand",
+
+"Jesus Teaches About Discipleship and Greatness",
+"The Triumphal Entry and Cleansing of the Temple",
+
+"Jesus Teaches in the Temple",
+
+"Parables and Teachings About the Kingdom",
+
+"Jesus Predicts the Destruction of the Temple",
+
+"Jesus Is Anointed, Betrayed, and Arrested",
+"The Resurrection of Jesus and the Great Commission",
+
+        ]
+    },
+
+    {
+        "name": "Luke",
+        "headings": [
+"Gabriel Announces the Birth of Jesus",
+
+"The Birth and Childhood of Jesus",
+
+"John the Baptist Prepares the Way",
+
+"Jesus Is Tempted and Begins His Ministry",
+
+"Jesus Calls His Disciples and Performs Miracles",
+"Jesus Teaches the Crowd and Chooses the Twelve",
+
+"Jesus Teaches and Performs Miracles",
+
+"Jesus Sends Out the Twelve and Feeds the Five Thousand",
+
+"Jesus Reveals His Glory and Teaches His Disciples",
+
+"Jesus Sends Out the Seventy-Two and Teaches About Love",
+"Jesus Teaches His Disciples to Pray",
+
+"Jesus Warns Against Hypocrisy and Greed",
+
+"Jesus Teaches About Readiness and Repentance",
+
+"Jesus Heals on the Sabbath and Teaches About the Kingdom",
+
+"Parables of the Lost and Found",
+"Jesus Teaches About Wealth and Faithfulness",
+
+"Jesus Teaches About Forgiveness and Faith",
+
+"Jesus Heals Ten Lepers and Teaches About the Kingdom",
+
+"Jesus Teaches About Prayer and Eternal Life",
+
+"Jesus Enters Jerusalem and Teaches in the Temple",
+"The Triumphal Entry and Jesus Teaches in the Temple",
+
+"Jesus Teaches About the Destruction of Jerusalem",
+
+"Jesus Is Betrayed, Tried, and Crucified",
+
+"The Resurrection and the Road to Emmaus",
+        ]
+    },
+
+    {
+        "name": "John",
+        "headings": [
+"The Word Becomes Flesh",
+
+"Jesus Performs His First Miracles",
+
+"Jesus Teaches Nicodemus About New Birth",
+
+"Jesus and the Samaritan Woman",
+
+"Jesus Heals the Official's Son",
+"The Feeding of the Five Thousand and the Bread of Life",
+
+"Jesus Teaches at the Feast of Booths",
+
+"Jesus Forgives the Adulterous Woman and Reveals His Identity",
+
+"Jesus Heals a Man Born Blind",
+
+"Jesus the Good Shepherd",
+"Lazarus Is Raised from the Dead",
+
+"Jesus Is Anointed and Enters Jerusalem",
+
+"Jesus Teaches About His Death and Unbelief",
+
+"Jesus Washes His Disciples' Feet",
+
+"Jesus Teaches About the Vine and His Love",
+"Jesus Teaches About the Holy Spirit",
+
+"Jesus Prays for Himself, His Disciples, and All Believers",
+
+"Jesus Is Arrested and Tried",
+
+"Jesus Is Crucified and Buried",
+
+"Jesus Rises from the Dead",
+"Jesus Appears to His Disciples and Restores Peter",
+
+        ]
+    },
+
+    {
+        "name": "Acts",
+        "headings": [
+"Jesus Ascends and the Disciples Await the Holy Spirit",
+
+"The Holy Spirit Comes at Pentecost",
+
+"Peter Heals a Lame Man and Preaches to the Crowd",
+
+"Peter and John Face Opposition",
+
+"Ananias and Sapphira and the Apostles Face Persecution",
+"The Seven Servants and Stephen's Ministry",
+
+"Stephen's Martyrdom and the Scattering of Believers",
+
+"Philip Proclaims Christ in Samaria",
+
+"Saul Encounters Jesus and Begins to Preach",
+
+"Peter Preaches to Cornelius and the Gentiles",
+"The Gospel Spreads to the Gentiles",
+
+"Peter Is Rescued and Herod Is Struck Down",
+
+"Paul and Barnabas Begin Their First Missionary Journey",
+
+"Paul and Barnabas Preach and Face Opposition",
+
+"The Jerusalem Council on Gentile Believers",
+"Paul's Second Missionary Journey Begins",
+
+"Paul Preaches in Athens and Corinth",
+
+"Paul's Ministry in Ephesus",
+
+"Paul Travels Through Macedonia and Raises Eutychus",
+
+"Paul's Farewell to the Ephesian Elders",
+"Paul Arrives in Jerusalem and Is Arrested",
+
+"Paul Gives His Testimony to the Crowd",
+
+"Paul Before the Sanhedrin",
+
+"Paul Is Taken to Caesarea",
+
+"Paul's Trial Before Governor Felix",
+"Paul's Defense Before King Agrippa",
+
+"Paul's Journey to Rome and Shipwreck",
+
+"Paul Proclaims the Kingdom in Rome",
+
+        ]
+    },
+
+    {
+        "name": "Romans",
+        "headings": [
+"Paul's Greeting and the Righteousness of God",
+
+"God's Judgment on Sin",
+
+"God's Righteousness Through Faith",
+
+"Justified by Faith Like Abraham",
+
+"Peace with God Through Jesus Christ",
+"Dead to Sin and Alive to God",
+
+"Released from the Law and United with Christ",
+
+"Life Through the Spirit",
+
+"God's Sovereign Purpose for Israel",
+
+"Salvation Through Faith in Christ",
+"God's Mercy and the Remnant of Israel",
+
+"Living Sacrifices and Serving Others",
+
+"Submitting to Governing Authorities and Loving Others",
+
+"Do Not Judge Your Brother",
+
+"Living to Please Others and Glorify God",
+"Paul's Greetings and Final Exhortations",
+
+        ]
+    },
+
+    {
+        "name": "1 Corinthians",
+        "headings": [
+"Christ the Power and Wisdom of God",
+
+"God's Wisdom Revealed Through the Spirit",
+
+"Servants of Christ and Stewards of God's Mysteries",
+
+"Paul's Example and Warning Against Pride",
+
+"Discipline for Immorality in the Church",
+"Do Not Take Your Brothers to Court",
+
+"Marriage and Singleness",
+
+"Food Offered to Idols and Christian Freedom",
+
+"Paul's Rights as an Apostle",
+
+"Warnings from Israel's History",
+"Order in Worship and the Lord's Supper",
+
+"Spiritual Gifts and the Body of Christ",
+
+"Love Is the Greatest Gift",
+
+"Prophecy and Speaking in the Church",
+
+"The Resurrection of Christ and the Hope of Believers",
+"Paul's Final Instructions and Farewell",
+
+        ]
+    },
+
+    {
+        "name": "2 Corinthians",
+        "headings": [
+"Comfort in Suffering and Paul's Ministry",
+
+"Forgiveness and the Triumph of Christ",
+
+"Ministers of the New Covenant",
+
+"Treasure in Jars of Clay",
+
+"Living by Faith and Reconciled to God",
+"Do Not Be Unequally Yoked",
+
+"Godly Grief and Joyful Repentance",
+
+"Generosity and Giving",
+
+"Paul Defends His Apostleship",
+
+"Paul's Authority and Spiritual Warfare",
+"Paul's Suffering and Defense of His Apostleship",
+
+"Paul's Vision and Weakness",
+
+"Final Warnings and Exhortations",
+
+        ]
+    },
+
+    {
+        "name": "Galatians",
+        "headings": [
+"Paul's Gospel and Apostleship",
+
+"Justification by Faith and Not by Works",
+
+"Faith in Christ and the Promise of the Spirit",
+
+"Freedom in Christ and the Law",
+
+"Walking by the Spirit and Bearing Fruit",
+"Doing Good to All and Boasting in the Cross",
+
+        ]
+    },
+
+    {
+        "name": "Ephesians",
+        "headings": [
+"Every Spiritual Blessing in Christ",
+
+"Made Alive by Grace Through Faith",
+
+"The Mystery of Christ and the Unity of the Church",
+
+"Walk in Love and Live as Children of Light",
+
+"Wives, Husbands, Children, and Spiritual Warfare",
+"Children, Servants, and the Armor of God",
+
+        ]
+    },
+
+    {
+        "name": "Philippians",
+        "headings": [
+"Paul's Joy and Prayer in Suffering",
+
+"Christ's Humility and the Call to Shine",
+
+"Knowing Christ and Pressing Toward the Goal",
+
+"Rejoice in the Lord and Be Content",
+
+        ]
+    },
+
+    {
+        "name": "Colossians",
+        "headings": [
+"Christ Is Supreme and the Head of the Church",
+
+"Alive with Christ and Free from Human Traditions",
+
+"Set Your Minds on Things Above",
+"Devote Yourselves to Prayer and Walk in Wisdom",
+
+        ]
+    },
+
+    {
+        "name": "1 Thessalonians",
+        "headings": [
+"The Thessalonians' Faith and Example",
+
+"Paul's Ministry Among the Thessalonians",
+
+"Timothy's Report and Paul's Encouragement",
+
+"Living to Please God and the Coming of Christ",
+
+"Living in the Light of Christ's Return",
+
+        ]
+    },
+
+    {
+        "name": "2 Thessalonians",
+        "headings": [
+"Thanksgiving for Faith and Perseverance",
+
+"Christ's Return and the Man of Lawlessness",
+
+"Prayer, Work, and Standing Firm in the Lord",
+
+        ]
+    },
+
+    {
+        "name": "1 Timothy",
+        "headings": [
+"Guard the Gospel and Fight the Good Fight",
+
+"Prayer and God's Desire for All People",
+
+"Qualifications for Church Leaders",
+
+"Warnings About False Teachers",
+
+"Instructions for Various Groups in the Church",
+
+"Godliness, Contentment, and the Love of Money",
+
+        ]
+    },
+
+    {
+        "name": "2 Timothy",
+        "headings": [
+"Guard the Good Deposit",
+
+"Endure Hardship as a Good Soldier of Christ",
+
+"Godliness and the Truth in the Last Days",
+
+"Preach the Word and Finish the Race",
+
+        ]
+    },
+
+    {
+        "name": "Titus",
+        "headings": [
+"Appoint Elders and Guard Against False Teachers",
+
+"Teach Sound Doctrine and Live Godly Lives",
+
+"Saved by Grace and Devoted to Good Works",
+
+        ]
+    },
+
+    {
+        "name": "Philemon",
+        "headings": [
+"Paul Appeals for Onesimus",
+
+        ]
+    },
+
+    {
+        "name": "Hebrews",
+        "headings": [
+"The Son Is Greater Than the Angels",
+
+"Jesus Is Greater Than Moses",
+
+"Enter God's Rest Through Faith",
+
+"Jesus the Great High Priest",
+
+"Jesus the Source of Eternal Salvation",
+"Press On to Maturity and the Hope of God's Promise",
+
+"Jesus the Eternal High Priest",
+
+"The New Covenant and the Heavenly Sanctuary",
+
+"Christ's Sacrifice Once for All",
+
+"Draw Near to God and Hold Fast to Faith",
+"Faith and the Heroes of the Old Testament",
+
+"Run the Race and Look to Jesus",
+
+"Final Exhortations and Blessings",
+
+        ]
+    },
+
+    {
+        "name": "James",
+        "headings": [
+"Trials, Wisdom, and Hearing God's Word",
+
+"Faith Shown by Works and Love",
+
+"Controlling the Tongue and Seeking God's Wisdom",
+
+"Humility, Submission to God, and Patience",
+
+"Prayer, Suffering, and Restoring the Wandering",
+
+        ]
+    },
+
+    {
+        "name": "1 Peter",
+        "headings": [
+"Living Hope and Holiness Through Christ",
+
+"Living as God's Holy People",
+
+"Submission and Following Christ's Example",
+
+"Living for God in a Hostile World",
+
+"Humility and Standing Firm in Faith",
+
+        ]
+    },
+
+    {
+        "name": "2 Peter",
+        "headings": [
+"Growing in Grace and the Knowledge of Christ",
+
+"False Teachers and the Judgment of God",
+
+"The Day of the Lord and God's Promise",
+
+        ]
+    },
+
+    {
+        "name": "1 John",
+        "headings": [
+"Walking in the Light and Confessing Sin",
+
+"Knowing God Through Obedience and Love",
+
+"Children of God and the Test of Righteousness",
+
+"Testing the Spirits and Living in God's Love",
+
+"Faith in Jesus Christ and Eternal Life",
+
+        ]
+    },
+
+    {
+        "name": "2 John",
+        "headings": [
+"Walking in Truth and Love",
+
+        ]
+    },
+
+    {
+        "name": "3 John",
+        "headings": [
+"Walking Faithfully and Supporting God's Workers",
+
+        ]
+    },
+
+    {
+        "name": "Jude",
+        "headings": [
+"Contend for the Faith and Beware of False Teachers",
+
+        ]
+    },
+
+    {
+        "name": "Revelation",
+        "headings": [
+"Jesus Reveals Himself to John",
+
+"Messages to the Seven Churches",
+
+"The Throne of God in Heaven",
+
+"The Lamb and the Seven-Sealed Scroll",
+
+"The Lamb Opens the First Six Seals",
+"The Seals and the Great Multitude",
+
+"The Seventh Seal and the Seven Trumpets",
+
+"The Seven Trumpets and the Two Witnesses",
+
+"The Dragon, the Beasts, and the Lamb",
+
+"The Seven Angels and the Seven Bowls",
+"The Two Witnesses and the Seventh Trumpet",
+
+"The Woman, the Dragon, and the Beasts",
+
+"The Lamb and the 144,000",
+
+"The Harvest of the Earth",
+
+"The Seven Bowls of God's Wrath",
+"The Seven Bowls of God's Wrath",
+
+"The Fall of Babylon the Great",
+
+"The Rider on the White Horse",
+
+"The Thousand Years and the Final Judgment",
+
+"The Defeat of Satan and the Great White Throne",
+"The New Heaven, the New Earth, and the New Jerusalem",
+
+"The River of Life and the Return of Christ",
 
         ]
     },
@@ -1170,10 +1811,6 @@ const translations = [
     {
         "name": "ASV",
         "id": "12"
-    },
-    {
-        "name": "MSB",
-        "id": "4754"
     },
     {
         "name": "WEBUS",
@@ -1199,10 +1836,10 @@ document.querySelector(".bib-left-open").addEventListener("click", () => {
 });
 document.querySelector(".bib-right-open").addEventListener("click", () => {
     document.querySelector(".bib-right").classList.add("bib-right-show");
+    document.querySelector(".bib-opt").style.right = "392px";
 });
 document.querySelector("i.bib-left-xmark").addEventListener("click", () => {
     document.querySelector(".bib-left").classList.remove("bib-left-show");
-    document.querySelector(".bib-opt").style.right = "352px";
 });
 document.querySelector("i.bib-right-close").addEventListener("click", () => {
     document.querySelector(".bib-right").classList.remove("bib-right-show");
@@ -1212,12 +1849,37 @@ document.querySelector(".bib-header-settings").addEventListener("click", () => {
     document.querySelector(".bib-opt").style.opacity = "1";
     document.querySelector(".bib-opt").style.pointerEvents = "auto";
 });
+function focusBible(){
+	if(document.querySelector(".bib-mid-open").style.opacity == "0"){
+		document.querySelectorAll(".bib-header-focus i")[0].classList.remove("none");
+		document.querySelectorAll(".bib-header-focus i")[1].classList.add("none");
+		document.querySelectorAll(".bib-mid-open").forEach(btn => {
+			btn.style.opacity = "1";
+			btn.style.pointerEvents = "auto";
+			btn.click();
+		});
+		document.querySelector(".bib-opt-range").value = 1;
+		document.querySelector(".bib-opt-range").dispatchEvent(new Event('change', { bubbles: true })); 
+	} else {
+		document.querySelectorAll(".bib-header-focus i")[0].classList.add("none");
+		document.querySelectorAll(".bib-header-focus i")[1].classList.remove("none");
+		document.querySelectorAll(".bib-mid-open").forEach(btn => {
+			btn.style.opacity = "0";
+			btn.style.pointerEvents = "none";
+		});
+		document.querySelector(".bib-left-xmark").click();
+		document.querySelector(".bib-right-close").click();
+		document.querySelector(".bib-opt-range").value = 1.2;
+		document.querySelector(".bib-opt-range").dispatchEvent(new Event('change', { bubbles: true })); 
+	}
+}
 document.querySelector("i.bib-opt-close").addEventListener("click", () => {
     document.querySelector(".bib-opt").style.opacity = "0";
     document.querySelector(".bib-opt").style.pointerEvents = "none";
 });
 document.querySelector("i.bib-book-chev").addEventListener("click", () => {
     if(document.querySelector("i.bib-book-chev").style.transform != "rotate(-180deg)"){
+		document.querySelectorAll(".bib-left-search input")[1].focus();
         document.querySelector(".bib-left-drop").style.opacity = "1";
         document.querySelector(".bib-left-drop").style.pointerEvents = "auto";
         document.querySelector("i.bib-book-chev").style.transform = "rotate(-180deg)";
@@ -1229,6 +1891,7 @@ document.querySelector("i.bib-book-chev").addEventListener("click", () => {
 });
 document.querySelector("i.bib-mid-down").addEventListener("click", () => {
     if(document.querySelector("i.bib-mid-down").style.transform != "rotate(-180deg)"){
+		document.querySelectorAll(".bib-left-search input")[0].focus();
         document.querySelector(".bib-header-drop").style.opacity = "1";
         document.querySelector(".bib-header-drop").style.pointerEvents = "auto";
         document.querySelector("i.bib-mid-down").style.transform = "rotate(-180deg)";
@@ -1254,8 +1917,8 @@ document.querySelectorAll(".bib-left-search input").forEach((input, idx) => {
 });
 document.querySelector(".bib-opt-range").addEventListener("change", () => {
     document.querySelector(".bib-mid-title").style.fontSize = Number(46 * document.querySelector(".bib-opt-range").value) + "px";
-    document.querySelectorAll(".p, .d, .q1, .q2").forEach(verse => verse.style.fontSize = Number(20 * document.querySelector(".bib-opt-range").value) + "px");
-    document.querySelector(".s1").style.fontSize = Number(22 * document.querySelector(".bib-opt-range").value) + "px";
+    document.querySelectorAll(".p, .nb, .d, .q1, .q2").forEach(verse => verse.style.fontSize = Number(20 * document.querySelector(".bib-opt-range").value) + "px");
+    document.querySelectorAll(".s1, .s2").forEach(subheading => subheading.style.fontSize = Number(22 * document.querySelector(".bib-opt-range").value) + "px");
 });
 document.querySelector(".bib-opt-family").querySelectorAll(".bib-opt-btn").forEach((btn, idx) => {
     btn.addEventListener("click", () => {
@@ -1263,10 +1926,10 @@ document.querySelector(".bib-opt-family").querySelectorAll(".bib-opt-btn").forEa
         btn.classList.add("bib-opt-btn-active");
         if(idx == 0){
             //document.querySelectorAll("div, span").forEach(el => el.classList.remove("font-sans"));
-            document.querySelectorAll(".p, .d, .q1, .q2, .s1, .bib-mid-title").forEach(el => el.classList.remove("font-sans"));
+            document.querySelectorAll(".p, .nb, .d, .q1, .q2, .s1, .s2, .bib-mid-title").forEach(el => el.classList.remove("font-sans"));
         } else {
             //document.querySelectorAll("div, span").forEach(el => el.classList.add("font-sans"));
-            document.querySelectorAll(".p, .d, .q1, .q2, .s1, .bib-mid-title").forEach(el => el.classList.add("font-sans"));
+            document.querySelectorAll(".p, .nb, .d, .q1, .q2, .s1, .s2, .bib-mid-title").forEach(el => el.classList.add("font-sans"));
         }
     });
 });
@@ -1274,8 +1937,33 @@ document.querySelector(".bib-opt-spacing").querySelectorAll(".bib-opt-btn").forE
     btn.addEventListener("click", () => {
         document.querySelector(".bib-opt-spacing").querySelector(".bib-opt-btn-active")?.classList.remove("bib-opt-btn-active");
         btn.classList.add("bib-opt-btn-active");
-        document.querySelectorAll(".p, .d, .q1, .q2").forEach(verse => verse.style.lineHeight = 1.25 + (.25 * idx));
+        document.querySelectorAll(".p, .nb, .d, .q1, .q2").forEach(verse => verse.style.lineHeight = 1 + (.3 * idx));
     });
+});
+document.querySelectorAll(".bib-opt-theme .bib-opt-col").forEach((col, idx) => {
+    col.addEventListener("click", () => {
+        document.querySelectorAll(".bib-opt-theme .bib-opt-col").forEach(other => other.classList.remove("bib-opt-col-active"));
+    
+        col.classList.add("bib-opt-col-active");
+
+        document.querySelectorAll("*").forEach(el => {
+            el.classList.remove("light-theme");
+            el.classList.remove("sepia-theme");
+            el.classList.remove("dark-theme");
+
+            if(idx == 0){
+                el.classList.add("light-theme");
+            } else if(idx == 1){
+                el.classList.add("sepia-theme");
+            } else if(idx == 2){
+                el.classList.add("dark-theme");
+            }
+        });
+    });
+
+    if(idx == 1){
+        col.click();
+    }
 });
 document.addEventListener("click", (e) => {
     document.querySelectorAll(".bib-book-drop").forEach((drop, idx) => {
@@ -1290,6 +1978,30 @@ document.addEventListener("click", (e) => {
         document.querySelector(".bib-opt").style.opacity = "0";
         document.querySelector(".bib-opt").style.pointerEvents = "none";
     }
+});
+function resetBibleText(){
+	document.querySelector(".bib-opt-range").dispatchEvent(new Event('change', { bubbles: true })); 
+	document.querySelector(".bib-opt-family .bib-opt-btn-active").click();
+	document.querySelector(".bib-opt-spacing .bib-opt-btn-active").click();
+	document.querySelector(".bib-opt-theme .bib-opt-col-active").click();
+}
+document.querySelectorAll(".bib-right-btn span").forEach((btn, idx) => {
+	btn.addEventListener("click", () => {
+		document.querySelectorAll(".bib-right-col").forEach(other => other.classList.add("none"));
+		document.querySelectorAll(".bib-right-col")[idx].classList.remove("none");
+		document.querySelectorAll(".bib-right-btn span").forEach(other => other.classList.remove("bib-right-btn-active"));
+		btn.classList.add("bib-right-btn-active");
+
+		if(idx == 1){
+			setVerseAdding();
+			document.querySelector(".bib-right-verse-add").classList.add("inactive-el");
+		} else if(idx == 2){
+			setVerseRelated();
+			document.querySelector(".bib-right-rel-add").classList.add("inactive-el");
+		} else {
+			resetVerseColor();
+		}
+	});
 });
 
 async function loadBible(){
@@ -1341,6 +2053,7 @@ async function loadBible(){
             });
         });
 
+		resetBibleText();
         resetChapterArrows();
 
     } catch (error) {
@@ -1381,7 +2094,7 @@ function getBookSlug(fullName){
   { name: "Nehemiah", id: "NEH" },
   { name: "Esther", id: "EST" },
   { name: "Job", id: "JOB" },
-  { name: "Psalms", id: "PSA" },
+  { name: "Psalm", id: "PSA" },
   { name: "Proverbs", id: "PRO" },
   { name: "Ecclesiastes", id: "ECC" },
   { name: "Song of Solomon", id: "SNG" },
@@ -1483,28 +2196,226 @@ function initializeTranslations(){
 }
 initializeTranslations();
 
-document.querySelectorAll(".bib-opt-theme .bib-opt-col").forEach((col, idx) => {
-    col.addEventListener("click", () => {
-        document.querySelectorAll(".bib-opt-theme .bib-opt-col").forEach(other => other.classList.remove("bib-opt-col-active"));
-    
-        col.classList.add("bib-opt-col-active");
+function addNote(){
+	let newNote = document.createElement("div");
+	newNote.classList.add("bib-note");
+	newNote.innerHTML = `
+		<i class="fa-solid fa-xmark bib-note-xmark"></i>
+		<textarea placeholder="Enter Heading..." class="bib-note-head-area" spellcheck="false"></textarea>
+		<textarea placeholder="Type here..." class="bib-note-txt-area" spellcheck="false"></textarea>
+		<div class="bib-note-time">Today <span></span> ${getTime()}</div>
+	`;
+	document.querySelector(".bib-right-note-col").insertBefore(newNote, document.querySelector(".bib-note"));
 
-        document.querySelectorAll("*").forEach(el => {
-            el.classList.remove("light-theme");
-            el.classList.remove("sepia-theme");
-            el.classList.remove("dark-theme");
+	newNote.querySelector("i.bib-note-xmark").addEventListener("click", () => {
+		document.querySelector(".bib-right-note-col").removeChild(newNote);
+	});
 
-            if(idx == 0){
-                el.classList.add("light-theme");
-            } else if(idx == 1){
-                el.classList.add("sepia-theme");
-            } else if(idx == 2){
-                el.classList.add("dark-theme");
-            }
+	newNote.querySelector(".bib-note-txt-area").addEventListener("scroll", () => {
+		newNote.querySelector(".bib-note-txt-area").style.resize = "vertical";
+	});
+}
+
+function resetVerseColor(){
+	document.querySelectorAll(".yv-vlbl").forEach(num => {
+		num.classList.remove("bib-verse-idx-highlighted");
+		num.classList.remove("bib-verse-idx-active");
+	});
+}
+
+function setVerseAdding(){
+	document.querySelectorAll(".yv-vlbl").forEach(num => {
+		num.classList.add("bib-verse-idx-highlighted");
+		num.classList.remove("bib-verse-idx-active");
+
+		num.onclick = () => {
+			if(num.classList.contains("bib-verse-idx-active")){
+				num.classList.remove("bib-verse-idx-active");
+			} else {
+				num.classList.add("bib-verse-idx-active");
+			}
+			resetVerseBtn();
+		}
+	});
+}
+function resetVerseBtn(){
+	if(document.querySelector(".bib-verse-idx-active")){
+		document.querySelector(".bib-right-verse-add").classList.remove("inactive-el");
+	} else {
+		document.querySelector(".bib-right-verse-add").classList.add("inactive-el");
+	}
+}
+async function addVerse(){
+	let verseIdxs = [];
+	let verseStr = "";
+	document.querySelectorAll(".bib-verse-idx-active").forEach(num => {
+		verseIdxs.push(num.textContent);
+
+		if(verseStr == ""){
+			verseStr = num.textContent;
+		} else if(Number(num.textContent) == Number(verseStr[verseStr.length - 1]) + 1){
+			if(verseStr[verseStr.length - 2] == "-"){
+				verseStr = verseStr.slice(0, -1) + num.textContent;
+			} else {
+				verseStr += "-" + num.textContent;
+			}
+		} else {
+			verseStr += ", " + num.textContent;
+		}
+	});
+
+    const dataToSend = { translation: currentTranslation.id, book: getBookSlug(currentBook), chapter: currentChapterIdx + 1, verses: verseIdxs };
+    try {
+        const response = await fetch(url + `/api/get-verses`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(dataToSend), 
         });
-    });
 
-    if(idx == 1){
-        col.click();
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Error:', errorData.message);
+            return;
+        }
+
+        const data = await response.json();
+
+		let newVerse = document.createElement("div");
+		newVerse.classList.add("bib-verse");
+		newVerse.innerHTML = `
+		<i class="fa-solid fa-xmark bib-verse-xmark"></i>
+			<div class="bib-verse-head">${currentBook} ${currentChapterIdx + 1}: ${verseStr}</div>
+			<div class="bib-verse-txt">${data.verse}</div>
+			<div class="bib-verse-time">Today <span></span> ${getTime()}</div>
+		`;
+		document.querySelector(".bib-right-verse-col").insertBefore(newVerse, document.querySelector(".bib-verse"));
+
+		newVerse.querySelector("i.bib-verse-xmark").addEventListener("click", () => {
+			document.querySelector(".bib-right-verse-col").removeChild(newVerse);
+		});
+
+    } catch (error) {
+        console.error('Error posting data:', error);
     }
-});
+}
+
+function setVerseRelated(){
+	document.querySelectorAll(".yv-vlbl").forEach(num => {
+		num.classList.add("bib-verse-idx-highlighted");
+		num.classList.remove("bib-verse-idx-active");
+
+		num.onclick = () => {
+			document.querySelectorAll(".yv-vlbl").forEach(other => other.classList.remove("bib-verse-idx-active"));
+			num.classList.add("bib-verse-idx-active");
+			resetRelBtn();
+		}
+	});
+}
+function resetRelBtn(){
+	if(document.querySelector(".bib-verse-idx-active")){
+		document.querySelector(".bib-right-rel-add").classList.remove("inactive-el");
+	} else {
+		document.querySelector(".bib-right-rel-add").classList.add("inactive-el");
+	}
+}
+async function getReferences(){
+	let baseScripture = `${currentBook} ${currentChapterIdx + 1}`;
+	if(document.querySelector(".bib-verse-idx-active")) baseScripture += " " + document.querySelector(".bib-verse-idx-active").textContent;
+
+	let sampleFormat = [
+		{
+			"book": "Genesis",
+			"chapter": 1,
+			"verses": "1"
+		},
+		{
+			"book": "Genesis",
+			"chapter": 1,
+			"verses": "10-15"
+		},
+		{
+			"book": "Genesis",
+			"chapter": 1,
+			"verses": "25"
+		}
+	]
+
+	let prompt = `
+You are an AI assistant for a Christian Bible study app.
+
+Your task is to find exactly 4 strong biblical cross-references for ${baseScripture}.
+
+A cross-reference should have a clear and meaningful connection to the passage, such as:
+Direct quotation or allusion
+Parallel passage or event
+Prophecy and fulfillment
+Closely related biblical teaching or theme
+A passage that helps explain or illuminate the meaning
+
+Prioritize strong, direct connections over merely sharing similar words or vague themes. Do not include a passage simply because it contains similar vocabulary.
+
+For each cross-reference, return accurate Bible book, chapter, and verse references.
+
+Return ONLY valid JSON in exactly this format:
+${sampleFormat}
+
+Do not include markdown, explanations, commentary, or text outside the JSON.
+	`;
+	
+    const dataToSend = { prompt: prompt, translation: currentTranslation.id };
+    try {
+        const response = await fetch(url + `/api/get-references`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(dataToSend), 
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Error:', errorData.message);
+            return;
+        }
+
+        const data = await response.json();
+
+		let references = data.data.references;
+
+		references.forEach(ref => {
+			let newRef = document.createElement("div");
+			newRef.classList.add("bib-rel");
+			newRef.innerHTML = `
+				<div class="bib-rel-head">${ref.book} ${ref.chapter}: ${ref.verses}</div>
+				<div class="bib-rel-txt">${ref.verseTxt}</div>
+			`;
+			document.querySelector(".bib-right-rel-col").insertBefore(newRef, document.querySelector(".bib-rel"));
+		});
+	} catch (error) {
+        console.error('Error posting data:', error);
+    }
+}
+
+
+
+/*////////// AUTO //////////*/
+function getTime(){
+    const now = new Date();
+    let timeString = now.toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false
+    });
+    if(Number(timeString.slice(0, 2)) > 12){
+        timeString = String(Number(Number(timeString.slice(0, 2)) - 12)) + timeString.slice(2) + "pm";
+    } else if(Number(timeString.slice(0, 2)) == 12){
+        timeString = timeString + "pm";
+    } else {
+        timeString = timeString + "am";
+    }
+    return timeString;
+}

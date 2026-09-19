@@ -1,8 +1,13 @@
 
 EIKON BIBLE
 
-- bible loading -> bible navigation
-- change translations
-- note adding
-- highlights?
+right column features:
+- notes + saved verses
+- Greek/hebrew
+- click verse/verses and see links to other scriptures
+- AI analysis
+- make/view public comments on passages
+
+- search by verse, phrase, topic, or reference
+- audio bible
 - colour theme

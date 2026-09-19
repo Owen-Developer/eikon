@@ -1,3 +1,6 @@
 
-
 - can only click the chevron to change bible book
+
+- changing chapter resets verse number colors
+
+- need to show loading ui for clarity

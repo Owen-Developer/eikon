@@ -102,7 +102,7 @@
             </div>
             
             <div class="bib-header-right">
-                <!-- 
+                <!--
                     <span>
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <input type="text" placeholder="">
@@ -111,7 +111,13 @@
                         <i class="fa-solid fa-bookmark"></i>
                     </span>
                 -->
-                <span class="bib-header-settings"><i class="fa-solid fa-gear" style="pointer-events: none;"></i></span>    
+                <span class="bib-header-focus" onclick="focusBible()">
+                    <i class="fa-solid fa-up-right-and-down-left-from-center" style="pointer-events: none;"></i>
+                    <i class="fa-solid fa-down-left-and-up-right-to-center none" style="pointer-events: none;"></i>
+                </span>    
+                <span class="bib-header-settings">
+                    <i class="fa-solid fa-gear" style="pointer-events: none;"></i>
+                </span>    
             </div>
         </div>
 
@@ -434,19 +440,47 @@
                     <i class="fa-solid fa-xmark bib-right-close"></i>
                 </div>
                 
-                <div class="bib-right-links">
-                    <div>Highlights</div>
-                    <div class="bib-link-active">Notes</div>
+                <!-- 
+                    <div class="bib-right-links">
+                        <div class="bib-link-active">Notes</div>
+                        <div>Languages</div>
+                        <div>References</div>
+                        <div>AI</div>
+                        <div>Community</div>
+                    </div>
+                 -->
+                <div class="bib-right-btn">
+                    <span class="bib-right-btn-active">Notes</span>
+                    <span>Verses</span>
+                    <span>Related</span>
+                    <span>Languages</span>
+                    <span>AI Analysis</span>
+                    <span>Community</span>
                 </div>
 
-                <div class="bib-right-col">
-                    <div class="bib-note">
-                        <div class="bib-note-head">Note</div>
-                        <div class="bib-note-txt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit ad libero harum dicta, sed distinctio temporibus deserunt ducimus explicabo magni praesentium ipsam!</div>
-                        <div class="bib-note-time">Today <span></span> 10:36 AM</div>
+                <div class="bib-right-col bib-right-note-container ">
+                    <div class="bib-right-note-add" onclick="addNote()">Add note <i class="fa-solid fa-plus"></i></div>
+                    <div class="bib-right-note-col">
                     </div>
+                </div>
+                <div class="bib-right-col bib-right-verse-container none">
+                    <div class="bib-right-verse-add inactive-el" onclick="addVerse()">Add verse <i class="fa-solid fa-plus"></i></div>
+                    <div class="bib-right-verse-col">
+                    </div>
+                </div>
+                <div class="bib-right-col bib-right-rel-container none">
+                    <div class="bib-right-rel-add inactive-el" onclick="getReferences()">Cross References <i class="fa-solid fa-magnifying-glass"></i></div> 
+                    <div class="bib-right-rel-col">
+                        <div class="bib-rel-desc">Scripture related to Genesis 1</div>
 
-                    <div class="bib-right-note-add">Add note <i class="fa-solid fa-plus"></i></div>
+                        <!-- 
+                            <div class="bib-rel">
+                                <div class="bib-rel-head">Romans 5:4</div>
+                                <div class="bib-rel-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt vitae dignissimos dolor?</div>
+                            </div>
+                        -->
+                        
+                    </div>
                 </div>
             </div>
         </div>
