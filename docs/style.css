@@ -356,6 +356,12 @@ i.bib-mid-chev:hover, i.bib-mid-down:hover, i.bib-left-xmark:hover, i.bib-book-c
 .bib-right-open {
     right: 0;
 }
+.bib-mid-mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.2s ease;
+}
 .bib-mid-title {
     position: relative;
     font-size: 46px;
@@ -525,7 +531,7 @@ i.bib-right-close:hover {
     font-size: 16px;
     color: hsl(0, 0%, 40%);
 }
-.bib-right-note-add {
+.bib-right-note-add, .bib-right-verse-add, .bib-right-rel-add, .bib-right-lang-add {
     align-self: flex-start;
     margin-bottom: 5px;
     cursor: pointer;
@@ -536,12 +542,15 @@ i.bib-right-close:hover {
     align-items: center;
     gap: 10px;
 }
-.bib-right-note-add i {
+.bib-right-note-add i, .bib-right-verse-add i, .bib-right-rel-add i, .bib-right-lang-add i {
     font-size: 14px;
     color: hsl(0, 0%, 20%);
 }
-.bib-right-note-add:hover, .bib-right-note-add:hover i {
+.bib-right-note-add:hover, .bib-right-note-add:hover i,  .bib-right-verse-add:hover, .bib-right-verse-add:hover i,  .bib-right-rel-add:hover, .bib-right-rel-add:hover i, .bib-right-lang-add:hover, .bib-right-lang-add:hover i {
     color: black;
+}
+.bib-right-note-add:active, .bib-right-verse-note:active i, .bib-right-verse-add:active, .bib-right-verse-add:active i, .bib-right-rel-add:active, .bib-right-rel-add:active i, .bib-right-lang-add:active, .bib-right-lang-add:active i {
+    color: #4b6653;
 }
 .bib-note textarea {
     width: 100%;
@@ -628,24 +637,6 @@ i.bib-note-xmark:hover {
     font-size: 16px;
     color: hsl(0, 0%, 40%);
 }
-.bib-right-verse-add {
-    align-self: flex-start;
-    margin-bottom: 5px;
-    cursor: pointer;
-    font-size: 19px;
-    color: hsl(0, 0%, 20%);
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.bib-right-verse-add i {
-    font-size: 14px;
-    color: hsl(0, 0%, 20%);
-}
-.bib-right-verse-add:hover, .bib-right-verse-add:hover i {
-    color: black;
-}
 .bib-verse-btn {
     margin-top: 22px;
     width: 100%;
@@ -708,28 +699,101 @@ i.bib-verse-xmark:hover {
     font-size: 17px;
     color: hsl(0, 0%, 30%);
 }
-.bib-right-rel-add {
-    align-self: flex-start;
-    margin-bottom: 5px;
-    cursor: pointer;
-    font-size: 19px;
-    color: hsl(0, 0%, 20%);
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.bib-right-rel-add i {
-    font-size: 14px;
-    color: hsl(0, 0%, 20%);
-}
-.bib-right-rel-add:hover, .bib-right-rel-add:hover i {
-    color: black;
-}
 .bib-rel-desc {
     margin: 10px 0 2px;
     font-size: 17px;
     font-weight: 500;
+    color: hsl(0, 0%, 30%);
+}
+
+.bib-right-lang-col {
+    padding-bottom: 20px;
+    scrollbar-width: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+}
+.bib-lang-load {
+    margin: 10px 0 10px;
+    font-size: 17px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
+}
+.bib-lang-greek {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 7px;
+    row-gap: 4px;
+}
+.bib-lang-greek span {
+    font-size: 19px;
+    font-weight: 500;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.bib-lang-greek span:hover {
+    color: hsl(240, 100%, 30%);
+}
+.bib-lang-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.bib-lang-ul {
+    margin: 32px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.bib-lang-li {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+}
+.bib-lang-li div {
+    flex-shrink: 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.bib-lang-li span {
+    font-size: 17px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
+    width: 100%;
+}
+.bib-lang-label {
+    font-size: 20px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.bib-lang-occ-col {
+    margin-top: 12px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.bib-lang-occ {
+    position: relative;
+    border-radius: 4px;
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid hsl(35, 66%, 75%);
+}
+.bib-lang-head {
+    font-size: 20px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.bib-lang-txt {
+    margin-top: 10px;
+    font-size: 17px;
     color: hsl(0, 0%, 30%);
 }
 

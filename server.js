@@ -206,8 +206,8 @@ app.post("/api/get-references", async (req, res) => {
                     properties: {
                         references: {
                             type: "array",
-                            minItems: 4,
-                            maxItems: 4,
+                            minItems: 5,
+                            maxItems: 5,
                             items: {
                                 type: "object",
                                 properties: {
@@ -235,10 +235,6 @@ app.post("/api/get-references", async (req, res) => {
 
     let result = JSON.parse(response.output_text);
 
-    console.log(result);
-
-    console.log("---");
-
     for(const ref of result.references){
         const response = await fetch(
             `https://api.youversion.com/v1/bibles/${translation}/passages/${getBookSlug(ref.book)}.${ref.chapter}.${ref.verses}`,
@@ -254,6 +250,24 @@ app.post("/api/get-references", async (req, res) => {
     }
 
     return res.json({ data: result });
+});
+
+app.post("/api/get-greek-verse", async (req, res) => {
+    const { prompt } = req.body;
+
+    const response = await openaiClient.responses.create({
+        model: "gpt-4.1-mini",
+        input: prompt,
+        text: {
+            format: {
+                type: "json_object"
+            }
+        }
+    });
+
+    console.log(response.output_text);
+
+    return res.json({ greek: JSON.parse(response.output_text).greek });
 });
 
 

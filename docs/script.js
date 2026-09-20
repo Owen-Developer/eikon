@@ -25,9 +25,9 @@ const chapterHeadings = [
         "God's Covenant with Abram",
                 "The Birth of Ishmael",
         "The Covenant of Circumcision",
+        "Abraham Intercedes for Sodom",
         "The Destruction of Sodom and Gomorrah",
         "Abraham and Abimelech",
-        "The Birth of Isaac",
                 "The Birth of Isaac",
         "The Binding of Isaac",
         "The Burial of Sarah",
@@ -215,9 +215,8 @@ const chapterHeadings = [
         "The Choice Between Life and Death",
         "Joshua Commissioned to Lead Israel",
         "The Song of Moses",
-        "The Song of Moses",
-        "Moses' Final Blessing",
-        "The Death of Moses",
+        "Moses' Final Instructions",
+        "Moses' Final Words",
         "Moses' Final Blessing",
         "The Death of Moses",
         ]
@@ -700,7 +699,6 @@ const chapterHeadings = [
   "The Blessings of the Righteous",
   "The Majesty and Mercy of God",
   "God's Deliverance of Israel",
-  "The Glory of God Over Idols",
     "The Glory of God Over Idols",
   "Thanksgiving for Deliverance",
   "A Song of Love and Gratitude",
@@ -741,9 +739,16 @@ const chapterHeadings = [
     },
 
     {
-        "name": "Job",
+        "name": "Song of Solomon",
         "headings": [
-
+"Longing for the Beloved",
+"The Bridegroom and His Bride",
+"Seeking and Finding the Beloved",
+"The Beauty of the Beloved",
+"Love Awakens",
+"Love's Unfailing Strength",
+"The Beloved's Garden",
+"Love's Delight and Devotion",
         ]
     },
 
@@ -1998,13 +2003,50 @@ document.querySelectorAll(".bib-right-btn span").forEach((btn, idx) => {
 		} else if(idx == 2){
 			setVerseRelated();
 			document.querySelector(".bib-right-rel-add").classList.add("inactive-el");
-		} else {
+		} else if(idx == 3){
+            setVerseLang();
+			document.querySelector(".bib-right-lang-add").classList.add("inactive-el");
+        } else {
 			resetVerseColor();
 		}
 	});
 });
 
+async function getVerse(translation, book, chapter, verses){
+    const dataToSend = { translation: translation, book: book, chapter: chapter, verses: verses };
+    try {
+        const response = await fetch(url + `/api/get-verses`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(dataToSend),
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Error:', errorData.message);
+            return;
+        }
+
+        const data = await response.json();
+        
+        return data.verse;
+
+    } catch (error) {
+        console.error('Error posting data:', error);
+    }
+}
+
 async function loadBible(){
+    document.querySelector(".bib-mid-mid").style.opacity = "0";
+    let isNewBook = false;
+    if(document.querySelector(".bib-book-txt").textContent != currentBook) isNewBook = true;
+    if(isNewBook) document.querySelector(".bib-left-col").innerHTML = "";
+    document.querySelector(".bib-book-txt").textContent = currentBook;
+    document.querySelector(".bib-chap-txt").textContent = "Loading...";
+
     const dataToSend = { translation: currentTranslation.id, book: getBookSlug(currentBook), chapterIdx: currentChapterIdx + 1 };
     try {
         const response = await fetch(url + `/api/bible`, {
@@ -2027,14 +2069,11 @@ async function loadBible(){
 
         document.querySelector(".bib-mid-title").innerHTML = currentBook + " " + Number(currentChapterIdx + 1) + "<span></span>";
         document.querySelector(".bib-txt").innerHTML = chapter.content;
-        document.querySelector(".bib-book-txt").textContent = currentBook;
-        document.querySelector(".bib-chap-txt").textContent = Number(currentChapterIdx + 1) + " Chapters";
+        document.querySelector(".bib-chap-txt").textContent = amountOfChapters + " Chapters";
         document.querySelector(".bib-header-mid-txt").textContent = currentBook + " " + Number(currentChapterIdx + 1);
+        document.querySelector(".bib-mid-mid").style.opacity = "1";
 
-        document.querySelectorAll(".bib-left-box").forEach(box => {
-            document.querySelector(".bib-left-col").removeChild(box);
-        });
-
+        document.querySelector(".bib-left-col").innerHTML = "";
         chapterHeadings.find(book => book.name == currentBook).headings.forEach((heading, idx) => {
             let newBox = document.createElement("div");
             newBox.classList.add("bib-left-box");
@@ -2052,9 +2091,13 @@ async function loadBible(){
                 loadBible();
             });
         });
+        if(isNewBook){
+            document.querySelector(".bib-left-col").scrollTop = 0;
+        }
 
 		resetBibleText();
         resetChapterArrows();
+        document.querySelector(".bib-right-btn-active").click();
 
     } catch (error) {
         console.error('Error posting data:', error);
@@ -2264,42 +2307,21 @@ async function addVerse(){
 		}
 	});
 
-    const dataToSend = { translation: currentTranslation.id, book: getBookSlug(currentBook), chapter: currentChapterIdx + 1, verses: verseIdxs };
-    try {
-        const response = await fetch(url + `/api/get-verses`, {
-            method: 'POST',
-            credentials: 'include',
-            headers: { 
-                'Content-Type': 'application/json', 
-            },
-            body: JSON.stringify(dataToSend), 
-        });
+    let fullVerse = await getVerse(currentTranslation.id, getBookSlug(currentBook), currentChapterIdx + 1, verseIdxs);
 
-        if (!response.ok) {
-            const errorData = await response.json();
-            console.error('Error:', errorData.message);
-            return;
-        }
+    let newVerse = document.createElement("div");
+    newVerse.classList.add("bib-verse");
+    newVerse.innerHTML = `
+    <i class="fa-solid fa-xmark bib-verse-xmark"></i>
+        <div class="bib-verse-head">${currentBook} ${currentChapterIdx + 1}: ${verseStr}</div>
+        <div class="bib-verse-txt">${fullVerse}</div>
+        <div class="bib-verse-time">Today <span></span> ${getTime()}</div>
+    `;
+    document.querySelector(".bib-right-verse-col").insertBefore(newVerse, document.querySelector(".bib-verse"));
 
-        const data = await response.json();
-
-		let newVerse = document.createElement("div");
-		newVerse.classList.add("bib-verse");
-		newVerse.innerHTML = `
-		<i class="fa-solid fa-xmark bib-verse-xmark"></i>
-			<div class="bib-verse-head">${currentBook} ${currentChapterIdx + 1}: ${verseStr}</div>
-			<div class="bib-verse-txt">${data.verse}</div>
-			<div class="bib-verse-time">Today <span></span> ${getTime()}</div>
-		`;
-		document.querySelector(".bib-right-verse-col").insertBefore(newVerse, document.querySelector(".bib-verse"));
-
-		newVerse.querySelector("i.bib-verse-xmark").addEventListener("click", () => {
-			document.querySelector(".bib-right-verse-col").removeChild(newVerse);
-		});
-
-    } catch (error) {
-        console.error('Error posting data:', error);
-    }
+    newVerse.querySelector("i.bib-verse-xmark").addEventListener("click", () => {
+        document.querySelector(".bib-right-verse-col").removeChild(newVerse);
+    });
 }
 
 function setVerseRelated(){
@@ -2313,6 +2335,7 @@ function setVerseRelated(){
 			resetRelBtn();
 		}
 	});
+    getReferences();
 }
 function resetRelBtn(){
 	if(document.querySelector(".bib-verse-idx-active")){
@@ -2323,7 +2346,9 @@ function resetRelBtn(){
 }
 async function getReferences(){
 	let baseScripture = `${currentBook} ${currentChapterIdx + 1}`;
-	if(document.querySelector(".bib-verse-idx-active")) baseScripture += " " + document.querySelector(".bib-verse-idx-active").textContent;
+	if(document.querySelector(".bib-verse-idx-active")) baseScripture += ": " + document.querySelector(".bib-verse-idx-active").textContent;
+    document.querySelector(".bib-rel-desc").textContent = "Loading...";
+    document.querySelectorAll(".bib-rel").forEach(rel => document.querySelector(".bib-right-rel-col").removeChild(rel));
 
 	let sampleFormat = [
 		{
@@ -2346,16 +2371,18 @@ async function getReferences(){
 	let prompt = `
 You are an AI assistant for a Christian Bible study app.
 
-Your task is to find exactly 4 strong biblical cross-references for ${baseScripture}.
+Your task is to find exactly 6 strong biblical cross-references for ${baseScripture}.
 
 A cross-reference should have a clear and meaningful connection to the passage, such as:
-Direct quotation or allusion
-Parallel passage or event
-Prophecy and fulfillment
 Closely related biblical teaching or theme
 A passage that helps explain or illuminate the meaning
+Parallel passage or event
+Direct quotation or allusion
+Prophecy and fulfillment
 
-Prioritize strong, direct connections over merely sharing similar words or vague themes. Do not include a passage simply because it contains similar vocabulary.
+Prioritize strong, direct connections over merely sharing similar words or vague themes.
+
+Try to use references from different books in the bible, or atleast different chapters if it is possible.
 
 For each cross-reference, return accurate Bible book, chapter, and verse references.
 
@@ -2395,7 +2422,92 @@ Do not include markdown, explanations, commentary, or text outside the JSON.
 			`;
 			document.querySelector(".bib-right-rel-col").insertBefore(newRef, document.querySelector(".bib-rel"));
 		});
+        document.querySelector(".bib-rel-desc").textContent = "Scripture related to " + baseScripture;
+
 	} catch (error) {
+        console.error('Error posting data:', error);
+    }
+}
+
+function setVerseLang(){
+	document.querySelectorAll(".yv-vlbl").forEach(num => {
+		num.classList.add("bib-verse-idx-highlighted");
+		num.classList.remove("bib-verse-idx-active");
+
+		num.onclick = () => {
+			document.querySelectorAll(".yv-vlbl").forEach(other => other.classList.remove("bib-verse-idx-active"));
+			num.classList.add("bib-verse-idx-active");
+			resetLangBtn();
+		}
+	});
+}
+function resetLangBtn(){
+	if(document.querySelector(".bib-verse-idx-active")){
+		document.querySelector(".bib-right-lang-add").classList.remove("inactive-el");
+	} else {
+		document.querySelector(".bib-right-lang-add").classList.add("inactive-el");
+	}
+}
+async function getGreekVerse(){
+    let engVerse = await getVerse(currentTranslation.id, getBookSlug(currentBook), currentChapterIdx + 1, [document.querySelector(".bib-verse-idx-active")]);
+
+	let baseScripture = `${currentBook} ${currentChapterIdx + 1}`;
+	if(document.querySelector(".bib-verse-idx-active")) baseScripture += ": " + document.querySelector(".bib-verse-idx-active").textContent;
+    document.querySelector(".bib-lang-load").textContent = "Loading...";
+    document.querySelector(".bib-right-lang-col").classList.add("none");
+    document.querySelector(".bib-lang-content").classList.add("none");
+
+    let prompt = `
+You are a Greek New Testament text retrieval assistant.
+
+Given the English Bible verse and its Scripture reference below, return ONLY the corresponding original Koine Greek text of that verse.
+
+Scripture reference: ${baseScripture}
+English verse: ${engVerse}
+
+Return your response in exactly this JSON format:
+{"greek":"..."}
+
+Rules:
+- Return only the Greek text of the specified verse.
+- Do not translate, explain, paraphrase, or add commentary.
+- Preserve the original Greek wording and accents.
+- Do not include the verse reference.
+- Do not include Markdown or code fences.
+- Return valid JSON only.
+    `;
+
+    const dataToSend = { prompt: prompt };
+    try {
+        const response = await fetch(url + `/api/get-greek-verse`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(dataToSend), 
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Error:', errorData.message);
+            return;
+        }
+        
+        const data = await response.json();
+
+        document.querySelector(".bib-right-lang-col").classList.remove("none");
+        document.querySelector(".bib-lang-load").textContent = baseScripture;
+        document.querySelector(".bib-lang-greek").innerHTML = "";
+        data.greek.split(" ").forEach(word => {
+            document.querySelector(".bib-lang-greek").innerHTML += `<span>${word}</span>`;
+        });
+
+        document.querySelectorAll(".bib-lang-greek span").forEach(word => {
+            // click for data
+        });
+
+    } catch (error) {
         console.error('Error posting data:', error);
     }
 }

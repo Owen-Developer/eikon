@@ -1,0 +1,4 @@
+
+greek process:
+- click verse -> show literal greek with each word underlined/clickable
+- click word -> show: lemma, transliteration, english, definition, parsing (NNSM), where else it is in the bible
