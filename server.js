@@ -265,9 +265,81 @@ app.post("/api/get-greek-verse", async (req, res) => {
         }
     });
 
+    return res.json({ greek: JSON.parse(response.output_text).greek });
+});
+
+app.post("/api/analyse-greek-word", async (req, res)=> {
+    const { prompt } = req.body;
+
+    const responseFormat = {
+        type: "json_schema",
+        name: "greek_word_info",
+        strict: true,
+        schema: {
+            type: "object",
+            properties: {
+                transliteration: {
+                    type: "string"
+                },
+                english: {
+                    type: "string"
+                },
+                definition: {
+                    type: "string"
+                },
+                strongs: {
+                    type: "string"
+                },
+                parsing: {
+                    type: "string"
+                },
+                occurrences: {
+                    type: "array",
+                    items: {
+                        type: "object",
+                        properties: {
+                            book: {
+                                type: "string"
+                            },
+                            chapter: {
+                                type: "integer"
+                            },
+                            verse: {
+                                type: "integer"
+                            }
+                        },
+                        required: [
+                            "book",
+                            "chapter",
+                            "verse"
+                        ],
+                        additionalProperties: false
+                    }
+                }
+            },
+            required: [
+                "transliteration",
+                "english",
+                "definition",
+                "strongs",
+                "parsing",
+                "occurrences"
+            ],
+            additionalProperties: false
+        }
+    };
+
+    const response = await openaiClient.responses.create({
+        model: "gpt-4.1-mini",
+        input: prompt,
+        text: {
+            format: responseFormat
+        }
+    });
+
     console.log(response.output_text);
 
-    return res.json({ greek: JSON.parse(response.output_text).greek });
+    return res.json({ analysis: JSON.parse(response.output_text) });
 });
 
 

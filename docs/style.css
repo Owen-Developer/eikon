@@ -709,10 +709,10 @@ i.bib-verse-xmark:hover {
 .bib-right-lang-col {
     padding-bottom: 20px;
     scrollbar-width: none;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: 100%;
     overflow: auto;
 }
 .bib-lang-load {
@@ -737,6 +737,12 @@ i.bib-verse-xmark:hover {
 }
 .bib-lang-greek span:hover {
     color: hsl(240, 100%, 30%);
+}
+.bib-lang-content-load {
+    margin-top: 32px;
+    font-size: 17px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
 }
 .bib-lang-content {
     width: 100%;

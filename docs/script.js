@@ -1,7 +1,7 @@
 
 
 let url = "";
-let currentBook = "Genesis";
+let currentBook = "John";
 let currentChapterIdx = 0;
 
 const chapterHeadings = [
@@ -1829,7 +1829,7 @@ const translations = [
         "name": "GNV",
         "id": "2163"
     },
-]
+];
 let currentTranslation = translations[0];
 
 // 
@@ -2098,6 +2098,7 @@ async function loadBible(){
 		resetBibleText();
         resetChapterArrows();
         document.querySelector(".bib-right-btn-active").click();
+        document.querySelector(".bib-mid").scrollTop = 0;
 
     } catch (error) {
         console.error('Error posting data:', error);
@@ -2454,8 +2455,10 @@ async function getGreekVerse(){
 	let baseScripture = `${currentBook} ${currentChapterIdx + 1}`;
 	if(document.querySelector(".bib-verse-idx-active")) baseScripture += ": " + document.querySelector(".bib-verse-idx-active").textContent;
     document.querySelector(".bib-lang-load").textContent = "Loading...";
-    document.querySelector(".bib-right-lang-col").classList.add("none");
+    document.querySelector(".bib-lang-greek").innerHTML = "";
+    document.querySelector(".bib-right-lang-col").classList.remove("none");
     document.querySelector(".bib-lang-content").classList.add("none");
+    document.querySelector(".bib-lang-content-load").classList.add("none");
 
     let prompt = `
 You are a Greek New Testament text retrieval assistant.
@@ -2466,7 +2469,7 @@ Scripture reference: ${baseScripture}
 English verse: ${engVerse}
 
 Return your response in exactly this JSON format:
-{"greek":"..."}
+{"greek": "..."}
 
 Rules:
 - Return only the Greek text of the specified verse.
@@ -2496,17 +2499,102 @@ Rules:
         
         const data = await response.json();
 
-        document.querySelector(".bib-right-lang-col").classList.remove("none");
         document.querySelector(".bib-lang-load").textContent = baseScripture;
-        document.querySelector(".bib-lang-greek").innerHTML = "";
         data.greek.split(" ").forEach(word => {
             document.querySelector(".bib-lang-greek").innerHTML += `<span>${word}</span>`;
         });
 
         document.querySelectorAll(".bib-lang-greek span").forEach(word => {
-            // click for data
+            word.addEventListener("click", () => {
+                document.querySelector(".bib-lang-content-load").classList.remove("none");
+                analyseGreekWord(word.textContent, baseScripture, engVerse);
+            });
         });
 
+    } catch (error) {
+        console.error('Error posting data:', error);
+    }
+}
+async function analyseGreekWord(greekWord, scripture, verse){
+    let responseFormat = {
+        "transliteration": "",
+        "english": "",
+        "definition": "",
+        "strongs": "",
+        "parsing": "",
+        "occurrences": [
+            {
+                "book": "Genesis",
+                "chapter": 1,
+                "verse": 1
+            },
+        ]
+    }
+
+    let prompt = `
+You are a Koine Greek New Testament word-study assistant.
+
+I will provide you with:
+
+* The Greek word's Lemma: ${greekWord}
+* The Bible verse/reference: ${scripture}
+* The whole english verse: ${verse}
+
+Your task is to return accurate lexical and grammatical information about **that specific Greek word**.
+
+You must provide:
+
+1. **Transliteration** — A standard scholarly transliteration of the Greek lemma.
+2. **English** — The most appropriate English equivalent(s) for the lemma in general.
+3. **Definition** — A concise lexical definition of the lemma in Koine Greek/New Testament usage.
+4. **Strong’s** — The Strong's Greek number corresponding to the lemma, including the G prefix where appropriate (e.g. G26).
+5. **Parsing** — The grammatical parsing of the specific form appearing in the supplied verse, using full descriptions such as:
+   * Noun, Nominative, Singular, Masculine
+   * Verb, Aorist, Active, Indicative, 3rd Person Singular
+   * Adjective, Nominative, Singular, Feminine
+   * Preposition
+   * Conjunction
+   * Article, Nominative, Singular, Masculine
+6. Occurences — A list of the other New Testament verses where this **same lemma** occurs.
+
+Important rules for NT occurrences:
+
+* List references where the Greek lemma itself occurs, not merely verses containing an English translation that could correspond to it.
+* Do not include the supplied verse in the list.
+* Do not invent or guess references.
+* If the lemma occurs many times, return all occurrences that can be established reliably.
+* If the exact occurrence data cannot be established with confidence, return an empty array rather than fabricating references.
+* Preserve the distinction between the lemma and different Greek words that may have similar English translations.
+
+Important rules for the supplied word:
+
+* Use the supplied **Lemma** as the primary lexical identifier.
+* Use the Greek form appearing in the verse to determine the **Parsing**.
+* Do not confuse the lemma with a related word, cognate, synonym, or inflected form of a different lemma.
+* Strong's should correspond to the supplied lemma.
+
+Return the result ONLY in the JSON format provided in ${responseFormat}. Do not include markdown, explanations outside the JSON, or additional fields.
+    `;
+
+    const dataToSend = { prompt: prompt };
+    try {
+        const response = await fetch(url + `/api/analyse-greek-word`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(dataToSend), 
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Error:', errorData.message);
+            return;
+        }
+
+        const data = await response.json();
+        console.log(data);
     } catch (error) {
         console.error('Error posting data:', error);
     }
