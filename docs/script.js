@@ -2594,7 +2594,35 @@ Return the result ONLY in the JSON format provided in ${responseFormat}. Do not 
         }
 
         const data = await response.json();
-        console.log(data);
+        let analysis = data.analysis;
+
+        document.querySelector(".bib-lang-ul").innerHTML = `
+            <div class="bib-lang-li">
+                <div>Lemma:</div>
+                <span>κατάκριμα</span>
+            </div>
+            <div class="bib-lang-li">
+                <div>Transliteration:</div>
+                <span>katakrima</span>
+            </div>
+            <div class="bib-lang-li">
+                <div>English:</div>
+                <span>condemnation</span>
+            </div>
+            <div class="bib-lang-li">
+                <div>Definition:</div>
+                <span>a condemning sentence or penalty following judgment</span>
+            </div>
+            <div class="bib-lang-li">
+                <div>Strong’s:</div>
+                <span>G2631</span>
+            </div>
+            <div class="bib-lang-li">
+                <div>Parsing:</div>
+                <span>N-NSM</span>
+            </div>
+        `;
+
     } catch (error) {
         console.error('Error posting data:', error);
     }
