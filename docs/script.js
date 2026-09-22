@@ -2500,13 +2500,13 @@ Rules:
         const data = await response.json();
 
         document.querySelector(".bib-lang-load").textContent = baseScripture;
-        data.greek.split(" ").forEach(word => {
-            document.querySelector(".bib-lang-greek").innerHTML += `<span>${word}</span>`;
+        engVerse.split(" ").forEach(word => {
+            document.querySelector(".bib-lang-eng").innerHTML = `<span>${word}</span>`;
         });
+        document.querySelector(".bib-lang-greek").textContent = data.greek;
 
-        document.querySelectorAll(".bib-lang-greek span").forEach(word => {
+        document.querySelectorAll(".bib-lang-eng span").forEach(word => {
             word.addEventListener("click", () => {
-                document.querySelector(".bib-lang-content-load").classList.remove("none");
                 analyseGreekWord(word.textContent, baseScripture, engVerse);
             });
         });
@@ -2515,7 +2515,9 @@ Rules:
         console.error('Error posting data:', error);
     }
 }
-async function analyseGreekWord(greekWord, scripture, verse){
+async function analyseGreekWord(engWord, scripture, verse){
+    document.querySelector(".bib-lang-content-load").classList.remove("none");
+
     let responseFormat = {
         "transliteration": "",
         "english": "",
@@ -2531,6 +2533,7 @@ async function analyseGreekWord(greekWord, scripture, verse){
         ]
     }
 
+    /*
     let prompt = `
 You are a Koine Greek New Testament word-study assistant.
 
@@ -2544,6 +2547,52 @@ Your task is to return accurate lexical and grammatical information about **that
 
 You must provide:
 
+1. **Transliteration** — A standard scholarly transliteration of the Greek lemma.
+2. **English** — The most appropriate English equivalent(s) for the lemma in general.
+3. **Definition** — A concise lexical definition of the lemma in Koine Greek/New Testament usage.
+4. **Strong’s** — The Strong's Greek number corresponding to the lemma, including the G prefix where appropriate (e.g. G26).
+5. **Parsing** — The grammatical parsing of the specific form appearing in the supplied verse, using full descriptions such as:
+   * Noun, Nominative, Singular, Masculine
+   * Verb, Aorist, Active, Indicative, 3rd Person Singular
+   * Adjective, Nominative, Singular, Feminine
+   * Preposition
+   * Conjunction
+   * Article, Nominative, Singular, Masculine
+6. Occurences — A list of the other New Testament verses where this **same lemma** occurs.
+
+Important rules for NT occurrences:
+
+* List references where the Greek lemma itself occurs, not merely verses containing an English translation that could correspond to it.
+* Do not include the supplied verse in the list.
+* Do not invent or guess references.
+* If the lemma occurs many times, return all occurrences that can be established reliably.
+* If the exact occurrence data cannot be established with confidence, return an empty array rather than fabricating references.
+* Preserve the distinction between the lemma and different Greek words that may have similar English translations.
+
+Important rules for the supplied word:
+
+* Use the supplied **Lemma** as the primary lexical identifier.
+* Use the Greek form appearing in the verse to determine the **Parsing**.
+* Do not confuse the lemma with a related word, cognate, synonym, or inflected form of a different lemma.
+* Strong's should correspond to the supplied lemma.
+
+Return the result ONLY in the JSON format provided in ${responseFormat}. Do not include markdown, explanations outside the JSON, or additional fields.
+    `;
+    */
+    let prompt = `
+You are a Koine Greek New Testament word-study assistant.
+
+I will provide you with:
+
+* The English word: ${engWord}
+* The Bible verse/reference: ${scripture}
+* The whole english verse: ${verse}
+
+Your task is to return accurate lexical and grammatical information about **that specific Greek word**.
+
+You must provide:
+
+1. **Lemma** — The exact greek lemma word for the english word in this verse. *******
 1. **Transliteration** — A standard scholarly transliteration of the Greek lemma.
 2. **English** — The most appropriate English equivalent(s) for the lemma in general.
 3. **Definition** — A concise lexical definition of the lemma in Koine Greek/New Testament usage.
@@ -2624,10 +2673,20 @@ Return the result ONLY in the JSON format provided in ${responseFormat}. Do not 
             </div>
         `;
 
-        analysis.occurrences.forEach(occ => {
+        document.querySelector(".bib-lang-content-load").classList.add("none");
+
+        document.querySelector(".bib-lang-label").innerHTML = `NT Occurrences (${analysis.occurrences.length})`;
+        document.querySelector(".bib-lang-occ-col").innerHTML = "";
+        for(const verse of analysis.occurrences){
             let newOcc = document.createElement("div");
-            newOcc.classList.add("")
-        });
+            newOcc.classList.add("bib-lang-occ");
+            let occVerse = await getVerse(currentTranslation.id, getBookSlug(verse.book), verse.chapter, [verse.verse]);
+            newOcc.innerHTML = `
+                <div class="bib-lang-head">${verse.book} ${verse.chapter}:${verse.verse}</div>
+                <div class="bib-lang-txt">${occVerse}</div>
+            `;
+            document.querySelector(".bib-lang-occ-col").appendChild(newOcc);
+        }
 
     } catch (error) {
         console.error('Error posting data:', error);

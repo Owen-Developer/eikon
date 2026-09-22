@@ -721,22 +721,30 @@ i.bib-verse-xmark:hover {
     font-weight: 500;
     color: hsl(0, 0%, 30%);
 }
-.bib-lang-greek {
+.bib-lang-eng {
     display: flex;
     flex-wrap: wrap;
     column-gap: 7px;
-    row-gap: 4px;
+    row-gap: 2px;
 }
-.bib-lang-greek span {
+.bib-lang-eng span {
     font-size: 19px;
     font-weight: 500;
-    color: blue;
+    color: hsl(240, 100%, 50%);
     text-decoration: underline;
+    text-underline-offset: 1px;
     cursor: pointer;
     transition: 0.2s ease;
 }
-.bib-lang-greek span:hover {
+.bib-lang-eng span:hover {
     color: hsl(240, 100%, 30%);
+}
+.bib-lang-greek {
+    margin-top: 12px;
+    font-size: 19px;
+    color: hsl(0, 0%, 20%);
+    cursor: pointer;
+    transition: 0.2s ease;
 }
 .bib-lang-content-load {
     margin-top: 32px;

@@ -136,6 +136,19 @@ function getBookSlug(fullName){
 
     return bibleBooks.find(book => book.name == fullName).id;
 }
+async function getVerse(scriptureData, translation){
+    const response = await fetch(
+        `https://api.youversion.com/v1/bibles/${translation}/passages/${getBookSlug(scriptureData.book)}.${scriptureData.chapter}.${scriptureData.verse}`,
+        {
+            headers: {
+                "X-YVP-App-Key": process.env.YOUVERSION_KEY
+            }
+        }
+    );
+    const data = await response.json();
+    
+    return data.content;
+}
 
 
 
@@ -186,6 +199,7 @@ app.post("/api/get-verses", async (req, res) => {
 
         wholeVerse += data.content + " ";
     }
+
 
     return res.json({ verse: wholeVerse });
 });
@@ -268,7 +282,7 @@ app.post("/api/get-greek-verse", async (req, res) => {
     return res.json({ greek: JSON.parse(response.output_text).greek });
 });
 
-app.post("/api/analyse-greek-word", async (req, res)=> {
+app.post("/api/analyse-greek-word", async (req, res) => {
     const { prompt } = req.body;
 
     const responseFormat = {
@@ -329,7 +343,6 @@ app.post("/api/analyse-greek-word", async (req, res)=> {
         }
     };
 
-    /*
     const response = await openaiClient.responses.create({
         model: "gpt-4.1-mini",
         input: prompt,
@@ -338,9 +351,6 @@ app.post("/api/analyse-greek-word", async (req, res)=> {
         }
     });
     let analysis = JSON.parse(response.output_text);
-    */
-
-    let analysis = responseFormat;
 
     return res.json({ analysis: analysis });
 });
