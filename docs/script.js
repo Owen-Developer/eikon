@@ -2594,7 +2594,42 @@ Return the result ONLY in the JSON format provided in ${responseFormat}. Do not 
         }
 
         const data = await response.json();
-        console.log(data);
+
+        let analysis = data.analysis;
+
+        document.querySelector(".bib-lang-content").classList.remove("none");
+        document.querySelector(".bib-lang-ul").innerHTML = `
+            <div class="bib-lang-li">
+                <div>Lemma:</div>
+                <span>${greekWord}</span>
+            </div>
+            <div class="bib-lang-li">
+                <div>Transliteration:</div>
+                <span>${analysis.transliteration}</span>
+            </div>
+            <div class="bib-lang-li">
+                <div>English:</div>
+                <span>${analysis.english}</span>
+            </div>
+            <div class="bib-lang-li">
+                <div>Definition:</div>
+                <span>${analysis.definition}</span>
+            </div>
+            <div class="bib-lang-li">
+                <div>Strong’s:</div>
+                <span>${analysis.strongs}</span>
+            </div>
+            <div class="bib-lang-li">
+                <div>Parsing:</div>
+                <span>${analysis.parsing}</span>
+            </div>
+        `;
+
+        analysis.occurrences.forEach(occ => {
+            let newOcc = document.createElement("div");
+            newOcc.classList.add("")
+        });
+
     } catch (error) {
         console.error('Error posting data:', error);
     }

@@ -329,6 +329,7 @@ app.post("/api/analyse-greek-word", async (req, res)=> {
         }
     };
 
+    /*
     const response = await openaiClient.responses.create({
         model: "gpt-4.1-mini",
         input: prompt,
@@ -336,10 +337,12 @@ app.post("/api/analyse-greek-word", async (req, res)=> {
             format: responseFormat
         }
     });
+    let analysis = JSON.parse(response.output_text);
+    */
 
-    console.log(response.output_text);
+    let analysis = responseFormat;
 
-    return res.json({ analysis: JSON.parse(response.output_text) });
+    return res.json({ analysis: analysis });
 });
 
 
