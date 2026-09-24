@@ -358,6 +358,49 @@ app.post("/api/analyse-greek-word", async (req, res) => {
     return res.json({ analysis: analysis });
 });
 
+// update route below ***
+app.post("/api/load-comments", (req, res) => {
+    const { book, chapter } = req.body;
+
+    // load from mysql database
+
+    const comments = [
+        {
+            "id": 1,
+            "parent_id": 0,
+            "book": "John",
+            "chapter": 3,
+            "user_id": 1,
+            "username": "user993",
+            "comment_date": "2026-10-14",
+            "time": "3:02am",
+            "text": "This is a sample comment."
+        },
+        {
+            "id": 2,
+            "parent_id": 1,
+            "book": "John",
+            "chapter": 3,
+            "user_id": 1,
+            "username": "user995",
+            "comment_date": "2026-10-14",
+            "time": "3:02am",
+            "text": "This is a sample reply."
+        }
+    ];
+
+    return res.json({ comments: comments })
+});
+
+// update route below
+app.post("api/get-pfp", (req, res) => {
+    const userId = req.body.userId;
+
+    // get pfp from mysql DB
+
+    return res.json({ pfp: "images/pfp1.jpg" });
+});
+
 
 
 

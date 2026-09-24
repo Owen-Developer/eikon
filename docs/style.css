@@ -939,3 +939,112 @@ i.bib-opt-close:hover {
     width: auto;
     padding: 5px 12px;
 }
+
+.bib-chat-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+.bib-chat-input input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid hsl(0, 0%, 85%);
+    outline: none;
+    font-size: 17px;
+    color: hsl(0, 0%, 20%);
+}
+.bib-chat-input input:focus {
+    border: 1px sold hsl(0, 0%, 70%);
+}
+.bib-chat-send {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    background-color: #4b6653;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bib-chat-send i {
+    color: white;
+    font-size: 17px;
+}
+.bib-chat-col {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+    gap: 20px;
+    padding-bottom: 20px;
+    scrollbar-width: 0;
+}
+.bib-chat-com {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+}
+.bib-com-pfp {
+    width: 45px;
+    height: 45px;
+    border-radius: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background-color: #4b6653;
+    overflow: hidden;
+}
+.bib-com-pfp img {
+    width: 100%;
+    height: auto;
+}
+.bib-com-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.bib-com-name {
+    font-size: 19px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.bib-com-date {
+    margin: 8px 0 8px;
+    font-size: 17px;
+    color: hsl(0, 0%, 30%);
+}
+.bib-com-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.bib-com-reply-btn {
+    cursor: pointer;
+    margin: 12px 0 22px;
+    font-size: 18px;
+    color: hsl(0, 0%, 30%);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.bib-com-reply-btn span {
+    color: hsl(0, 0%, 30%);
+    font-weight: 500;
+}
+.bib-com-reply-btn i {
+    margin-left: 15px;
+    font-size: 15px;
+    color: hsl(0, 0%, 35%);
+    transition: 0.2s ease;
+}
+.bib-com-col {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

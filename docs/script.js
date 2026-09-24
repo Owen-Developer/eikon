@@ -2104,7 +2104,6 @@ async function loadBible(){
         console.error('Error posting data:', error);
     }
 }
-loadBible();
 
 document.querySelectorAll(".bib-left-drop-li").forEach(li => {
     li.addEventListener("click", () => {
@@ -2646,6 +2645,92 @@ Return the result ONLY in the JSON format provided in ${responseFormat}. Do not 
             `;
             document.querySelector(".bib-lang-occ-col").appendChild(newOcc);
         }
+
+    } catch (error) {
+        console.error('Error posting data:', error);
+    }
+}
+
+async function loadComments(){
+    const dataToSend = { book: currentBook, chapter: currentChapterIdx + 1 };
+    try {
+        const response = await fetch(url + `/api/load-comments`, {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(dataToSend), 
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Error:', errorData.message);
+            return;
+        }
+        
+        const data = await response.json();
+
+        let comments = data.comments;
+
+        comments.forEach(comment => {
+            let newComment = document.createElement("div");
+            newComment.classList.add("bib-chat-com");
+
+            let pfpStr = getPfp(comment.user_id);
+
+            let replies = comments.filter(reply => reply.parent_id == comment.id);
+
+            newComment.innerHTML = `
+                <div class="bib-com-pfp">
+                    <img src="${pfpStr} />
+                </div>
+
+                <div class="bib-com-right">
+                    <div class="bib-com-name">${comment.username}</div>
+                    <div class="bib-com-date">${comment.comment_date}, ${comment.time}</div>
+                    <div class="bib-com-text">${comment.text}</div>
+                    <div class="bib-com-reply-btn">View Reples (<span>${replies.length}}/span>) <i class="fa-solid fa-chevron-down"></i></div>
+
+                    <div class="bib-com-col">
+
+                    </div>
+                </div>
+            `;
+
+            replies.forEach(reply => {
+                let newReply = document.createElement("div");
+                newReply.classList.add("bib-chat-com");
+
+                // continue here, it needs to be made repeatable for replies of replies etc ***
+            });
+
+            document.querySelector(".bib-chat-col").appendChild(newComment);
+        });
+
+    } catch (error) {
+        console.error('Error posting data:', error);
+    }
+}
+async function getPfp(userId){
+    const dataToSend = { userId: userId };
+    try {
+        const response = await fetch(url + `/api/get-pfp`, {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(dataToSend), 
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Error:', errorData.message);
+            return;
+        }
+        
+        const data = await response.json();
+
+        return data.pfp;
 
     } catch (error) {
         console.error('Error posting data:', error);

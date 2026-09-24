@@ -2,10 +2,9 @@
 EIKON BIBLE
 
 right column features:
-- Greek/hebrew
-- click verse/verses and see links to other scriptures
-- AI analysis
+- Greek/hebrew (still need to do OT hebrew)
 - make/view public comments on passages
+- AI analysis
 
 - search by verse, phrase, topic, or reference
 - audio bible
