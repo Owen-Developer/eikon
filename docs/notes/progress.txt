@@ -2,7 +2,6 @@
 EIKON BIBLE
 
 right column features:
-- notes + saved verses
 - Greek/hebrew
 - click verse/verses and see links to other scriptures
 - AI analysis

@@ -200,7 +200,6 @@ app.post("/api/get-verses", async (req, res) => {
         wholeVerse += data.content + " ";
     }
 
-
     return res.json({ verse: wholeVerse });
 });
 
@@ -292,6 +291,9 @@ app.post("/api/analyse-greek-word", async (req, res) => {
         schema: {
             type: "object",
             properties: {
+                lemma: {
+                    type: "string"
+                },
                 transliteration: {
                     type: "string"
                 },
@@ -332,6 +334,7 @@ app.post("/api/analyse-greek-word", async (req, res) => {
                 }
             },
             required: [
+                "lemma",
                 "transliteration",
                 "english",
                 "definition",

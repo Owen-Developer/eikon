@@ -743,7 +743,6 @@ i.bib-verse-xmark:hover {
     margin-top: 12px;
     font-size: 19px;
     color: hsl(0, 0%, 20%);
-    cursor: pointer;
     transition: 0.2s ease;
 }
 .bib-lang-content-load {
@@ -770,6 +769,7 @@ i.bib-verse-xmark:hover {
     gap: 12px;
 }
 .bib-lang-li div {
+    min-width: 105px;
     flex-shrink: 0;
     font-size: 17px;
     font-weight: 500;
