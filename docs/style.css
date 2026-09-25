@@ -940,6 +940,10 @@ i.bib-opt-close:hover {
     padding: 5px 12px;
 }
 
+.bib-chat-desc {
+    font-size: 18px;
+    color: hsl(0, 0%, 30%);
+}
 .bib-chat-input {
     display: flex;
     align-items: center;
@@ -983,6 +987,9 @@ i.bib-opt-close:hover {
     padding-bottom: 20px;
     scrollbar-width: 0;
 }
+.bib-chat-col::-webkit-scrollbar {
+    display: none;
+}
 .bib-chat-com {
     width: 100%;
     display: flex;
@@ -1024,6 +1031,7 @@ i.bib-opt-close:hover {
     color: hsl(0, 0%, 20%);
 }
 .bib-com-reply-btn {
+    align-self: flex-start;
     cursor: pointer;
     margin: 12px 0 22px;
     font-size: 18px;
@@ -1037,10 +1045,13 @@ i.bib-opt-close:hover {
     font-weight: 500;
 }
 .bib-com-reply-btn i {
-    margin-left: 15px;
+    margin-left: 12px;
     font-size: 15px;
     color: hsl(0, 0%, 35%);
     transition: 0.2s ease;
+}
+.bib-com-reply-btn:hover, .bib-com-reply-btn:hover span, .bib-com-reply-btn:hover i {
+    color: hsl(0, 0%, 10%);
 }
 .bib-com-col {
     width: 100%;

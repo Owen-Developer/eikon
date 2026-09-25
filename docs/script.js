@@ -2041,6 +2041,7 @@ async function getVerse(translation, book, chapter, verses){
 }
 
 async function loadBible(){
+    loadComments();
     document.querySelector(".bib-mid-mid").style.opacity = "0";
     let isNewBook = false;
     if(document.querySelector(".bib-book-txt").textContent != currentBook) isNewBook = true;
@@ -2073,10 +2074,12 @@ async function loadBible(){
         document.querySelector(".bib-chap-txt").textContent = amountOfChapters + " Chapters";
         document.querySelector(".bib-header-mid-txt").textContent = currentBook + " " + Number(currentChapterIdx + 1);
         document.querySelector(".bib-mid-mid").style.opacity = "1";
-        if(currentChapterIdx < 39){
+        if(chapterHeadings.indexOf(chapterHeadings.find(heading => heading.name == currentBook)) < 39){
             currentLanguage = "Hebrew";
+            document.querySelector(".bib-right-lang-add").innerHTML = `View Hebrew <i class="fa-solid fa-magnifying-glass"></i>`;
         } else {
             currentLanguage = "Greek";
+            document.querySelector(".bib-right-lang-add").innerHTML = `View Greek <i class="fa-solid fa-magnifying-glass"></i>`;
         }
         document.querySelector(".bib-right-btn-greek").textContent = currentLanguage;
 
@@ -2478,7 +2481,7 @@ Scripture reference: ${baseScripture}
 English verse: ${engVerse}
 
 Return your response in exactly this JSON format:
-{"greek": "..."}
+{"original": "..."}
 
 Rules:
 - Return only the Greek text of the specified verse.
@@ -2610,6 +2613,59 @@ Important rules for the supplied word:
 
 Return the result ONLY in the JSON format provided in ${responseFormat}. Do not include markdown, explanations outside the JSON, or additional fields.
     `;
+    if(currentLanguage == "Hebrew"){
+        prompt = `
+You are a Hebrew Old Testament word-study assistant.
+
+I will provide you with:
+
+* The English word: ${engWord}
+* The Bible verse/reference: ${scripture}
+* The whole english verse: ${verse}
+
+Your task is to return accurate lexical and grammatical information about **that specific Hebrew word**.
+
+You must provide:
+
+1. **Lemma** — The exact Hebrew lemma corresponding to the word as it appears in the supplied verse.
+2. **Transliteration** — A standard scholarly transliteration of the Hebrew lemma.
+3. **English** — The most appropriate English equivalent(s) for the lemma in general.
+4. **Definition** — A concise lexical definition of the lemma in Hebrew/OT usage.
+5. **Strong’s** — The Strong's Hebrew number corresponding to the lemma, including the H prefix where appropriate.
+6. **Parsing** — The grammatical parsing of the specific form appearing in the supplied verse, using full descriptions such as:
+* Noun, Masculine, Singular, Absolute
+* Noun, Masculine, Singular, Construct
+* Verb, Qal, Perfect, 3rd Person, Masculine, Singular
+* Verb, Qal, Imperfect, 3rd Person, Masculine, Singular
+* Verb, Piel, Perfect, 3rd Person, Masculine, Singular
+* Adjective, Masculine, Singular, Absolute
+* Preposition
+* Conjunction
+* Definite Article
+* Pronoun, 3rd Person, Masculine, Singular
+* Adverb
+* Particle
+7. Occurences — A list of the other Old Testament verses where this **same lemma** occurs.
+
+Important rules for OT occurrences:
+
+* List references where the Hebrew lemma itself occurs, not merely verses containing an English translation that could correspond to it.
+* Do not include the supplied verse in the list.
+* Do not invent or guess references.
+* If the lemma occurs many times, return all occurrences that can be established reliably.
+* If the exact occurrence data cannot be established with confidence, return an empty array rather than fabricating references.
+* Preserve the distinction between the lemma and different Hebrew words that may have similar English translations.
+
+Important rules for the supplied word:
+
+* Use the supplied **Lemma** as the primary lexical identifier.
+* Determine the parsing from the actual Hebrew form occurring in the supplied verse
+* Do not confuse the lemma with a related word, cognate, synonym, or inflected form of a different lemma.
+* Strong's should correspond to the supplied lemma.
+
+Return the result ONLY in the JSON format provided in ${responseFormat}. Do not include markdown, explanations outside the JSON, or additional fields.
+    `;
+    }
 
     const dataToSend = { prompt: prompt };
     try {
@@ -2700,40 +2756,41 @@ async function loadComments(){
 
         let comments = data.comments;
 
-        comments.forEach(comment => {
+        for(const comment of comments){
             let newComment = document.createElement("div");
             newComment.classList.add("bib-chat-com");
-
-            let pfpStr = getPfp(comment.user_id);
-
+    
+            let pfpStr = await getPfp(comment.user_id);
+    
             let replies = comments.filter(reply => reply.parent_id == comment.id);
-
+    
             newComment.innerHTML = `
                 <div class="bib-com-pfp">
-                    <img src="${pfpStr} />
+                    <img src="${pfpStr}" />
                 </div>
-
+    
                 <div class="bib-com-right">
                     <div class="bib-com-name">${comment.username}</div>
                     <div class="bib-com-date">${comment.comment_date}, ${comment.time}</div>
                     <div class="bib-com-text">${comment.text}</div>
-                    <div class="bib-com-reply-btn">View Reples (<span>${replies.length}}/span>) <i class="fa-solid fa-chevron-down"></i></div>
-
+                    <div class="bib-com-reply-btn">View Reples (<span>${replies.length}}</span>) <i class="fa-solid fa-chevron-down"></i></div>
+    
                     <div class="bib-com-col">
-
+    
                     </div>
                 </div>
             `;
-
+    
             replies.forEach(reply => {
                 let newReply = document.createElement("div");
                 newReply.classList.add("bib-chat-com");
-
+    
                 // continue here, it needs to be made repeatable for replies of replies etc ***
             });
-
+    
             document.querySelector(".bib-chat-col").appendChild(newComment);
-        });
+        }
+
 
     } catch (error) {
         console.error('Error posting data:', error);
@@ -2757,6 +2814,8 @@ async function getPfp(userId){
         }
         
         const data = await response.json();
+
+        console.log(data.pfp);
 
         return data.pfp;
 

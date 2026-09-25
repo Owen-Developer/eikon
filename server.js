@@ -278,7 +278,7 @@ app.post("/api/get-greek-verse", async (req, res) => {
         }
     });
 
-    return res.json({ greek: JSON.parse(response.output_text).greek });
+    return res.json({ original: JSON.parse(response.output_text).original });
 });
 
 app.post("/api/analyse-greek-word", async (req, res) => {
@@ -393,7 +393,7 @@ app.post("/api/load-comments", (req, res) => {
 });
 
 // update route below
-app.post("api/get-pfp", (req, res) => {
+app.post("/api/get-pfp", (req, res) => {
     const userId = req.body.userId;
 
     // get pfp from mysql DB
