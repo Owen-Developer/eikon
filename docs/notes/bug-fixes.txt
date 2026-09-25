@@ -2,3 +2,9 @@
 - can only click the chevron to change bible book
 
 - need to show loading ui for clarity
+
+- comment on chat is an input not textarea
+
+- userId for comments is hard coded until we add sessions
+
+- add default for user pfp in DB

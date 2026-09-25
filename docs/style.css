@@ -1021,7 +1021,7 @@ i.bib-opt-close:hover {
     color: hsl(0, 0%, 20%);
 }
 .bib-com-date {
-    margin: 8px 0 8px;
+    margin: 6px 0;
     font-size: 17px;
     color: hsl(0, 0%, 30%);
 }
@@ -1030,10 +1030,15 @@ i.bib-opt-close:hover {
     font-weight: 500;
     color: hsl(0, 0%, 20%);
 }
+.bib-com-flex {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 .bib-com-reply-btn {
     align-self: flex-start;
     cursor: pointer;
-    margin: 12px 0 22px;
     font-size: 18px;
     color: hsl(0, 0%, 30%);
     font-weight: 500;
@@ -1045,17 +1050,68 @@ i.bib-opt-close:hover {
     font-weight: 500;
 }
 .bib-com-reply-btn i {
-    margin-left: 12px;
+    margin-left: 8px;
     font-size: 15px;
     color: hsl(0, 0%, 35%);
     transition: 0.2s ease;
+}
+.bib-com-rep {
+    cursor: pointer;
+    font-size: 15px;
+    color: hsl(0, 0%, 30%);
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+.bib-com-rep:hover {
+    color: hsl(0, 0%, 20%);
 }
 .bib-com-reply-btn:hover, .bib-com-reply-btn:hover span, .bib-com-reply-btn:hover i {
     color: hsl(0, 0%, 10%);
 }
 .bib-com-col {
+    margin-top: 22px;
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+.bib-com-input-container {
+    margin-top: 12px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 8px;
+}
+.bib-com-input {
+    width: 100%;
+    outline: 0;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid hsl(0, 0%, 60%);
+    font-size: 18px;
+    resize: none;
+    height: 34px;
+    padding: 3px 0;
+    color: hsl(0, 0%, 20%);
+}
+.bib-com-input-btn {
+    cursor: pointer;
+    border-radius: 200px;
+    padding: 6px 16px;
+    font-size: 17px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+}
+.bib-input-cancel-btn {
+    background-color: transparent;
+    color: hsl(0, 0%, 20%);
+}
+.bib-input-reply-btn {
+    background-color: #4b6653;
+    color: white;    
 }

@@ -1833,8 +1833,20 @@ const translations = [
 ];
 let currentTranslation = translations[0];
 
-// 
-
+const shortMonths = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec"
+];
 
 
 document.querySelector(".bib-left-open").addEventListener("click", () => {
@@ -2757,43 +2769,86 @@ async function loadComments(){
         let comments = data.comments;
 
         for(const comment of comments){
-            let newComment = document.createElement("div");
-            newComment.classList.add("bib-chat-com");
-    
-            let pfpStr = await getPfp(comment.user_id);
-    
-            let replies = comments.filter(reply => reply.parent_id == comment.id);
-    
-            newComment.innerHTML = `
-                <div class="bib-com-pfp">
-                    <img src="${pfpStr}" />
-                </div>
-    
-                <div class="bib-com-right">
-                    <div class="bib-com-name">${comment.username}</div>
-                    <div class="bib-com-date">${comment.comment_date}, ${comment.time}</div>
-                    <div class="bib-com-text">${comment.text}</div>
-                    <div class="bib-com-reply-btn">View Reples (<span>${replies.length}}</span>) <i class="fa-solid fa-chevron-down"></i></div>
-    
-                    <div class="bib-com-col">
-    
-                    </div>
-                </div>
-            `;
-    
-            replies.forEach(reply => {
-                let newReply = document.createElement("div");
-                newReply.classList.add("bib-chat-com");
-    
-                // continue here, it needs to be made repeatable for replies of replies etc ***
-            });
-    
-            document.querySelector(".bib-chat-col").appendChild(newComment);
+            await displayComment(comment, comments);
         }
 
 
     } catch (error) {
         console.error('Error posting data:', error);
+    }
+}
+async function displayComment(commentData, allComments){
+    let newComment = document.createElement("div");
+    newComment.classList.add("bib-chat-com");
+    newComment.dataset.commentId = commentData.id;
+
+    let pfpStr = await getPfp(commentData.user_id);
+
+    let replies = allComments.filter(reply => reply.parent_id == commentData.id);
+
+    newComment.innerHTML = `
+        <div class="bib-com-pfp">
+            <img src="${pfpStr}" />
+        </div>
+
+        <div class="bib-com-right">
+            <div class="bib-com-name">${commentData.username}</div>
+            <div class="bib-com-date">${getTextDateNoYear(commentData.comment_date)}, ${commentData.comment_time}</div>
+            <div class="bib-com-text">${commentData.message}</div>
+            <div class="bib-com-flex">
+                <div class="bib-com-reply-btn bib-com-view">View Reples (<span>${replies.length}</span>) <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="bib-com-rep">Reply</div>
+            </div>
+            <div class="bib-com-input-container none">
+                <textarea type="text" placeholder="Type a reply..." class="bib-com-input" ></textarea>
+                <div class="bib-com-input-btn bib-input-cancel-btn">Cancel</div>
+                <div class="bib-com-input-btn bib-input-reply-btn">Reply</div>
+            </div>
+
+            <div class="bib-com-col none">
+
+            </div>
+        </div>
+    `;
+    newComment.querySelector(".bib-com-input").addEventListener("scroll", () => {
+        newComment.querySelector(".bib-com-input").style.height = Number(newComment.querySelector(".bib-com-input").scrollHeight + 2) + "px";
+    });
+    newComment.querySelector(".bib-com-input").addEventListener("input", () => {
+        if(newComment.querySelector(".bib-com-input").value == ""){
+            newComment.querySelector(".bib-com-input").style.height = "34px";
+        }
+    });
+
+    if(replies.length == 0){
+        newComment.querySelector(".bib-com-view").classList.add("none");
+    }
+
+    newComment.querySelector(".bib-com-view").addEventListener("click", () => {
+        if(newComment.querySelector(".bib-com-col").classList.contains("none")){
+            newComment.querySelector(".bib-com-col").classList.remove("none");
+            newComment.querySelector(".bib-com-reply-btn i").style.transform = "rotate(-180deg)";
+        } else {
+            newComment.querySelector(".bib-com-col").classList.add("none");
+            newComment.querySelector(".bib-com-reply-btn i").style.transform = "rotate(0deg)";
+        }
+    });
+
+    newComment.querySelector(".bib-com-rep").addEventListener("click", () => {
+        newComment.querySelector(".bib-com-input-container").classList.remove("none");
+    });
+    newComment.querySelector(".bib-input-cancel-btn").addEventListener("click", () => {
+        newComment.querySelector(".bib-com-input-container").classList.add("none");
+        newComment.querySelector(".bib-com-input").value = "";
+    });
+
+    newComment.querySelector(".bib-input-reply-btn").addEventListener("click", () => {
+
+    });
+
+    if(commentData.parent_id == 0){
+        document.querySelector(".bib-chat-col").appendChild(newComment);
+    } else {
+        Array.from(document.querySelectorAll(".bib-chat-com")).find(comment => comment.dataset.commentId == commentData.parent_id)?.querySelector(".bib-com-col").appendChild(newComment);
     }
 }
 async function getPfp(userId){
@@ -2815,10 +2870,31 @@ async function getPfp(userId){
         
         const data = await response.json();
 
-        console.log(data.pfp);
-
         return data.pfp;
 
+    } catch (error) {
+        console.error('Error posting data:', error);
+    }
+}
+async function postComment(text, parentId){
+    const dataToSend = { text: text, parentId: parentId, book: currentBook, chapter: currentChapterIdx + 1 };
+    try {
+        const response = await fetch(url + `/api/post-comment`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(dataToSend), 
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Error:', errorData.message);
+            return;
+        }
+
+        const data = await response.json();
     } catch (error) {
         console.error('Error posting data:', error);
     }
@@ -2842,4 +2918,10 @@ function getTime(){
         timeString = timeString + "am";
     }
     return timeString;
+}
+function getTextDate(date){
+    return `${date.split("-")[2]} ${shortMonths[Number(date.split("-")[1]) - 1]} ${date.split("-")[0]}`;
+}
+function getTextDateNoYear(date){
+    return `${date.split("-")[2]} ${shortMonths[Number(date.split("-")[1]) - 1]}`;
 }

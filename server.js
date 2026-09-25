@@ -15,7 +15,6 @@ const openaiClient = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-/*
 const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -51,7 +50,6 @@ app.use(session({
         sameSite: "lax"    // allow cross-site cookies
     }
 }));
-*/
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -358,47 +356,34 @@ app.post("/api/analyse-greek-word", async (req, res) => {
     return res.json({ analysis: analysis });
 });
 
-// update route below ***
 app.post("/api/load-comments", (req, res) => {
     const { book, chapter } = req.body;
 
-    // load from mysql database
-
-    const comments = [
-        {
-            "id": 1,
-            "parent_id": 0,
-            "book": "John",
-            "chapter": 3,
-            "user_id": 1,
-            "username": "user993",
-            "comment_date": "2026-10-14",
-            "time": "3:02am",
-            "text": "This is a sample comment."
-        },
-        {
-            "id": 2,
-            "parent_id": 1,
-            "book": "John",
-            "chapter": 3,
-            "user_id": 1,
-            "username": "user995",
-            "comment_date": "2026-10-14",
-            "time": "3:02am",
-            "text": "This is a sample reply."
+    db.query("select * from comments where book = ? and chapter = ?", [book, chapter], (err, result) => {
+        if(err){
+            console.error(err);
         }
-    ];
-
-    return res.json({ comments: comments })
+    
+        return res.json({ comments: result })
+    });
 });
 
-// update route below
 app.post("/api/get-pfp", (req, res) => {
     const userId = req.body.userId;
 
-    // get pfp from mysql DB
+    db.query("select * from users where id = ?", [userId], (err, result) => {
+        if(err){
+            console.error(err);
+        }
+        
+        return res.json({ pfp: result[0].pfp });
+    });
+});
 
-    return res.json({ pfp: "images/pfp1.jpg" });
+app.post("/api/post-comment", (req, res) => {
+    let { text, parentId, book, chapter } = req.body;
+
+    db.query("insert into comments (parent_id, book, chapter, user_id, username, comment_date, comment_time, message) values (?, ?, ?, ?, ?, ?, ?, ?)", [parentId, book, chapter, 1, ])
 });
 
 
