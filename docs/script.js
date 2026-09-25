@@ -3,6 +3,7 @@
 let url = "";
 let currentBook = "John";
 let currentChapterIdx = 0;
+let currentLanguage = "Greek";
 
 const chapterHeadings = [
     {
@@ -2072,6 +2073,12 @@ async function loadBible(){
         document.querySelector(".bib-chap-txt").textContent = amountOfChapters + " Chapters";
         document.querySelector(".bib-header-mid-txt").textContent = currentBook + " " + Number(currentChapterIdx + 1);
         document.querySelector(".bib-mid-mid").style.opacity = "1";
+        if(currentChapterIdx < 39){
+            currentLanguage = "Hebrew";
+        } else {
+            currentLanguage = "Greek";
+        }
+        document.querySelector(".bib-right-btn-greek").textContent = currentLanguage;
 
         document.querySelector(".bib-left-col").innerHTML = "";
         chapterHeadings.find(book => book.name == currentBook).headings.forEach((heading, idx) => {
@@ -2460,6 +2467,8 @@ async function getGreekVerse(){
     document.querySelector(".bib-lang-content").classList.add("none");
     document.querySelector(".bib-lang-content-load").classList.add("none");
 
+    // not showing hebrew text, + takes to long to show loading text
+
     let prompt = `
 You are a Greek New Testament text retrieval assistant.
 
@@ -2479,6 +2488,27 @@ Rules:
 - Do not include Markdown or code fences.
 - Return valid JSON only.
     `;
+    if(currentLanguage == "Hebrew"){
+        prompt = `
+You are a Hebrew Old Testament text retrieval assistant.
+
+Given the English Bible verse and its Scripture reference below, return ONLY the corresponding original Hebrew text of that verse.
+
+Scripture reference: ${baseScripture}
+English verse: ${engVerse}
+
+Return your response in exactly this JSON format:
+{"original": "..."}
+
+Rules:
+- Return only the Hebrew text of the specified verse.
+- Do not translate, explain, paraphrase, or add commentary.
+- Preserve the original Hebrew wording and accents.
+- Do not include the verse reference.
+- Do not include Markdown or code fences.
+- Return valid JSON only.
+        `;
+    }
 
     const dataToSend = { prompt: prompt };
     try {
@@ -2499,13 +2529,11 @@ Rules:
         
         const data = await response.json();
 
-        console.log(engVerse);
-
         document.querySelector(".bib-lang-load").textContent = baseScripture;
         engVerse.split(" ").forEach(word => {
             document.querySelector(".bib-lang-eng").innerHTML += `<span>${word}</span>`;
         });
-        document.querySelector(".bib-lang-greek").textContent = data.greek;
+        document.querySelector(".bib-lang-greek").textContent = data.original;
 
         document.querySelectorAll(".bib-lang-eng span").forEach(word => {
             word.addEventListener("click", () => {
