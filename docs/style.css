@@ -531,7 +531,7 @@ i.bib-right-close:hover {
     font-size: 16px;
     color: hsl(0, 0%, 40%);
 }
-.bib-right-note-add, .bib-right-verse-add, .bib-right-rel-add, .bib-right-lang-add {
+.bib-right-note-add, .bib-right-verse-add, .bib-right-rel-add, .bib-right-lang-add, .bib-right-ai-add {
     align-self: flex-start;
     margin-bottom: 5px;
     cursor: pointer;
@@ -542,14 +542,14 @@ i.bib-right-close:hover {
     align-items: center;
     gap: 10px;
 }
-.bib-right-note-add i, .bib-right-verse-add i, .bib-right-rel-add i, .bib-right-lang-add i {
+.bib-right-note-add i, .bib-right-verse-add i, .bib-right-rel-add i, .bib-right-lang-add i, .bib-right-ai-add i {
     font-size: 14px;
     color: hsl(0, 0%, 20%);
 }
-.bib-right-note-add:hover, .bib-right-note-add:hover i,  .bib-right-verse-add:hover, .bib-right-verse-add:hover i,  .bib-right-rel-add:hover, .bib-right-rel-add:hover i, .bib-right-lang-add:hover, .bib-right-lang-add:hover i {
+.bib-right-note-add:hover, .bib-right-note-add:hover i,  .bib-right-verse-add:hover, .bib-right-verse-add:hover i,  .bib-right-rel-add:hover, .bib-right-rel-add:hover i, .bib-right-lang-add:hover, .bib-right-lang-add:hover i, .bib-right-ai-add:hover, .bib-right-ai-add:hover i {
     color: black;
 }
-.bib-right-note-add:active, .bib-right-verse-note:active i, .bib-right-verse-add:active, .bib-right-verse-add:active i, .bib-right-rel-add:active, .bib-right-rel-add:active i, .bib-right-lang-add:active, .bib-right-lang-add:active i {
+.bib-right-note-add:active, .bib-right-verse-note:active i, .bib-right-verse-add:active, .bib-right-verse-add:active i, .bib-right-rel-add:active, .bib-right-rel-add:active i, .bib-right-lang-add:active, .bib-right-lang-add:active i, .bib-right-ai-add:active, .bib-right-ai-add:active i {
     color: #4b6653;
 }
 .bib-note textarea {
@@ -593,6 +593,9 @@ i.bib-right-close:hover {
     align-items: center;
     justify-content: center;
     transition: 0.2s ease;
+}
+.bib-right-btn span:hover {
+    background-color: hsl(0, 0%, 94%);
 }
 i.bib-note-xmark {
     cursor: pointer;
@@ -940,6 +943,197 @@ i.bib-opt-close:hover {
     padding: 5px 12px;
 }
 
+.bib-right-ai-container {
+    gap: 0px;
+    height: 100%;
+    overflow: auto;
+    scrollbar-width: 0;
+    padding-bottom: 20px;
+}
+.bib-right-ai-container::-webkit-scrollbar {
+    display: none;
+}
+.bib-right-ai-add {
+    margin-bottom: 16px;
+}
+.bib-ai-label-flex {
+    margin: 0 0 6px;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+}
+.bib-ai-label {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
+}
+.bib-ai-sel-flex {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+}
+.bib-ai-sel {
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid hsl(0, 0%, 85%);
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+}
+.bib-ai-sel:hover {
+    border: 1px solid hsl(0, 0%, 70%);
+}
+.bib-ai-sel span {
+    font-size: 18px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.bib-ai-sel-drop {
+    max-height: 250px;
+    overflow: auto;
+    scrollbar-width: 0;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid hsl(0, 0%, 85%);
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+    z-index: 1;
+    position: absolute;
+    top: 46px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+.bib-ai-sel-drop::-webkit-scrollbar {
+    display: none;
+}
+.bib-ai-sel-drop div {
+    border-radius: 5px;
+    width: 100%;
+    padding: 8px 0;
+    font-size: 17px;
+    text-align: center;
+    color: hsl(0, 0%, 20%);
+}
+.bib-ai-sel-drop div:hover {
+    background-color: hsl(0, 0%, 94%);
+}
+.bib-ai-ques-txt {
+    align-self: flex-start;
+    margin: 12px 0 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.bib-ai-ques-txt i {
+    margin-left: 3px;
+    font-size: 11px;
+    color: hsl(0, 0%, 45%);
+}
+.bib-ai-ques-txt:hover {
+    color: hsl(0, 0%, 10%);
+}
+.bib-ai-wrapper {
+    margin-top: 20px;
+    background-color: #4b6653;
+    width: 100%;
+    padding: 18px 15px;
+    border-radius: 5px;
+}
+.bib-ai-head {
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+}
+.bib-ai-txt {
+    font-size: 18px;
+    color: hsl(0, 0%, 85%);
+    display: flex;
+    flex-direction: column;
+}
+.bib-ai-txt span {
+    font-size: 19px;
+    font-weight: 500;
+    color: white;
+    margin: 20px 0 6px;
+}
+.bib-ai-ques-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.bib-ai-ques-area {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 1px solid hsl(0, 0%, 85%);
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+    background-color: white;
+}
+.bib-ai-ques-area textarea {
+    width: 100%;
+    outline: 0;
+    border: 0;
+    resize: none;
+    height: 120px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: hsl(0, 0%, 20%);
+    padding: 8px 12px;
+    margin-bottom: 50px;
+}
+.bib-ai-ques-btn {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: hsl(0, 0%, 20%);
+    border: 1px solid hsl(0, 0%, 85%);
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+    border-radius: 5px;
+    height: 34px;
+    width: 34px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+.bib-ai-ques-btn:hover {
+    background-color: hsl(0, 0%, 94%);
+}
+.bib-ai-ques-ana {
+    align-self: flex-start;
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.bib-ai-ques-ana i {
+    margin-left: 3px;
+    margin-right: 5px;
+    font-size: 10px;
+    color: hsl(0, 0%, 45%);
+}
+
 .bib-chat-desc {
     font-size: 18px;
     color: hsl(0, 0%, 30%);
@@ -963,6 +1157,7 @@ i.bib-opt-close:hover {
     border: 1px sold hsl(0, 0%, 70%);
 }
 .bib-chat-send {
+    cursor: pointer;
     flex-shrink: 0;
     width: 45px;
     height: 45px;
@@ -971,10 +1166,14 @@ i.bib-opt-close:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.2s ease;
 }
 .bib-chat-send i {
     color: white;
     font-size: 17px;
+}
+.bib-chat-send:hover {
+    background-color: hsl(138, 15%, 45%);
 }
 .bib-chat-col {
     height: 100%;

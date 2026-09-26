@@ -253,11 +253,11 @@ app.post("/api/get-references", async (req, res) => {
                                     chapter: {
                                         type: "integer"
                                     },
-                                    verses: {
+                                    verse: {
                                         type: "string"
                                     }
                                 },
-                                required: ["book", "chapter", "verses"],
+                                required: ["book", "chapter", "verse"],
                                 additionalProperties: false
                             }
                         }
@@ -272,17 +272,9 @@ app.post("/api/get-references", async (req, res) => {
     let result = JSON.parse(response.output_text);
 
     for(const ref of result.references){
-        const response = await fetch(
-            `https://api.youversion.com/v1/bibles/${translation}/passages/${getBookSlug(ref.book)}.${ref.chapter}.${ref.verses}`,
-            {
-                headers: {
-                    "X-YVP-App-Key": process.env.YOUVERSION_KEY
-                }
-            }
-        );
-        const data = await response.json();
+        ref.verse = ref.verse.replace("},{", "");
 
-        ref.verseTxt = data.content;
+        ref.verseTxt = await getVerse(ref, translation);
     }
 
     return res.json({ data: result });
@@ -301,7 +293,7 @@ app.post("/api/get-greek-verse", async (req, res) => {
         }
     });
 
-    return res.json({ original: JSON.parse(response.output_text).original });
+    return res.json({ original: JSON.parse(response.output_text).original.replace("־", "").replace(":", "") });
 });
 
 app.post("/api/analyse-greek-word", async (req, res) => {
@@ -384,12 +376,12 @@ app.post("/api/analyse-greek-word", async (req, res) => {
 app.post("/api/load-comments", (req, res) => {
     const { book, chapter } = req.body;
 
-    db.query("select * from comments where book = ? and chapter = ?", [book, chapter], (err, result) => {
+    db.query("select * from comments where book = ? and chapter = ? order by id asc", [book, chapter], (err, result) => {
         if(err){
             console.error(err);
         }
     
-        return res.json({ comments: result.reverse() })
+        return res.json({ comments: result })
     });
 });
 

@@ -2,8 +2,6 @@
 EIKON BIBLE
 
 right column features:
-- Greek/hebrew (still need to do OT hebrew)
-- make/view public comments on passages
 - AI analysis
 
 - search by verse, phrase, topic, or reference

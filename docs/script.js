@@ -2016,10 +2016,11 @@ document.querySelectorAll(".bib-right-btn span").forEach((btn, idx) => {
 			document.querySelector(".bib-right-verse-add").classList.add("inactive-el");
 		} else if(idx == 2){
 			setVerseRelated();
-			document.querySelector(".bib-right-rel-add").classList.add("inactive-el");
 		} else if(idx == 3){
             setVerseLang();
 			document.querySelector(".bib-right-lang-add").classList.add("inactive-el");
+        } else if(idx == 4){
+            initializeAi();
         } else {
 			resetVerseColor();
 		}
@@ -2353,23 +2354,22 @@ function setVerseRelated(){
 		num.classList.remove("bib-verse-idx-active");
 
 		num.onclick = () => {
-			document.querySelectorAll(".yv-vlbl").forEach(other => other.classList.remove("bib-verse-idx-active"));
-			num.classList.add("bib-verse-idx-active");
-			resetRelBtn();
+            if(!num.classList.contains("bib-verse-idx-active")){
+                document.querySelectorAll(".yv-vlbl").forEach(other => other.classList.remove("bib-verse-idx-active"));
+                num.classList.add("bib-verse-idx-active");
+            } else {
+                num.classList.remove("bib-verse-idx-active");
+            }
 		}
 	});
-    getReferences();
-}
-function resetRelBtn(){
-	if(document.querySelector(".bib-verse-idx-active")){
-		document.querySelector(".bib-right-rel-add").classList.remove("inactive-el");
-	} else {
-		document.querySelector(".bib-right-rel-add").classList.add("inactive-el");
-	}
+    document.querySelector(".bib-right-rel-col").classList.add("none");
+    //getReferences();
 }
 async function getReferences(){
-	let baseScripture = `${currentBook} ${currentChapterIdx + 1}`;
+    let baseScripture = `${currentBook} ${currentChapterIdx + 1}`;
 	if(document.querySelector(".bib-verse-idx-active")) baseScripture += ": " + document.querySelector(".bib-verse-idx-active").textContent;
+    document.querySelector(".bib-right-rel-add").classList.add("inactive-el");
+    document.querySelector(".bib-right-rel-col").classList.remove("none");
     document.querySelector(".bib-rel-desc").textContent = "Loading...";
     document.querySelectorAll(".bib-rel").forEach(rel => document.querySelector(".bib-right-rel-col").removeChild(rel));
 
@@ -2377,17 +2377,17 @@ async function getReferences(){
 		{
 			"book": "Genesis",
 			"chapter": 1,
-			"verses": "1"
+			"verse": "1"
 		},
 		{
 			"book": "Genesis",
 			"chapter": 1,
-			"verses": "10-15"
+			"verse": "10-15"
 		},
 		{
 			"book": "Genesis",
 			"chapter": 1,
-			"verses": "25"
+			"verse": "25"
 		}
 	]
 
@@ -2425,8 +2425,7 @@ Do not include markdown, explanations, commentary, or text outside the JSON.
             },
             body: JSON.stringify(dataToSend), 
         });
-
-        if (!response.ok) {
+        if(!response.ok){
             const errorData = await response.json();
             console.error('Error:', errorData.message);
             return;
@@ -2436,16 +2435,19 @@ Do not include markdown, explanations, commentary, or text outside the JSON.
 
 		let references = data.data.references;
 
-		references.forEach(ref => {
+		references.reverse().forEach(ref => {
 			let newRef = document.createElement("div");
 			newRef.classList.add("bib-rel");
 			newRef.innerHTML = `
-				<div class="bib-rel-head">${ref.book} ${ref.chapter}:${ref.verses}</div>
+				<div class="bib-rel-head">${ref.book} ${ref.chapter}:${ref.verse}</div>
 				<div class="bib-rel-txt">${ref.verseTxt}</div>
 			`;
+            if(!ref.verseTxt) newRef.classList.add("none");
 			document.querySelector(".bib-right-rel-col").insertBefore(newRef, document.querySelector(".bib-rel"));
 		});
         document.querySelector(".bib-rel-desc").textContent = "Scripture related to " + baseScripture;
+
+        document.querySelector(".bib-right-rel-add").classList.remove("inactive-el");
 
 	} catch (error) {
         console.error('Error posting data:', error);
@@ -2453,6 +2455,11 @@ Do not include markdown, explanations, commentary, or text outside the JSON.
 }
 
 function setVerseLang(){
+    document.querySelector(".bib-right-lang-col").classList.add("none");
+    document.querySelector(".bib-lang-content").classList.add("none");
+    document.querySelector(".bib-lang-content-load").classList.add("none");
+    document.querySelector(".bib-lang-content").classList.add("none");
+
 	document.querySelectorAll(".yv-vlbl").forEach(num => {
 		num.classList.add("bib-verse-idx-highlighted");
 		num.classList.remove("bib-verse-idx-active");
@@ -2730,7 +2737,7 @@ Return the result ONLY in the JSON format provided in ${responseFormat}. Do not 
 
         document.querySelector(".bib-lang-content-load").classList.add("none");
 
-        document.querySelector(".bib-lang-label").innerHTML = `NT Occurrences (${analysis.occurrences.length})`;
+        document.querySelector(".bib-lang-label").innerHTML = `NT Occurrences`;
         document.querySelector(".bib-lang-occ-col").innerHTML = "";
         for(const verse of analysis.occurrences){
             let newOcc = document.createElement("div");
@@ -2740,8 +2747,13 @@ Return the result ONLY in the JSON format provided in ${responseFormat}. Do not 
                 <div class="bib-lang-head">${verse.book} ${verse.chapter}:${verse.verse}</div>
                 <div class="bib-lang-txt">${occVerse}</div>
             `;
+            if(!occVerse){
+                newOcc.classList.add("none");
+                analysis.occurrences = analysis.occurrences.filter(occc => occc != verse);
+            }
             document.querySelector(".bib-lang-occ-col").appendChild(newOcc);
         }
+        document.querySelector(".bib-lang-label").innerHTML = `NT Occurrences (${analysis.occurrences.length})`;
 
     } catch (error) {
         console.error('Error posting data:', error);
@@ -2749,6 +2761,7 @@ Return the result ONLY in the JSON format provided in ${responseFormat}. Do not 
 }
 
 async function loadComments(){
+    document.querySelector(".bib-chat-desc").innerHTML = `Loading...`;
     const dataToSend = { book: currentBook, chapter: currentChapterIdx + 1 };
     try {
         const response = await fetch(url + `/api/load-comments`, {
@@ -2766,10 +2779,11 @@ async function loadComments(){
         }
         
         const data = await response.json();
-
+        
         let comments = data.comments;
-
         currentAllComments = comments;
+        document.querySelector(".bib-chat-col").innerHTML = "";
+        document.querySelector(".bib-chat-desc").innerHTML = `Community chat for ${currentBook} ${currentChapterIdx + 1}`;
 
         for(const comment of comments){
             await displayComment(comment, comments);
@@ -2805,7 +2819,7 @@ async function displayComment(commentData, allComments){
             <div class="bib-com-input-container none">
                 <textarea type="text" placeholder="Type a reply..." class="bib-com-input" ></textarea>
                 <div class="bib-com-input-btn bib-input-cancel-btn">Cancel</div>
-                <div class="bib-com-input-btn bib-input-reply-btn">Reply</div>
+                <div class="bib-com-input-btn bib-input-reply-btn inactive-el">Reply</div>
             </div>
 
             <div class="bib-com-col none">
@@ -2818,7 +2832,10 @@ async function displayComment(commentData, allComments){
     });
     newComment.querySelector(".bib-com-input").addEventListener("input", () => {
         if(newComment.querySelector(".bib-com-input").value == ""){
+            document.querySelector(".bib-input-reply-btn").classList.add("inactive-el");
             newComment.querySelector(".bib-com-input").style.height = "34px";
+        } else {
+            document.querySelector(".bib-input-reply-btn").classList.remove("inactive-el");
         }
     });
 
@@ -2845,7 +2862,12 @@ async function displayComment(commentData, allComments){
     });
 
     newComment.querySelector(".bib-input-reply-btn").addEventListener("click", () => {
-
+        postComment(newComment.querySelector(".bib-com-input").value, commentData.id);
+        newComment.querySelector(".bib-input-cancel-btn").click();
+        newComment.querySelector(".bib-com-view").classList.remove("none");
+        newComment.querySelector(".bib-com-col").classList.remove("none");
+        newComment.querySelector(".bib-com-reply-btn i").style.transform = "rotate(-180deg)";
+        newComment.querySelector(".bib-com-view span").textContent = Number(newComment.querySelector(".bib-com-view span").textContent) + 1;
     });
 
     if(commentData.parent_id == 0){
@@ -2900,7 +2922,7 @@ async function postComment(text, parentId){
         const data = await response.json();
 
         let sameComment = data.sameComment;
-        currentAllComments.appendChild(sameComment);
+        currentAllComments.push(sameComment);
         displayComment(sameComment, currentAllComments);
 
     } catch (error) {
@@ -2918,6 +2940,54 @@ document.querySelector(".bib-chat-input input").addEventListener("input", () => 
 document.querySelector(".bib-chat-send").addEventListener("click", () => {
     postComment(document.querySelector(".bib-chat-input input").value, 0);
 });
+
+document.querySelector(".bib-ai-ques-txt").addEventListener("click", () => {
+    document.querySelector(".bib-ai-ana").classList.add("none");
+    document.querySelector(".bib-ai-ques-container").classList.remove("none");
+    document.querySelector(".bib-right-ai-add").classList.add("none");
+});
+document.querySelector(".bib-ai-ques-ana").addEventListener("click", () => {
+    document.querySelector(".bib-ai-ana").classList.remove("none");
+    document.querySelector(".bib-ai-ques-container").classList.add("none");
+    document.querySelector(".bib-right-ai-add").classList.remove("none");
+});
+function initializeAi(){
+    document.querySelectorAll(".bib-ai-sel").forEach((sel, selIdx) => {
+        sel.querySelector("span").textContent = "1";
+        if(selIdx == 1){
+            sel.querySelector("span").textContent = document.querySelectorAll(".yv-vlbl").length;
+        }
+        sel.querySelector(".bib-ai-sel-drop").innerHTML = "";
+        document.querySelectorAll(".yv-vlbl").forEach((num) => {
+            sel.querySelector(".bib-ai-sel-drop").innerHTML += `<div>${num.textContent}</div>`;
+        });
+
+        sel.querySelectorAll(".bib-ai-sel-drop div").forEach(opt => {
+            opt.onclick = () => {
+                sel.querySelector("span").textContent = opt.textContent;
+                setTimeout(() => {
+                    sel.querySelector(".bib-ai-sel-drop").style.opacity = "0";
+                    sel.querySelector(".bib-ai-sel-drop").style.pointerEvents = "none";
+                }, 0);
+            }
+        });
+    });
+}
+document.querySelectorAll(".bib-ai-sel").forEach((sel, idx) => {
+    sel.addEventListener("click", () => {
+        sel.querySelector(".bib-ai-sel-drop").style.opacity = "1";
+        sel.querySelector(".bib-ai-sel-drop").style.pointerEvents = "auto";
+    });
+});
+document.addEventListener("click", (e) => {
+    document.querySelectorAll(".bib-ai-sel").forEach(sel => {
+        if(!sel.contains(e.target)){
+            sel.querySelector(".bib-ai-sel-drop").style.opacity = "0";
+            sel.querySelector(".bib-ai-sel-drop").style.pointerEvents = "none";
+        }
+    });
+});
+
 
 
 
