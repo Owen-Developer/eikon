@@ -147,6 +147,31 @@ async function getVerse(scriptureData, translation){
     
     return data.content;
 }
+function getTime(){
+    const now = new Date();
+    let timeString = now.toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false
+    });
+    if(Number(timeString.slice(0, 2)) > 12){
+        timeString = String(Number(Number(timeString.slice(0, 2)) - 12)) + timeString.slice(2) + "pm";
+    } else if(Number(timeString.slice(0, 2)) == 12){
+        timeString = timeString + "pm";
+    } else {
+        timeString = timeString + "am";
+    }
+    return timeString;
+}
+function getCurrentDateFormal(){
+    const today = new Date();
+
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+    const yyyy = today.getFullYear();
+
+    return `${yyyy}-${mm}-${dd}`;
+}
 
 
 
@@ -364,26 +389,41 @@ app.post("/api/load-comments", (req, res) => {
             console.error(err);
         }
     
-        return res.json({ comments: result })
+        return res.json({ comments: result.reverse() })
     });
 });
 
-app.post("/api/get-pfp", (req, res) => {
+app.post("/api/get-user-info", (req, res) => {
     const userId = req.body.userId;
 
     db.query("select * from users where id = ?", [userId], (err, result) => {
         if(err){
             console.error(err);
         }
+
+        let userData = result[0];
+        userData.password_hash = "";
         
-        return res.json({ pfp: result[0].pfp });
+        return res.json({ userData: userData });
     });
 });
 
 app.post("/api/post-comment", (req, res) => {
     let { text, parentId, book, chapter } = req.body;
 
-    db.query("insert into comments (parent_id, book, chapter, user_id, username, comment_date, comment_time, message) values (?, ?, ?, ?, ?, ?, ?, ?)", [parentId, book, chapter, 1, ])
+    db.query("insert into comments (parent_id, book, chapter, user_id, username, comment_date, comment_time, message) values (?, ?, ?, ?, ?, ?, ?, ?)", [parentId, book, chapter, 1, "sampleuser", getCurrentDateFormal(), getTime(), text], (err, result) => {
+        if(err){
+            console.error(err);
+        }
+
+        db.query("select * from comments where id = ?", [result.insertId], (err, selfResult) => {
+            if(err){
+                console.error(err);
+            }
+
+            return res.json({ sameComment: selfResult[0] });
+        });
+    });
 });
 
 

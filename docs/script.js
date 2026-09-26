@@ -4,6 +4,7 @@ let url = "";
 let currentBook = "John";
 let currentChapterIdx = 0;
 let currentLanguage = "Greek";
+let currentAllComments;
 
 const chapterHeadings = [
     {
@@ -2768,6 +2769,8 @@ async function loadComments(){
 
         let comments = data.comments;
 
+        currentAllComments = comments;
+
         for(const comment of comments){
             await displayComment(comment, comments);
         }
@@ -2782,17 +2785,17 @@ async function displayComment(commentData, allComments){
     newComment.classList.add("bib-chat-com");
     newComment.dataset.commentId = commentData.id;
 
-    let pfpStr = await getPfp(commentData.user_id);
+    let userData = await getUserData(commentData.user_id);
 
     let replies = allComments.filter(reply => reply.parent_id == commentData.id);
 
     newComment.innerHTML = `
         <div class="bib-com-pfp">
-            <img src="${pfpStr}" />
+            <img src="${userData.pfp}" />
         </div>
 
         <div class="bib-com-right">
-            <div class="bib-com-name">${commentData.username}</div>
+            <div class="bib-com-name">${userData.username}</div>
             <div class="bib-com-date">${getTextDateNoYear(commentData.comment_date)}, ${commentData.comment_time}</div>
             <div class="bib-com-text">${commentData.message}</div>
             <div class="bib-com-flex">
@@ -2846,15 +2849,15 @@ async function displayComment(commentData, allComments){
     });
 
     if(commentData.parent_id == 0){
-        document.querySelector(".bib-chat-col").appendChild(newComment);
+        document.querySelector(".bib-chat-col").prepend(newComment);
     } else {
-        Array.from(document.querySelectorAll(".bib-chat-com")).find(comment => comment.dataset.commentId == commentData.parent_id)?.querySelector(".bib-com-col").appendChild(newComment);
+        Array.from(document.querySelectorAll(".bib-chat-com")).find(comment => comment.dataset.commentId == commentData.parent_id)?.querySelector(".bib-com-col").prepend(newComment);
     }
 }
-async function getPfp(userId){
+async function getUserData(userId){
     const dataToSend = { userId: userId };
     try {
-        const response = await fetch(url + `/api/get-pfp`, {
+        const response = await fetch(url + `/api/get-user-info`, {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json', 
@@ -2870,7 +2873,7 @@ async function getPfp(userId){
         
         const data = await response.json();
 
-        return data.pfp;
+        return data.userData;
 
     } catch (error) {
         console.error('Error posting data:', error);
@@ -2895,10 +2898,26 @@ async function postComment(text, parentId){
         }
 
         const data = await response.json();
+
+        let sameComment = data.sameComment;
+        currentAllComments.appendChild(sameComment);
+        displayComment(sameComment, currentAllComments);
+
     } catch (error) {
         console.error('Error posting data:', error);
     }
 }
+document.querySelector(".bib-chat-input input").addEventListener("input", () => {
+    let commentValue = document.querySelector(".bib-chat-input input").value;
+    if(commentValue == ""){
+        document.querySelector(".bib-chat-send").classList.add("inactive-el");
+    } else {
+        document.querySelector(".bib-chat-send").classList.remove("inactive-el");
+    }
+});
+document.querySelector(".bib-chat-send").addEventListener("click", () => {
+    postComment(document.querySelector(".bib-chat-input input").value, 0);
+});
 
 
 
