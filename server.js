@@ -418,6 +418,67 @@ app.post("/api/post-comment", (req, res) => {
     });
 });
 
+app.post("/api/ai-analysis", async (req, res) => {
+    const prompt = req.body.prompt;
+    
+    const responseFormat = {
+        type: "json_schema",
+        name: "scripture_analysis",
+        strict: true,
+        schema: {
+            type: "object",
+            properties: {
+                observe: {
+                    type: "string"
+                },
+                interpret: {
+                    type: "string"
+                },
+                theology: {
+                    type: "string"
+                },
+                apply: {
+                    type: "string"
+                },
+                apologetics: {
+                    type: "string"
+                }
+            },
+            required: [
+                "observe",
+                "interpret",
+                "theology",
+                "apply",
+                "apologetics",
+            ],
+            additionalProperties: false
+        }
+    };
+
+    const response = await openaiClient.responses.create({
+        model: "gpt-4.1-mini",
+        input: prompt,
+        text: {
+            format: responseFormat
+        }
+    });
+    let analysis = JSON.parse(response.output_text);
+
+    return res.json({ analysis: analysis });
+});
+
+app.post("/api/ai-ask-question", async (req, res) => {
+    const prompt = req.body.prompt;
+
+    const response = await openaiClient.responses.create({
+        model: "gpt-4.1-mini",
+        input: prompt,
+    });
+    let answer = response.output_text;
+
+    return res.json({ answer: answer });
+});
+
 
 
 

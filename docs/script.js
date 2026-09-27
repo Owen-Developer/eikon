@@ -1863,6 +1863,7 @@ document.querySelector("i.bib-left-xmark").addEventListener("click", () => {
 document.querySelector("i.bib-right-close").addEventListener("click", () => {
     document.querySelector(".bib-right").classList.remove("bib-right-show");
     document.querySelector(".bib-opt").style.right = "55px";
+    document.querySelector(".bib-right-btn span").click();
 });
 document.querySelector(".bib-header-settings").addEventListener("click", () => {
     document.querySelector(".bib-opt").style.opacity = "1";
@@ -2019,10 +2020,11 @@ document.querySelectorAll(".bib-right-btn span").forEach((btn, idx) => {
 		} else if(idx == 3){
             setVerseLang();
 			document.querySelector(".bib-right-lang-add").classList.add("inactive-el");
-        } else if(idx == 4){
-            initializeAi();
         } else {
 			resetVerseColor();
+            if(idx == 4){
+                initializeAi();
+            }
 		}
 	});
 });
@@ -2479,10 +2481,8 @@ function resetLangBtn(){
 	}
 }
 async function getGreekVerse(){
-    let engVerse = await getVerse(currentTranslation.id, getBookSlug(currentBook), currentChapterIdx + 1, [document.querySelector(".bib-verse-idx-active").textContent]);
-
 	let baseScripture = `${currentBook} ${currentChapterIdx + 1}`;
-	if(document.querySelector(".bib-verse-idx-active")) baseScripture += ": " + document.querySelector(".bib-verse-idx-active").textContent;
+	if(document.querySelector(".bib-verse-idx-active")) baseScripture += ":" + document.querySelector(".bib-verse-idx-active").textContent;
     document.querySelector(".bib-lang-load").textContent = "Loading...";
     document.querySelector(".bib-lang-eng").innerHTML = "";
     document.querySelector(".bib-lang-greek").innerHTML = "";
@@ -2490,7 +2490,7 @@ async function getGreekVerse(){
     document.querySelector(".bib-lang-content").classList.add("none");
     document.querySelector(".bib-lang-content-load").classList.add("none");
 
-    // not showing hebrew text, + takes to long to show loading text
+    let engVerse = await getVerse(currentTranslation.id, getBookSlug(currentBook), currentChapterIdx + 1, [document.querySelector(".bib-verse-idx-active").textContent]);
 
     let prompt = `
 You are a Greek New Testament text retrieval assistant.
@@ -2783,12 +2783,15 @@ async function loadComments(){
         let comments = data.comments;
         currentAllComments = comments;
         document.querySelector(".bib-chat-col").innerHTML = "";
-        document.querySelector(".bib-chat-desc").innerHTML = `Community chat for ${currentBook} ${currentChapterIdx + 1}`;
+        document.querySelector(".bib-chat-desc").innerHTML = `Comments on ${currentBook} ${currentChapterIdx + 1}`;
 
         for(const comment of comments){
             await displayComment(comment, comments);
         }
 
+        if(comments.length == 0){
+            document.querySelector(".bib-chat-col").innerHTML = "No comments found";
+        }
 
     } catch (error) {
         console.error('Error posting data:', error);
@@ -2875,6 +2878,7 @@ async function displayComment(commentData, allComments){
     } else {
         Array.from(document.querySelectorAll(".bib-chat-com")).find(comment => comment.dataset.commentId == commentData.parent_id)?.querySelector(".bib-com-col").prepend(newComment);
     }
+    document.querySelector(".bib-chat-col").innerHTML = document.querySelector(".bib-chat-col").innerHTML.replace("No comments found", "");
 }
 async function getUserData(userId){
     const dataToSend = { userId: userId };
@@ -2945,11 +2949,15 @@ document.querySelector(".bib-ai-ques-txt").addEventListener("click", () => {
     document.querySelector(".bib-ai-ana").classList.add("none");
     document.querySelector(".bib-ai-ques-container").classList.remove("none");
     document.querySelector(".bib-right-ai-add").classList.add("none");
+    document.querySelector(".bib-ai-wrapper").classList.add("none");
+    document.querySelector(".bib-ai-load").classList.add("none");
 });
 document.querySelector(".bib-ai-ques-ana").addEventListener("click", () => {
     document.querySelector(".bib-ai-ana").classList.remove("none");
     document.querySelector(".bib-ai-ques-container").classList.add("none");
     document.querySelector(".bib-right-ai-add").classList.remove("none");
+    document.querySelector(".bib-ai-wrapper").classList.add("none");
+    document.querySelector(".bib-ai-load").classList.add("none");
 });
 function initializeAi(){
     document.querySelectorAll(".bib-ai-sel").forEach((sel, selIdx) => {
@@ -2969,6 +2977,11 @@ function initializeAi(){
                     sel.querySelector(".bib-ai-sel-drop").style.opacity = "0";
                     sel.querySelector(".bib-ai-sel-drop").style.pointerEvents = "none";
                 }, 0);
+                if(selIdx == 0 && Number(document.querySelectorAll(".bib-ai-sel span")[1].textContent) < Number(opt.textContent)){
+                    document.querySelectorAll(".bib-ai-sel span")[1].textContent = opt.textContent;
+                } else if(selIdx == 1 && Number(document.querySelectorAll(".bib-ai-sel span")[0].textContent) > Number(opt.textContent)){
+                    document.querySelectorAll(".bib-ai-sel span")[0].textContent = opt.textContent;
+                }
             }
         });
     });
@@ -2987,6 +3000,199 @@ document.addEventListener("click", (e) => {
         }
     });
 });
+async function aiAnalysis(){
+    let scripture = `${currentBook} ${currentChapterIdx + 1}:${document.querySelectorAll(".bib-ai-sel span")[0].textContent}`;
+    if(document.querySelectorAll(".bib-ai-sel span")[1].textContent != document.querySelectorAll(".bib-ai-sel span")[0].textContent){
+        scripture += `-${document.querySelectorAll(".bib-ai-sel span")[1].textContent}`;
+    }
+    document.querySelector(".bib-ai-load").classList.remove("none");
+    document.querySelector(".bib-ai-ques-txt").classList.add("inactive-el");
+
+    let responseFormat = {
+        "observe": "",
+        "interpret": "",
+        "theology": "",
+        "apply": "",
+        "apologetics": "",
+    }
+
+    let prompt = `
+        You are a careful Christian Scripture analysis assistant. Analyse the following passage:
+
+        ${scripture}
+
+        Return your response strictly in this JSON format:
+
+        ${responseFormat}
+
+        Each field must contain ONE coherent paragraph of analysis. Do not use bullet points, numbered lists, headings, or multiple paragraphs inside any field.
+
+        ### 1. Observe
+        Carefully observe what the text itself says before interpreting it.
+        - Identify who is speaking, acting, receiving, or responding.
+        - Identify important commands, promises, contrasts, causes, and results.
+        - Highlight the words, phrases, or ideas that carry the main point.
+        - End by restating the passage's basic meaning in one sentence without adding interpretation or information not stated in the passage.
+        Do not make theological or modern-life applications here.
+
+        ### 2. Interpret
+        Explain what the passage communicates in its literary and historical context.
+        - Explain what it would have communicated to its original audience.
+        - Consider what immediately comes before and after the passage.
+        - Identify the words, phrases, images, or literary features that control its meaning.
+        - Distinguish clearly between what the text explicitly says and reasonable interpretive conclusions.
+        Do not force meanings into the passage that are not supported by its context.
+
+        ### 3. Theology
+        Explain the theological significance of the passage.
+        - What does it reveal about God, humanity, sin, grace, salvation, redemption, or other relevant theological themes?
+        - Explain how the passage fits into the wider story and teaching of Scripture.
+        - Where faithful Christians may reasonably interpret a detail differently, briefly acknowledge the main interpretive possibilities without declaring a position merely because it is common.
+        Keep the theology grounded in the passage and the wider biblical context rather than speculation.
+
+        ### 4. Apply
+        Draw faithful, specific application from the meaning of the passage.
+        - Identify the truth that should shape a Christian's thinking today.
+        - Identify any relevant command, promise, warning, encouragement, example, or principle to respond to.
+        - Give ONE specific, practical response that could be practiced this week.
+        Do not turn the passage into generic self-help or invent an application that contradicts its original meaning. Keep the application centered on faithfulness to God and, where appropriate, Christ.
+
+        ### 5. Apologetics
+        Consider how this passage might be questioned or misunderstood.
+        - Identify a reasonable question, difficulty, or objection someone might raise about the passage.
+        - Identify other relevant Scripture that should be considered before answering it.
+        - Give a careful explanation that addresses the question while remaining faithful to the passage and its context.
+        - Do not invent objections merely to create controversy, and do not overstate what the passage proves.
+        If there is genuine uncertainty or disagreement among Christians, acknowledge it honestly.
+
+        ### General requirements
+        - Analyse the specific passage provided, not merely its general theme.
+        - Keep all five paragraphs focused and reasonably concise.
+        - Do not quote large portions of Scripture unnecessarily.
+        - Do not cite nonexistent sources or claim that a verse says something it does not say.
+        - Do not treat personal application as the original meaning of the passage.
+        - Let Scripture interpret Scripture where relevant.
+        - Maintain a reverent, Christ-centered, biblically faithful tone.
+        - Return ONLY valid JSON matching the provided structure.
+    `;
+
+    const dataToSend = { prompt: prompt };
+    try {
+        const response = await fetch(url + `/api/ai-analysis`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(dataToSend), 
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Error:', errorData.message);
+            return;
+        }
+
+        const data = await response.json();
+        let analysis = data.analysis;
+
+        document.querySelector(".bib-ai-head").style.marginBottom = "-10px";
+        document.querySelector(".bib-ai-head").textContent = `${scripture} Analysis`;
+        document.querySelector(".bib-ai-ques-txt").classList.remove("inactive-el");
+        document.querySelector(".bib-ai-load").classList.add("none");
+        document.querySelector(".bib-ai-wrapper").classList.remove("none");
+        document.querySelector(".bib-ai-txt").innerHTML = "";
+
+        let aiHeadings = ["Observe", "Interpret", "Theology", "Apply", "Apologetics"];
+        Object.values(analysis).forEach((para, idx) => {
+            document.querySelector(".bib-ai-txt").innerHTML += `<span>${aiHeadings[idx]}</span>`;
+            document.querySelector(".bib-ai-txt").innerHTML += para;
+        });
+
+    } catch (error) {
+        console.error('Error posting data:', error);
+    }
+}
+document.querySelector(".bib-ai-ques-area textarea").addEventListener("keydown", (e) => {
+    if(e.key == "Enter"){
+        aiAskQuestion();
+        setTimeout(() => {
+            document.querySelector(".bib-ai-ques-area textarea").value = "";
+            document.querySelector(".bib-ai-ques-area textarea").blur();
+        }, 10);
+    }
+});
+async function aiAskQuestion(){
+    let quesValue = document.querySelector(".bib-ai-ques-area textarea").value;
+    document.querySelector(".bib-ai-load").classList.remove("none");
+    document.querySelector(".bib-ai-ques-ana").classList.add("inactive-el");
+
+    if(quesValue != ""){
+        let scripture = `${currentBook} ${currentChapterIdx + 1}`;
+
+        let prompt = `
+            You are a careful, biblically faithful Christian Bible study assistant.
+
+            The user is asking a question about the following passage/chapter of Scripture:
+            ${scripture}
+
+            Here is the user's question:
+            ${quesValue}
+
+            Answer the user's question directly and clearly.
+
+            Use the surrounding context of the passage and, where relevant, the wider teaching of Scripture to explain your answer. Pay close attention to the actual wording, context, literary genre, historical setting, and intended meaning of the passage.
+
+            Distinguish between:
+            - What the passage explicitly teaches.
+            - What can reasonably be inferred from it.
+            - Interpretations where faithful Christians may disagree.
+
+            If other passages of Scripture are important for understanding the question, mention them and briefly explain how they relate.
+
+            Do not force an answer simply because the user expects one. If the passage does not provide enough information to answer something with certainty, say so clearly.
+
+            Avoid reading modern ideas into the text, taking verses out of context, or making claims that go beyond what Scripture supports.
+
+            Keep the response focused on the user's specific question rather than giving an unnecessary general commentary on the entire chapter.
+
+            Write in clear, natural paragraphs with a warm, reverent, Christ-centered tone.
+
+            Return only the answer to the user's question.
+        `;
+    
+        const dataToSend = { prompt: prompt };
+        try {
+            const response = await fetch(url + `/api/ai-ask-question`, {
+                method: 'POST',
+                credentials: 'include',
+                headers: { 
+                    'Content-Type': 'application/json', 
+                },
+                body: JSON.stringify(dataToSend), 
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('Error:', errorData.message);
+                return;
+            }
+    
+            const data = await response.json();
+            let answer = data.answer;
+
+            document.querySelector(".bib-ai-head").style.marginBottom = "0px";
+            document.querySelector(".bib-ai-head").textContent = `${scripture} Question`;
+            document.querySelector(".bib-ai-ques-ana").classList.remove("inactive-el");
+            document.querySelector(".bib-ai-load").classList.add("none");
+            document.querySelector(".bib-ai-wrapper").classList.remove("none");
+            document.querySelector(".bib-ai-txt").innerHTML = answer;
+
+        } catch (error) {
+            console.error('Error posting data:', error);
+        }
+    }
+}
 
 
 

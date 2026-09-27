@@ -150,6 +150,79 @@ i.bib-mid-chev:hover, i.bib-mid-down:hover, i.bib-left-xmark:hover, i.bib-book-c
     font-size: 16px;
     color: hsl(0, 0%, 20%);
 }
+.bib-header-search-container {
+    display: flex;
+    flex-direction: column;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    background-color: hsla(0, 0%, 0%, 0.1);
+    cursor: pointer;
+    transition: 0.2s ease;
+    position: relative;
+}
+.bib-header-search-container-focus {
+    width: 350px;
+}
+.bib-header-search-top {
+    width: 100%;
+    display: flex;
+    display: none;
+    align-items: center;
+}
+.bib-search-input {
+    display: none;
+    outline: 0;
+    border: 0;
+    width: 100%;
+    background-color: transparent;
+    font-size: 17px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
+}
+.bib-header-search-btn {
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4b6653;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.bib-header-search-eg {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 0;
+    border: 1px solid hsl(0, 0%, 85%);
+}
+.bib-header-search-label {
+    
+}
+.bib-search-header-eg-flex {
+    
+}
+.bib-search-header-eg-flex div {
+    
+}
+.bib-header-sug {
+    display: none;
+}
+.bib-header-sug-ul {
+    
+}
+.bib-header-sug-li {
+    
+}
+.bib-header-sug-li div {
+    
+}
 
 
 .bib-flex {
@@ -1058,6 +1131,7 @@ i.bib-opt-close:hover {
     color: white;
 }
 .bib-ai-txt {
+    margin-top: 10px;
     font-size: 18px;
     color: hsl(0, 0%, 85%);
     display: flex;
@@ -1118,7 +1192,13 @@ i.bib-opt-close:hover {
 .bib-ai-ques-btn:hover {
     background-color: hsl(0, 0%, 94%);
 }
+.bib-ai-ana, .bib-ai-ques-container {
+    display: flex;
+    flex-direction: column;
+}
 .bib-ai-ques-ana {
+    display: flex;
+    align-items: center;
     align-self: flex-start;
     margin: 0 0 12px;
     font-size: 16px;
@@ -1133,10 +1213,20 @@ i.bib-opt-close:hover {
     font-size: 10px;
     color: hsl(0, 0%, 45%);
 }
+.bib-ai-ques-ana:hover, .bib-ai-ques-ana:hover i {
+    color: hsl(0, 0%, 10%);
+}
+.bib-ai-load {
+    margin-top: 20px;
+    font-size: 17px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
+}
 
 .bib-chat-desc {
-    font-size: 18px;
-    color: hsl(0, 0%, 30%);
+    font-size: 17px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
 }
 .bib-chat-input {
     display: flex;
