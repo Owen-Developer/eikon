@@ -3230,6 +3230,20 @@ document.querySelector(".bib-search-input").addEventListener("input", () => {
                 }
             }
         }
+
+        if(searchValue.length > 3){
+            document.querySelectorAll(".bib-header-sug-li")[2].innerHTML = `
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Search <div>${searchValue}</div> in topics
+            `;
+            document.querySelectorAll(".bib-header-sug-li")[2].classList.remove("none");
+            document.querySelectorAll(".bib-header-sug-li")[2].onclick = () => {
+                currentBook = book.name;
+                currentChapterIdx = Number(searchValue.slice(book.name.length + 1)) - 1;
+                loadBible();
+                closeHeaderSearch();
+            }
+        }
     });
 
     if(Array.from(document.querySelectorAll(".bib-header-sug-li")).filter(li => !li.classList.contains("none")).length > 0){
