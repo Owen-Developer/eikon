@@ -161,17 +161,41 @@ i.bib-mid-chev:hover, i.bib-mid-down:hover, i.bib-left-xmark:hover, i.bib-book-c
     transition: 0.2s ease;
     position: relative;
 }
+.bib-header-search-container:hover {
+    background-color: hsla(0, 0%, 0%, 0.2);
+}
 .bib-header-search-container-focus {
     width: 350px;
 }
+.bib-header-search-container-focus i.bib-header-search-icon {
+    display: none !important;
+}
+.bib-header-search-container-focus .bib-header-search-top {
+    display: flex !important;
+}
+
+i.bib-header-search-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: hsl(0, 0%, 20%);
+}
+.bib-header-search-drop {
+    display: none;
+}
 .bib-header-search-top {
+    height: 100%;
     width: 100%;
+    background-color: white;
+    border-radius: 8px;
     display: flex;
     display: none;
     align-items: center;
 }
 .bib-search-input {
-    display: none;
+    margin-left: 15px;
     outline: 0;
     border: 0;
     width: 100%;
@@ -201,27 +225,54 @@ i.bib-mid-chev:hover, i.bib-mid-down:hover, i.bib-left-xmark:hover, i.bib-book-c
     gap: 12px;
     padding: 16px 0;
     border: 1px solid hsl(0, 0%, 85%);
+    border-left: 0;
+    border-right: 0;
 }
 .bib-header-search-label {
-    
+    font-size: 17px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
 }
 .bib-search-header-eg-flex {
-    
+    width: 100%;
+    display: flex;
+    gap: 10px;
 }
 .bib-search-header-eg-flex div {
-    
+    padding: 5px 14px;
+    background-color: white;
+    border: 1px solid hsl(0, 0%, 85%);
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
 }
 .bib-header-sug {
-    display: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 0;
+    border: 1px solid hsl(0, 0%, 85%);
+    border-left: 0;
+    border-right: 0;
 }
 .bib-header-sug-ul {
-    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 .bib-header-sug-li {
-    
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
 }
 .bib-header-sug-li div {
-    
+    font-size: 16px;
+    font-weight: 500;
+    color: #4b6653;
 }
 
 
