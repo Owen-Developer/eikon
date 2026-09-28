@@ -2057,7 +2057,7 @@ async function getVerse(translation, book, chapter, verses){
 }
 
 async function loadBible(){
-    loadComments();
+    //loadComments();
     document.querySelector(".bib-mid-mid").style.opacity = "0";
     let isNewBook = false;
     if(document.querySelector(".bib-book-txt").textContent != currentBook) isNewBook = true;
@@ -3123,11 +3123,11 @@ document.querySelector(".bib-ai-ques-area textarea").addEventListener("keydown",
     }
 });
 async function aiAskQuestion(){
-    let quesValue = document.querySelector(".bib-ai-ques-area textarea").value;
+    let qValue = document.querySelector(".bib-ai-ques-area textarea").value;
     document.querySelector(".bib-ai-load").classList.remove("none");
     document.querySelector(".bib-ai-ques-ana").classList.add("inactive-el");
 
-    if(quesValue != ""){
+    if(qValue != ""){
         let scripture = `${currentBook} ${currentChapterIdx + 1}`;
 
         let prompt = `
@@ -3137,7 +3137,7 @@ async function aiAskQuestion(){
             ${scripture}
 
             Here is the user's question:
-            ${quesValue}
+            ${qValue}
 
             Answer the user's question directly and clearly.
 
@@ -3192,6 +3192,60 @@ async function aiAskQuestion(){
             console.error('Error posting data:', error);
         }
     }
+}
+
+let headerSearchOpen = false;
+document.querySelector(".bib-header-search-container").addEventListener("click", () => {
+    if(!headerSearchOpen){
+        headerSearchOpen = true;
+        document.querySelector(".bib-header-search-container").classList.add("bib-header-search-container-focus");
+        document.querySelector(".bib-search-input").focus();
+    }
+});
+document.querySelector(".bib-search-input").addEventListener("blur", () => {
+    //document.querySelector(".bib-header-search-container").classList.remove("bib-header-search-container-focus");
+});
+document.querySelector(".bib-search-input").addEventListener("input", () => {
+    document.querySelectorAll(".bib-header-sug-li").forEach(sug => {
+        sug.classList.add("none");
+    });
+    document.querySelector(".bib-header-sug").classList.add("none");
+
+    let searchValue = document.querySelector(".bib-search-input").value.toLowerCase();
+
+    chapterHeadings.forEach(book => {
+        if(searchValue.includes(book.name.toLowerCase())){
+            // is format john XY
+            if(searchValue[book.name.length] == " " && searchValue.length >= book.name.length + 2 && !isNaN(searchValue.slice(book.name.length + 1)) && Number(searchValue.slice(book.name.length + 1)) <= book.headings.length){
+                document.querySelectorAll(".bib-header-sug-li")[0].innerHTML = `
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Go to <div>${searchValue}</div>
+                `;
+                document.querySelectorAll(".bib-header-sug-li")[0].classList.remove("none");
+                document.querySelectorAll(".bib-header-sug-li")[0].onclick = () => {
+                    currentBook = book.name;
+                    currentChapterIdx = Number(searchValue.slice(book.name.length + 1)) - 1;
+                    loadBible();
+                    closeHeaderSearch();
+                }
+            }
+        }
+    });
+
+    if(Array.from(document.querySelectorAll(".bib-header-sug-li")).filter(li => !li.classList.contains("none")).length > 0){
+        document.querySelector(".bib-header-sug").classList.remove("none");
+    }
+});
+function closeHeaderSearch(){
+    document.querySelector(".bib-search-input").value = "";
+    document.querySelectorAll(".bib-header-sug-li").forEach(sug => {
+        sug.classList.add("none");
+    });
+    document.querySelector(".bib-header-sug").classList.add("none");
+    document.querySelector(".bib-header-search-container").classList.remove("bib-header-search-container-focus");
+    setTimeout(() => {
+        headerSearchOpen = false;
+    }, 10);
 }
 
 

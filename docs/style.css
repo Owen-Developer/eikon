@@ -58,7 +58,7 @@ img {
     flex-direction: column;
 }
 .bib-header {
-    z-index: 2;
+    z-index: 3;
     position: relative;
     width: 100%;
     display: flex;
@@ -151,6 +151,7 @@ i.bib-mid-chev:hover, i.bib-mid-down:hover, i.bib-left-xmark:hover, i.bib-book-c
     color: hsl(0, 0%, 20%);
 }
 .bib-header-search-container {
+    z-index: 3;
     display: flex;
     flex-direction: column;
     width: 45px;
@@ -165,13 +166,17 @@ i.bib-mid-chev:hover, i.bib-mid-down:hover, i.bib-left-xmark:hover, i.bib-book-c
     background-color: hsla(0, 0%, 0%, 0.2);
 }
 .bib-header-search-container-focus {
-    width: 350px;
+    width: 420px;
 }
 .bib-header-search-container-focus i.bib-header-search-icon {
     display: none !important;
 }
 .bib-header-search-container-focus .bib-header-search-top {
     display: flex !important;
+}
+.bib-header-search-container-focus .bib-header-search-drop {
+    display: flex !important;
+
 }
 
 i.bib-header-search-icon {
@@ -183,7 +188,18 @@ i.bib-header-search-icon {
     color: hsl(0, 0%, 20%);
 }
 .bib-header-search-drop {
+    background-color: hsla(0, 0%, 0%, 0.1);
+    cursor: auto;
+    z-index: 3;
+    display: flex;
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 48px;
+    left: 0px;
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
 }
 .bib-header-search-top {
     height: 100%;
@@ -222,9 +238,10 @@ i.bib-header-search-icon {
     width: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     gap: 12px;
-    padding: 16px 0;
-    border: 1px solid hsl(0, 0%, 85%);
+    padding: 16px 15px 20px;
+    border-bottom: 1px solid hsl(0, 0%, 85%);
     border-left: 0;
     border-right: 0;
 }
@@ -244,7 +261,8 @@ i.bib-header-search-icon {
     border: 1px solid hsl(0, 0%, 85%);
     box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
     border-radius: 5px;
-    font-size: 17px;
+    font-size: 16px;
+    flex-shrink: 0;
     font-weight: 500;
     color: hsl(0, 0%, 20%);
 }
@@ -253,26 +271,40 @@ i.bib-header-search-icon {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding: 16px 0;
-    border: 1px solid hsl(0, 0%, 85%);
-    border-left: 0;
-    border-right: 0;
+    padding: 16px 12px 12px;
 }
 .bib-header-sug-ul {
+    margin-top: 2px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 2px;
 }
 .bib-header-sug-li {
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    gap: 6px;
     font-size: 16px;
     font-weight: 500;
     color: hsl(0, 0%, 30%);
+    transition: 0.2s ease;
+}
+.bib-header-sug-li:hover {
+    padding-left: 15px;
+    background-color: hsl(0, 0%, 94%);
 }
 .bib-header-sug-li div {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     color: #4b6653;
+}
+.bib-header-sug-li i {
+    margin-right: 4px;
+    font-size: 12px;
+    color: hsl(0, 0%, 35%);
 }
 
 
@@ -523,7 +555,7 @@ i.bib-right-close:hover {
     font-weight: 500;
     color: hsl(0, 0%, 20%);
 }
-.p, .nb, .d, .q1, .q2 {
+.p, .nb, .d, .q1, .q2, .m {
     font-size: 20px;
     line-height: 1.3;
 }
