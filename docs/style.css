@@ -365,6 +365,9 @@ i.bib-header-search-icon {
     font-weight: 500;
     color: hsl(0, 0%, 20%);
 }
+.bib-header-verse-drop-error {
+    padding: 15px 12px;
+}
 
 .bib-flex {
     position: relative;

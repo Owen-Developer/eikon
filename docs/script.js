@@ -3283,6 +3283,9 @@ document.querySelector(".bib-search-input").addEventListener("input", () => {
                         closeHeaderSearch();
                     });
                 });
+                if(phraseVerses.length == 0){
+                    document.querySelector(".bib-header-verse-drop").innerHTML = `<div class="bib-header-verse-drop-error">No verses found including the phrase: "${phrase}"</div>`;
+                }
             }
         }
 
@@ -3342,6 +3345,18 @@ async function getFullBible(){
         console.error(err);
     }
 }
+function manualHeaderSearch(){
+    if(Array.from(document.querySelectorAll(".bib-header-sug-li")).filter(li => !li.classList.contains("none")).length > 0){
+        Array.from(document.querySelectorAll(".bib-header-sug-li")).filter(li => !li.classList.contains("none"))[0].click();
+    } else {
+        
+    }
+}
+document.querySelector(".bib-search-input").addEventListener("keydown", (e) => {
+    if(e.key == "Enter"){
+        manualHeaderSearch();
+    }
+});
 
 
 
