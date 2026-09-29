@@ -1834,6 +1834,10 @@ const translations = [
 ];
 let currentTranslation = translations[0];
 
+const jsonBibles = {
+    "12": "esv.json"
+}
+
 const shortMonths = [
   "Jan",
   "Feb",
@@ -3206,6 +3210,8 @@ document.querySelector(".bib-search-input").addEventListener("blur", () => {
     //document.querySelector(".bib-header-search-container").classList.remove("bib-header-search-container-focus");
 });
 document.querySelector(".bib-search-input").addEventListener("input", () => {
+    document.querySelector(".bib-header-verse-drop").style.opacity = "0";
+    document.querySelector(".bib-header-verse-drop").style.pointerEvents = "none";
     document.querySelectorAll(".bib-header-sug-li").forEach(sug => {
         sug.classList.add("none");
     });
@@ -3231,7 +3237,55 @@ document.querySelector(".bib-search-input").addEventListener("input", () => {
             }
         }
 
-        if(searchValue.length > 3){
+        if(searchValue[0] == `"` && searchValue[searchValue.length - 1] == `"`){
+            document.querySelectorAll(".bib-header-sug-li")[1].innerHTML = `
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Find verses including <div>${searchValue}</div>
+            `;
+            document.querySelectorAll(".bib-header-sug-li")[1].classList.remove("none");
+            document.querySelectorAll(".bib-header-sug-li")[1].onclick = async () => {
+                document.querySelector(".bib-header-verse-drop").style.opacity = "1";
+                document.querySelector(".bib-header-verse-drop").style.pointerEvents = "auto";
+                
+                let currentBible = await getFullBible();
+                let phrase = searchValue.replace(/"/g, "");
+                let phraseVerses = [];
+                Object.values(currentBible).forEach((book, bookIdx) => {
+                    Object.values(book).forEach((chapter, chapterIdx) => {
+                        Object.values(chapter).forEach((verse, verseIdx) => {
+                            if(verse.includes(phrase)){
+                                let verseObj = {
+                                    "book": Object.keys(currentBible)[bookIdx],
+                                    "chapter": chapterIdx + 1,
+                                    "verse": verseIdx + 1,
+                                    "text": verse
+                                }
+                                phraseVerses.push(verseObj);
+                            }
+                        });
+                    });
+                });
+
+                phraseVerses.forEach(verse => {
+                    let newVerseOpt = document.createElement("div");
+                    newVerseOpt.classList.add("bib-header-verse-opt");
+                    newVerseOpt.innerHTML = `
+                        <div class="bib-header-verse-name">${verse.book} ${verse.chapter}:${verse.verse}</div>
+                        <div class="bib-header-verse-txt">${verse.text.replace(new RegExp(phrase, "g"), `<b>${phrase}</b>`)}</div>
+                    `;
+                    document.querySelector(".bib-header-verse-drop").appendChild(newVerseOpt);
+
+                    newVerseOpt.addEventListener("click", async () => {
+                        currentBook = verse.book;
+                        currentChapterIdx = verse.chapter - 1;
+                        await loadBible();
+                        closeHeaderSearch();
+                    });
+                });
+            }
+        }
+
+        if(searchValue.length >= 3){
             document.querySelectorAll(".bib-header-sug-li")[2].innerHTML = `
                 <i class="fa-solid fa-magnifying-glass"></i>
                 Search <div>${searchValue}</div> in topics
@@ -3260,6 +3314,28 @@ function closeHeaderSearch(){
     setTimeout(() => {
         headerSearchOpen = false;
     }, 10);
+}
+document.addEventListener("click", (e) => {
+    if(!document.querySelector(".bib-header-search-container").contains(e.target)){
+        document.querySelector(".bib-header-search-container").classList.remove("bib-header-search-container-focus");
+        setTimeout(() => {
+            headerSearchOpen = false;
+        }, 10);
+    }
+});
+async function getFullBible(){
+    let bibleName = jsonBibles[String(currentTranslation.id)];
+    try {
+        const response = await fetch(`${url}/json_bibles/${bibleName}`, {
+            method: 'GET',
+        });
+        const data = await response.json();
+
+        return data;
+    }
+    catch (err){
+        console.error(err);
+    }
 }
 
 

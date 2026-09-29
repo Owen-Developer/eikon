@@ -188,7 +188,7 @@ i.bib-header-search-icon {
     color: hsl(0, 0%, 20%);
 }
 .bib-header-search-drop {
-    background-color: hsla(0, 0%, 0%, 0.1);
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
     cursor: auto;
     z-index: 3;
     display: flex;
@@ -305,6 +305,55 @@ i.bib-header-search-icon {
     margin-right: 4px;
     font-size: 12px;
     color: hsl(0, 0%, 35%);
+}
+
+.bib-header-verse-drop {
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+    cursor: auto;
+    z-index: 3;
+    overflow: auto;
+    max-height: 400px;
+    scrollbar-width: 0;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 48px;
+    left: 0px;
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    transition: 0.2s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+.bib-header-verse-drop::-webkit-scrollbar {
+    display: none;
+}
+.bib-header-verse-opt {
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 15px;
+    gap: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
+    transition: 0.2s ease;
+}
+.bib-header-verse-opt:hover {
+    background-color: hsl(0, 0%, 94%);
+}
+.bib-header-verse-name {
+    font-size: 18px;
+    color: hsl(0, 0%, 20%);
+    font-weight: 500;
+}
+.bib-header-verse-txt {
+    margin-top: 4px;
+    font-size: 16px;
+    color: hsl(0, 0%, 30%);
 }
 
 
