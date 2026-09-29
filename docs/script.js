@@ -3266,6 +3266,7 @@ document.querySelector(".bib-search-input").addEventListener("input", () => {
                     });
                 });
 
+                document.querySelector(".bib-header-verse-drop").innerHTML = "";
                 phraseVerses.forEach(verse => {
                     let newVerseOpt = document.createElement("div");
                     newVerseOpt.classList.add("bib-header-verse-opt");
@@ -3309,6 +3310,9 @@ function closeHeaderSearch(){
     document.querySelectorAll(".bib-header-sug-li").forEach(sug => {
         sug.classList.add("none");
     });
+    document.querySelector(".bib-header-verse-drop").style.opacity = "0";
+    document.querySelector(".bib-header-verse-drop").style.pointerEvents = "none";
+
     document.querySelector(".bib-header-sug").classList.add("none");
     document.querySelector(".bib-header-search-container").classList.remove("bib-header-search-container-focus");
     setTimeout(() => {
@@ -3317,7 +3321,8 @@ function closeHeaderSearch(){
 }
 document.addEventListener("click", (e) => {
     if(!document.querySelector(".bib-header-search-container").contains(e.target)){
-        document.querySelector(".bib-header-search-container").classList.remove("bib-header-search-container-focus");
+        closeHeaderSearch();
+        //document.querySelector(".bib-header-search-container").classList.remove("bib-header-search-container-focus");
         setTimeout(() => {
             headerSearchOpen = false;
         }, 10);

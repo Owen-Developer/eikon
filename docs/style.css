@@ -178,6 +178,9 @@ i.bib-mid-chev:hover, i.bib-mid-down:hover, i.bib-left-xmark:hover, i.bib-book-c
     display: flex !important;
 
 }
+.bib-header-search-container-focus .bib-header-verse-drop {
+    display: flex !important;
+}
 
 i.bib-header-search-icon {
     position: absolute;
@@ -313,8 +316,10 @@ i.bib-header-search-icon {
     z-index: 3;
     overflow: auto;
     max-height: 400px;
+    height: 400px;
     scrollbar-width: 0;
     display: flex;
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 48px;
@@ -355,7 +360,11 @@ i.bib-header-search-icon {
     font-size: 16px;
     color: hsl(0, 0%, 30%);
 }
-
+.bib-header-verse-txt b {
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
 
 .bib-flex {
     position: relative;
