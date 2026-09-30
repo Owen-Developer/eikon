@@ -1,8 +1,4 @@
 
 EIKON BIBLE
 
-- search by verse, phrase, topic, or reference
-John 3:16, "born again", verses about endurance
-
 - audio bible
-- colour theme

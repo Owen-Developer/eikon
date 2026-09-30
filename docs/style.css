@@ -66,18 +66,6 @@ img {
     justify-content: space-between;
     padding: 16px 30px;
 }
-.bib-header.light-theme {
-    background-color: hsl(33, 45%, 92%);
-    border-bottom: 1px solid hsl(33, 45%, 85%);
-}
-.bib-header.sepia-theme {
-    background-color: #dcc2a2;
-    border-bottom: 1px solid hsl(33, 45%, 65%);
-}
-.bib-header.dark-theme {
-    background-color: #dcc2a2;
-    border-bottom: 1px solid hsl(33, 45%, 65%);
-}
 .bib-logo {
     display: flex;
     align-items: center;
@@ -1553,3 +1541,45 @@ i.bib-opt-close:hover {
     background-color: #4b6653;
     color: white;    
 }
+
+/*//////////////// COLOUR THEME /////////////////*/
+.bib-header.light-theme {
+    background-color: hsl(40, 9%, 80%);
+    border-bottom: 1px solid hsl(36, 20%, 75%);
+}
+.bib-left.light-theme {
+    background-color: hsl(36, 20%, 94%);
+    border-right: 1px solid hsl(36, 20%, 75%);
+}
+.bib-right.light-theme {
+    background-color: hsl(36, 20%, 94%);
+    border-left: 1px solid hsl(36, 20%, 75%);
+}
+.bib-mid.light-theme {
+    background-color: hsl(36, 20%, 90%);
+}
+
+.bib-header.sepia-theme {
+    background-color: #dcc2a2;
+    border-bottom: 1px solid hsl(33, 45%, 65%);
+}
+
+.bib-header.dark-theme {
+    background-color: hsl(40, 15%, 68%);
+    border-bottom: 1px solid hsl(36, 20%, 60%);
+}
+.bib-left.dark-theme {
+    background-color: hsl(36, 20%, 79%);
+    border-right: 1px solid hsl(36, 20%, 60%);
+}
+.bib-right.dark-theme {
+    background-color: hsl(36, 20%, 79%);
+    border-left: 1px solid hsl(36, 20%, 60%);
+}
+.bib-mid.dark-theme {
+    background-color: hsl(36, 20%, 75%);
+}
+.bib-verse-idx-highlighted.dark-theme {
+    background-color: hsla(0, 0%, 100%, 0.4);
+}
+/*///////////////////////////////////////////////*/
