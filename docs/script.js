@@ -1334,9 +1334,9 @@ const chapterHeadings = [
 
 "Jesus Is Anointed and Enters Jerusalem",
 
-"Jesus Teaches About His Death and Unbelief",
-
 "Jesus Washes His Disciples' Feet",
+
+"Jesus the Way, Truth and Life",
 
 "Jesus Teaches About the Vine and His Love",
 "Jesus Teaches About the Holy Spirit",
@@ -3210,8 +3210,10 @@ document.querySelector(".bib-search-input").addEventListener("blur", () => {
     //document.querySelector(".bib-header-search-container").classList.remove("bib-header-search-container-focus");
 });
 document.querySelector(".bib-search-input").addEventListener("input", () => {
-    document.querySelector(".bib-header-verse-drop").style.opacity = "0";
-    document.querySelector(".bib-header-verse-drop").style.pointerEvents = "none";
+    document.querySelectorAll(".bib-header-verse-drop, .bib-header-topic-drop").forEach(drop => {
+        drop.style.opacity = "0";
+        drop.style.pointerEvents = "none";
+    });
     document.querySelectorAll(".bib-header-sug-li").forEach(sug => {
         sug.classList.add("none");
     });
@@ -3246,6 +3248,9 @@ document.querySelector(".bib-search-input").addEventListener("input", () => {
             document.querySelectorAll(".bib-header-sug-li")[1].onclick = async () => {
                 document.querySelector(".bib-header-verse-drop").style.opacity = "1";
                 document.querySelector(".bib-header-verse-drop").style.pointerEvents = "auto";
+                document.querySelectorAll(".bib-header-verse-drop .bib-header-verse-opt").forEach(opt => {
+                    document.querySelector(".bib-header-verse-drop").removeChild(opt);
+                });
                 
                 let currentBible = await getFullBible();
                 let phrase = searchValue.replace(/"/g, "");
@@ -3265,8 +3270,6 @@ document.querySelector(".bib-search-input").addEventListener("input", () => {
                         });
                     });
                 });
-
-                document.querySelector(".bib-header-verse-drop").innerHTML = "";
                 phraseVerses.forEach(verse => {
                     let newVerseOpt = document.createElement("div");
                     newVerseOpt.classList.add("bib-header-verse-opt");
@@ -3284,7 +3287,9 @@ document.querySelector(".bib-search-input").addEventListener("input", () => {
                     });
                 });
                 if(phraseVerses.length == 0){
-                    document.querySelector(".bib-header-verse-drop").innerHTML = `<div class="bib-header-verse-drop-error">No verses found including the phrase: "${phrase}"</div>`;
+                    document.querySelector(".bib-header-verse-drop .bib-header-verse-drop-label").textContent = `No verses found including the phrase: "${phrase}"`;
+                } else {
+                    document.querySelector(".bib-header-verse-drop .bib-header-verse-drop-label").textContent = `${phraseVerses.length} verses including "${phrase}":`;
                 }
             }
         }
@@ -3295,11 +3300,36 @@ document.querySelector(".bib-search-input").addEventListener("input", () => {
                 Search <div>${searchValue}</div> in topics
             `;
             document.querySelectorAll(".bib-header-sug-li")[2].classList.remove("none");
-            document.querySelectorAll(".bib-header-sug-li")[2].onclick = () => {
-                currentBook = book.name;
-                currentChapterIdx = Number(searchValue.slice(book.name.length + 1)) - 1;
-                loadBible();
-                closeHeaderSearch();
+            document.querySelectorAll(".bib-header-sug-li")[2].onclick = async () => {
+                document.querySelector(".bib-header-topic-drop").style.opacity = "1";
+                document.querySelector(".bib-header-topic-drop").style.pointerEvents = "auto";
+                document.querySelectorAll(".bib-header-topic-drop .bib-header-verse-opt").forEach(opt => {
+                    document.querySelector(".bib-header-topic-drop").removeChild(opt);
+                });
+                document.querySelector(".bib-header-topic-drop .bib-header-verse-drop-label").textContent = `Loading...`;
+
+                let verses = await getTopicScriptures(searchValue);
+                
+                document.querySelectorAll(".bib-header-topic-drop .bib-header-verse-opt").forEach(opt => {
+                    document.querySelector(".bib-header-topic-drop").removeChild(opt);
+                });
+                document.querySelector(".bib-header-topic-drop .bib-header-verse-drop-label").textContent = `Topic: ${searchValue} (${verses.length})`;
+                for(const verse of verses){
+                    let newVerse = document.createElement("div");
+                    newVerse.classList.add("bib-header-verse-opt");
+                    let verseTxt = await getVerse(currentTranslation.id, getBookSlug(verse.book), verse.chapter, [verse.verse]);
+                    newVerse.innerHTML = `
+                        <div class="bib-header-verse-name">${verse.book} ${verse.chapter}:${verse.verse}</div>
+                        <div class="bib-header-verse-txt">${verseTxt}</div>
+                    `;
+                    document.querySelector(".bib-header-topic-drop").appendChild(newVerse);
+
+                    newVerse.addEventListener("click", () => {
+                        currentBook = verse.book;
+                        currentChapterIdx = verse.chapter - 1;
+                        loadBible();
+                    });
+                }
             }
         }
     });
@@ -3313,8 +3343,10 @@ function closeHeaderSearch(){
     document.querySelectorAll(".bib-header-sug-li").forEach(sug => {
         sug.classList.add("none");
     });
-    document.querySelector(".bib-header-verse-drop").style.opacity = "0";
-    document.querySelector(".bib-header-verse-drop").style.pointerEvents = "none";
+    document.querySelectorAll(".bib-header-verse-drop, .bib-header-topic-drop").forEach(drop => {
+        drop.style.opacity = "0";
+        drop.style.pointerEvents = "none";
+    });
 
     document.querySelector(".bib-header-sug").classList.add("none");
     document.querySelector(".bib-header-search-container").classList.remove("bib-header-search-container-focus");
@@ -3357,6 +3389,71 @@ document.querySelector(".bib-search-input").addEventListener("keydown", (e) => {
         manualHeaderSearch();
     }
 });
+async function getTopicScriptures(topicStr){
+    let responseFormat = [
+        {
+            "book": "Genesis",
+            "chapter": 1,
+            "verse": "1"
+        },
+        {
+            "book": "John",
+            "chapter": 15,
+            "verse": "1-5"
+        },
+        {
+            "book": "John",
+            "chapter": 2,
+            "verse": "5-10"
+        },
+    ]
+
+    let prompt = `
+        Find 5 to 10 of the most relevant Bible verses or passages that directly relate to the topic below:
+        ${topicStr}
+
+        Guidelines:
+        - Choose passages from anywhere in the Bible.
+        - Each passage must be genuinely relevant to the topic, not merely contain a related word.
+        - Prefer passages that clearly teach, explain, illustrate, or address the topic.
+        - Use a single verse when that verse sufficiently addresses the topic.
+        - Use a verse range when the surrounding context is important to understanding the passage.
+        - Do not include duplicate or substantially overlapping passages.
+        - Return between 5 and 10 passages.
+        - Return ONLY a valid JSON array.
+        - Do not include explanations, commentary, markdown, or any text outside the JSON array.
+        - Use the exact format shown below.
+        - "chapter" must be a number.
+        - "verse" must be a string, and may contain either a single verse number (e.g. "5") or a verse range (e.g. "5-10").
+
+        only respond in this exact JSON format:
+        ${responseFormat}
+    `;
+
+    const dataToSend = { prompt: prompt };
+    try {
+        const response = await fetch(url + `/api/get-topic-scriptures`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(dataToSend), 
+        });
+
+        if(!response.ok){
+            const errorData = await response.json();
+            console.error('Error:', errorData.message);
+            return;
+        }
+
+        const data = await response.json();
+        return data.verses;
+
+    } catch (error) {
+        console.error('Error posting data:', error);
+    }
+}
 
 
 

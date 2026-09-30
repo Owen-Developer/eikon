@@ -178,7 +178,7 @@ i.bib-mid-chev:hover, i.bib-mid-down:hover, i.bib-left-xmark:hover, i.bib-book-c
     display: flex !important;
 
 }
-.bib-header-search-container-focus .bib-header-verse-drop {
+.bib-header-search-container-focus .bib-header-verse-drop, .bib-header-search-container-focus .bib-header-topic-drop {
     display: flex !important;
 }
 
@@ -310,7 +310,7 @@ i.bib-header-search-icon {
     color: hsl(0, 0%, 35%);
 }
 
-.bib-header-verse-drop {
+.bib-header-verse-drop, .bib-header-topic-drop {
     box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
     cursor: auto;
     z-index: 3;
@@ -341,7 +341,6 @@ i.bib-header-search-icon {
     display: flex;
     flex-direction: column;
     padding: 12px 15px;
-    gap: 6px;
     font-size: 16px;
     font-weight: 500;
     color: hsl(0, 0%, 30%);
@@ -351,12 +350,13 @@ i.bib-header-search-icon {
     background-color: hsl(0, 0%, 94%);
 }
 .bib-header-verse-name {
+    line-height: 1;
     font-size: 18px;
     color: hsl(0, 0%, 20%);
     font-weight: 500;
 }
 .bib-header-verse-txt {
-    margin-top: 4px;
+    margin-top: 5px;
     font-size: 16px;
     color: hsl(0, 0%, 30%);
 }
@@ -365,8 +365,13 @@ i.bib-header-search-icon {
     font-weight: 500;
     color: hsl(0, 0%, 20%);
 }
-.bib-header-verse-drop-error {
-    padding: 15px 12px;
+.bib-header-verse-drop-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 6px;
 }
 
 .bib-flex {

@@ -481,6 +481,55 @@ app.post("/api/ai-ask-question", async (req, res) => {
     return res.json({ answer: answer });
 });
 
+app.post("/api/get-topic-scriptures", async (req, res) => {
+    const { prompt } = req.body;
+
+    const responseFormat = {
+        type: "json_schema",
+        name: "topic_verses",
+        strict: true,
+        schema: {
+            type: "object",
+            properties: {
+                verses: {
+                    type: "array",
+                    minItems: 5,
+                    maxItems: 10,
+                    items: {
+                        type: "object",
+                        properties: {
+                            book: {
+                                type: "string"
+                            },
+                            chapter: {
+                                type: "number"
+                            },
+                            verse: {
+                                type: "string"
+                            }
+                        },
+                        required: ["book", "chapter", "verse"],
+                        additionalProperties: false
+                    }
+                }
+            },
+            required: ["verses"],
+            additionalProperties: false
+        }
+    };
+
+    const response = await openaiClient.responses.create({
+        model: "gpt-4.1-mini",
+        input: prompt,
+        text: {
+            format: responseFormat
+        }
+    });
+    let data = JSON.parse(response.output_text);
+
+    return res.json({ verses: data.verses });
+});
+
 
 
 
