@@ -5,6 +5,9 @@ let currentBook = "John";
 let currentChapterIdx = 0;
 let currentLanguage = "Greek";
 let currentAllComments;
+let currentAudio;
+let currentAudioBook = currentBook;
+let currentAudioChapter = currentChapterIdx;
 
 const chapterHeadings = [
     {
@@ -2591,13 +2594,15 @@ async function analyseGreekWord(engWord, scripture, verse){
         "definition": "",
         "strongs": "",
         "parsing": "",
-        "occurrences": [
-            {
-                "book": "Genesis",
-                "chapter": 1,
-                "verse": 1
-            },
-        ]
+        /*
+            "occurrences": [
+                {
+                    "book": "Genesis",
+                    "chapter": 1,
+                    "verse": 1
+                },
+            ]
+        */
     }
     
     let prompt = `
@@ -2625,16 +2630,6 @@ You must provide:
    * Preposition
    * Conjunction
    * Article, Nominative, Singular, Masculine
-7. Occurences — A list of the other New Testament verses where this **same lemma** occurs.
-
-Important rules for NT occurrences:
-
-* List references where the Greek lemma itself occurs, not merely verses containing an English translation that could correspond to it.
-* Do not include the supplied verse in the list.
-* Do not invent or guess references.
-* If the lemma occurs many times, return all occurrences that can be established reliably.
-* If the exact occurrence data cannot be established with confidence, return an empty array rather than fabricating references.
-* Preserve the distinction between the lemma and different Greek words that may have similar English translations.
 
 Important rules for the supplied word:
 
@@ -2645,6 +2640,7 @@ Important rules for the supplied word:
 
 Return the result ONLY in the JSON format provided in ${responseFormat}. Do not include markdown, explanations outside the JSON, or additional fields.
     `;
+
     if(currentLanguage == "Hebrew"){
         prompt = `
 You are a Hebrew Old Testament word-study assistant.
@@ -2696,7 +2692,7 @@ Important rules for the supplied word:
 * Strong's should correspond to the supplied lemma.
 
 Return the result ONLY in the JSON format provided in ${responseFormat}. Do not include markdown, explanations outside the JSON, or additional fields.
-    `;
+        `;
     }
 
     const dataToSend = { prompt: prompt };
@@ -2749,9 +2745,13 @@ Return the result ONLY in the JSON format provided in ${responseFormat}. Do not 
 
         document.querySelector(".bib-lang-content-load").classList.add("none");
 
+        let occurrences;
+        if(currentLanguage == "Greek"){
+            occurrences = await getGreekOccurences(analysis.lemma);
+        }
         document.querySelector(".bib-lang-label").innerHTML = `NT Occurrences`;
         document.querySelector(".bib-lang-occ-col").innerHTML = "";
-        for(const verse of analysis.occurrences){
+        for(const verse of occurrences){
             let newOcc = document.createElement("div");
             newOcc.classList.add("bib-lang-occ");
             let occVerse = await getVerse(currentTranslation.id, getBookSlug(verse.book), verse.chapter, [verse.verse]);
@@ -2765,12 +2765,42 @@ Return the result ONLY in the JSON format provided in ${responseFormat}. Do not 
             }
             document.querySelector(".bib-lang-occ-col").appendChild(newOcc);
         }
-        document.querySelector(".bib-lang-label").innerHTML = `NT Occurrences (${analysis.occurrences.length})`;
+        document.querySelector(".bib-lang-label").innerHTML = `NT Occurrences (${occurrences.length})`;
 
     } catch (error) {
         console.error('Error posting data:', error);
     }
 }
+async function getGreekOccurences(greekWord){
+    let occurrences = [];
+    for(const book of chapterHeadings){
+        if(chapterHeadings.indexOf(book) > 38){
+            let bookLink = `greek_nt/${book.name.toLowerCase().replace(/ /g, "_")}.json`;
+            try {
+                const response = await fetch(bookLink, {
+                    method: 'GET',
+                });
+                const data = await response.json(); 
+
+                data.forEach(word => {
+                    if(word.word == greekWord){
+                        occurrences.push({
+                            "book": book.name,
+                            "chapter": word.chapter,
+                            "verse": word.verse
+                        });
+                    }
+                });
+
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+    }
+    console.log(occurrences);
+    return occurrences;
+}
+getGreekOccurences("κατάκριμα");
 
 async function loadComments(){
     document.querySelector(".bib-chat-desc").innerHTML = `Loading...`;
@@ -3463,14 +3493,103 @@ async function getTopicScriptures(topicStr){
     }
 }
 
-document.querySelector(".bib-header-audio").addEventListener("click", () => {
-    document.querySelector(".bib-audio-title").textContent = `${currentBook} ${currentChapterIdx + 1}`;
+function showAudio(book, chapter){
+    document.querySelector(".bib-audio-title").textContent = `${book} ${chapter}`;
     document.querySelector(".bib-audio-modal").style.opacity = "1";
     document.querySelector(".bib-audio-modal").style.pointerEvents = "auto";
-});
-document.querySelector(".bib-audio-xmark").addEventListener("click", () => {
+
+    let audio = document.createElement("audio");
+    document.body.appendChild(audio);
+    audio.src = `bible_audios/${book.toLowerCase()}/${chapter}.mp3`;
+    currentAudio = audio;
+    document.querySelectorAll(".bib-audio-time div")[0].textContent = "0:00";
+    document.querySelector(".bib-audio-range").value = 0;
+
+    audio.addEventListener('timeupdate', () => {
+        document.querySelectorAll(".bib-audio-time div")[0].textContent = formatTime(audio.currentTime);
+        document.querySelector(".bib-audio-range").value = audio.currentTime / audio.duration;
+        if(audio.currentTime == audio.duration){
+            audio.currentTime = 0;
+            audio.pause();
+            document.querySelector(".bib-audio-play .fa-pause").classList.add("none");
+            document.querySelector(".bib-audio-play .fa-play").classList.remove("none");
+
+            document.querySelectorAll(".bib-audio-time div")[0].textContent = formatTime(audio.currentTime);
+        }
+    });
+    document.querySelector(".bib-audio-range").addEventListener("change", () => {
+        audio.currentTime = audio.duration * document.querySelector(".bib-audio-range").value;
+    });
+    audio.addEventListener('loadedmetadata', () => {
+        document.querySelectorAll(".bib-audio-time div")[1].textContent = formatTime(audio.duration);
+    });
+    document.querySelectorAll("i.bib-audio-forward")[0].addEventListener("click", () => {
+        audio.currentTime = Math.max(0, audio.currentTime - 10);
+    });
+    document.querySelectorAll("i.bib-audio-forward")[1].addEventListener("click", () => {
+        audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
+    });
+    function timeToSeconds(time) {
+        const [mins, secs] = time.split(':').map(Number);
+        return mins * 60 + secs;
+    }
+    function getProgress(current, total) {
+        const currentSec = timeToSeconds(current);
+        const totalSec = timeToSeconds(total);
+        return currentSec / totalSec;
+    }
+    
+    document.querySelector(".bib-audio-play").onclick = () => {
+        if(audio.paused){
+            audio.play();
+            document.querySelector(".bib-audio-play .fa-pause").classList.remove("none");
+            document.querySelector(".bib-audio-play .fa-play").classList.add("none");
+        } else {
+            audio.pause();
+            document.querySelector(".bib-audio-play .fa-pause").classList.add("none");
+            document.querySelector(".bib-audio-play .fa-play").classList.remove("none");
+        }
+    }
+
+    function formatTime(sec) {
+        const m = Math.floor(sec / 60);
+        const s = Math.floor(sec % 60).toString().padStart(2, '0');
+        return `${m}:${s}`;
+    }
+}
+function closeAudio(){
     document.querySelector(".bib-audio-modal").style.opacity = "0";
     document.querySelector(".bib-audio-modal").style.pointerEvents = "none";
+    currentAudio.pause();
+}
+document.querySelector(".bib-header-audio").addEventListener("click", () => {
+    showAudio(currentBook, currentChapterIdx + 1);
+});
+document.querySelector(".bib-audio-xmark").addEventListener("click", () => {
+    closeAudio();
+});
+document.querySelector(".bib-audio-modal").addEventListener("click", (e) => {
+    if(!document.querySelector(".bib-audio-wrapper").contains(e.target)){
+        closeAudio();
+    }
+});
+document.querySelectorAll(".bib-audio-chev").forEach((chev, idx) => {
+    chev.addEventListener("click", () => {
+        if(currentAudioChapter == 0 && idx == 0){
+            currentAudioBook = chapterHeadings[chapterHeadings.indexOf(chapterHeadings.find(book => book.name == currentAudioBook)) - 1].name;
+            currentAudioChapter = chapterHeadings.find(book => book.name == currentAudioBook).headings.length - 1;
+        } else if(currentAudioChapter == chapterHeadings.find(book => book.name == currentAudioBook).headings.length - 1 && idx == 1){
+            currentAudioBook = chapterHeadings[chapterHeadings.indexOf(chapterHeadings.find(book => book.name == currentAudioBook)) + 1].name;
+            currentChapterIdx = 0;
+        } else {
+            if(idx == 0){
+                currentAudioChapter--;
+            } else {
+                currentAudioChapter++;
+            }
+        }
+        showAudio(currentAudioBook, currentAudioChapter + 1);
+    });
 });
 
 

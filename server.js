@@ -325,29 +325,6 @@ app.post("/api/analyse-greek-word", async (req, res) => {
                 },
                 parsing: {
                     type: "string"
-                },
-                occurrences: {
-                    type: "array",
-                    items: {
-                        type: "object",
-                        properties: {
-                            book: {
-                                type: "string"
-                            },
-                            chapter: {
-                                type: "integer"
-                            },
-                            verse: {
-                                type: "integer"
-                            }
-                        },
-                        required: [
-                            "book",
-                            "chapter",
-                            "verse"
-                        ],
-                        additionalProperties: false
-                    }
                 }
             },
             required: [
@@ -357,7 +334,6 @@ app.post("/api/analyse-greek-word", async (req, res) => {
                 "definition",
                 "strongs",
                 "parsing",
-                "occurrences"
             ],
             additionalProperties: false
         }

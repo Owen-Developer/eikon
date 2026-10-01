@@ -820,7 +820,7 @@
                 <div class="bib-audio-head"><i class="fa-solid fa-volume-high"></i> Audio Bible</div>
                 <div class="bib-audio-title">Psalm 150</div>
     
-                <input type="range" class="bib-audio-range" />
+                <input type="range" class="bib-audio-range" min="0" max="1" step="0.001" value="0" />
                 <div class="bib-audio-time">
                     <div>0:00</div>
                     <div>1:41</div>
@@ -828,7 +828,14 @@
     
                 <div class="bib-audio-nav">
                     <i class="fa-solid fa-chevron-left bib-audio-chev"></i>
-                    <i class="fa-solid fa-play bib-audio-play"></i>
+                    <i class="fa-solid fa-forward-fast fa-rotate-180 bib-audio-forward"></i>
+
+                    <div class="bib-audio-play">
+                        <i class="fa-solid fa-play"></i>
+                        <i class="fa-solid fa-pause none"></i>
+                    </div>
+
+                    <i class="fa-solid fa-forward-fast bib-audio-forward"></i>
                     <i class="fa-solid fa-chevron-right bib-audio-chev"></i>
                 </div>
             </div>
