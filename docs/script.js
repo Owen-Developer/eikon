@@ -2225,11 +2225,11 @@ function resetChapterArrows(){
     document.querySelectorAll(".bib-mid-chev").forEach((arrow, idx) => {
         arrow.classList.remove("inactive-el");
         
-        if(idx == 0 && currentChapterIdx == 0){
+        if(idx == 0 && currentChapterIdx == 0 && currentBook == "Genesis"){
             arrow.classList.add("inactive-el");
         }
 
-        if(idx ==  1 && currentChapterIdx == chapterHeadings.find(book => book.name == currentBook).headings.length - 1){
+        if(idx ==  1 && currentChapterIdx == chapterHeadings.find(book => book.name == currentBook).headings.length - 1 && currentBook == "Revelation"){
             arrow.classList.add("inactive-el");
         }
     });
@@ -2237,10 +2237,18 @@ function resetChapterArrows(){
 
 document.querySelectorAll(".bib-mid-chev").forEach((chev, idx) => {
     chev.addEventListener("click", () => {
-        if(idx == 0){
-            currentChapterIdx--;
+        if(currentChapterIdx == 0 && idx == 0){
+            currentBook = chapterHeadings[chapterHeadings.indexOf(chapterHeadings.find(book => book.name == currentBook)) - 1].name;
+            currentChapterIdx = chapterHeadings.find(book => book.name == currentBook).headings.length - 1;
+        } else if(currentChapterIdx == chapterHeadings.find(book => book.name == currentBook).headings.length - 1 && idx == 1){
+            currentBook = chapterHeadings[chapterHeadings.indexOf(chapterHeadings.find(book => book.name == currentBook)) + 1].name;
+            currentChapterIdx = 0;
         } else {
-            currentChapterIdx++;
+            if(idx == 0){
+                currentChapterIdx--;
+            } else {
+                currentChapterIdx++;
+            }
         }
         loadBible();
     });
@@ -3454,6 +3462,16 @@ async function getTopicScriptures(topicStr){
         console.error('Error posting data:', error);
     }
 }
+
+document.querySelector(".bib-header-audio").addEventListener("click", () => {
+    document.querySelector(".bib-audio-title").textContent = `${currentBook} ${currentChapterIdx + 1}`;
+    document.querySelector(".bib-audio-modal").style.opacity = "1";
+    document.querySelector(".bib-audio-modal").style.pointerEvents = "auto";
+});
+document.querySelector(".bib-audio-xmark").addEventListener("click", () => {
+    document.querySelector(".bib-audio-modal").style.opacity = "0";
+    document.querySelector(".bib-audio-modal").style.pointerEvents = "none";
+});
 
 
 

@@ -1542,21 +1542,133 @@ i.bib-opt-close:hover {
     color: white;    
 }
 
+.bib-audio-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsla(0, 0%, 0%, 0.2);
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+.bib-audio-wrapper {
+    position: relative;
+    border-radius: 8px;
+    background-color: white;
+    border: 1px solid hsl(0, 0%, 85%);
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+    padding: 20px 15px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s ease;
+}
+i.bib-audio-xmark {
+    cursor: pointer;
+    font-size: 15px;
+    color: hsl(0, 0%, 30%);
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+i.bib-audio-xmark:hover {
+    color: black;
+}
+.bib-audio-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.bib-audio-head i {
+    font-size: 11px;
+    color: hsl(0, 0%, 26%);
+}
+.bib-audio-title {
+    margin: 6px 0 20px;
+    font-size: 34px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.bib-audio-range {
+    width: 100%;
+    height: 20px;
+    accent-color: #4b6653;
+}
+.bib-audio-time {
+    margin: 8px 0 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bib-audio-time div {
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
+}
+.bib-audio-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+i.bib-audio-chev {
+    width: 45px;
+    height: 45px;
+    border-radius: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 17px;
+    color: hsl(0, 0%, 20%);
+    transition: 0.2s ease;
+}
+i.bib-audio-chev:hover {
+    background-color: hsl(0, 0%, 94%);
+}
+i.bib-audio-play {
+    aspect-ratio: 1 / 1;
+    border-radius: 200px;
+    width: 55px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    background-color: #4b6653;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+i.bib-audio-play:hover {
+    background-color: hsl(138, 15%, 45%);
+}
+
 /*//////////////// COLOUR THEME /////////////////*/
 .bib-header.light-theme {
-    background-color: hsl(40, 9%, 80%);
+    background-color: hsl(40, 9%, 85%);
     border-bottom: 1px solid hsl(36, 20%, 75%);
 }
 .bib-left.light-theme {
-    background-color: hsl(36, 20%, 94%);
+    background-color: hsl(36, 20%, 99%);
     border-right: 1px solid hsl(36, 20%, 75%);
 }
 .bib-right.light-theme {
-    background-color: hsl(36, 20%, 94%);
+    background-color: hsl(36, 20%, 99%);
     border-left: 1px solid hsl(36, 20%, 75%);
 }
 .bib-mid.light-theme {
-    background-color: hsl(36, 20%, 90%);
+    background-color: hsl(36, 20%, 95%);
 }
 
 .bib-header.sepia-theme {
@@ -1566,15 +1678,15 @@ i.bib-opt-close:hover {
 
 .bib-header.dark-theme {
     background-color: hsl(40, 15%, 68%);
-    border-bottom: 1px solid hsl(36, 20%, 60%);
+    border-bottom: 1px solid hsl(36, 20%, 50%);
 }
 .bib-left.dark-theme {
-    background-color: hsl(36, 20%, 79%);
-    border-right: 1px solid hsl(36, 20%, 60%);
+    background-color: hsl(36, 20%, 83%);
+    border-right: 1px solid hsl(36, 20%, 50%);
 }
 .bib-right.dark-theme {
-    background-color: hsl(36, 20%, 79%);
-    border-left: 1px solid hsl(36, 20%, 60%);
+    background-color: hsl(36, 20%, 83%);
+    border-left: 1px solid hsl(36, 20%, 50%);
 }
 .bib-mid.dark-theme {
     background-color: hsl(36, 20%, 75%);
