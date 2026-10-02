@@ -1,0 +1,4616 @@
+[
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "דְּבַר",
+        "strongs": "1697"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "יְהוָ֣ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "אֲשֶׁ֣ר",
+        "strongs": "834"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "הָיָ֗ה",
+        "strongs": "1961"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "אֶל",
+        "strongs": "413"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "צְפַנְיָה֙",
+        "strongs": "6846"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "בֶּן",
+        "strongs": "1121"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "כּוּשִׁ֣י",
+        "strongs": "3570"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "בֶן",
+        "strongs": "1121"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "גְּדַלְיָ֔ה",
+        "strongs": "1436"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "בֶּן",
+        "strongs": "1121"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "אֲמַרְיָ֖ה",
+        "strongs": "568"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "בֶּן",
+        "strongs": "1121"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "חִזְקִיָּ֑ה",
+        "strongs": "2396"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "בִּ/ימֵ֛י",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "יֹאשִׁיָּ֥הוּ",
+        "strongs": "2977"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "בֶן",
+        "strongs": "1121"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "אָמ֖וֹן",
+        "strongs": "526"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "מֶ֥לֶךְ",
+        "strongs": "4428"
+    },
+    {
+        "chapter": 1,
+        "verse": 1,
+        "word": "יְהוּדָֽה",
+        "strongs": "3063"
+    },
+    {
+        "chapter": 1,
+        "verse": 2,
+        "word": "אָסֹ֨ף",
+        "strongs": "622"
+    },
+    {
+        "chapter": 1,
+        "verse": 2,
+        "word": "אָסֵ֜ף",
+        "strongs": "5486"
+    },
+    {
+        "chapter": 1,
+        "verse": 2,
+        "word": "כֹּ֗ל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 1,
+        "verse": 2,
+        "word": "מֵ/עַ֛ל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 1,
+        "verse": 2,
+        "word": "פְּנֵ֥י",
+        "strongs": "6440"
+    },
+    {
+        "chapter": 1,
+        "verse": 2,
+        "word": "הָ/אֲדָמָ֖ה",
+        "strongs": "127"
+    },
+    {
+        "chapter": 1,
+        "verse": 2,
+        "word": "נְאֻם",
+        "strongs": "5002"
+    },
+    {
+        "chapter": 1,
+        "verse": 2,
+        "word": "יְהוָֽה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "אָסֵ֨ף",
+        "strongs": "622"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "אָדָ֜ם",
+        "strongs": "120"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "וּ/בְהֵמָ֗ה",
+        "strongs": "929"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "אָסֵ֤ף",
+        "strongs": "622"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "עוֹף",
+        "strongs": "5775"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "הַ/שָּׁמַ֨יִם֙",
+        "strongs": "8064"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "וּ/דְגֵ֣י",
+        "strongs": "1709"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "הַ/יָּ֔ם",
+        "strongs": "3220"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "וְ/הַ/מַּכְשֵׁל֖וֹת",
+        "strongs": "4384"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "אֶת",
+        "strongs": "854"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "הָ/רְשָׁעִ֑ים",
+        "strongs": "7563"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "וְ/הִכְרַתִּ֣י",
+        "strongs": "3772"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "אֶת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "הָ/אָדָ֗ם",
+        "strongs": "120"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "מֵ/עַ֛ל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "פְּנֵ֥י",
+        "strongs": "6440"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "הָ/אֲדָמָ֖ה",
+        "strongs": "127"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "נְאֻם",
+        "strongs": "5002"
+    },
+    {
+        "chapter": 1,
+        "verse": 3,
+        "word": "יְהוָֽה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "וְ/נָטִ֤יתִי",
+        "strongs": "5186"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "יָדִ/י֙",
+        "strongs": "3027"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "עַל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "יְהוּדָ֔ה",
+        "strongs": "3063"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "וְ/עַ֖ל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "כָּל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "יוֹשְׁבֵ֣י",
+        "strongs": "3427"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "יְרוּשָׁלִָ֑ם",
+        "strongs": "3389"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "וְ/הִכְרַתִּ֞י",
+        "strongs": "3772"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "מִן",
+        "strongs": "4480"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "הַ/מָּק֤וֹם",
+        "strongs": "4725"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "הַ/זֶּה֙",
+        "strongs": "2088"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "אֶת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "שְׁאָ֣ר",
+        "strongs": "7605"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "הַ/בַּ֔עַל",
+        "strongs": "1168"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "אֶת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "שֵׁ֥ם",
+        "strongs": "8034"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "הַ/כְּמָרִ֖ים",
+        "strongs": "3649"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "עִם",
+        "strongs": "5973"
+    },
+    {
+        "chapter": 1,
+        "verse": 4,
+        "word": "הַ/כֹּהֲנִֽים",
+        "strongs": "3548"
+    },
+    {
+        "chapter": 1,
+        "verse": 5,
+        "word": "וְ/אֶת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 1,
+        "verse": 5,
+        "word": "הַ/מִּשְׁתַּחֲוִ֥ים",
+        "strongs": "7812"
+    },
+    {
+        "chapter": 1,
+        "verse": 5,
+        "word": "עַל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 1,
+        "verse": 5,
+        "word": "הַ/גַּגּ֖וֹת",
+        "strongs": "1406"
+    },
+    {
+        "chapter": 1,
+        "verse": 5,
+        "word": "לִ/צְבָ֣א",
+        "strongs": "6635"
+    },
+    {
+        "chapter": 1,
+        "verse": 5,
+        "word": "הַ/שָּׁמָ֑יִם",
+        "strongs": "8064"
+    },
+    {
+        "chapter": 1,
+        "verse": 5,
+        "word": "וְ/אֶת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 1,
+        "verse": 5,
+        "word": "הַ/מִּֽשְׁתַּחֲוִים֙",
+        "strongs": "7812"
+    },
+    {
+        "chapter": 1,
+        "verse": 5,
+        "word": "הַ/נִּשְׁבָּעִ֣ים",
+        "strongs": "7650"
+    },
+    {
+        "chapter": 1,
+        "verse": 5,
+        "word": "לַֽ/יהוָ֔ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 1,
+        "verse": 5,
+        "word": "וְ/הַ/נִּשְׁבָּעִ֖ים",
+        "strongs": "7650"
+    },
+    {
+        "chapter": 1,
+        "verse": 5,
+        "word": "בְּ/מַלְכָּֽ/ם",
+        "strongs": "4445"
+    },
+    {
+        "chapter": 1,
+        "verse": 6,
+        "word": "וְ/אֶת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 1,
+        "verse": 6,
+        "word": "הַ/נְּסוֹגִ֖ים",
+        "strongs": "5472"
+    },
+    {
+        "chapter": 1,
+        "verse": 6,
+        "word": "מֵ/אַחֲרֵ֣י",
+        "strongs": "310"
+    },
+    {
+        "chapter": 1,
+        "verse": 6,
+        "word": "יְהוָ֑ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 1,
+        "verse": 6,
+        "word": "וַ/אֲשֶׁ֛ר",
+        "strongs": "834"
+    },
+    {
+        "chapter": 1,
+        "verse": 6,
+        "word": "לֹֽא",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 1,
+        "verse": 6,
+        "word": "בִקְשׁ֥וּ",
+        "strongs": "1245"
+    },
+    {
+        "chapter": 1,
+        "verse": 6,
+        "word": "אֶת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 1,
+        "verse": 6,
+        "word": "יְהוָ֖ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 1,
+        "verse": 6,
+        "word": "וְ/לֹ֥א",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 1,
+        "verse": 6,
+        "word": "דְרָשֻֽׁ/הוּ",
+        "strongs": "1875"
+    },
+    {
+        "chapter": 1,
+        "verse": 7,
+        "word": "הַ֕ס",
+        "strongs": "2013"
+    },
+    {
+        "chapter": 1,
+        "verse": 7,
+        "word": "מִ/פְּנֵ֖י",
+        "strongs": "6440"
+    },
+    {
+        "chapter": 1,
+        "verse": 7,
+        "word": "אֲדֹנָ֣/י",
+        "strongs": "136"
+    },
+    {
+        "chapter": 1,
+        "verse": 7,
+        "word": "יְהוִ֑ה",
+        "strongs": "3069"
+    },
+    {
+        "chapter": 1,
+        "verse": 7,
+        "word": "כִּ֤י",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 1,
+        "verse": 7,
+        "word": "קָרוֹב֙",
+        "strongs": "7138"
+    },
+    {
+        "chapter": 1,
+        "verse": 7,
+        "word": "י֣וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 1,
+        "verse": 7,
+        "word": "יְהוָ֔ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 1,
+        "verse": 7,
+        "word": "כִּֽי",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 1,
+        "verse": 7,
+        "word": "הֵכִ֧ין",
+        "strongs": "3559"
+    },
+    {
+        "chapter": 1,
+        "verse": 7,
+        "word": "יְהוָ֛ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 1,
+        "verse": 7,
+        "word": "זֶ֖בַח",
+        "strongs": "2077"
+    },
+    {
+        "chapter": 1,
+        "verse": 7,
+        "word": "הִקְדִּ֥ישׁ",
+        "strongs": "6942"
+    },
+    {
+        "chapter": 1,
+        "verse": 7,
+        "word": "קְרֻאָֽי/ו",
+        "strongs": "7121"
+    },
+    {
+        "chapter": 1,
+        "verse": 8,
+        "word": "וְ/הָיָ֗ה",
+        "strongs": "1961"
+    },
+    {
+        "chapter": 1,
+        "verse": 8,
+        "word": "בְּ/יוֹם֙",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 1,
+        "verse": 8,
+        "word": "זֶ֣בַח",
+        "strongs": "2077"
+    },
+    {
+        "chapter": 1,
+        "verse": 8,
+        "word": "יְהוָ֔ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 1,
+        "verse": 8,
+        "word": "וּ/פָקַדְתִּ֥י",
+        "strongs": "6485"
+    },
+    {
+        "chapter": 1,
+        "verse": 8,
+        "word": "עַל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 1,
+        "verse": 8,
+        "word": "הַ/שָּׂרִ֖ים",
+        "strongs": "8269"
+    },
+    {
+        "chapter": 1,
+        "verse": 8,
+        "word": "וְ/עַל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 1,
+        "verse": 8,
+        "word": "בְּנֵ֣י",
+        "strongs": "1121"
+    },
+    {
+        "chapter": 1,
+        "verse": 8,
+        "word": "הַ/מֶּ֑לֶךְ",
+        "strongs": "4428"
+    },
+    {
+        "chapter": 1,
+        "verse": 8,
+        "word": "וְ/עַ֥ל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 1,
+        "verse": 8,
+        "word": "כָּל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 1,
+        "verse": 8,
+        "word": "הַ/לֹּבְשִׁ֖ים",
+        "strongs": "3847"
+    },
+    {
+        "chapter": 1,
+        "verse": 8,
+        "word": "מַלְבּ֥וּשׁ",
+        "strongs": "4403"
+    },
+    {
+        "chapter": 1,
+        "verse": 8,
+        "word": "נָכְרִֽי",
+        "strongs": "5237"
+    },
+    {
+        "chapter": 1,
+        "verse": 9,
+        "word": "וּ/פָקַדְתִּ֗י",
+        "strongs": "6485"
+    },
+    {
+        "chapter": 1,
+        "verse": 9,
+        "word": "עַ֧ל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 1,
+        "verse": 9,
+        "word": "כָּל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 1,
+        "verse": 9,
+        "word": "הַ/דּוֹלֵ֛ג",
+        "strongs": "1801"
+    },
+    {
+        "chapter": 1,
+        "verse": 9,
+        "word": "עַל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 1,
+        "verse": 9,
+        "word": "הַ/מִּפְתָּ֖ן",
+        "strongs": "4670"
+    },
+    {
+        "chapter": 1,
+        "verse": 9,
+        "word": "בַּ/יּ֣וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 1,
+        "verse": 9,
+        "word": "הַ/ה֑וּא",
+        "strongs": "1931"
+    },
+    {
+        "chapter": 1,
+        "verse": 9,
+        "word": "הַֽ/מְמַלְאִ֛ים",
+        "strongs": "4390"
+    },
+    {
+        "chapter": 1,
+        "verse": 9,
+        "word": "בֵּ֥ית",
+        "strongs": "1004"
+    },
+    {
+        "chapter": 1,
+        "verse": 9,
+        "word": "אֲדֹנֵי/הֶ֖ם",
+        "strongs": "113"
+    },
+    {
+        "chapter": 1,
+        "verse": 9,
+        "word": "חָמָ֥ס",
+        "strongs": "2555"
+    },
+    {
+        "chapter": 1,
+        "verse": 9,
+        "word": "וּ/מִרְמָֽה",
+        "strongs": "4820"
+    },
+    {
+        "chapter": 1,
+        "verse": 10,
+        "word": "וְ/הָיָה֩",
+        "strongs": "1961"
+    },
+    {
+        "chapter": 1,
+        "verse": 10,
+        "word": "בַ/יּ֨וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 1,
+        "verse": 10,
+        "word": "הַ/ה֜וּא",
+        "strongs": "1931"
+    },
+    {
+        "chapter": 1,
+        "verse": 10,
+        "word": "נְאֻם",
+        "strongs": "5002"
+    },
+    {
+        "chapter": 1,
+        "verse": 10,
+        "word": "יְהוָ֗ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 1,
+        "verse": 10,
+        "word": "ק֤וֹל",
+        "strongs": "6963"
+    },
+    {
+        "chapter": 1,
+        "verse": 10,
+        "word": "צְעָקָה֙",
+        "strongs": "6818"
+    },
+    {
+        "chapter": 1,
+        "verse": 10,
+        "word": "מִ/שַּׁ֣עַר",
+        "strongs": "8179"
+    },
+    {
+        "chapter": 1,
+        "verse": 10,
+        "word": "הַ/דָּגִ֔ים",
+        "strongs": "1709"
+    },
+    {
+        "chapter": 1,
+        "verse": 10,
+        "word": "וִֽ/ילָלָ֖ה",
+        "strongs": "3215"
+    },
+    {
+        "chapter": 1,
+        "verse": 10,
+        "word": "מִן",
+        "strongs": "4480"
+    },
+    {
+        "chapter": 1,
+        "verse": 10,
+        "word": "הַ/מִּשְׁנֶ֑ה",
+        "strongs": "4932"
+    },
+    {
+        "chapter": 1,
+        "verse": 10,
+        "word": "וְ/שֶׁ֥בֶר",
+        "strongs": "7667"
+    },
+    {
+        "chapter": 1,
+        "verse": 10,
+        "word": "גָּד֖וֹל",
+        "strongs": "1419"
+    },
+    {
+        "chapter": 1,
+        "verse": 10,
+        "word": "מֵ/הַ/גְּבָעֽוֹת",
+        "strongs": "1389"
+    },
+    {
+        "chapter": 1,
+        "verse": 11,
+        "word": "הֵילִ֖ילוּ",
+        "strongs": "3213"
+    },
+    {
+        "chapter": 1,
+        "verse": 11,
+        "word": "יֹשְׁבֵ֣י",
+        "strongs": "3427"
+    },
+    {
+        "chapter": 1,
+        "verse": 11,
+        "word": "הַ/מַּכְתֵּ֑שׁ",
+        "strongs": "4389"
+    },
+    {
+        "chapter": 1,
+        "verse": 11,
+        "word": "כִּ֤י",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 1,
+        "verse": 11,
+        "word": "נִדְמָה֙",
+        "strongs": "1820"
+    },
+    {
+        "chapter": 1,
+        "verse": 11,
+        "word": "כָּל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 1,
+        "verse": 11,
+        "word": "עַ֣ם",
+        "strongs": "5971"
+    },
+    {
+        "chapter": 1,
+        "verse": 11,
+        "word": "כְּנַ֔עַן",
+        "strongs": "3667"
+    },
+    {
+        "chapter": 1,
+        "verse": 11,
+        "word": "נִכְרְת֖וּ",
+        "strongs": "3772"
+    },
+    {
+        "chapter": 1,
+        "verse": 11,
+        "word": "כָּל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 1,
+        "verse": 11,
+        "word": "נְטִ֥ילֵי",
+        "strongs": "5187"
+    },
+    {
+        "chapter": 1,
+        "verse": 11,
+        "word": "כָֽסֶף",
+        "strongs": "3701"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "וְ/הָיָה֙",
+        "strongs": "1961"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "בָּ/עֵ֣ת",
+        "strongs": "6256"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "הַ/הִ֔יא",
+        "strongs": "1931"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "אֲחַפֵּ֥שׂ",
+        "strongs": "2664"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "אֶת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "יְרוּשָׁלִַ֖ם",
+        "strongs": "3389"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "בַּ/נֵּר֑וֹת",
+        "strongs": "5216"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "וּ/פָקַדְתִּ֣י",
+        "strongs": "6485"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "עַל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "הָ/אֲנָשִׁ֗ים",
+        "strongs": "376"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "הַ/קֹּֽפְאִים֙",
+        "strongs": "7087"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "עַל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "שִׁמְרֵי/הֶ֔ם",
+        "strongs": "8105"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "הָ/אֹֽמְרִים֙",
+        "strongs": "559"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "בִּ/לְבָבָ֔/ם",
+        "strongs": "3824"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "לֹֽא",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "יֵיטִ֥יב",
+        "strongs": "3190"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "יְהוָ֖ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "וְ/לֹ֥א",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 1,
+        "verse": 12,
+        "word": "יָרֵֽעַ",
+        "strongs": "7489"
+    },
+    {
+        "chapter": 1,
+        "verse": 13,
+        "word": "וְ/הָיָ֤ה",
+        "strongs": "1961"
+    },
+    {
+        "chapter": 1,
+        "verse": 13,
+        "word": "חֵילָ/ם֙",
+        "strongs": "2428"
+    },
+    {
+        "chapter": 1,
+        "verse": 13,
+        "word": "לִ/מְשִׁסָּ֔ה",
+        "strongs": "4933"
+    },
+    {
+        "chapter": 1,
+        "verse": 13,
+        "word": "וּ/בָתֵּי/הֶ֖ם",
+        "strongs": "1004"
+    },
+    {
+        "chapter": 1,
+        "verse": 13,
+        "word": "לִ/שְׁמָמָ֑ה",
+        "strongs": "8077"
+    },
+    {
+        "chapter": 1,
+        "verse": 13,
+        "word": "וּ/בָנ֤וּ",
+        "strongs": "1129"
+    },
+    {
+        "chapter": 1,
+        "verse": 13,
+        "word": "בָתִּים֙",
+        "strongs": "1004"
+    },
+    {
+        "chapter": 1,
+        "verse": 13,
+        "word": "וְ/לֹ֣א",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 1,
+        "verse": 13,
+        "word": "יֵשֵׁ֔בוּ",
+        "strongs": "3427"
+    },
+    {
+        "chapter": 1,
+        "verse": 13,
+        "word": "וְ/נָטְע֣וּ",
+        "strongs": "5193"
+    },
+    {
+        "chapter": 1,
+        "verse": 13,
+        "word": "כְרָמִ֔ים",
+        "strongs": "3754"
+    },
+    {
+        "chapter": 1,
+        "verse": 13,
+        "word": "וְ/לֹ֥א",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 1,
+        "verse": 13,
+        "word": "יִשְׁתּ֖וּ",
+        "strongs": "8354"
+    },
+    {
+        "chapter": 1,
+        "verse": 13,
+        "word": "אֶת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 1,
+        "verse": 13,
+        "word": "יֵינָֽ/ם",
+        "strongs": "3196"
+    },
+    {
+        "chapter": 1,
+        "verse": 14,
+        "word": "קָר֤וֹב",
+        "strongs": "7138"
+    },
+    {
+        "chapter": 1,
+        "verse": 14,
+        "word": "יוֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 1,
+        "verse": 14,
+        "word": "יְהוָה֙",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 1,
+        "verse": 14,
+        "word": "הַ/גָּד֔וֹל",
+        "strongs": "1419"
+    },
+    {
+        "chapter": 1,
+        "verse": 14,
+        "word": "קָר֖וֹב",
+        "strongs": "7138"
+    },
+    {
+        "chapter": 1,
+        "verse": 14,
+        "word": "וּ/מַהֵ֣ר",
+        "strongs": "4118"
+    },
+    {
+        "chapter": 1,
+        "verse": 14,
+        "word": "מְאֹ֑ד",
+        "strongs": "3966"
+    },
+    {
+        "chapter": 1,
+        "verse": 14,
+        "word": "ק֚וֹל",
+        "strongs": "6963"
+    },
+    {
+        "chapter": 1,
+        "verse": 14,
+        "word": "י֣וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 1,
+        "verse": 14,
+        "word": "יְהוָ֔ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 1,
+        "verse": 14,
+        "word": "מַ֥ר",
+        "strongs": "4751"
+    },
+    {
+        "chapter": 1,
+        "verse": 14,
+        "word": "צֹרֵ֖חַ",
+        "strongs": "6873"
+    },
+    {
+        "chapter": 1,
+        "verse": 14,
+        "word": "שָׁ֥ם",
+        "strongs": "8033"
+    },
+    {
+        "chapter": 1,
+        "verse": 14,
+        "word": "גִּבּֽוֹר",
+        "strongs": "1368"
+    },
+    {
+        "chapter": 1,
+        "verse": 15,
+        "word": "י֥וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 1,
+        "verse": 15,
+        "word": "עֶבְרָ֖ה",
+        "strongs": "5678"
+    },
+    {
+        "chapter": 1,
+        "verse": 15,
+        "word": "הַ/יּ֣וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 1,
+        "verse": 15,
+        "word": "הַ/ה֑וּא",
+        "strongs": "1931"
+    },
+    {
+        "chapter": 1,
+        "verse": 15,
+        "word": "י֧וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 1,
+        "verse": 15,
+        "word": "צָרָ֣ה",
+        "strongs": "6869"
+    },
+    {
+        "chapter": 1,
+        "verse": 15,
+        "word": "וּ/מְצוּקָ֗ה",
+        "strongs": "4691"
+    },
+    {
+        "chapter": 1,
+        "verse": 15,
+        "word": "י֤וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 1,
+        "verse": 15,
+        "word": "שֹׁאָה֙",
+        "strongs": "7722"
+    },
+    {
+        "chapter": 1,
+        "verse": 15,
+        "word": "וּ/מְשׁוֹאָ֔ה",
+        "strongs": "4875"
+    },
+    {
+        "chapter": 1,
+        "verse": 15,
+        "word": "י֥וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 1,
+        "verse": 15,
+        "word": "חֹ֨שֶׁךְ֙",
+        "strongs": "2822"
+    },
+    {
+        "chapter": 1,
+        "verse": 15,
+        "word": "וַ/אֲפֵלָ֔ה",
+        "strongs": "653"
+    },
+    {
+        "chapter": 1,
+        "verse": 15,
+        "word": "י֥וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 1,
+        "verse": 15,
+        "word": "עָנָ֖ן",
+        "strongs": "6051"
+    },
+    {
+        "chapter": 1,
+        "verse": 15,
+        "word": "וַ/עֲרָפֶֽל",
+        "strongs": "6205"
+    },
+    {
+        "chapter": 1,
+        "verse": 16,
+        "word": "י֥וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 1,
+        "verse": 16,
+        "word": "שׁוֹפָ֖ר",
+        "strongs": "7782"
+    },
+    {
+        "chapter": 1,
+        "verse": 16,
+        "word": "וּ/תְרוּעָ֑ה",
+        "strongs": "8643"
+    },
+    {
+        "chapter": 1,
+        "verse": 16,
+        "word": "עַ֚ל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 1,
+        "verse": 16,
+        "word": "הֶ/עָרִ֣ים",
+        "strongs": "5892"
+    },
+    {
+        "chapter": 1,
+        "verse": 16,
+        "word": "הַ/בְּצֻר֔וֹת",
+        "strongs": "1219"
+    },
+    {
+        "chapter": 1,
+        "verse": 16,
+        "word": "וְ/עַ֖ל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 1,
+        "verse": 16,
+        "word": "הַ/פִּנּ֥וֹת",
+        "strongs": "6438"
+    },
+    {
+        "chapter": 1,
+        "verse": 16,
+        "word": "הַ/גְּבֹהֽוֹת",
+        "strongs": "1364"
+    },
+    {
+        "chapter": 1,
+        "verse": 17,
+        "word": "וַ/הֲצֵרֹ֣תִי",
+        "strongs": "6887"
+    },
+    {
+        "chapter": 1,
+        "verse": 17,
+        "word": "לָ/אָדָ֗ם",
+        "strongs": "120"
+    },
+    {
+        "chapter": 1,
+        "verse": 17,
+        "word": "וְ/הָֽלְכוּ֙",
+        "strongs": "1980"
+    },
+    {
+        "chapter": 1,
+        "verse": 17,
+        "word": "כַּֽ/עִוְרִ֔ים",
+        "strongs": "5787"
+    },
+    {
+        "chapter": 1,
+        "verse": 17,
+        "word": "כִּ֥י",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 1,
+        "verse": 17,
+        "word": "לַֽ/יהוָ֖ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 1,
+        "verse": 17,
+        "word": "חָטָ֑אוּ",
+        "strongs": "2398"
+    },
+    {
+        "chapter": 1,
+        "verse": 17,
+        "word": "וְ/שֻׁפַּ֤ךְ",
+        "strongs": "8210"
+    },
+    {
+        "chapter": 1,
+        "verse": 17,
+        "word": "דָּמָ/ם֙",
+        "strongs": "1818"
+    },
+    {
+        "chapter": 1,
+        "verse": 17,
+        "word": "כֶּֽ/עָפָ֔ר",
+        "strongs": "6083"
+    },
+    {
+        "chapter": 1,
+        "verse": 17,
+        "word": "וּ/לְחֻמָ֖/ם",
+        "strongs": "3894"
+    },
+    {
+        "chapter": 1,
+        "verse": 17,
+        "word": "כַּ/גְּלָלִֽים",
+        "strongs": "1561"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "גַּם",
+        "strongs": "1571"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "כַּסְפָּ֨/ם",
+        "strongs": "3701"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "גַּם",
+        "strongs": "1571"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "זְהָבָ֜/ם",
+        "strongs": "2091"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "לֹֽא",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "יוּכַ֣ל",
+        "strongs": "3201"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "לְ/הַצִּילָ֗/ם",
+        "strongs": "5337"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "בְּ/יוֹם֙",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "עֶבְרַ֣ת",
+        "strongs": "5678"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "יְהוָ֔ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "וּ/בְ/אֵשׁ֙",
+        "strongs": "784"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "קִנְאָת֔/וֹ",
+        "strongs": "7068"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "תֵּאָכֵ֖ל",
+        "strongs": "398"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "כָּל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "הָ/אָ֑רֶץ",
+        "strongs": "776"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "כִּֽי",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "כָלָ֤ה",
+        "strongs": "3617"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "אַךְ",
+        "strongs": "389"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "נִבְהָלָה֙",
+        "strongs": "926"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "יַֽעֲשֶׂ֔ה",
+        "strongs": "6213"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "אֵ֥ת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "כָּל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "יֹשְׁבֵ֖י",
+        "strongs": "3427"
+    },
+    {
+        "chapter": 1,
+        "verse": 18,
+        "word": "הָ/אָֽרֶץ",
+        "strongs": "776"
+    },
+    {
+        "chapter": 2,
+        "verse": 1,
+        "word": "הִֽתְקוֹשְׁשׁ֖וּ",
+        "strongs": "7197"
+    },
+    {
+        "chapter": 2,
+        "verse": 1,
+        "word": "וָ/ק֑וֹשּׁוּ",
+        "strongs": "7197"
+    },
+    {
+        "chapter": 2,
+        "verse": 1,
+        "word": "הַ/גּ֖וֹי",
+        "strongs": "1471"
+    },
+    {
+        "chapter": 2,
+        "verse": 1,
+        "word": "לֹ֥א",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 2,
+        "verse": 1,
+        "word": "נִכְסָֽף",
+        "strongs": "3700"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "בְּ/טֶ֨רֶם֙",
+        "strongs": "2962"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "לֶ֣דֶת",
+        "strongs": "3205"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "חֹ֔ק",
+        "strongs": "2706"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "כְּ/מֹ֖ץ",
+        "strongs": "4671"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "עָ֣בַר",
+        "strongs": "5674"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "י֑וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "בְּ/טֶ֣רֶם",
+        "strongs": "2962"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "לֹא",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "יָב֣וֹא",
+        "strongs": "935"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "עֲלֵי/כֶ֗ם",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "חֲרוֹן֙",
+        "strongs": "2740"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "אַף",
+        "strongs": "639"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "יְהוָ֔ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "בְּ/טֶ֨רֶם֙",
+        "strongs": "2962"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "לֹא",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "יָב֣וֹא",
+        "strongs": "935"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "עֲלֵי/כֶ֔ם",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "י֖וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "אַף",
+        "strongs": "639"
+    },
+    {
+        "chapter": 2,
+        "verse": 2,
+        "word": "יְהוָֽה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "בַּקְּשׁ֤וּ",
+        "strongs": "1245"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "אֶת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "יְהוָה֙",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "כָּל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "עַנְוֵ֣י",
+        "strongs": "6035"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "הָ/אָ֔רֶץ",
+        "strongs": "776"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "אֲשֶׁ֥ר",
+        "strongs": "834"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "מִשְׁפָּט֖/וֹ",
+        "strongs": "4941"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "פָּעָ֑לוּ",
+        "strongs": "6466"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "בַּקְּשׁוּ",
+        "strongs": "1245"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "צֶ֨דֶק֙",
+        "strongs": "6664"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "בַּקְּשׁ֣וּ",
+        "strongs": "1245"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "עֲנָוָ֔ה",
+        "strongs": "6038"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "אוּלַי֙",
+        "strongs": "194"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "תִּסָּ֣תְר֔וּ",
+        "strongs": "5641"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "בְּ/י֖וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "אַף",
+        "strongs": "639"
+    },
+    {
+        "chapter": 2,
+        "verse": 3,
+        "word": "יְהוָֽה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 2,
+        "verse": 4,
+        "word": "כִּ֤י",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 2,
+        "verse": 4,
+        "word": "עַזָּה֙",
+        "strongs": "5804"
+    },
+    {
+        "chapter": 2,
+        "verse": 4,
+        "word": "עֲזוּבָ֣ה",
+        "strongs": "5800"
+    },
+    {
+        "chapter": 2,
+        "verse": 4,
+        "word": "תִֽהְיֶ֔ה",
+        "strongs": "1961"
+    },
+    {
+        "chapter": 2,
+        "verse": 4,
+        "word": "וְ/אַשְׁקְל֖וֹן",
+        "strongs": "831"
+    },
+    {
+        "chapter": 2,
+        "verse": 4,
+        "word": "לִ/שְׁמָמָ֑ה",
+        "strongs": "8077"
+    },
+    {
+        "chapter": 2,
+        "verse": 4,
+        "word": "אַשְׁדּ֗וֹד",
+        "strongs": "795"
+    },
+    {
+        "chapter": 2,
+        "verse": 4,
+        "word": "בַּֽ/צָּהֳרַ֨יִם֙",
+        "strongs": "6672"
+    },
+    {
+        "chapter": 2,
+        "verse": 4,
+        "word": "יְגָ֣רְשׁ֔וּ/הָ",
+        "strongs": "1644"
+    },
+    {
+        "chapter": 2,
+        "verse": 4,
+        "word": "וְ/עֶקְר֖וֹן",
+        "strongs": "6138"
+    },
+    {
+        "chapter": 2,
+        "verse": 4,
+        "word": "תֵּעָקֵֽר",
+        "strongs": "6131"
+    },
+    {
+        "chapter": 2,
+        "verse": 5,
+        "word": "ה֗וֹי",
+        "strongs": "1945"
+    },
+    {
+        "chapter": 2,
+        "verse": 5,
+        "word": "יֹֽשְׁבֵ֛י",
+        "strongs": "3427"
+    },
+    {
+        "chapter": 2,
+        "verse": 5,
+        "word": "חֶ֥בֶל",
+        "strongs": "2256"
+    },
+    {
+        "chapter": 2,
+        "verse": 5,
+        "word": "הַ/יָּ֖ם",
+        "strongs": "3220"
+    },
+    {
+        "chapter": 2,
+        "verse": 5,
+        "word": "גּ֣וֹי",
+        "strongs": "1471"
+    },
+    {
+        "chapter": 2,
+        "verse": 5,
+        "word": "כְּרֵתִ֑ים",
+        "strongs": "3774"
+    },
+    {
+        "chapter": 2,
+        "verse": 5,
+        "word": "דְּבַר",
+        "strongs": "1697"
+    },
+    {
+        "chapter": 2,
+        "verse": 5,
+        "word": "יְהוָ֣ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 2,
+        "verse": 5,
+        "word": "עֲלֵי/כֶ֗ם",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 2,
+        "verse": 5,
+        "word": "כְּנַ֨עַן֙",
+        "strongs": "3667"
+    },
+    {
+        "chapter": 2,
+        "verse": 5,
+        "word": "אֶ֣רֶץ",
+        "strongs": "776"
+    },
+    {
+        "chapter": 2,
+        "verse": 5,
+        "word": "פְּלִשְׁתִּ֔ים",
+        "strongs": "6430"
+    },
+    {
+        "chapter": 2,
+        "verse": 5,
+        "word": "וְ/הַאֲבַדְתִּ֖י/ךְ",
+        "strongs": "6"
+    },
+    {
+        "chapter": 2,
+        "verse": 5,
+        "word": "מֵ/אֵ֥ין",
+        "strongs": "369"
+    },
+    {
+        "chapter": 2,
+        "verse": 5,
+        "word": "יוֹשֵֽׁב",
+        "strongs": "3427"
+    },
+    {
+        "chapter": 2,
+        "verse": 6,
+        "word": "וְֽ/הָיְתָ֞ה",
+        "strongs": "1961"
+    },
+    {
+        "chapter": 2,
+        "verse": 6,
+        "word": "חֶ֣בֶל",
+        "strongs": "2256"
+    },
+    {
+        "chapter": 2,
+        "verse": 6,
+        "word": "הַ/יָּ֗ם",
+        "strongs": "3220"
+    },
+    {
+        "chapter": 2,
+        "verse": 6,
+        "word": "נְוֺ֛ת",
+        "strongs": "5116"
+    },
+    {
+        "chapter": 2,
+        "verse": 6,
+        "word": "כְּרֹ֥ת",
+        "strongs": "3741"
+    },
+    {
+        "chapter": 2,
+        "verse": 6,
+        "word": "רֹעִ֖ים",
+        "strongs": "7462"
+    },
+    {
+        "chapter": 2,
+        "verse": 6,
+        "word": "וְ/גִדְר֥וֹת",
+        "strongs": "1448"
+    },
+    {
+        "chapter": 2,
+        "verse": 6,
+        "word": "צֹֽאן",
+        "strongs": "6629"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "וְ/הָ֣יָה",
+        "strongs": "1961"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "חֶ֗בֶל",
+        "strongs": "2256"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "לִ/שְׁאֵרִ֛ית",
+        "strongs": "7611"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "בֵּ֥ית",
+        "strongs": "1004"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "יְהוּדָ֖ה",
+        "strongs": "3063"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "עֲלֵי/הֶ֣ם",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "יִרְע֑וּ/ן",
+        "strongs": "7462"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "בְּ/בָתֵּ֣י",
+        "strongs": "1004"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "אַשְׁקְל֗וֹן",
+        "strongs": "831"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "בָּ/עֶ֨רֶב֙",
+        "strongs": "6153"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "יִרְבָּצ֔וּ/ן",
+        "strongs": "7257"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "כִּ֧י",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "יִפְקְדֵ֛/ם",
+        "strongs": "6485"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "יְהוָ֥ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "אֱלֹהֵי/הֶ֖ם",
+        "strongs": "430"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "וְ/שָׁ֥ב",
+        "strongs": "7725"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "שבות/ם",
+        "strongs": "7622"
+    },
+    {
+        "chapter": 2,
+        "verse": 7,
+        "word": "שְׁבִיתָֽ/ם",
+        "strongs": "7622"
+    },
+    {
+        "chapter": 2,
+        "verse": 8,
+        "word": "שָׁמַ֨עְתִּי֙",
+        "strongs": "8085"
+    },
+    {
+        "chapter": 2,
+        "verse": 8,
+        "word": "חֶרְפַּ֣ת",
+        "strongs": "2781"
+    },
+    {
+        "chapter": 2,
+        "verse": 8,
+        "word": "מוֹאָ֔ב",
+        "strongs": "4124"
+    },
+    {
+        "chapter": 2,
+        "verse": 8,
+        "word": "וְ/גִדּוּפֵ֖י",
+        "strongs": "1421"
+    },
+    {
+        "chapter": 2,
+        "verse": 8,
+        "word": "בְּנֵ֣י",
+        "strongs": "1121"
+    },
+    {
+        "chapter": 2,
+        "verse": 8,
+        "word": "עַמּ֑וֹן",
+        "strongs": "5983"
+    },
+    {
+        "chapter": 2,
+        "verse": 8,
+        "word": "אֲשֶׁ֤ר",
+        "strongs": "834"
+    },
+    {
+        "chapter": 2,
+        "verse": 8,
+        "word": "חֵֽרְפוּ֙",
+        "strongs": "2778"
+    },
+    {
+        "chapter": 2,
+        "verse": 8,
+        "word": "אֶת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 2,
+        "verse": 8,
+        "word": "עַמִּ֔/י",
+        "strongs": "5971"
+    },
+    {
+        "chapter": 2,
+        "verse": 8,
+        "word": "וַ/יַּגְדִּ֖ילוּ",
+        "strongs": "1431"
+    },
+    {
+        "chapter": 2,
+        "verse": 8,
+        "word": "עַל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 2,
+        "verse": 8,
+        "word": "גְּבוּלָֽ/ם",
+        "strongs": "1366"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "לָ/כֵ֣ן",
+        "strongs": "3651"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "חַי",
+        "strongs": "2416"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "אָ֡נִי",
+        "strongs": "589"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "נְאֻם֩",
+        "strongs": "5002"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "יְהוָ֨ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "צְבָא֜וֹת",
+        "strongs": "6635"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "אֱלֹהֵ֣י",
+        "strongs": "430"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "יִשְׂרָאֵ֗ל",
+        "strongs": "3478"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "כִּֽי",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "מוֹאָ֞ב",
+        "strongs": "4124"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "כִּ/סְדֹ֤ם",
+        "strongs": "5467"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "תִּֽהְיֶה֙",
+        "strongs": "1961"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "וּ/בְנֵ֤י",
+        "strongs": "1121"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "עַמּוֹן֙",
+        "strongs": "5983"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "כַּֽ/עֲמֹרָ֔ה",
+        "strongs": "6017"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "מִמְשַׁ֥ק",
+        "strongs": "4476"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "חָר֛וּל",
+        "strongs": "2738"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "וּ/מִכְרֵה",
+        "strongs": "4379"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "מֶ֥לַח",
+        "strongs": "4417"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "וּ/שְׁמָמָ֖ה",
+        "strongs": "8077"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "עַד",
+        "strongs": "5704"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "עוֹלָ֑ם",
+        "strongs": "5769"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "שְׁאֵרִ֤ית",
+        "strongs": "7611"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "עַמִּ/י֙",
+        "strongs": "5971"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "יְבָזּ֔וּ/ם",
+        "strongs": "962"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "וְ/יֶ֥תֶר",
+        "strongs": "3499"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "גוי",
+        "strongs": "1471"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "גּוֹיִ֖/י",
+        "strongs": "1471"
+    },
+    {
+        "chapter": 2,
+        "verse": 9,
+        "word": "יִנְחָלֽוּ/ם",
+        "strongs": "5157"
+    },
+    {
+        "chapter": 2,
+        "verse": 10,
+        "word": "זֹ֥את",
+        "strongs": "2063"
+    },
+    {
+        "chapter": 2,
+        "verse": 10,
+        "word": "לָ/הֶ֖ם",
+        "strongs": ""
+    },
+    {
+        "chapter": 2,
+        "verse": 10,
+        "word": "תַּ֣חַת",
+        "strongs": "8478"
+    },
+    {
+        "chapter": 2,
+        "verse": 10,
+        "word": "גְּאוֹנָ֑/ם",
+        "strongs": "1347"
+    },
+    {
+        "chapter": 2,
+        "verse": 10,
+        "word": "כִּ֤י",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 2,
+        "verse": 10,
+        "word": "חֵֽרְפוּ֙",
+        "strongs": "2778"
+    },
+    {
+        "chapter": 2,
+        "verse": 10,
+        "word": "וַ/יַּגְדִּ֔לוּ",
+        "strongs": "1431"
+    },
+    {
+        "chapter": 2,
+        "verse": 10,
+        "word": "עַל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 2,
+        "verse": 10,
+        "word": "עַ֖ם",
+        "strongs": "5971"
+    },
+    {
+        "chapter": 2,
+        "verse": 10,
+        "word": "יְהוָ֥ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 2,
+        "verse": 10,
+        "word": "צְבָאֽוֹת",
+        "strongs": "6635"
+    },
+    {
+        "chapter": 2,
+        "verse": 11,
+        "word": "נוֹרָ֤א",
+        "strongs": "3372"
+    },
+    {
+        "chapter": 2,
+        "verse": 11,
+        "word": "יְהוָה֙",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 2,
+        "verse": 11,
+        "word": "עֲלֵי/הֶ֔ם",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 2,
+        "verse": 11,
+        "word": "כִּ֣י",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 2,
+        "verse": 11,
+        "word": "רָזָ֔ה",
+        "strongs": "7329"
+    },
+    {
+        "chapter": 2,
+        "verse": 11,
+        "word": "אֵ֖ת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 2,
+        "verse": 11,
+        "word": "כָּל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 2,
+        "verse": 11,
+        "word": "אֱלֹהֵ֣י",
+        "strongs": "430"
+    },
+    {
+        "chapter": 2,
+        "verse": 11,
+        "word": "הָ/אָ֑רֶץ",
+        "strongs": "776"
+    },
+    {
+        "chapter": 2,
+        "verse": 11,
+        "word": "וְ/יִשְׁתַּֽחֲווּ",
+        "strongs": "7812"
+    },
+    {
+        "chapter": 2,
+        "verse": 11,
+        "word": "ל/וֹ֙",
+        "strongs": ""
+    },
+    {
+        "chapter": 2,
+        "verse": 11,
+        "word": "אִ֣ישׁ",
+        "strongs": "376"
+    },
+    {
+        "chapter": 2,
+        "verse": 11,
+        "word": "מִ/מְּקוֹמ֔/וֹ",
+        "strongs": "4725"
+    },
+    {
+        "chapter": 2,
+        "verse": 11,
+        "word": "כֹּ֖ל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 2,
+        "verse": 11,
+        "word": "אִיֵּ֥י",
+        "strongs": "339"
+    },
+    {
+        "chapter": 2,
+        "verse": 11,
+        "word": "הַ/גּוֹיִֽם",
+        "strongs": "1471"
+    },
+    {
+        "chapter": 2,
+        "verse": 12,
+        "word": "גַּם",
+        "strongs": "1571"
+    },
+    {
+        "chapter": 2,
+        "verse": 12,
+        "word": "אַתֶּ֣ם",
+        "strongs": "859"
+    },
+    {
+        "chapter": 2,
+        "verse": 12,
+        "word": "כּוּשִׁ֔ים",
+        "strongs": "3569"
+    },
+    {
+        "chapter": 2,
+        "verse": 12,
+        "word": "חַֽלְלֵ֥י",
+        "strongs": "2491"
+    },
+    {
+        "chapter": 2,
+        "verse": 12,
+        "word": "חַרְבִּ֖/י",
+        "strongs": "2719"
+    },
+    {
+        "chapter": 2,
+        "verse": 12,
+        "word": "הֵֽמָּה",
+        "strongs": "1992"
+    },
+    {
+        "chapter": 2,
+        "verse": 13,
+        "word": "וְ/יֵ֤ט",
+        "strongs": "5186"
+    },
+    {
+        "chapter": 2,
+        "verse": 13,
+        "word": "יָד/וֹ֙",
+        "strongs": "3027"
+    },
+    {
+        "chapter": 2,
+        "verse": 13,
+        "word": "עַל",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 2,
+        "verse": 13,
+        "word": "צָפ֔וֹן",
+        "strongs": "6828"
+    },
+    {
+        "chapter": 2,
+        "verse": 13,
+        "word": "וִֽ/יאַבֵּ֖ד",
+        "strongs": "6"
+    },
+    {
+        "chapter": 2,
+        "verse": 13,
+        "word": "אֶת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 2,
+        "verse": 13,
+        "word": "אַשּׁ֑וּר",
+        "strongs": "804"
+    },
+    {
+        "chapter": 2,
+        "verse": 13,
+        "word": "וְ/יָשֵׂ֤ם",
+        "strongs": "7760"
+    },
+    {
+        "chapter": 2,
+        "verse": 13,
+        "word": "אֶת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 2,
+        "verse": 13,
+        "word": "נִֽינְוֵה֙",
+        "strongs": "5210"
+    },
+    {
+        "chapter": 2,
+        "verse": 13,
+        "word": "לִ/שְׁמָמָ֔ה",
+        "strongs": "8077"
+    },
+    {
+        "chapter": 2,
+        "verse": 13,
+        "word": "צִיָּ֖ה",
+        "strongs": "6723"
+    },
+    {
+        "chapter": 2,
+        "verse": 13,
+        "word": "כַּ/מִּדְבָּֽר",
+        "strongs": "4057"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "וְ/רָבְצ֨וּ",
+        "strongs": "7257"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "בְ/תוֹכָ֤/הּ",
+        "strongs": "8432"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "עֲדָרִים֙",
+        "strongs": "5739"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "כָּל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "חַיְת/וֹ",
+        "strongs": "2416"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "ג֔וֹי",
+        "strongs": "1471"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "גַּם",
+        "strongs": "1571"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "קָאַת֙",
+        "strongs": "6893"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "גַּם",
+        "strongs": "1571"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "קִפֹּ֔ד",
+        "strongs": "7090"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "בְּ/כַפְתֹּרֶ֖י/הָ",
+        "strongs": "3730"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "יָלִ֑ינוּ",
+        "strongs": "3885"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "ק֠וֹל",
+        "strongs": "6963"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "יְשׁוֹרֵ֤ר",
+        "strongs": "7891"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "בַּֽ/חַלּוֹן֙",
+        "strongs": "2474"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "חֹ֣רֶב",
+        "strongs": "2721"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "בַּ/סַּ֔ף",
+        "strongs": "5592"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "כִּ֥י",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "אַרְזָ֖ה",
+        "strongs": "731"
+    },
+    {
+        "chapter": 2,
+        "verse": 14,
+        "word": "עֵרָֽה",
+        "strongs": "6168"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "זֹ֞֠את",
+        "strongs": "2063"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "הָ/עִ֤יר",
+        "strongs": "5892"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "הָ/עַלִּיזָה֙",
+        "strongs": "5947"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "הַ/יּוֹשֶׁ֣בֶת",
+        "strongs": "3427"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "לָ/בֶ֔טַח",
+        "strongs": "983"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "הָ/אֹֽמְרָה֙",
+        "strongs": "559"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "בִּ/לְבָבָ֔/הּ",
+        "strongs": "3824"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "אֲנִ֖י",
+        "strongs": "589"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "וְ/אַפְסִ֣/י",
+        "strongs": "657"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "ע֑וֹד",
+        "strongs": "5750"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "אֵ֣יךְ",
+        "strongs": "349"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "הָיְתָ֣ה",
+        "strongs": "1961"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "לְ/שַׁמָּ֗ה",
+        "strongs": "8047"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "מַרְבֵּץ֙",
+        "strongs": "4769"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "לַֽ/חַיָּ֔ה",
+        "strongs": "2416"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "כֹּ֚ל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "עוֹבֵ֣ר",
+        "strongs": "5674"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "עָלֶ֔י/הָ",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "יִשְׁרֹ֖ק",
+        "strongs": "8319"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "יָנִ֥יעַ",
+        "strongs": "5128"
+    },
+    {
+        "chapter": 2,
+        "verse": 15,
+        "word": "יָדֽ/וֹ",
+        "strongs": "3027"
+    },
+    {
+        "chapter": 3,
+        "verse": 1,
+        "word": "ה֥וֹי",
+        "strongs": "1945"
+    },
+    {
+        "chapter": 3,
+        "verse": 1,
+        "word": "מֹרְאָ֖ה",
+        "strongs": "4754"
+    },
+    {
+        "chapter": 3,
+        "verse": 1,
+        "word": "וְ/נִגְאָלָ֑ה",
+        "strongs": "1351"
+    },
+    {
+        "chapter": 3,
+        "verse": 1,
+        "word": "הָ/עִ֖יר",
+        "strongs": "5892"
+    },
+    {
+        "chapter": 3,
+        "verse": 1,
+        "word": "הַ/יּוֹנָֽה",
+        "strongs": "3238"
+    },
+    {
+        "chapter": 3,
+        "verse": 2,
+        "word": "לֹ֤א",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 3,
+        "verse": 2,
+        "word": "שָֽׁמְעָה֙",
+        "strongs": "8085"
+    },
+    {
+        "chapter": 3,
+        "verse": 2,
+        "word": "בְּ/ק֔וֹל",
+        "strongs": "6963"
+    },
+    {
+        "chapter": 3,
+        "verse": 2,
+        "word": "לֹ֥א",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 3,
+        "verse": 2,
+        "word": "לָקְחָ֖ה",
+        "strongs": "3947"
+    },
+    {
+        "chapter": 3,
+        "verse": 2,
+        "word": "מוּסָ֑ר",
+        "strongs": "4148"
+    },
+    {
+        "chapter": 3,
+        "verse": 2,
+        "word": "בַּֽ/יהוָה֙",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 3,
+        "verse": 2,
+        "word": "לֹ֣א",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 3,
+        "verse": 2,
+        "word": "בָטָ֔חָה",
+        "strongs": "982"
+    },
+    {
+        "chapter": 3,
+        "verse": 2,
+        "word": "אֶל",
+        "strongs": "413"
+    },
+    {
+        "chapter": 3,
+        "verse": 2,
+        "word": "אֱלֹהֶ֖י/הָ",
+        "strongs": "430"
+    },
+    {
+        "chapter": 3,
+        "verse": 2,
+        "word": "לֹ֥א",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 3,
+        "verse": 2,
+        "word": "קָרֵֽבָה",
+        "strongs": "7126"
+    },
+    {
+        "chapter": 3,
+        "verse": 3,
+        "word": "שָׂרֶ֣י/הָ",
+        "strongs": "8269"
+    },
+    {
+        "chapter": 3,
+        "verse": 3,
+        "word": "בְ/קִרְבָּ֔/הּ",
+        "strongs": "7130"
+    },
+    {
+        "chapter": 3,
+        "verse": 3,
+        "word": "אֲרָי֖וֹת",
+        "strongs": "738"
+    },
+    {
+        "chapter": 3,
+        "verse": 3,
+        "word": "שֹֽׁאֲגִ֑ים",
+        "strongs": "7580"
+    },
+    {
+        "chapter": 3,
+        "verse": 3,
+        "word": "שֹׁפְטֶ֨י/הָ֙",
+        "strongs": "8199"
+    },
+    {
+        "chapter": 3,
+        "verse": 3,
+        "word": "זְאֵ֣בֵי",
+        "strongs": "2061"
+    },
+    {
+        "chapter": 3,
+        "verse": 3,
+        "word": "עֶ֔רֶב",
+        "strongs": "6153"
+    },
+    {
+        "chapter": 3,
+        "verse": 3,
+        "word": "לֹ֥א",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 3,
+        "verse": 3,
+        "word": "גָרְמ֖וּ",
+        "strongs": "1633"
+    },
+    {
+        "chapter": 3,
+        "verse": 3,
+        "word": "לַ/בֹּֽקֶר",
+        "strongs": "1242"
+    },
+    {
+        "chapter": 3,
+        "verse": 4,
+        "word": "נְבִיאֶ֨י/הָ֙",
+        "strongs": "5030"
+    },
+    {
+        "chapter": 3,
+        "verse": 4,
+        "word": "פֹּֽחֲזִ֔ים",
+        "strongs": "6348"
+    },
+    {
+        "chapter": 3,
+        "verse": 4,
+        "word": "אַנְשֵׁ֖י",
+        "strongs": "376"
+    },
+    {
+        "chapter": 3,
+        "verse": 4,
+        "word": "בֹּֽגְד֑וֹת",
+        "strongs": "900"
+    },
+    {
+        "chapter": 3,
+        "verse": 4,
+        "word": "כֹּהֲנֶ֨י/הָ֙",
+        "strongs": "3548"
+    },
+    {
+        "chapter": 3,
+        "verse": 4,
+        "word": "חִלְּלוּ",
+        "strongs": "2490"
+    },
+    {
+        "chapter": 3,
+        "verse": 4,
+        "word": "קֹ֔דֶשׁ",
+        "strongs": "6944"
+    },
+    {
+        "chapter": 3,
+        "verse": 4,
+        "word": "חָמְס֖וּ",
+        "strongs": "2554"
+    },
+    {
+        "chapter": 3,
+        "verse": 4,
+        "word": "תּוֹרָֽה",
+        "strongs": "8451"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "יְהוָ֤ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "צַדִּיק֙",
+        "strongs": "6662"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "בְּ/קִרְבָּ֔/הּ",
+        "strongs": "7130"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "לֹ֥א",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "יַעֲשֶׂ֖ה",
+        "strongs": "6213"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "עַוְלָ֑ה",
+        "strongs": "5766"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "בַּ/בֹּ֨קֶר",
+        "strongs": "1242"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "בַּ/בֹּ֜קֶר",
+        "strongs": "1242"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "מִשְׁפָּט֨/וֹ",
+        "strongs": "4941"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "יִתֵּ֤ן",
+        "strongs": "5414"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "לָ/אוֹר֙",
+        "strongs": "216"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "לֹ֣א",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "נֶעְדָּ֔ר",
+        "strongs": "5737"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "וְ/לֹֽא",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "יוֹדֵ֥עַ",
+        "strongs": "3045"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "עַוָּ֖ל",
+        "strongs": "5767"
+    },
+    {
+        "chapter": 3,
+        "verse": 5,
+        "word": "בֹּֽשֶׁת",
+        "strongs": "1322"
+    },
+    {
+        "chapter": 3,
+        "verse": 6,
+        "word": "הִכְרַ֣תִּי",
+        "strongs": "3772"
+    },
+    {
+        "chapter": 3,
+        "verse": 6,
+        "word": "גוֹיִ֗ם",
+        "strongs": "1471"
+    },
+    {
+        "chapter": 3,
+        "verse": 6,
+        "word": "נָשַׁ֨מּוּ֙",
+        "strongs": "8074"
+    },
+    {
+        "chapter": 3,
+        "verse": 6,
+        "word": "פִּנּוֹתָ֔/ם",
+        "strongs": "6438"
+    },
+    {
+        "chapter": 3,
+        "verse": 6,
+        "word": "הֶחֱרַ֥בְתִּי",
+        "strongs": "2717"
+    },
+    {
+        "chapter": 3,
+        "verse": 6,
+        "word": "חֽוּצוֹתָ֖/ם",
+        "strongs": "2351"
+    },
+    {
+        "chapter": 3,
+        "verse": 6,
+        "word": "מִ/בְּלִ֣י",
+        "strongs": "1097"
+    },
+    {
+        "chapter": 3,
+        "verse": 6,
+        "word": "עוֹבֵ֑ר",
+        "strongs": "5674"
+    },
+    {
+        "chapter": 3,
+        "verse": 6,
+        "word": "נִצְדּ֧וּ",
+        "strongs": "6658"
+    },
+    {
+        "chapter": 3,
+        "verse": 6,
+        "word": "עָרֵי/הֶ֛ם",
+        "strongs": "5892"
+    },
+    {
+        "chapter": 3,
+        "verse": 6,
+        "word": "מִ/בְּלִי",
+        "strongs": "1097"
+    },
+    {
+        "chapter": 3,
+        "verse": 6,
+        "word": "אִ֖ישׁ",
+        "strongs": "376"
+    },
+    {
+        "chapter": 3,
+        "verse": 6,
+        "word": "מֵ/אֵ֥ין",
+        "strongs": "369"
+    },
+    {
+        "chapter": 3,
+        "verse": 6,
+        "word": "יוֹשֵֽׁב",
+        "strongs": "3427"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "אָמַ֜רְתִּי",
+        "strongs": "559"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "אַךְ",
+        "strongs": "389"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "תִּירְאִ֤י",
+        "strongs": "3372"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "אוֹתִ/י֙",
+        "strongs": "853"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "תִּקְחִ֣י",
+        "strongs": "3947"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "מוּסָ֔ר",
+        "strongs": "4148"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "וְ/לֹֽא",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "יִכָּרֵ֣ת",
+        "strongs": "3772"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "מְעוֹנָ֔/הּ",
+        "strongs": "4585"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "כֹּ֥ל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "אֲשֶׁר",
+        "strongs": "834"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "פָּקַ֖דְתִּי",
+        "strongs": "6485"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "עָלֶ֑י/הָ",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "אָכֵן֙",
+        "strongs": "403"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "הִשְׁכִּ֣ימוּ",
+        "strongs": "7925"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "הִשְׁחִ֔יתוּ",
+        "strongs": "7843"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "כֹּ֖ל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 3,
+        "verse": 7,
+        "word": "עֲלִילוֹתָֽ/ם",
+        "strongs": "5949"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "לָ/כֵ֤ן",
+        "strongs": "3651"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "חַכּוּ",
+        "strongs": "2442"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "לִ/י֙",
+        "strongs": ""
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "נְאֻם",
+        "strongs": "5002"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "יְהוָ֔ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "לְ/י֖וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "קוּמִ֣/י",
+        "strongs": "6965"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "לְ/עַ֑ד",
+        "strongs": "5706"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "כִּ֣י",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "מִשְׁפָּטִ/י֩",
+        "strongs": "4941"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "לֶ/אֱסֹ֨ף",
+        "strongs": "622"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "גּוֹיִ֜ם",
+        "strongs": "1471"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "לְ/קָבְצִ֣/י",
+        "strongs": "6908"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "מַמְלָכ֗וֹת",
+        "strongs": "4467"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "לִ/שְׁפֹּ֨ךְ",
+        "strongs": "8210"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "עֲלֵי/הֶ֤ם",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "זַעְמִ/י֙",
+        "strongs": "2195"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "כֹּ֚ל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "חֲר֣וֹן",
+        "strongs": "2740"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "אַפִּ֔/י",
+        "strongs": "639"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "כִּ֚י",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "בְּ/אֵ֣שׁ",
+        "strongs": "784"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "קִנְאָתִ֔/י",
+        "strongs": "7068"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "תֵּאָכֵ֖ל",
+        "strongs": "398"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "כָּל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 3,
+        "verse": 8,
+        "word": "הָ/אָֽרֶץ",
+        "strongs": "776"
+    },
+    {
+        "chapter": 3,
+        "verse": 9,
+        "word": "כִּֽי",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 3,
+        "verse": 9,
+        "word": "אָ֛ז",
+        "strongs": "227"
+    },
+    {
+        "chapter": 3,
+        "verse": 9,
+        "word": "אֶהְפֹּ֥ךְ",
+        "strongs": "2015"
+    },
+    {
+        "chapter": 3,
+        "verse": 9,
+        "word": "אֶל",
+        "strongs": "413"
+    },
+    {
+        "chapter": 3,
+        "verse": 9,
+        "word": "עַמִּ֖ים",
+        "strongs": "5971"
+    },
+    {
+        "chapter": 3,
+        "verse": 9,
+        "word": "שָׂפָ֣ה",
+        "strongs": "8193"
+    },
+    {
+        "chapter": 3,
+        "verse": 9,
+        "word": "בְרוּרָ֑ה",
+        "strongs": "1305"
+    },
+    {
+        "chapter": 3,
+        "verse": 9,
+        "word": "לִ/קְרֹ֤א",
+        "strongs": "7121"
+    },
+    {
+        "chapter": 3,
+        "verse": 9,
+        "word": "כֻלָּ/ם֙",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 3,
+        "verse": 9,
+        "word": "בְּ/שֵׁ֣ם",
+        "strongs": "8034"
+    },
+    {
+        "chapter": 3,
+        "verse": 9,
+        "word": "יְהוָ֔ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 3,
+        "verse": 9,
+        "word": "לְ/עָבְד֖/וֹ",
+        "strongs": "5647"
+    },
+    {
+        "chapter": 3,
+        "verse": 9,
+        "word": "שְׁכֶ֥ם",
+        "strongs": "7926"
+    },
+    {
+        "chapter": 3,
+        "verse": 9,
+        "word": "אֶחָֽד",
+        "strongs": "259"
+    },
+    {
+        "chapter": 3,
+        "verse": 10,
+        "word": "מֵ/עֵ֖בֶר",
+        "strongs": "5676"
+    },
+    {
+        "chapter": 3,
+        "verse": 10,
+        "word": "לְ/נַֽהֲרֵי",
+        "strongs": "5104"
+    },
+    {
+        "chapter": 3,
+        "verse": 10,
+        "word": "כ֑וּשׁ",
+        "strongs": "3568"
+    },
+    {
+        "chapter": 3,
+        "verse": 10,
+        "word": "עֲתָרַ/י֙",
+        "strongs": "6282"
+    },
+    {
+        "chapter": 3,
+        "verse": 10,
+        "word": "בַּת",
+        "strongs": "1323"
+    },
+    {
+        "chapter": 3,
+        "verse": 10,
+        "word": "פוּצַ֔/י",
+        "strongs": "6327"
+    },
+    {
+        "chapter": 3,
+        "verse": 10,
+        "word": "יוֹבִל֖וּ/ן",
+        "strongs": "2986"
+    },
+    {
+        "chapter": 3,
+        "verse": 10,
+        "word": "מִנְחָתִֽ/י",
+        "strongs": "4503"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "בַּ/יּ֣וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "הַ/ה֗וּא",
+        "strongs": "1931"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "לֹ֤א",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "תֵב֨וֹשִׁי֙",
+        "strongs": "954"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "מִ/כֹּ֣ל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "עֲלִילֹתַ֔יִ/ךְ",
+        "strongs": "5949"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "אֲשֶׁ֥ר",
+        "strongs": "834"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "פָּשַׁ֖עַתְּ",
+        "strongs": "6586"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "בִּ֑/י",
+        "strongs": ""
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "כִּי",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "אָ֣ז",
+        "strongs": "227"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "אָסִ֣יר",
+        "strongs": "5493"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "מִ/קִּרְבֵּ֗/ךְ",
+        "strongs": "7130"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "עַלִּיזֵי֙",
+        "strongs": "5947"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "גַּאֲוָתֵ֔/ךְ",
+        "strongs": "1346"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "וְ/לֹֽא",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "תוֹסִ֧פִי",
+        "strongs": "3254"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "לְ/גָבְהָ֛ה",
+        "strongs": "1361"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "ע֖וֹד",
+        "strongs": "5750"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "בְּ/הַ֥ר",
+        "strongs": "2022"
+    },
+    {
+        "chapter": 3,
+        "verse": 11,
+        "word": "קָדְשִֽׁ/י",
+        "strongs": "6944"
+    },
+    {
+        "chapter": 3,
+        "verse": 12,
+        "word": "וְ/הִשְׁאַרְתִּ֣י",
+        "strongs": "7604"
+    },
+    {
+        "chapter": 3,
+        "verse": 12,
+        "word": "בְ/קִרְבֵּ֔/ךְ",
+        "strongs": "7130"
+    },
+    {
+        "chapter": 3,
+        "verse": 12,
+        "word": "עַ֥ם",
+        "strongs": "5971"
+    },
+    {
+        "chapter": 3,
+        "verse": 12,
+        "word": "עָנִ֖י",
+        "strongs": "6041"
+    },
+    {
+        "chapter": 3,
+        "verse": 12,
+        "word": "וָ/דָ֑ל",
+        "strongs": "1800"
+    },
+    {
+        "chapter": 3,
+        "verse": 12,
+        "word": "וְ/חָס֖וּ",
+        "strongs": "2620"
+    },
+    {
+        "chapter": 3,
+        "verse": 12,
+        "word": "בְּ/שֵׁ֥ם",
+        "strongs": "8034"
+    },
+    {
+        "chapter": 3,
+        "verse": 12,
+        "word": "יְהוָֽה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "שְׁאֵרִ֨ית",
+        "strongs": "7611"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "יִשְׂרָאֵ֜ל",
+        "strongs": "3478"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "לֹֽא",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "יַעֲשׂ֤וּ",
+        "strongs": "6213"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "עַוְלָה֙",
+        "strongs": "5766"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "וְ/לֹא",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "יְדַבְּר֣וּ",
+        "strongs": "1696"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "כָזָ֔ב",
+        "strongs": "3577"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "וְ/לֹֽא",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "יִמָּצֵ֥א",
+        "strongs": "4672"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "בְּ/פִי/הֶ֖ם",
+        "strongs": "6310"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "לְשׁ֣וֹן",
+        "strongs": "3956"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "תַּרְמִ֑ית",
+        "strongs": "8649"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "כִּֽי",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "הֵ֛מָּה",
+        "strongs": "1992"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "יִרְע֥וּ",
+        "strongs": "7462"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "וְ/רָבְצ֖וּ",
+        "strongs": "7257"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "וְ/אֵ֥ין",
+        "strongs": "369"
+    },
+    {
+        "chapter": 3,
+        "verse": 13,
+        "word": "מַחֲרִֽיד",
+        "strongs": "2729"
+    },
+    {
+        "chapter": 3,
+        "verse": 14,
+        "word": "רָנִּי֙",
+        "strongs": "7442"
+    },
+    {
+        "chapter": 3,
+        "verse": 14,
+        "word": "בַּת",
+        "strongs": "1323"
+    },
+    {
+        "chapter": 3,
+        "verse": 14,
+        "word": "צִיּ֔וֹן",
+        "strongs": "6726"
+    },
+    {
+        "chapter": 3,
+        "verse": 14,
+        "word": "הָרִ֖יעוּ",
+        "strongs": "7321"
+    },
+    {
+        "chapter": 3,
+        "verse": 14,
+        "word": "יִשְׂרָאֵ֑ל",
+        "strongs": "3478"
+    },
+    {
+        "chapter": 3,
+        "verse": 14,
+        "word": "שִׂמְחִ֤י",
+        "strongs": "8055"
+    },
+    {
+        "chapter": 3,
+        "verse": 14,
+        "word": "וְ/עָלְזִי֙",
+        "strongs": "5937"
+    },
+    {
+        "chapter": 3,
+        "verse": 14,
+        "word": "בְּ/כָל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 3,
+        "verse": 14,
+        "word": "לֵ֔ב",
+        "strongs": "3820"
+    },
+    {
+        "chapter": 3,
+        "verse": 14,
+        "word": "בַּ֖ת",
+        "strongs": "1323"
+    },
+    {
+        "chapter": 3,
+        "verse": 14,
+        "word": "יְרוּשָׁלִָֽם",
+        "strongs": "3389"
+    },
+    {
+        "chapter": 3,
+        "verse": 15,
+        "word": "הֵסִ֤יר",
+        "strongs": "5493"
+    },
+    {
+        "chapter": 3,
+        "verse": 15,
+        "word": "יְהוָה֙",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 3,
+        "verse": 15,
+        "word": "מִשְׁפָּטַ֔יִ/ךְ",
+        "strongs": "4941"
+    },
+    {
+        "chapter": 3,
+        "verse": 15,
+        "word": "פִּנָּ֖ה",
+        "strongs": "6437"
+    },
+    {
+        "chapter": 3,
+        "verse": 15,
+        "word": "אֹֽיְבֵ֑/ךְ",
+        "strongs": "341"
+    },
+    {
+        "chapter": 3,
+        "verse": 15,
+        "word": "מֶ֣לֶךְ",
+        "strongs": "4428"
+    },
+    {
+        "chapter": 3,
+        "verse": 15,
+        "word": "יִשְׂרָאֵ֤ל",
+        "strongs": "3478"
+    },
+    {
+        "chapter": 3,
+        "verse": 15,
+        "word": "יְהוָה֙",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 3,
+        "verse": 15,
+        "word": "בְּ/קִרְבֵּ֔/ךְ",
+        "strongs": "7130"
+    },
+    {
+        "chapter": 3,
+        "verse": 15,
+        "word": "לֹא",
+        "strongs": "3808"
+    },
+    {
+        "chapter": 3,
+        "verse": 15,
+        "word": "תִֽירְאִ֥י",
+        "strongs": "3372"
+    },
+    {
+        "chapter": 3,
+        "verse": 15,
+        "word": "רָ֖ע",
+        "strongs": "7451"
+    },
+    {
+        "chapter": 3,
+        "verse": 15,
+        "word": "עֽוֹד",
+        "strongs": "5750"
+    },
+    {
+        "chapter": 3,
+        "verse": 16,
+        "word": "בַּ/יּ֣וֹם",
+        "strongs": "3117"
+    },
+    {
+        "chapter": 3,
+        "verse": 16,
+        "word": "הַ/ה֔וּא",
+        "strongs": "1931"
+    },
+    {
+        "chapter": 3,
+        "verse": 16,
+        "word": "יֵאָמֵ֥ר",
+        "strongs": "559"
+    },
+    {
+        "chapter": 3,
+        "verse": 16,
+        "word": "לִ/ירֽוּשָׁלִַ֖ם",
+        "strongs": "3389"
+    },
+    {
+        "chapter": 3,
+        "verse": 16,
+        "word": "אַל",
+        "strongs": "408"
+    },
+    {
+        "chapter": 3,
+        "verse": 16,
+        "word": "תִּירָ֑אִי",
+        "strongs": "3372"
+    },
+    {
+        "chapter": 3,
+        "verse": 16,
+        "word": "צִיּ֖וֹן",
+        "strongs": "6726"
+    },
+    {
+        "chapter": 3,
+        "verse": 16,
+        "word": "אַל",
+        "strongs": "408"
+    },
+    {
+        "chapter": 3,
+        "verse": 16,
+        "word": "יִרְפּ֥וּ",
+        "strongs": "7503"
+    },
+    {
+        "chapter": 3,
+        "verse": 16,
+        "word": "יָדָֽיִ/ךְ",
+        "strongs": "3027"
+    },
+    {
+        "chapter": 3,
+        "verse": 17,
+        "word": "יְהוָ֧ה",
+        "strongs": "3068"
+    },
+    {
+        "chapter": 3,
+        "verse": 17,
+        "word": "אֱלֹהַ֛יִ/ךְ",
+        "strongs": "430"
+    },
+    {
+        "chapter": 3,
+        "verse": 17,
+        "word": "בְּ/קִרְבֵּ֖/ך",
+        "strongs": "7130"
+    },
+    {
+        "chapter": 3,
+        "verse": 17,
+        "word": "גִּבּ֣וֹר",
+        "strongs": "1368"
+    },
+    {
+        "chapter": 3,
+        "verse": 17,
+        "word": "יוֹשִׁ֑יעַ",
+        "strongs": "3467"
+    },
+    {
+        "chapter": 3,
+        "verse": 17,
+        "word": "יָשִׂ֨ישׂ",
+        "strongs": "7797"
+    },
+    {
+        "chapter": 3,
+        "verse": 17,
+        "word": "עָלַ֜יִ/ךְ",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 3,
+        "verse": 17,
+        "word": "בְּ/שִׂמְחָ֗ה",
+        "strongs": "8057"
+    },
+    {
+        "chapter": 3,
+        "verse": 17,
+        "word": "יַחֲרִישׁ֙",
+        "strongs": "2790"
+    },
+    {
+        "chapter": 3,
+        "verse": 17,
+        "word": "בְּ/אַ֣הֲבָת֔/וֹ",
+        "strongs": "160"
+    },
+    {
+        "chapter": 3,
+        "verse": 17,
+        "word": "יָגִ֥יל",
+        "strongs": "1523"
+    },
+    {
+        "chapter": 3,
+        "verse": 17,
+        "word": "עָלַ֖יִ/ךְ",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 3,
+        "verse": 17,
+        "word": "בְּ/רִנָּֽה",
+        "strongs": "7440"
+    },
+    {
+        "chapter": 3,
+        "verse": 18,
+        "word": "נוּגֵ֧י",
+        "strongs": "3013"
+    },
+    {
+        "chapter": 3,
+        "verse": 18,
+        "word": "מִ/מּוֹעֵ֛ד",
+        "strongs": "4150"
+    },
+    {
+        "chapter": 3,
+        "verse": 18,
+        "word": "אָסַ֖פְתִּי",
+        "strongs": "622"
+    },
+    {
+        "chapter": 3,
+        "verse": 18,
+        "word": "מִמֵּ֣/ךְ",
+        "strongs": "4480"
+    },
+    {
+        "chapter": 3,
+        "verse": 18,
+        "word": "הָי֑וּ",
+        "strongs": "1961"
+    },
+    {
+        "chapter": 3,
+        "verse": 18,
+        "word": "מַשְׂאֵ֥ת",
+        "strongs": "4864"
+    },
+    {
+        "chapter": 3,
+        "verse": 18,
+        "word": "עָלֶ֖י/הָ",
+        "strongs": "5921"
+    },
+    {
+        "chapter": 3,
+        "verse": 18,
+        "word": "חֶרְפָּֽה",
+        "strongs": "2781"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "הִנְ/נִ֥י",
+        "strongs": "2005"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "עֹשֶׂ֛ה",
+        "strongs": "6213"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "אֶת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "כָּל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "מְעַנַּ֖יִ/ךְ",
+        "strongs": "6031"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "בָּ/עֵ֣ת",
+        "strongs": "6256"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "הַ/הִ֑יא",
+        "strongs": "1931"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "וְ/הוֹשַׁעְתִּ֣י",
+        "strongs": "3467"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "אֶת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "הַ/צֹּלֵעָ֗ה",
+        "strongs": "6760"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "וְ/הַ/נִּדָּחָה֙",
+        "strongs": "5080"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "אֲקַבֵּ֔ץ",
+        "strongs": "6908"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "וְ/שַׂמְתִּי/ם֙",
+        "strongs": "7760"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "לִ/תְהִלָּ֣ה",
+        "strongs": "8416"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "וּ/לְ/שֵׁ֔ם",
+        "strongs": "8034"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "בְּ/כָל",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "הָ/אָ֖רֶץ",
+        "strongs": "776"
+    },
+    {
+        "chapter": 3,
+        "verse": 19,
+        "word": "בָּשְׁתָּֽ/ם",
+        "strongs": "1322"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "בָּ/עֵ֤ת",
+        "strongs": "6256"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "הַ/הִיא֙",
+        "strongs": "1931"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "אָבִ֣יא",
+        "strongs": "935"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "אֶתְ/כֶ֔ם",
+        "strongs": "853"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "וּ/בָ/עֵ֖ת",
+        "strongs": "6256"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "קַבְּצִ֣/י",
+        "strongs": "6908"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "אֶתְ/כֶ֑ם",
+        "strongs": "853"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "כִּֽי",
+        "strongs": "3588"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "אֶתֵּ֨ן",
+        "strongs": "5414"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "אֶתְ/כֶ֜ם",
+        "strongs": "853"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "לְ/שֵׁ֣ם",
+        "strongs": "8034"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "וְ/לִ/תְהִלָּ֗ה",
+        "strongs": "8416"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "בְּ/כֹל֙",
+        "strongs": "3605"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "עַמֵּ֣י",
+        "strongs": "5971"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "הָ/אָ֔רֶץ",
+        "strongs": "776"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "בְּ/שׁוּבִ֧/י",
+        "strongs": "7725"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "אֶת",
+        "strongs": "853"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "שְׁבוּתֵי/כֶ֛ם",
+        "strongs": "7622"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "לְ/עֵינֵי/כֶ֖ם",
+        "strongs": "5869"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "אָמַ֥ר",
+        "strongs": "559"
+    },
+    {
+        "chapter": 3,
+        "verse": 20,
+        "word": "יְהוָֽה",
+        "strongs": "3068"
+    }
+]

@@ -6,3 +6,7 @@
 - userId for comments is hard coded until we add sessions
 
 - add default for user pfp in DB
+
+- allow for (e.g.) Romans 8 + ": 1" search
+
+- use stepbible to properly get greek/hebrew data

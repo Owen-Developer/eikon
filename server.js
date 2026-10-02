@@ -308,6 +308,9 @@ app.post("/api/analyse-greek-word", async (req, res) => {
         schema: {
             type: "object",
             properties: {
+                surface_form: {
+                    type: "string"
+                },
                 lemma: {
                     type: "string"
                 },
@@ -328,6 +331,7 @@ app.post("/api/analyse-greek-word", async (req, res) => {
                 }
             },
             required: [
+                "surface_form",
                 "lemma",
                 "transliteration",
                 "english",

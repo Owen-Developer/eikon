@@ -744,20 +744,6 @@ const chapterHeadings = [
     },
 
     {
-        "name": "Song of Solomon",
-        "headings": [
-"Longing for the Beloved",
-"The Bridegroom and His Bride",
-"Seeking and Finding the Beloved",
-"The Beauty of the Beloved",
-"Love Awakens",
-"Love's Unfailing Strength",
-"The Beloved's Garden",
-"Love's Delight and Devotion",
-        ]
-    },
-
-    {
         "name": "Proverbs",
         "headings": [
   "The Purpose of Proverbs",
@@ -813,7 +799,21 @@ const chapterHeadings = [
     },
 
     {
-        "name": "Isiah",
+        "name": "Song of Solomon",
+        "headings": [
+"Longing for the Beloved",
+"The Bridegroom and His Bride",
+"Seeking and Finding the Beloved",
+"The Beauty of the Beloved",
+"Love Awakens",
+"Love's Unfailing Strength",
+"The Beloved's Garden",
+"Love's Delight and Devotion",
+        ]
+    },
+
+    {
+        "name": "Isaiah",
         "headings": [
   "The Rebellion of God's People",
   "The Mountain of the Lord",
@@ -1856,6 +1856,38 @@ const shortMonths = [
   "Dec"
 ];
 
+const greekParsing = [
+    {
+        V: "Verb",
+        N: "Noun",
+        A: "Adjective",
+        P: "Pronoun",
+        D: "Adverb",
+        C: "Conjunction",
+        R: "Preposition",
+    },
+
+    {
+        P: "Present",
+        A: "Active",
+        M: "Middle",
+        S: "Subjunctive",
+        I: "Indicative",
+        J: "Imperative",
+        N: "Infinitive",
+    },
+
+    {
+        "1S": "1st Person Singular",
+        "2S": "2nd Person Singular",
+        "3S": "3rd Person Singular",
+        "1P": "1st Person Plural",
+        "2P": "2nd Person Plural",
+        "3P": "3rd Person Plural"
+    }
+
+]
+
 
 document.querySelector(".bib-left-open").addEventListener("click", () => {
     document.querySelector(".bib-left").classList.add("bib-left-show");
@@ -2495,9 +2527,9 @@ function resetLangBtn(){
 		document.querySelector(".bib-right-lang-add").classList.add("inactive-el");
 	}
 }
-async function getGreekVerse(){
-	let baseScripture = `${currentBook} ${currentChapterIdx + 1}`;
-	if(document.querySelector(".bib-verse-idx-active")) baseScripture += ":" + document.querySelector(".bib-verse-idx-active").textContent;
+async function loadTranslatedVerse(){
+    let baseScripture = `${currentBook} ${currentChapterIdx + 1}`;
+	if(document.querySelector(".bib-verse-idx-active")) baseScripture += ": " + document.querySelector(".bib-verse-idx-active").textContent;
     document.querySelector(".bib-lang-load").textContent = "Loading...";
     document.querySelector(".bib-lang-eng").innerHTML = "";
     document.querySelector(".bib-lang-greek").innerHTML = "";
@@ -2507,87 +2539,60 @@ async function getGreekVerse(){
 
     let engVerse = await getVerse(currentTranslation.id, getBookSlug(currentBook), currentChapterIdx + 1, [document.querySelector(".bib-verse-idx-active").textContent]);
 
-    let prompt = `
-You are a Greek New Testament text retrieval assistant.
+    let translationData = await getTranslatedVerse({
+        "book": currentBook,
+        "chapter": currentChapterIdx + 1,
+        "verse": Number(document.querySelector(".bib-verse-idx-active").textContent)
+    },
+    currentLanguage
+    );
+    let translatedVerse = translationData[0];
+    let possibleStrongs = translationData[1];
 
-Given the English Bible verse and its Scripture reference below, return ONLY the corresponding original Koine Greek text of that verse.
+    document.querySelector(".bib-lang-load").textContent = baseScripture;
+    engVerse.split(" ").forEach(word => {
+        document.querySelector(".bib-lang-eng").innerHTML += `<span>${word}</span>`;
+    });
+    document.querySelector(".bib-lang-greek").textContent = translatedVerse;
 
-Scripture reference: ${baseScripture}
-English verse: ${engVerse}
-
-Return your response in exactly this JSON format:
-{"original": "..."}
-
-Rules:
-- Return only the Greek text of the specified verse.
-- Do not translate, explain, paraphrase, or add commentary.
-- Preserve the original Greek wording and accents.
-- Do not include the verse reference.
-- Do not include Markdown or code fences.
-- Return valid JSON only.
-    `;
-    if(currentLanguage == "Hebrew"){
-        prompt = `
-You are a Hebrew Old Testament text retrieval assistant.
-
-Given the English Bible verse and its Scripture reference below, return ONLY the corresponding original Hebrew text of that verse.
-
-Scripture reference: ${baseScripture}
-English verse: ${engVerse}
-
-Return your response in exactly this JSON format:
-{"original": "..."}
-
-Rules:
-- Return only the Hebrew text of the specified verse.
-- Do not translate, explain, paraphrase, or add commentary.
-- Preserve the original Hebrew wording and accents.
-- Do not include the verse reference.
-- Do not include Markdown or code fences.
-- Return valid JSON only.
-        `;
+    document.querySelectorAll(".bib-lang-eng span").forEach(word => {
+        word.addEventListener("click", () => {
+            analyseWord(word.textContent, baseScripture, engVerse, possibleStrongs);
+        });
+    });
+}
+async function getTranslatedVerse(verseData, language){
+    let fileName = "greek_nt";
+    if(language == "Hebrew"){
+        fileName = "hebrew_ot";
     }
-
-    const dataToSend = { prompt: prompt };
+    let bookLink = `${fileName}/${verseData.book.toLowerCase().replace(/ /g, "_")}.json`;
     try {
-        const response = await fetch(url + `/api/get-greek-verse`, {
-            method: 'POST',
-            credentials: 'include',
-            headers: { 
-                'Content-Type': 'application/json', 
-            },
-            body: JSON.stringify(dataToSend), 
+        const response = await fetch(bookLink, {
+            method: 'GET',
         });
-
-        if (!response.ok) {
-            const errorData = await response.json();
-            console.error('Error:', errorData.message);
-            return;
-        }
-        
         const data = await response.json();
-
-        document.querySelector(".bib-lang-load").textContent = baseScripture;
-        engVerse.split(" ").forEach(word => {
-            document.querySelector(".bib-lang-eng").innerHTML += `<span>${word}</span>`;
+        
+        let allWords = data.filter(word => word.chapter == verseData.chapter && word.verse == verseData.verse);
+        let greekVerse = "";
+        let possibleStrongs = "";
+        allWords.forEach(word => {
+            greekVerse += `${word.word.replace(/[/]/g, "")} `;
+            possibleStrongs += `${word.strongs}, `;
         });
-        document.querySelector(".bib-lang-greek").textContent = data.original;
-
-        document.querySelectorAll(".bib-lang-eng span").forEach(word => {
-            word.addEventListener("click", () => {
-                analyseGreekWord(word.textContent, baseScripture, engVerse);
-            });
-        });
+        possibleStrongs = possibleStrongs.slice(0, -2);
+        return [greekVerse, possibleStrongs];
 
     } catch (error) {
-        console.error('Error posting data:', error);
+        console.error('Error fetching data:', error);
     }
 }
-async function analyseGreekWord(engWord, scripture, verse){
+async function analyseWord(engWord, scripture, verse, possibleStrongs){
     document.querySelector(".bib-lang-content-load").classList.remove("none");
     document.querySelector(".bib-lang-content").classList.add("none");
 
     let responseFormat = {
+        "surface_form": "",
         "lemma": "",
         "transliteration": "",
         "english": "",
@@ -2613,17 +2618,23 @@ I will provide you with:
 * The English word: ${engWord}
 * The Bible verse/reference: ${scripture}
 * The whole english verse: ${verse}
+* This is the entire greek verse. You need to pick out one word out of these greek words which matches the english word '${engWord}': ${document.querySelector(".bib-lang-greek").textContent}
+
+IMPORTANT: DO NOT USE ANY GREEK LEMMA THAT IS NOT INCLUDED IN THE GREEK VERSE: ${document.querySelector(".bib-lang-greek").textContent}
+
+HERE IS THE LIST OF STRONGS YOU MUST CHOOSE FROM: ${possibleStrongs}
 
 Your task is to return accurate lexical and grammatical information about **that specific Greek word**.
 
 You must provide:
 
-1. **Lemma** — The exact Greek lemma corresponding to the word as it appears in the supplied verse.
-2. **Transliteration** — A standard scholarly transliteration of the Greek lemma.
-3. **English** — The most appropriate English equivalent(s) for the lemma in general.
-4. **Definition** — A concise lexical definition of the lemma in Koine Greek/New Testament usage.
-5. **Strong’s** — The Strong's Greek number corresponding to the lemma, including the G prefix where appropriate (e.g. G26).
-6. **Parsing** — The grammatical parsing of the specific form appearing in the supplied verse, using full descriptions such as:
+1. **Surface Form** — Return the exact Greek lemma associated with the selected word in the supplied verse data.
+2. **Lemma** — The general lexical/dictionary form of the Greek word, not necessarily the exact form as it appears in the supplied verse.
+3. **Transliteration** — A standard scholarly transliteration of the Greek lemma.
+4. **English** — The most appropriate English equivalent(s) for the lemma in general.
+5. **Definition** — A concise lexical definition of the lemma in Koine Greek/New Testament usage.
+6. **Strong’s** — The Strong's Greek number corresponding to the lemma, including the G prefix where appropriate (e.g. G26). Please return the correct Strong's number. You must choose one of these strongs, these are the only possible options: ${possibleStrongs}
+7. **Parsing** — The grammatical parsing of the specific form appearing in the supplied verse, using full descriptions such as:
    * Noun, Nominative, Singular, Masculine
    * Verb, Aorist, Active, Indicative, 3rd Person Singular
    * Adjective, Nominative, Singular, Feminine
@@ -2633,67 +2644,118 @@ You must provide:
 
 Important rules for the supplied word:
 
-* Use the supplied **Lemma** as the primary lexical identifier.
 * Use the Greek form appearing in the verse to determine the **Parsing**.
 * Do not confuse the lemma with a related word, cognate, synonym, or inflected form of a different lemma.
-* Strong's should correspond to the supplied lemma.
 
 Return the result ONLY in the JSON format provided in ${responseFormat}. Do not include markdown, explanations outside the JSON, or additional fields.
     `;
 
     if(currentLanguage == "Hebrew"){
         prompt = `
-You are a Hebrew Old Testament word-study assistant.
 
-I will provide you with:
+        You are a Hebrew Old Testament word-study assistant.
 
-* The English word: ${engWord}
-* The Bible verse/reference: ${scripture}
-* The whole english verse: ${verse}
+        I will provide you with:
 
-Your task is to return accurate lexical and grammatical information about **that specific Hebrew word**.
+        * The English word: ${engWord}
 
-You must provide:
+        * The Bible verse/reference: ${scripture}
 
-1. **Lemma** — The exact Hebrew lemma corresponding to the word as it appears in the supplied verse.
-2. **Transliteration** — A standard scholarly transliteration of the Hebrew lemma.
-3. **English** — The most appropriate English equivalent(s) for the lemma in general.
-4. **Definition** — A concise lexical definition of the lemma in Hebrew/OT usage.
-5. **Strong’s** — The Strong's Hebrew number corresponding to the lemma, including the H prefix where appropriate.
-6. **Parsing** — The grammatical parsing of the specific form appearing in the supplied verse, using full descriptions such as:
-* Noun, Masculine, Singular, Absolute
-* Noun, Masculine, Singular, Construct
-* Verb, Qal, Perfect, 3rd Person, Masculine, Singular
-* Verb, Qal, Imperfect, 3rd Person, Masculine, Singular
-* Verb, Piel, Perfect, 3rd Person, Masculine, Singular
-* Adjective, Masculine, Singular, Absolute
-* Preposition
-* Conjunction
-* Definite Article
-* Pronoun, 3rd Person, Masculine, Singular
-* Adverb
-* Particle
-7. Occurences — A list of the other Old Testament verses where this **same lemma** occurs.
+        * The whole English verse: ${verse}
 
-Important rules for OT occurrences:
+        * This is the entire Hebrew verse. You MUST select the Hebrew word corresponding to the English word ONLY from the Hebrew text supplied below:
+        ${document.querySelector(".bib-lang-greek").textContent}
 
-* List references where the Hebrew lemma itself occurs, not merely verses containing an English translation that could correspond to it.
-* Do not include the supplied verse in the list.
-* Do not invent or guess references.
-* If the lemma occurs many times, return all occurrences that can be established reliably.
-* If the exact occurrence data cannot be established with confidence, return an empty array rather than fabricating references.
-* Preserve the distinction between the lemma and different Hebrew words that may have similar English translations.
+        Your task is to return accurate lexical and grammatical information about THAT SPECIFIC HEBREW WORD.
 
-Important rules for the supplied word:
+        CRITICAL WORD-SELECTION RULES:
 
-* Use the supplied **Lemma** as the primary lexical identifier.
-* Determine the parsing from the actual Hebrew form occurring in the supplied verse
-* Do not confuse the lemma with a related word, cognate, synonym, or inflected form of a different lemma.
-* Strong's should correspond to the supplied lemma.
+        * The selected Surface Form MUST be an exact Hebrew word/token that literally appears in the supplied Hebrew verse above.
 
-Return the result ONLY in the JSON format provided in ${responseFormat}. Do not include markdown, explanations outside the JSON, or additional fields.
+        * You MUST NOT output a Hebrew word that does not appear anywhere in the supplied Hebrew verse.
+
+        * Do NOT reconstruct, invent, substitute, or infer a different Hebrew form.
+
+        * Do NOT select a Hebrew synonym, cognate, related word, alternative lexical form, or word from another Hebrew verse.
+
+        * First identify the exact Hebrew word/token in the supplied verse that corresponds to the supplied English word. Only after identifying that exact word may you determine its lemma, Strong's number, transliteration, definition, and parsing.
+
+        * If the Hebrew word appears in an inflected form, preserve that exact inflected form as the Surface Form.
+
+        * The Lemma is the dictionary/lexical form belonging to that exact Surface Form. Do NOT use the lemma itself as the Surface Form unless the lemma and the verse form are actually identical.
+
+        * The Strong's number MUST correspond to the Lemma of the exact selected Surface Form.
+
+        * The Parsing MUST describe the exact Surface Form appearing in the supplied verse, not the lemma.
+
+        * Never replace the supplied Hebrew word with another word simply because that other word has a more obvious or familiar Strong's definition.
+
+        You must provide:
+
+        1. **Surface Form** — Return the EXACT Hebrew word/token as it appears in the supplied Hebrew verse. Copy it directly from the supplied Hebrew verse. Do not normalize it, replace it, or generate a different form.
+
+        2. **Lemma** — The general lexical/dictionary form belonging to the selected Hebrew Surface Form.
+
+        3. **Transliteration** — A standard scholarly transliteration of the Hebrew lemma.
+
+        4. **English** — The most appropriate English equivalent(s) for the lemma in general.
+
+        5. **Definition** — A concise lexical definition of the lemma in Hebrew/OT usage.
+
+        6. **Strong’s** — The Strong's Hebrew number corresponding to the lemma, including the H prefix where appropriate. Please return the correct Strong's number.
+
+        7. **Parsing** — The grammatical parsing of the specific Surface Form appearing in the supplied verse, using full descriptions such as:
+
+        * Noun, Masculine, Singular, Absolute
+
+        * Noun, Masculine, Singular, Construct
+
+        * Verb, Qal, Perfect, 3rd Person, Masculine, Singular
+
+        * Verb, Qal, Imperfect, 3rd Person, Masculine, Singular
+
+        * Verb, Piel, Perfect, 3rd Person, Masculine, Singular
+
+        * Adjective, Masculine, Singular, Absolute
+
+        * Preposition
+
+        * Conjunction
+
+        * Definite Article
+
+        * Pronoun, 3rd Person, Masculine, Singular
+
+        * Adverb
+
+        * Particle
+
+        Important rules for the supplied word:
+
+        * Determine the Surface Form by directly locating the corresponding Hebrew word in the supplied Hebrew verse.
+
+        * The Surface Form MUST be copied exactly from the supplied Hebrew verse.
+
+        * Determine the parsing from the actual Hebrew Surface Form occurring in the supplied verse.
+
+        * Determine the Lemma from that exact Surface Form.
+
+        * Do not confuse the lemma with a related word, cognate, synonym, or inflected form belonging to a different lemma.
+
+        * Strong's must correspond to the selected Lemma.
+
+        * Parsing must correspond to the selected Surface Form.
+
+        * If you cannot identify a Hebrew word in the supplied verse that corresponds to the English word, do NOT invent or substitute a Hebrew word from outside the supplied verse.
+
+        * Before returning the answer, internally verify that the Surface Form appears literally in the supplied Hebrew verse and that the Lemma and Strong's number belong to that Surface Form.
+
+        Return the result ONLY in the JSON format provided in ${responseFormat}. Do not include markdown, explanations outside the JSON, or additional fields.
+
         `;
     }
+
+    console.log(prompt);
 
     const dataToSend = { prompt: prompt };
     try {
@@ -2716,6 +2778,10 @@ Return the result ONLY in the JSON format provided in ${responseFormat}. Do not 
         let analysis = data.analysis;
 
         document.querySelector(".bib-lang-content").classList.remove("none");
+        let parsing = analysis.parsing;
+        if(currentLanguage == "Greek"){
+            parsing = await getGreekParsing(currentBook, currentChapterIdx + 1, document.querySelector(".bib-verse-idx-active").textContent, analysis.surface_form);
+        }
         document.querySelector(".bib-lang-ul").innerHTML = `
             <div class="bib-lang-li">
                 <div>Lemma:</div>
@@ -2739,16 +2805,14 @@ Return the result ONLY in the JSON format provided in ${responseFormat}. Do not 
             </div>
             <div class="bib-lang-li">
                 <div>Parsing:</div>
-                <span>${analysis.parsing}</span>
+                <span>${parsing}</span>
             </div>
         `;
 
         document.querySelector(".bib-lang-content-load").classList.add("none");
 
         let occurrences;
-        if(currentLanguage == "Greek"){
-            occurrences = await getGreekOccurences(analysis.lemma);
-        }
+        occurrences = await getLemmaOccurrences(analysis.strongs, currentLanguage);
         document.querySelector(".bib-lang-label").innerHTML = `NT Occurrences`;
         document.querySelector(".bib-lang-occ-col").innerHTML = "";
         for(const verse of occurrences){
@@ -2757,13 +2821,11 @@ Return the result ONLY in the JSON format provided in ${responseFormat}. Do not 
             let occVerse = await getVerse(currentTranslation.id, getBookSlug(verse.book), verse.chapter, [verse.verse]);
             newOcc.innerHTML = `
                 <div class="bib-lang-head">${verse.book} ${verse.chapter}:${verse.verse}</div>
-                <div class="bib-lang-txt">${occVerse}</div>
+                <div class="bib-lang-txt">${occVerse || "Verse not found"}</div>
             `;
-            if(!occVerse){
-                newOcc.classList.add("none");
-                analysis.occurrences = analysis.occurrences.filter(occc => occc != verse);
+            if(Array.from(document.querySelectorAll(".bib-lang-occ")).filter(occ => occ.querySelector(".bib-lang-head").textContent == `${verse.book} ${verse.chapter}:${verse.verse}`).length == 0){
+                document.querySelector(".bib-lang-occ-col").appendChild(newOcc);
             }
-            document.querySelector(".bib-lang-occ-col").appendChild(newOcc);
         }
         document.querySelector(".bib-lang-label").innerHTML = `NT Occurrences (${occurrences.length})`;
 
@@ -2771,24 +2833,30 @@ Return the result ONLY in the JSON format provided in ${responseFormat}. Do not 
         console.error('Error posting data:', error);
     }
 }
-async function getGreekOccurences(greekWord){
+async function getLemmaOccurrences(strongs, language){
+    let fileName = "greek_nt";
+    if(language == "Hebrew"){
+        fileName = "hebrew_ot";
+    }
     let occurrences = [];
     for(const book of chapterHeadings){
-        if(chapterHeadings.indexOf(book) > 38){
-            let bookLink = `greek_nt/${book.name.toLowerCase().replace(/ /g, "_")}.json`;
+        if( (chapterHeadings.indexOf(book) > 38 && language == "Greek") || (chapterHeadings.indexOf(book) <= 38 && language == "Hebrew") ){
+            let bookLink = `${fileName}/${book.name.toLowerCase().replace(/ /g, "_")}.json`;
             try {
                 const response = await fetch(bookLink, {
                     method: 'GET',
                 });
-                const data = await response.json(); 
+                const data = await response.json();
 
                 data.forEach(word => {
-                    if(word.word == greekWord){
-                        occurrences.push({
+                    if(Number(word.strongs.replace(/\D/g, "")) == Number(strongs.replace(/\D/g, ""))){
+                        let newOcc = {
                             "book": book.name,
                             "chapter": word.chapter,
                             "verse": word.verse
-                        });
+                        }
+
+                        occurrences.push(newOcc);
                     }
                 });
 
@@ -2797,10 +2865,23 @@ async function getGreekOccurences(greekWord){
             }
         }
     }
-    console.log(occurrences);
     return occurrences;
 }
-getGreekOccurences("κατάκριμα");
+async function getGreekParsing(book, chapter, verse, surfaceForm){
+    try {
+        const response = await fetch(`greek_nt/${book.toLowerCase().replace(/ /g, "_")}.json`, {
+            method: 'GET',
+        });
+        const data = await response.json();
+
+        let codeParsing = data.find(word => word.chapter == chapter && word.verse == verse && word.word == surfaceForm).morph;        
+
+        return codeParsing;
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
 
 async function loadComments(){
     document.querySelector(".bib-chat-desc").innerHTML = `Loading...`;
@@ -3592,6 +3673,101 @@ document.querySelectorAll(".bib-audio-chev").forEach((chev, idx) => {
     });
 });
 
+async function convertHebrew(){
+    const tempHeadings = [
+        "Genesis",
+        "Exod",
+        "Lev",
+        "Num",
+        "Deut",
+        "Josh",
+        "Judg",
+        "Ruth",
+        "1Sam",
+        "2Sam",
+        "1Kgs",
+        "2Kgs",
+        "1 Chronicles",
+        "2Chr",
+        "Ezra",
+        "Neh",
+        "Esth",
+        "Job",
+        "Ps",
+        "Prov",
+        "Eccl",
+        "Song",
+        "Isa",
+        "Jer",
+        "Lam",
+        "Ezek",
+        "Dan",
+        "Hos",
+        "Joel",
+        "Amos",
+        "Obad",
+        "Jonah",
+        "Mic",
+        "Nah",
+        "Hab",
+        "Zeph",
+        "Hag",
+        "Zech",
+        "Mal"
+    ];
+
+    for(const book of chapterHeadings){
+        if(chapterHeadings.indexOf(book) < 39){
+            let bookLink = `hebrew_ot/${tempHeadings[chapterHeadings.indexOf(book)].slice(0, 1).toUpperCase()}${tempHeadings[chapterHeadings.indexOf(book)].slice(1)}.xml`;
+            try {
+                const response = await fetch(bookLink, {
+                    method: 'GET',
+                });
+                const data = await response.text(); 
+        
+                const parser = new DOMParser();
+                const bookDoc = parser.parseFromString(data, "application/xml");
+    
+                let newBook = []
+    
+                bookDoc.querySelector("div").querySelectorAll("chapter").forEach((chapter, chapterIdx) => {
+                    chapter.querySelectorAll("verse").forEach((verse, verseIdx) => {
+                        verse.querySelectorAll("w").forEach(word => {
+                            newBook.push({
+                                "chapter": chapterIdx + 1,
+                                "verse": verseIdx + 1,
+                                "word": word.textContent,
+                                "strongs": Number(word.getAttribute("lemma").replace(/\D/g, ""))
+                            });
+                        });
+                    });
+                });
+    
+                downloadFile(newBook, book.name.toLowerCase().replace(/ /g, "_"));
+        
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+    }
+}
+function downloadFile(bookData, bookName){
+    const json = JSON.stringify(bookData, null, 4);
+
+    const blob = new Blob([json], {
+        type: "application/json"
+    });
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${bookName}.json`;
+    a.click();
+
+    URL.revokeObjectURL(url);
+}
+// convertHebrew();
 
 
 
