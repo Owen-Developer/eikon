@@ -3,5 +3,3 @@
 - how do I know Christianity is true app under Apologetics
 
 - Christian authors/books suggestion app
-
-- instead of using openai to get greek/hebrew word occurrences, use a prepared JSON file and loop through every singe verse
