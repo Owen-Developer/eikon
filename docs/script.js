@@ -1,13 +1,14 @@
 
 
 let url = "";
-let currentBook = "John";
+let currentBook = "Genesis";
 let currentChapterIdx = 0;
-let currentLanguage = "Greek";
+let currentLanguage = "Hebrew";
 let currentAllComments;
 let currentAudio;
 let currentAudioBook = currentBook;
 let currentAudioChapter = currentChapterIdx;
+let currentTestament = "OT";
 
 const chapterHeadings = [
     {
@@ -1888,6 +1889,13 @@ const greekParsing = [
 
 ]
 
+const psalmSubscriptions = [
+    3, 4, 5, 6, 7, 8, 9, 12, 13, 18, 19, 20, 21, 22, 30, 31, 34, 36, 38, 39, 40, 41, 42, 44, 45, 46, 47, 48, 49, 53, 55, 56, 57, 58, 59, 61, 62, 63, 64, 65, 67, 68, 69, 70, 75, 76, 77, 80, 81, 83, 84, 85, 88, 89, 92, 102, 108, 140, 142
+]
+const psalmDoubleSubscriptions = [
+    51, 52, 54, 60
+]
+
 
 document.querySelector(".bib-left-open").addEventListener("click", () => {
     document.querySelector(".bib-left").classList.add("bib-left-show");
@@ -1936,7 +1944,7 @@ document.querySelector("i.bib-opt-close").addEventListener("click", () => {
     document.querySelector(".bib-opt").style.opacity = "0";
     document.querySelector(".bib-opt").style.pointerEvents = "none";
 });
-document.querySelector("i.bib-book-chev").addEventListener("click", () => {
+document.querySelector(".bib-book-book").addEventListener("click", () => {
     if(document.querySelector("i.bib-book-chev").style.transform != "rotate(-180deg)"){
 		document.querySelectorAll(".bib-left-search input")[1].focus();
         document.querySelector(".bib-left-drop").style.opacity = "1";
@@ -1948,7 +1956,7 @@ document.querySelector("i.bib-book-chev").addEventListener("click", () => {
         document.querySelector("i.bib-book-chev").style.transform = "rotate(0deg)";
     }
 });
-document.querySelector("i.bib-mid-down").addEventListener("click", () => {
+document.querySelector(".bib-header-mid-mid").addEventListener("click", () => {
     if(document.querySelector("i.bib-mid-down").style.transform != "rotate(-180deg)"){
 		document.querySelectorAll(".bib-left-search input")[0].focus();
         document.querySelector(".bib-header-drop").style.opacity = "1";
@@ -2026,10 +2034,10 @@ document.querySelectorAll(".bib-opt-theme .bib-opt-col").forEach((col, idx) => {
 });
 document.addEventListener("click", (e) => {
     document.querySelectorAll(".bib-book-drop").forEach((drop, idx) => {
-        if(!drop.contains(e.target) && !e.target.classList.contains("drop-chev")){
+        if(!drop.contains(e.target) && !e.target.classList.contains("drop-chev") && !e.target.parentElement.classList.contains("drop-chev")){
             drop.style.opacity = "0";
             drop.style.pointerEvents = "none";
-            document.querySelectorAll(".drop-chev")[idx].style.transform = "rotate(0deg)";
+            document.querySelectorAll("i.drop-chev")[idx].style.transform = "rotate(0deg)";
         }
     });
 
@@ -2096,7 +2104,7 @@ async function getVerse(translation, book, chapter, verses){
 }
 
 async function loadBible(){
-    //loadComments();
+    loadComments();
     document.querySelector(".bib-mid-mid").style.opacity = "0";
     let isNewBook = false;
     if(document.querySelector(".bib-book-txt").textContent != currentBook) isNewBook = true;
@@ -2131,9 +2139,11 @@ async function loadBible(){
         document.querySelector(".bib-mid-mid").style.opacity = "1";
         if(chapterHeadings.indexOf(chapterHeadings.find(heading => heading.name == currentBook)) < 39){
             currentLanguage = "Hebrew";
+            currentTestament = "OT";
             document.querySelector(".bib-right-lang-add").innerHTML = `View Hebrew <i class="fa-solid fa-magnifying-glass"></i>`;
         } else {
             currentLanguage = "Greek";
+            currentTestament = "NT";
             document.querySelector(".bib-right-lang-add").innerHTML = `View Greek <i class="fa-solid fa-magnifying-glass"></i>`;
         }
         document.querySelector(".bib-right-btn-greek").textContent = currentLanguage;
@@ -2416,7 +2426,7 @@ function setVerseRelated(){
 }
 async function getReferences(){
     let baseScripture = `${currentBook} ${currentChapterIdx + 1}`;
-	if(document.querySelector(".bib-verse-idx-active")) baseScripture += ": " + document.querySelector(".bib-verse-idx-active").textContent;
+	if(document.querySelector(".bib-verse-idx-active")) baseScripture += ":" + document.querySelector(".bib-verse-idx-active").textContent;
     document.querySelector(".bib-right-rel-add").classList.add("inactive-el");
     document.querySelector(".bib-right-rel-col").classList.remove("none");
     document.querySelector(".bib-rel-desc").textContent = "Loading...";
@@ -2529,10 +2539,11 @@ function resetLangBtn(){
 }
 async function loadTranslatedVerse(){
     let baseScripture = `${currentBook} ${currentChapterIdx + 1}`;
-	if(document.querySelector(".bib-verse-idx-active")) baseScripture += ": " + document.querySelector(".bib-verse-idx-active").textContent;
+	if(document.querySelector(".bib-verse-idx-active")) baseScripture += ":" + document.querySelector(".bib-verse-idx-active").textContent;
     document.querySelector(".bib-lang-load").textContent = "Loading...";
     document.querySelector(".bib-lang-eng").innerHTML = "";
-    document.querySelector(".bib-lang-greek").innerHTML = "";
+    document.querySelector(".bib-lang-greek-full").innerHTML = "";
+    document.querySelector(".bib-lang-greek-ul").innerHTML = "";
     document.querySelector(".bib-right-lang-col").classList.remove("none");
     document.querySelector(".bib-lang-content").classList.add("none");
     document.querySelector(".bib-lang-content-load").classList.add("none");
@@ -2546,20 +2557,35 @@ async function loadTranslatedVerse(){
     },
     currentLanguage
     );
-    let translatedVerse = translationData[0];
-    let possibleStrongs = translationData[1];
+    let wordArr = translationData;
 
     document.querySelector(".bib-lang-load").textContent = baseScripture;
-    engVerse.split(" ").forEach(word => {
-        document.querySelector(".bib-lang-eng").innerHTML += `<span>${word}</span>`;
-    });
-    document.querySelector(".bib-lang-greek").textContent = translatedVerse;
+    document.querySelector(".bib-lang-eng").innerHTML = engVerse + "<br>";
+    wordArr.forEach(word => document.querySelector(".bib-lang-greek-full").innerHTML += word.word.replace(/[/]/g, "") + " ");
 
-    document.querySelectorAll(".bib-lang-eng span").forEach(word => {
-        word.addEventListener("click", () => {
-            analyseWord(word.textContent, baseScripture, engVerse, possibleStrongs);
-        });
-    });
+
+    for(const word of wordArr){
+        let wordData = await getWordDictionary(word.strongs);
+        if(!wordData){
+            wordData = {
+                "transliteration": "n/a",
+                "gloss": "n/a"
+            }
+        }
+        let newWord = document.createElement("div");
+        newWord.classList.add("bib-lang-greek-li");
+        newWord.dataset.transliteration = wordData.transliteration;
+        newWord.innerHTML = `
+            <div class="bib-lang-greek-word">${word.word.replace(/[/]/g, "")}</div>
+            <span></span>
+            <div class="bib-lang-eng-word">${wordData.gloss.replace("[Obj.]", "(object marker)")}</div>
+        `;
+        document.querySelector(".bib-lang-greek-ul").appendChild(newWord);
+
+        newWord.onclick = () => {
+            analyseWord(wordData.lemma, wordData.transliteration, word.strongs, wordData.gloss.replace("[Obj.]", "(object marker)"), word.morph, baseScripture, engVerse);
+        }
+    }
 }
 async function getTranslatedVerse(verseData, language){
     let fileName = "greek_nt";
@@ -2573,189 +2599,80 @@ async function getTranslatedVerse(verseData, language){
         });
         const data = await response.json();
         
-        let allWords = data.filter(word => word.chapter == verseData.chapter && word.verse == verseData.verse);
-        let greekVerse = "";
-        let possibleStrongs = "";
-        allWords.forEach(word => {
-            greekVerse += `${word.word.replace(/[/]/g, "")} `;
-            possibleStrongs += `${word.strongs}, `;
+        let realVerseNum = verseData.verse;
+        if(verseData.book == "Psalm"){
+            if(psalmSubscriptions.includes(verseData.chapter)){
+                realVerseNum++;
+            } else if(psalmDoubleSubscriptions.includes(verseData.chapter)){
+                realVerseNum += 2;
+            }
+        }
+
+        let wordArr = data.filter(word => word.chapter == verseData.chapter && word.verse == realVerseNum);
+        wordArr.forEach(word => {
+            if(word.strongs.slice(0, 1) != "G"){
+                word.strongs = "H" + word.strongs;
+            }
         });
-        possibleStrongs = possibleStrongs.slice(0, -2);
-        return [greekVerse, possibleStrongs];
+        return wordArr;
 
     } catch (error) {
         console.error('Error fetching data:', error);
     }
 }
-async function analyseWord(engWord, scripture, verse, possibleStrongs){
+async function analyseWord(translatedWord, transliteration, strongs, gloss, parsing, reference, engVerse){
     document.querySelector(".bib-lang-content-load").classList.remove("none");
     document.querySelector(".bib-lang-content").classList.add("none");
-
-    let responseFormat = {
-        "surface_form": "",
-        "lemma": "",
-        "transliteration": "",
-        "english": "",
-        "definition": "",
-        "strongs": "",
-        "parsing": "",
-        /*
-            "occurrences": [
-                {
-                    "book": "Genesis",
-                    "chapter": 1,
-                    "verse": 1
-                },
-            ]
-        */
-    }
+    document.querySelector(".bib-right-lang-col").scrollTop = document.querySelector(".bib-right-lang-col").scrollHeight;
     
     let prompt = `
-You are a Koine Greek New Testament word-study assistant.
+        You are a biblical Greek and Hebrew lexical and contextual analysis assistant.
 
-I will provide you with:
+        Using the lexical information and Bible verse below, provide:
+        1. ONE concise, accurate English definition of the word.
+        2. ONE concise analysis of what the word means specifically in this verse, including any useful insight gained from knowing the original Greek or Hebrew word.
 
-* The English word: ${engWord}
-* The Bible verse/reference: ${scripture}
-* The whole english verse: ${verse}
-* This is the entire greek verse. You need to pick out one word out of these greek words which matches the english word '${engWord}': ${document.querySelector(".bib-lang-greek").textContent}
+        Lexical information:
 
-IMPORTANT: DO NOT USE ANY GREEK LEMMA THAT IS NOT INCLUDED IN THE GREEK VERSE: ${document.querySelector(".bib-lang-greek").textContent}
+        - Language: ${currentLanguage}
+        - Lemma: ${translatedWord}
+        - Strong's number: ${strongs}
+        - English glosses: ${gloss}
 
-HERE IS THE LIST OF STRONGS YOU MUST CHOOSE FROM: ${possibleStrongs}
+        Verse information:
 
-Your task is to return accurate lexical and grammatical information about **that specific Greek word**.
+        - Bible reference: ${reference}
+        - English verse: ${engVerse}
 
-You must provide:
+        Instructions for the definition:
 
-1. **Surface Form** — Return the exact Greek lemma associated with the selected word in the supplied verse data.
-2. **Lemma** — The general lexical/dictionary form of the Greek word, not necessarily the exact form as it appears in the supplied verse.
-3. **Transliteration** — A standard scholarly transliteration of the Greek lemma.
-4. **English** — The most appropriate English equivalent(s) for the lemma in general.
-5. **Definition** — A concise lexical definition of the lemma in Koine Greek/New Testament usage.
-6. **Strong’s** — The Strong's Greek number corresponding to the lemma, including the G prefix where appropriate (e.g. G26). Please return the correct Strong's number. You must choose one of these strongs, these are the only possible options: ${possibleStrongs}
-7. **Parsing** — The grammatical parsing of the specific form appearing in the supplied verse, using full descriptions such as:
-   * Noun, Nominative, Singular, Masculine
-   * Verb, Aorist, Active, Indicative, 3rd Person Singular
-   * Adjective, Nominative, Singular, Feminine
-   * Preposition
-   * Conjunction
-   * Article, Nominative, Singular, Masculine
+        - IMPORTANT: Give the word's general lexical meaning, not its meaning in this particular verse.
+        - Do not introduce meanings that are not supported by the supplied information.
+        - Write in clear, natural English that an ordinary Bible reader can understand.
+        - Keep the definition concise: approximately 10–25 words.
+        - If the word has multiple closely related senses, express them naturally in one definition rather than listing separate definitions.
+        - Do not give theological commentary or application in the definition.
 
-Important rules for the supplied word:
+        Instructions for the verse analysis:
 
-* Use the Greek form appearing in the verse to determine the **Parsing**.
-* Do not confuse the lemma with a related word, cognate, synonym, or inflected form of a different lemma.
+        - Explain what this word specifically means or conveys in this particular verse.
+        - Use the surrounding verse context to determine the most appropriate sense.
+        - Explain any meaningful nuance that may be lost or less obvious in the English translation.
+        - If knowing the Greek or Hebrew word provides a useful insight into the verse, briefly explain why.
+        - Do not claim that the original-language word has a meaning that is not supported by its lexical or contextual usage.
+        - Do not force an insight simply because the word is Greek or Hebrew.
+        - Keep the analysis approximately 25–40 words.
+        - Write for an ordinary Bible reader: clear, informative, and natural.
+        - Do not speculate about the author's intentions beyond what the text supports.
+        - Focus the analysis on the word specifically, not the bible verse.
 
-Return the result ONLY in the JSON format provided in ${responseFormat}. Do not include markdown, explanations outside the JSON, or additional fields.
+        Return ONLY valid JSON in exactly this format:
+
+        {
+        "definition": "A concise general definition of the word.",
+        "verseAnalysis": "A concise explanation of what the word conveys specifically in this verse and any useful original-language insight."
+        }
     `;
-
-    if(currentLanguage == "Hebrew"){
-        prompt = `
-
-        You are a Hebrew Old Testament word-study assistant.
-
-        I will provide you with:
-
-        * The English word: ${engWord}
-
-        * The Bible verse/reference: ${scripture}
-
-        * The whole English verse: ${verse}
-
-        * This is the entire Hebrew verse. You MUST select the Hebrew word corresponding to the English word ONLY from the Hebrew text supplied below:
-        ${document.querySelector(".bib-lang-greek").textContent}
-
-        Your task is to return accurate lexical and grammatical information about THAT SPECIFIC HEBREW WORD.
-
-        CRITICAL WORD-SELECTION RULES:
-
-        * The selected Surface Form MUST be an exact Hebrew word/token that literally appears in the supplied Hebrew verse above.
-
-        * You MUST NOT output a Hebrew word that does not appear anywhere in the supplied Hebrew verse.
-
-        * Do NOT reconstruct, invent, substitute, or infer a different Hebrew form.
-
-        * Do NOT select a Hebrew synonym, cognate, related word, alternative lexical form, or word from another Hebrew verse.
-
-        * First identify the exact Hebrew word/token in the supplied verse that corresponds to the supplied English word. Only after identifying that exact word may you determine its lemma, Strong's number, transliteration, definition, and parsing.
-
-        * If the Hebrew word appears in an inflected form, preserve that exact inflected form as the Surface Form.
-
-        * The Lemma is the dictionary/lexical form belonging to that exact Surface Form. Do NOT use the lemma itself as the Surface Form unless the lemma and the verse form are actually identical.
-
-        * The Strong's number MUST correspond to the Lemma of the exact selected Surface Form.
-
-        * The Parsing MUST describe the exact Surface Form appearing in the supplied verse, not the lemma.
-
-        * Never replace the supplied Hebrew word with another word simply because that other word has a more obvious or familiar Strong's definition.
-
-        You must provide:
-
-        1. **Surface Form** — Return the EXACT Hebrew word/token as it appears in the supplied Hebrew verse. Copy it directly from the supplied Hebrew verse. Do not normalize it, replace it, or generate a different form.
-
-        2. **Lemma** — The general lexical/dictionary form belonging to the selected Hebrew Surface Form.
-
-        3. **Transliteration** — A standard scholarly transliteration of the Hebrew lemma.
-
-        4. **English** — The most appropriate English equivalent(s) for the lemma in general.
-
-        5. **Definition** — A concise lexical definition of the lemma in Hebrew/OT usage.
-
-        6. **Strong’s** — The Strong's Hebrew number corresponding to the lemma, including the H prefix where appropriate. Please return the correct Strong's number.
-
-        7. **Parsing** — The grammatical parsing of the specific Surface Form appearing in the supplied verse, using full descriptions such as:
-
-        * Noun, Masculine, Singular, Absolute
-
-        * Noun, Masculine, Singular, Construct
-
-        * Verb, Qal, Perfect, 3rd Person, Masculine, Singular
-
-        * Verb, Qal, Imperfect, 3rd Person, Masculine, Singular
-
-        * Verb, Piel, Perfect, 3rd Person, Masculine, Singular
-
-        * Adjective, Masculine, Singular, Absolute
-
-        * Preposition
-
-        * Conjunction
-
-        * Definite Article
-
-        * Pronoun, 3rd Person, Masculine, Singular
-
-        * Adverb
-
-        * Particle
-
-        Important rules for the supplied word:
-
-        * Determine the Surface Form by directly locating the corresponding Hebrew word in the supplied Hebrew verse.
-
-        * The Surface Form MUST be copied exactly from the supplied Hebrew verse.
-
-        * Determine the parsing from the actual Hebrew Surface Form occurring in the supplied verse.
-
-        * Determine the Lemma from that exact Surface Form.
-
-        * Do not confuse the lemma with a related word, cognate, synonym, or inflected form belonging to a different lemma.
-
-        * Strong's must correspond to the selected Lemma.
-
-        * Parsing must correspond to the selected Surface Form.
-
-        * If you cannot identify a Hebrew word in the supplied verse that corresponds to the English word, do NOT invent or substitute a Hebrew word from outside the supplied verse.
-
-        * Before returning the answer, internally verify that the Surface Form appears literally in the supplied Hebrew verse and that the Lemma and Strong's number belong to that Surface Form.
-
-        Return the result ONLY in the JSON format provided in ${responseFormat}. Do not include markdown, explanations outside the JSON, or additional fields.
-
-        `;
-    }
-
-    console.log(prompt);
 
     const dataToSend = { prompt: prompt };
     try {
@@ -2778,30 +2695,30 @@ Return the result ONLY in the JSON format provided in ${responseFormat}. Do not 
         let analysis = data.analysis;
 
         document.querySelector(".bib-lang-content").classList.remove("none");
-        let parsing = analysis.parsing;
-        if(currentLanguage == "Greek"){
-            parsing = await getGreekParsing(currentBook, currentChapterIdx + 1, document.querySelector(".bib-verse-idx-active").textContent, analysis.surface_form);
-        }
         document.querySelector(".bib-lang-ul").innerHTML = `
             <div class="bib-lang-li">
                 <div>Lemma:</div>
-                <span>${analysis.lemma}</span>
+                <span>${translatedWord}</span>
             </div>
             <div class="bib-lang-li">
                 <div>Transliteration:</div>
-                <span>${analysis.transliteration}</span>
+                <span>${transliteration}</span>
             </div>
             <div class="bib-lang-li">
                 <div>English:</div>
-                <span>${analysis.english}</span>
+                <span>${gloss}</span>
             </div>
             <div class="bib-lang-li">
                 <div>Definition:</div>
                 <span>${analysis.definition}</span>
             </div>
             <div class="bib-lang-li">
+                <div>AI Analysis:</div>
+                <span>${analysis.analysis}</span>
+            </div>
+            <div class="bib-lang-li">
                 <div>Strong’s:</div>
-                <span>${analysis.strongs}</span>
+                <span>${strongs.replace(/[abcdef]/g, "")}</span>
             </div>
             <div class="bib-lang-li">
                 <div>Parsing:</div>
@@ -2811,9 +2728,11 @@ Return the result ONLY in the JSON format provided in ${responseFormat}. Do not 
 
         document.querySelector(".bib-lang-content-load").classList.add("none");
 
+        document.querySelector(".bib-right-lang-col").scrollTop = document.querySelector(".bib-right-lang-col").scrollHeight;
+
         let occurrences;
-        occurrences = await getLemmaOccurrences(analysis.strongs, currentLanguage);
-        document.querySelector(".bib-lang-label").innerHTML = `NT Occurrences`;
+        occurrences = await getLemmaOccurrences(strongs, currentLanguage);
+        document.querySelector(".bib-lang-label").innerHTML = `${currentTestament} Occurrences`;
         document.querySelector(".bib-lang-occ-col").innerHTML = "";
         for(const verse of occurrences){
             let newOcc = document.createElement("div");
@@ -2827,7 +2746,7 @@ Return the result ONLY in the JSON format provided in ${responseFormat}. Do not 
                 document.querySelector(".bib-lang-occ-col").appendChild(newOcc);
             }
         }
-        document.querySelector(".bib-lang-label").innerHTML = `NT Occurrences (${occurrences.length})`;
+        document.querySelector(".bib-lang-label").innerHTML = `${currentTestament} Occurrences (${occurrences.length})`;
 
     } catch (error) {
         console.error('Error posting data:', error);
@@ -2877,6 +2796,35 @@ async function getGreekParsing(book, chapter, verse, surfaceForm){
         let codeParsing = data.find(word => word.chapter == chapter && word.verse == verse && word.word == surfaceForm).morph;        
 
         return codeParsing;
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+async function getWordDictionary(strongs){
+    try {
+        const response = await fetch(`${url}/language_dictionary.json`, {
+            method: 'GET',
+        });
+        const data = await response.json(); 
+
+        let word;
+        Object.keys(data).forEach((key, keyIdx) => {
+            let keyCompare = `${key[0]}${Number(key.replace(/\D/g, ""))}`;
+            if(isNaN(key[key.length - 1])){
+                keyCompare += key[key.length - 1];
+            }
+            let strongsCompare = `${strongs[0]}${Number(strongs.replace(/\D/g, ""))}`;
+            if(isNaN(strongs[strongs.length - 1])){
+                strongsCompare += strongs[strongs.length - 1];
+            }
+
+            if(keyCompare == strongsCompare){
+                word = Object.values(data)[keyIdx];
+            }
+        });
+
+        return word;
 
     } catch (error) {
         console.error('Error fetching data:', error);
@@ -2953,6 +2901,7 @@ async function displayComment(commentData, allComments){
             </div>
         </div>
     `;
+
     newComment.querySelector(".bib-com-input").addEventListener("scroll", () => {
         newComment.querySelector(".bib-com-input").style.height = Number(newComment.querySelector(".bib-com-input").scrollHeight + 2) + "px";
     });
@@ -3001,7 +2950,6 @@ async function displayComment(commentData, allComments){
     } else {
         Array.from(document.querySelectorAll(".bib-chat-com")).find(comment => comment.dataset.commentId == commentData.parent_id)?.querySelector(".bib-com-col").prepend(newComment);
     }
-    document.querySelector(".bib-chat-col").innerHTML = document.querySelector(".bib-chat-col").innerHTML.replace("No comments found", "");
 }
 async function getUserData(userId){
     const dataToSend = { userId: userId };
@@ -3050,22 +2998,35 @@ async function postComment(text, parentId){
 
         let sameComment = data.sameComment;
         currentAllComments.push(sameComment);
-        displayComment(sameComment, currentAllComments);
+        if(document.querySelectorAll(".bib-chat-com").length == 0){
+            document.querySelector(".bib-chat-col").innerHTML = "";
+        }
+        await displayComment(sameComment, currentAllComments);
 
     } catch (error) {
         console.error('Error posting data:', error);
     }
 }
-document.querySelector(".bib-chat-input input").addEventListener("input", () => {
-    let commentValue = document.querySelector(".bib-chat-input input").value;
+document.querySelector(".bib-chat-input textarea").addEventListener("input", () => {
+    let commentValue = document.querySelector(".bib-chat-input textarea").value;
     if(commentValue == ""){
         document.querySelector(".bib-chat-send").classList.add("inactive-el");
+        document.querySelector(".bib-chat-input textarea").style.height = "45px";
     } else {
         document.querySelector(".bib-chat-send").classList.remove("inactive-el");
     }
 });
-document.querySelector(".bib-chat-send").addEventListener("click", () => {
-    postComment(document.querySelector(".bib-chat-input input").value, 0);
+document.querySelector(".bib-chat-input textarea").addEventListener("scroll", () => {
+    document.querySelector(".bib-chat-input textarea").style.height = Number(document.querySelector(".bib-chat-input textarea").scrollHeight + 2) + "px";
+});
+document.querySelector(".bib-chat-send").addEventListener("click", async () => {
+    await postComment(document.querySelector(".bib-chat-input textarea").value, 0);
+    /*
+    console.log("e");
+    document.querySelector(".bib-com-rep").addEventListener("click", () => {
+        document.querySelector(".bib-com-input-container").classList.remove("none");
+    });
+    */
 });
 
 document.querySelector(".bib-ai-ques-txt").addEventListener("click", () => {
@@ -3236,21 +3197,16 @@ async function aiAnalysis(){
         console.error('Error posting data:', error);
     }
 }
-document.querySelector(".bib-ai-ques-area textarea").addEventListener("keydown", (e) => {
-    if(e.key == "Enter"){
-        aiAskQuestion();
-        setTimeout(() => {
-            document.querySelector(".bib-ai-ques-area textarea").value = "";
-            document.querySelector(".bib-ai-ques-area textarea").blur();
-        }, 10);
-    }
-});
 async function aiAskQuestion(){
     let qValue = document.querySelector(".bib-ai-ques-area textarea").value;
-    document.querySelector(".bib-ai-load").classList.remove("none");
-    document.querySelector(".bib-ai-ques-ana").classList.add("inactive-el");
+    document.querySelector(".bib-ai-ques-area textarea").value = "";
+    document.querySelector(".bib-ai-ques-area textarea").blur();
 
     if(qValue != ""){
+        document.querySelector(".bib-ai-ques-ana").classList.add("inactive-el");
+        document.querySelector(".bib-ai-load").classList.remove("none");
+        document.querySelector(".bib-ai-wrapper").classList.add("none");
+
         let scripture = `${currentBook} ${currentChapterIdx + 1}`;
 
         let prompt = `
@@ -3316,6 +3272,11 @@ async function aiAskQuestion(){
         }
     }
 }
+document.querySelector(".bib-ai-ques-area textarea").addEventListener("keydown", (e) => {
+    if(e.key == "Enter"){
+        aiAskQuestion();
+    }
+});
 
 let headerSearchOpen = false;
 document.querySelector(".bib-header-search-container").addEventListener("click", () => {
@@ -3341,23 +3302,37 @@ document.querySelector(".bib-search-input").addEventListener("input", () => {
     let searchValue = document.querySelector(".bib-search-input").value.toLowerCase();
 
     chapterHeadings.forEach(book => {
+        // scripture
         if(searchValue.includes(book.name.toLowerCase())){
             // is format john XY
-            if(searchValue[book.name.length] == " " && searchValue.length >= book.name.length + 2 && !isNaN(searchValue.slice(book.name.length + 1)) && Number(searchValue.slice(book.name.length + 1)) <= book.headings.length){
+            if(searchValue[book.name.length] == " " && searchValue.length >= book.name.length + 2 && (!isNaN(searchValue.slice(book.name.length + 1).replace(":", "").replace(/ /g, "")) && searchValue[searchValue.length - 1] != ":") && (Number(searchValue.slice(book.name.length + 1)) || Number(searchValue.slice(book.name.length + 1).split(":")[0]) || Number(searchValue.slice(book.name.length + 1).split(" ")[0])) <= book.headings.length){
                 document.querySelectorAll(".bib-header-sug-li")[0].innerHTML = `
                     <i class="fa-solid fa-magnifying-glass"></i>
                     Go to <div>${searchValue}</div>
                 `;
                 document.querySelectorAll(".bib-header-sug-li")[0].classList.remove("none");
-                document.querySelectorAll(".bib-header-sug-li")[0].onclick = () => {
+                document.querySelectorAll(".bib-header-sug-li")[0].onclick = async () => {
                     currentBook = book.name;
                     currentChapterIdx = Number(searchValue.slice(book.name.length + 1)) - 1;
-                    loadBible();
+
+                    if(searchValue.slice(book.name.length + 1).replace(/ /g, ":").split(":").length == 2){
+                        currentChapterIdx = Number(searchValue.slice(book.name.length + 1).replace(/ /g, ":").split(":")[0]) - 1;
+                    }
                     closeHeaderSearch();
+                    await loadBible();
+
+                    if(searchValue.slice(book.name.length + 1).replace(/ /g, ":").split(":").length == 2){
+                        document.querySelectorAll(".yv-vlbl")[Number(searchValue.slice(book.name.length + 1).replace(/ /g, ":").split(":")[1]) - 1].scrollIntoView({
+                            block: "center"
+                        });
+                        document.querySelectorAll(".bib-right-btn span")[1].click();
+                        document.querySelectorAll(".yv-vlbl")[Number(searchValue.slice(book.name.length + 1).replace(/ /g, ":").split(":")[1]) - 1].click();
+                    }
                 }
             }
         }
 
+        // phrase
         if(searchValue[0] == `"` && searchValue[searchValue.length - 1] == `"`){
             document.querySelectorAll(".bib-header-sug-li")[1].innerHTML = `
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -3401,8 +3376,14 @@ document.querySelector(".bib-search-input").addEventListener("input", () => {
                     newVerseOpt.addEventListener("click", async () => {
                         currentBook = verse.book;
                         currentChapterIdx = verse.chapter - 1;
-                        await loadBible();
                         closeHeaderSearch();
+                        await loadBible();
+
+                        document.querySelectorAll(".yv-vlbl")[Number(verse.verse) - 1].scrollIntoView({
+                            block: "center"
+                        });
+                        document.querySelectorAll(".bib-right-btn span")[1].click();
+                        document.querySelectorAll(".yv-vlbl")[Number(verse.verse) - 1].click();
                     });
                 });
                 if(phraseVerses.length == 0){
@@ -3413,7 +3394,8 @@ document.querySelector(".bib-search-input").addEventListener("input", () => {
             }
         }
 
-        if(searchValue.length >= 3){
+        // topic
+        if(searchValue.length >= 3){ 
             document.querySelectorAll(".bib-header-sug-li")[2].innerHTML = `
                 <i class="fa-solid fa-magnifying-glass"></i>
                 Search <div>${searchValue}</div> in topics
@@ -3443,10 +3425,26 @@ document.querySelector(".bib-search-input").addEventListener("input", () => {
                     `;
                     document.querySelector(".bib-header-topic-drop").appendChild(newVerse);
 
-                    newVerse.addEventListener("click", () => {
+                    newVerse.addEventListener("click", async () => {
                         currentBook = verse.book;
                         currentChapterIdx = verse.chapter - 1;
-                        loadBible();
+                        closeHeaderSearch();        
+                        await loadBible();
+
+                        // NEED TO DEAL WITH VERSES LIKE "1-5" ***
+
+                        let verseNum;
+                        if(verse.verse.includes("-")){
+                            verseNum = Number(verse.verse.split("-")[0]) - 1;
+                        } else {
+                            verseNum = Number(verse.verse) - 1;
+                        }
+
+                        document.querySelectorAll(".yv-vlbl")[verseNum].scrollIntoView({
+                            block: "center"
+                        });
+                        document.querySelectorAll(".bib-right-btn span")[1].click();
+                        document.querySelectorAll(".yv-vlbl")[verseNum].click();
                     });
                 }
             }
@@ -3728,16 +3726,21 @@ async function convertHebrew(){
                 const parser = new DOMParser();
                 const bookDoc = parser.parseFromString(data, "application/xml");
     
-                let newBook = []
+                let newBook = [];
     
                 bookDoc.querySelector("div").querySelectorAll("chapter").forEach((chapter, chapterIdx) => {
                     chapter.querySelectorAll("verse").forEach((verse, verseIdx) => {
                         verse.querySelectorAll("w").forEach(word => {
+                            let strongs = word.getAttribute("lemma").replace(/\D/g, "");
+                            if(word.getAttribute("lemma").split(" ").length > 1){
+                                strongs += word.getAttribute("lemma").split(" ")[1];
+                            }
                             newBook.push({
                                 "chapter": chapterIdx + 1,
                                 "verse": verseIdx + 1,
                                 "word": word.textContent,
-                                "strongs": Number(word.getAttribute("lemma").replace(/\D/g, ""))
+                                "strongs": strongs,
+                                "morph": word.getAttribute("morph")
                             });
                         });
                     });
@@ -3767,7 +3770,7 @@ function downloadFile(bookData, bookName){
 
     URL.revokeObjectURL(url);
 }
-// convertHebrew();
+//convertHebrew();
 
 
 

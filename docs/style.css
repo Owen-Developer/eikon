@@ -88,8 +88,14 @@ img {
     align-items: center;
     gap: 12px;
 }
+.bib-header-mid-mid {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 auto;
+}
 .bib-header-mid-txt {
-    margin-left: auto;
     font-size: 19px;
     font-weight: 500;
     color: hsl(0, 0%, 20%);
@@ -106,7 +112,6 @@ i.bib-mid-chev:hover, i.bib-mid-down:hover, i.bib-left-xmark:hover, i.bib-book-c
 .bib-mid-down {
     transition: 0.2s ease;
     cursor: pointer;
-    margin-right: auto;
     font-size: 11px;
     color: hsl(0, 0%, 30%);
 }
@@ -464,12 +469,18 @@ i.bib-header-search-icon {
     background-color: hsl(0, 0%, 94%);
 }
 
+.bib-book-book {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 .bib-book-txt {
     font-size: 23px;
     font-weight: 500;
     color: hsl(0, 0%, 20%);
 }
-.bib-book-chev {
+i.bib-book-chev {
     transition: 0.2s ease;
     font-size: 12px;
     color: hsl(0, 0%, 30%);
@@ -920,7 +931,7 @@ i.bib-verse-xmark:hover {
 }
 
 .bib-right-lang-col {
-    padding-bottom: 20px;
+    padding-bottom: 30px;
     scrollbar-width: none;
     height: 100%;
     width: 100%;
@@ -929,19 +940,37 @@ i.bib-verse-xmark:hover {
     overflow: auto;
 }
 .bib-lang-load {
-    margin: 10px 0 10px;
+    margin: 10px 0 8px;
     font-size: 17px;
     font-weight: 500;
     color: hsl(0, 0%, 30%);
 }
 .bib-lang-eng {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 7px;
-    row-gap: 2px;
+    font-size: 17px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
 }
-.bib-lang-eng span {
-    font-size: 19px;
+.bib-lang-greek-full {
+    margin-top: 8px;
+    font-size: 17px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
+}
+.bib-lang-greek-ul {
+    margin: 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: 0.2s ease;
+}
+.bib-lang-greek-li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+.bib-lang-greek-word {
+    font-size: 21px;
     font-weight: 500;
     color: hsl(240, 100%, 50%);
     text-decoration: underline;
@@ -949,14 +978,18 @@ i.bib-verse-xmark:hover {
     cursor: pointer;
     transition: 0.2s ease;
 }
-.bib-lang-eng span:hover {
+.bib-lang-greek-word:hover {
     color: hsl(240, 100%, 30%);
 }
-.bib-lang-greek {
-    margin-top: 12px;
-    font-size: 19px;
-    color: hsl(0, 0%, 20%);
-    transition: 0.2s ease;
+.bib-lang-end-word {
+    font-size: 21px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
+}
+.bib-lang-greek-li span {
+    height: 1px;
+    width: 12px;
+    background-color: hsl(0, 0%, 50%);
 }
 .bib-lang-content-load {
     margin-top: 32px;
@@ -1367,21 +1400,24 @@ i.bib-opt-close:hover {
 }
 .bib-chat-input {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     gap: 12px;
     width: 100%;
 }
-.bib-chat-input input {
+.bib-chat-input textarea {
+    height: 45px;
     width: 100%;
+    border-radius: 5px;
     padding: 10px 15px;
     border: 1px solid hsl(0, 0%, 85%);
+    resize: none;
     outline: none;
     font-size: 17px;
     color: hsl(0, 0%, 20%);
 }
-.bib-chat-input input:focus {
-    border: 1px sold hsl(0, 0%, 70%);
+.bib-chat-input textarea:focus {
+    border: 1px solid hsl(0, 0%, 70%);
 }
 .bib-chat-send {
     cursor: pointer;

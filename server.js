@@ -15,7 +15,6 @@ const openaiClient = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-/*
 const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -51,7 +50,6 @@ app.use(session({
         sameSite: "lax"    // allow cross-site cookies
     }
 }));
-*/
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -308,36 +306,16 @@ app.post("/api/analyse-greek-word", async (req, res) => {
         schema: {
             type: "object",
             properties: {
-                surface_form: {
-                    type: "string"
-                },
-                lemma: {
-                    type: "string"
-                },
-                transliteration: {
-                    type: "string"
-                },
-                english: {
-                    type: "string"
-                },
                 definition: {
                     type: "string"
                 },
-                strongs: {
-                    type: "string"
-                },
-                parsing: {
+                analysis: {
                     type: "string"
                 }
             },
             required: [
-                "surface_form",
-                "lemma",
-                "transliteration",
-                "english",
                 "definition",
-                "strongs",
-                "parsing",
+                "analysis"
             ],
             additionalProperties: false
         }
@@ -457,6 +435,7 @@ app.post("/api/ai-ask-question", async (req, res) => {
         input: prompt,
     });
     let answer = response.output_text;
+
 
     return res.json({ answer: answer });
 });

@@ -3,3606 +3,4207 @@
         "chapter": 1,
         "verse": 1,
         "word": "בִּ/שְׁנַ֤ת",
-        "strongs": "8141"
+        "strongs": "8141",
+        "morph": "HR/Ncfsc"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "שְׁתַּ֨יִם֙",
-        "strongs": "8147"
+        "strongs": "8147",
+        "morph": "HAcfda"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "לְ/דָרְיָ֣וֶשׁ",
-        "strongs": "1867"
+        "strongs": "1867",
+        "morph": "HR/Np"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "הַ/מֶּ֔לֶךְ",
-        "strongs": "4428"
+        "strongs": "4428",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "בַּ/חֹ֨דֶשׁ֙",
-        "strongs": "2320"
+        "strongs": "2320",
+        "morph": "HRd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "הַ/שִּׁשִּׁ֔י",
-        "strongs": "8345"
+        "strongs": "8345",
+        "morph": "HTd/Aomsa"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "בְּ/י֥וֹם",
-        "strongs": "3117"
+        "strongs": "3117",
+        "morph": "HR/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "אֶחָ֖ד",
-        "strongs": "259"
+        "strongs": "259",
+        "morph": "HAcmsa"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "לַ/חֹ֑דֶשׁ",
-        "strongs": "2320"
+        "strongs": "2320",
+        "morph": "HRd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "הָיָ֨ה",
-        "strongs": "1961"
+        "strongs": "1961",
+        "morph": "HVqp3ms"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "דְבַר",
-        "strongs": "1697"
+        "strongs": "1697",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "יְהוָ֜ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "בְּ/יַד",
-        "strongs": "3027"
+        "strongs": "3027",
+        "morph": "HR/Ncbsc"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "חַגַּ֣י",
-        "strongs": "2292"
+        "strongs": "2292a",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "הַ/נָּבִ֗יא",
-        "strongs": "5030"
+        "strongs": "5030",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HR"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "זְרֻבָּבֶ֤ל",
-        "strongs": "2216"
+        "strongs": "2216",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "בֶּן",
-        "strongs": "1121"
+        "strongs": "1121a",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "שְׁאַלְתִּיאֵל֙",
-        "strongs": "7597"
+        "strongs": "7597a",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "פַּחַ֣ת",
-        "strongs": "6346"
+        "strongs": "6346",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "יְהוּדָ֔ה",
-        "strongs": "3063"
+        "strongs": "3063",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "וְ/אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HC/R"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "יְהוֹשֻׁ֧עַ",
-        "strongs": "3091"
+        "strongs": "3091",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "בֶּן",
-        "strongs": "1121"
+        "strongs": "1121a",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "יְהוֹצָדָ֛ק",
-        "strongs": "3087"
+        "strongs": "3087",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "הַ/כֹּהֵ֥ן",
-        "strongs": "3548"
+        "strongs": "3548",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "הַ/גָּד֖וֹל",
-        "strongs": "1419"
+        "strongs": "1419a",
+        "morph": "HTd/Aamsa"
     },
     {
         "chapter": 1,
         "verse": 1,
         "word": "לֵ/אמֹֽר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HR/Vqc"
     },
     {
         "chapter": 1,
         "verse": 2,
         "word": "כֹּ֥ה",
-        "strongs": "3541"
+        "strongs": "3541",
+        "morph": "HD"
     },
     {
         "chapter": 1,
         "verse": 2,
         "word": "אָמַ֛ר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HVqp3ms"
     },
     {
         "chapter": 1,
         "verse": 2,
         "word": "יְהוָ֥ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 2,
         "word": "צְבָא֖וֹת",
-        "strongs": "6635"
+        "strongs": "6635b",
+        "morph": "HNcbpa"
     },
     {
         "chapter": 1,
         "verse": 2,
         "word": "לֵ/אמֹ֑ר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HR/Vqc"
     },
     {
         "chapter": 1,
         "verse": 2,
         "word": "הָ/עָ֤ם",
-        "strongs": "5971"
+        "strongs": "5971a",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 2,
         "word": "הַ/זֶּה֙",
-        "strongs": "2088"
+        "strongs": "2088",
+        "morph": "HTd/Pdxms"
     },
     {
         "chapter": 1,
         "verse": 2,
         "word": "אָֽמְר֔וּ",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HVqp3cp"
     },
     {
         "chapter": 1,
         "verse": 2,
         "word": "לֹ֥א",
-        "strongs": "3808"
+        "strongs": "3808",
+        "morph": "HTn"
     },
     {
         "chapter": 1,
         "verse": 2,
         "word": "עֶת",
-        "strongs": "6256"
+        "strongs": "6256",
+        "morph": "HNcbsc"
     },
     {
         "chapter": 1,
         "verse": 2,
         "word": "בֹּ֛א",
-        "strongs": "935"
+        "strongs": "935",
+        "morph": "HVqc"
     },
     {
         "chapter": 1,
         "verse": 2,
         "word": "עֶת",
-        "strongs": "6256"
+        "strongs": "6256",
+        "morph": "HNcbsc"
     },
     {
         "chapter": 1,
         "verse": 2,
         "word": "בֵּ֥ית",
-        "strongs": "1004"
+        "strongs": "1004b",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 2,
         "word": "יְהוָ֖ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 2,
         "word": "לְ/הִבָּנֽוֹת",
-        "strongs": "1129"
+        "strongs": "1129",
+        "morph": "HR/VNc"
     },
     {
         "chapter": 1,
         "verse": 3,
         "word": "וַֽ/יְהִי֙",
-        "strongs": "1961"
+        "strongs": "1961",
+        "morph": "HC/Vqw3ms"
     },
     {
         "chapter": 1,
         "verse": 3,
         "word": "דְּבַר",
-        "strongs": "1697"
+        "strongs": "1697",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 3,
         "word": "יְהוָ֔ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 3,
         "word": "בְּ/יַד",
-        "strongs": "3027"
+        "strongs": "3027",
+        "morph": "HR/Ncbsc"
     },
     {
         "chapter": 1,
         "verse": 3,
         "word": "חַגַּ֥י",
-        "strongs": "2292"
+        "strongs": "2292a",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 3,
         "word": "הַ/נָּבִ֖יא",
-        "strongs": "5030"
+        "strongs": "5030",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 3,
         "word": "לֵ/אמֹֽר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HR/Vqc"
     },
     {
         "chapter": 1,
         "verse": 4,
         "word": "הַ/עֵ֤ת",
-        "strongs": "6256"
+        "strongs": "6256",
+        "morph": "HTi/Ncbsa"
     },
     {
         "chapter": 1,
         "verse": 4,
         "word": "לָ/כֶם֙",
-        "strongs": ""
+        "strongs": "",
+        "morph": "HR/Sp2mp"
     },
     {
         "chapter": 1,
         "verse": 4,
         "word": "אַתֶּ֔ם",
-        "strongs": "859"
+        "strongs": "859d",
+        "morph": "HPp2mp"
     },
     {
         "chapter": 1,
         "verse": 4,
         "word": "לָ/שֶׁ֖בֶת",
-        "strongs": "3427"
+        "strongs": "3427",
+        "morph": "HR/Vqc"
     },
     {
         "chapter": 1,
         "verse": 4,
         "word": "בְּ/בָתֵּי/כֶ֣ם",
-        "strongs": "1004"
+        "strongs": "1004b",
+        "morph": "HR/Ncmpc/Sp2mp"
     },
     {
         "chapter": 1,
         "verse": 4,
         "word": "סְפוּנִ֑ים",
-        "strongs": "5603"
+        "strongs": "5603",
+        "morph": "HVqsmpa"
     },
     {
         "chapter": 1,
         "verse": 4,
         "word": "וְ/הַ/בַּ֥יִת",
-        "strongs": "1004"
+        "strongs": "1004b",
+        "morph": "HC/Td/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 4,
         "word": "הַ/זֶּ֖ה",
-        "strongs": "2088"
+        "strongs": "2088",
+        "morph": "HTd/Pdxms"
     },
     {
         "chapter": 1,
         "verse": 4,
         "word": "חָרֵֽב",
-        "strongs": "2720"
+        "strongs": "2720b",
+        "morph": "HAamsa"
     },
     {
         "chapter": 1,
         "verse": 5,
         "word": "וְ/עַתָּ֕ה",
-        "strongs": "6258"
+        "strongs": "6258",
+        "morph": "HC/D"
     },
     {
         "chapter": 1,
         "verse": 5,
         "word": "כֹּ֥ה",
-        "strongs": "3541"
+        "strongs": "3541",
+        "morph": "HD"
     },
     {
         "chapter": 1,
         "verse": 5,
         "word": "אָמַ֖ר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HVqp3ms"
     },
     {
         "chapter": 1,
         "verse": 5,
         "word": "יְהוָ֣ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 5,
         "word": "צְבָא֑וֹת",
-        "strongs": "6635"
+        "strongs": "6635b",
+        "morph": "HNcbpa"
     },
     {
         "chapter": 1,
         "verse": 5,
         "word": "שִׂ֥ימוּ",
-        "strongs": "7760"
+        "strongs": "7760a",
+        "morph": "HVqv2mp"
     },
     {
         "chapter": 1,
         "verse": 5,
         "word": "לְבַבְ/כֶ֖ם",
-        "strongs": "3824"
+        "strongs": "3824",
+        "morph": "HNcmsc/Sp2mp"
     },
     {
         "chapter": 1,
         "verse": 5,
         "word": "עַל",
-        "strongs": "5921"
+        "strongs": "5921a",
+        "morph": "HR"
     },
     {
         "chapter": 1,
         "verse": 5,
         "word": "דַּרְכֵי/כֶֽם",
-        "strongs": "1870"
+        "strongs": "1870",
+        "morph": "HNcbpc/Sp2mp"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "זְרַעְתֶּ֨ם",
-        "strongs": "2232"
+        "strongs": "2232",
+        "morph": "HVqp2mp"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "הַרְבֵּ֜ה",
-        "strongs": "7235"
+        "strongs": "7235a",
+        "morph": "HVha"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "וְ/הָבֵ֣א",
-        "strongs": "935"
+        "strongs": "935",
+        "morph": "HC/Vha"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "מְעָ֗ט",
-        "strongs": "4592"
+        "strongs": "4592",
+        "morph": "HAamsa"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "אָכ֤וֹל",
-        "strongs": "398"
+        "strongs": "398",
+        "morph": "HVqa"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "וְ/אֵין",
-        "strongs": "369"
+        "strongs": "369",
+        "morph": "HC/Tn"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "לְ/שָׂבְעָה֙",
-        "strongs": "7654"
+        "strongs": "7654",
+        "morph": "HR/Ncfsa"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "שָׁת֣וֹ",
-        "strongs": "8354"
+        "strongs": "8354",
+        "morph": "HVqa"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "וְ/אֵין",
-        "strongs": "369"
+        "strongs": "369",
+        "morph": "HC/Tn"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "לְ/שָׁכְרָ֔ה",
-        "strongs": "7937"
+        "strongs": "7937",
+        "morph": "HR/Vqc"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "לָב֖וֹשׁ",
-        "strongs": "3847"
+        "strongs": "3847",
+        "morph": "HVqa"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "וְ/אֵין",
-        "strongs": "369"
+        "strongs": "369",
+        "morph": "HC/Tn"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "לְ/חֹ֣ם",
-        "strongs": "2527"
+        "strongs": "2527",
+        "morph": "HR/Vqc"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "ל֑/וֹ",
-        "strongs": ""
+        "strongs": "",
+        "morph": "HR/Sp3ms"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "וְ/הַ֨/מִּשְׂתַּכֵּ֔ר",
-        "strongs": "7936"
+        "strongs": "7936b",
+        "morph": "HC/Td/Vtrmsa"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "מִשְׂתַּכֵּ֖ר",
-        "strongs": "7936"
+        "strongs": "7936b",
+        "morph": "HVtrmsa"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HR"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "צְר֥וֹר",
-        "strongs": "6872"
+        "strongs": "6872a",
+        "morph": "HNcmsa"
     },
     {
         "chapter": 1,
         "verse": 6,
         "word": "נָקֽוּב",
-        "strongs": "5344"
+        "strongs": "5344a",
+        "morph": "HVqsmsa"
     },
     {
         "chapter": 1,
         "verse": 7,
         "word": "כֹּ֥ה",
-        "strongs": "3541"
+        "strongs": "3541",
+        "morph": "HD"
     },
     {
         "chapter": 1,
         "verse": 7,
         "word": "אָמַ֖ר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HVqp3ms"
     },
     {
         "chapter": 1,
         "verse": 7,
         "word": "יְהוָ֣ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 7,
         "word": "צְבָא֑וֹת",
-        "strongs": "6635"
+        "strongs": "6635b",
+        "morph": "HNcbpa"
     },
     {
         "chapter": 1,
         "verse": 7,
         "word": "שִׂ֥ימוּ",
-        "strongs": "7760"
+        "strongs": "7760a",
+        "morph": "HVqv2mp"
     },
     {
         "chapter": 1,
         "verse": 7,
         "word": "לְבַבְ/כֶ֖ם",
-        "strongs": "3824"
+        "strongs": "3824",
+        "morph": "HNcmsc/Sp2mp"
     },
     {
         "chapter": 1,
         "verse": 7,
         "word": "עַל",
-        "strongs": "5921"
+        "strongs": "5921a",
+        "morph": "HR"
     },
     {
         "chapter": 1,
         "verse": 7,
         "word": "דַּרְכֵי/כֶֽם",
-        "strongs": "1870"
+        "strongs": "1870",
+        "morph": "HNcbpc/Sp2mp"
     },
     {
         "chapter": 1,
         "verse": 8,
         "word": "עֲל֥וּ",
-        "strongs": "5927"
+        "strongs": "5927",
+        "morph": "HVqv2mp"
     },
     {
         "chapter": 1,
         "verse": 8,
         "word": "הָ/הָ֛ר",
-        "strongs": "2022"
+        "strongs": "2022",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 8,
         "word": "וַ/הֲבֵאתֶ֥ם",
-        "strongs": "935"
+        "strongs": "935",
+        "morph": "HC/Vhq2mp"
     },
     {
         "chapter": 1,
         "verse": 8,
         "word": "עֵ֖ץ",
-        "strongs": "6086"
+        "strongs": "6086",
+        "morph": "HNcmsa"
     },
     {
         "chapter": 1,
         "verse": 8,
         "word": "וּ/בְנ֣וּ",
-        "strongs": "1129"
+        "strongs": "1129",
+        "morph": "HC/Vqv2mp"
     },
     {
         "chapter": 1,
         "verse": 8,
         "word": "הַ/בָּ֑יִת",
-        "strongs": "1004"
+        "strongs": "1004b",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 8,
         "word": "וְ/אֶרְצֶה",
-        "strongs": "7521"
+        "strongs": "7521",
+        "morph": "HC/Vqi1cs"
     },
     {
         "chapter": 1,
         "verse": 8,
         "word": "בּ֥/וֹ",
-        "strongs": ""
+        "strongs": "",
+        "morph": "HR/Sp3ms"
     },
     {
         "chapter": 1,
         "verse": 8,
         "word": "ו/אכבד",
-        "strongs": "3513"
+        "strongs": "3513",
+        "morph": "HC/VNi1cs"
     },
     {
         "chapter": 1,
         "verse": 8,
         "word": "וְ/אֶכָּבְדָ֖ה",
-        "strongs": "3513"
+        "strongs": "3513",
+        "morph": "HC/VNh1cs"
     },
     {
         "chapter": 1,
         "verse": 8,
         "word": "אָמַ֥ר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HVqp3ms"
     },
     {
         "chapter": 1,
         "verse": 8,
         "word": "יְהוָֽה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "פָּנֹ֤ה",
-        "strongs": "6437"
+        "strongs": "6437",
+        "morph": "HVqa"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HR"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "הַרְבֵּה֙",
-        "strongs": "7235"
+        "strongs": "7235a",
+        "morph": "HVha"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "וְ/הִנֵּ֣ה",
-        "strongs": "2009"
+        "strongs": "2009",
+        "morph": "HC/Tm"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "לִ/מְעָ֔ט",
-        "strongs": "4592"
+        "strongs": "4592",
+        "morph": "HR/Aamsa"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "וַ/הֲבֵאתֶ֥ם",
-        "strongs": "935"
+        "strongs": "935",
+        "morph": "HC/Vhp2mp"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "הַ/בַּ֖יִת",
-        "strongs": "1004"
+        "strongs": "1004b",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "וְ/נָפַ֣חְתִּי",
-        "strongs": "5301"
+        "strongs": "5301",
+        "morph": "HC/Vqp1cs"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "ב֑/וֹ",
-        "strongs": ""
+        "strongs": "",
+        "morph": "HR/Sp3ms"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "יַ֣עַן",
-        "strongs": "3282"
+        "strongs": "3282",
+        "morph": "HC"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "מֶ֗ה",
-        "strongs": "4100"
+        "strongs": "4100",
+        "morph": "HTi"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "נְאֻם֙",
-        "strongs": "5002"
+        "strongs": "5002",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "יְהוָ֣ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "צְבָא֔וֹת",
-        "strongs": "6635"
+        "strongs": "6635b",
+        "morph": "HNcbpa"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "יַ֗עַן",
-        "strongs": "3282"
+        "strongs": "3282",
+        "morph": "HC"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "בֵּיתִ/י֙",
-        "strongs": "1004"
+        "strongs": "1004b",
+        "morph": "HNcmsc/Sp1cs"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "אֲשֶׁר",
-        "strongs": "834"
+        "strongs": "834a",
+        "morph": "HTr"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "ה֣וּא",
-        "strongs": "1931"
+        "strongs": "1931",
+        "morph": "HPp3ms"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "חָרֵ֔ב",
-        "strongs": "2720"
+        "strongs": "2720b",
+        "morph": "HAamsa"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "וְ/אַתֶּ֥ם",
-        "strongs": "859"
+        "strongs": "859d",
+        "morph": "HC/Pp2mp"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "רָצִ֖ים",
-        "strongs": "7323"
+        "strongs": "7323",
+        "morph": "HVqrmpa"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "אִ֥ישׁ",
-        "strongs": "376"
+        "strongs": "376",
+        "morph": "HNcmsa"
     },
     {
         "chapter": 1,
         "verse": 9,
         "word": "לְ/בֵיתֽ/וֹ",
-        "strongs": "1004"
+        "strongs": "1004b",
+        "morph": "HR/Ncmsc/Sp3ms"
     },
     {
         "chapter": 1,
         "verse": 10,
         "word": "עַל",
-        "strongs": "5921"
+        "strongs": "5921a",
+        "morph": "HR"
     },
     {
         "chapter": 1,
         "verse": 10,
         "word": "כֵּ֣ן",
-        "strongs": "3651"
+        "strongs": "3651c",
+        "morph": "HTm"
     },
     {
         "chapter": 1,
         "verse": 10,
         "word": "עֲלֵי/כֶ֔ם",
-        "strongs": "5921"
+        "strongs": "5921a",
+        "morph": "HR/Sp2mp"
     },
     {
         "chapter": 1,
         "verse": 10,
         "word": "כָּלְא֥וּ",
-        "strongs": "3607"
+        "strongs": "3607",
+        "morph": "HVqp3cp"
     },
     {
         "chapter": 1,
         "verse": 10,
         "word": "שָמַ֖יִם",
-        "strongs": "8064"
+        "strongs": "8064",
+        "morph": "HNcmpa"
     },
     {
         "chapter": 1,
         "verse": 10,
         "word": "מִ/טָּ֑ל",
-        "strongs": "2919"
+        "strongs": "2919",
+        "morph": "HR/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 10,
         "word": "וְ/הָ/אָ֖רֶץ",
-        "strongs": "776"
+        "strongs": "776",
+        "morph": "HC/Td/Ncbsa"
     },
     {
         "chapter": 1,
         "verse": 10,
         "word": "כָּלְאָ֥ה",
-        "strongs": "3607"
+        "strongs": "3607",
+        "morph": "HVqp3fs"
     },
     {
         "chapter": 1,
         "verse": 10,
         "word": "יְבוּלָֽ/הּ",
-        "strongs": "2981"
+        "strongs": "2981",
+        "morph": "HNcmsc/Sp3fs"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "וָ/אֶקְרָ֨א",
-        "strongs": "7121"
+        "strongs": "7121",
+        "morph": "HC/Vqw1cs"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "חֹ֜רֶב",
-        "strongs": "2721"
+        "strongs": "2721a",
+        "morph": "HNcmsa"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "עַל",
-        "strongs": "5921"
+        "strongs": "5921a",
+        "morph": "HR"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "הָ/אָ֣רֶץ",
-        "strongs": "776"
+        "strongs": "776",
+        "morph": "HTd/Ncbsa"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "וְ/עַל",
-        "strongs": "5921"
+        "strongs": "5921a",
+        "morph": "HC/R"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "הֶ/הָרִ֗ים",
-        "strongs": "2022"
+        "strongs": "2022",
+        "morph": "HTd/Ncmpa"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "וְ/עַל",
-        "strongs": "5921"
+        "strongs": "5921a",
+        "morph": "HC/R"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "הַ/דָּגָן֙",
-        "strongs": "1715"
+        "strongs": "1715",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "וְ/עַל",
-        "strongs": "5921"
+        "strongs": "5921a",
+        "morph": "HC/R"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "הַ/תִּיר֣וֹשׁ",
-        "strongs": "8492"
+        "strongs": "8492",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "וְ/עַל",
-        "strongs": "5921"
+        "strongs": "5921a",
+        "morph": "HC/R"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "הַ/יִּצְהָ֔ר",
-        "strongs": "3323"
+        "strongs": "3323",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "וְ/עַ֛ל",
-        "strongs": "5921"
+        "strongs": "5921a",
+        "morph": "HC/R"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "אֲשֶׁ֥ר",
-        "strongs": "834"
+        "strongs": "834a",
+        "morph": "HTr"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "תּוֹצִ֖יא",
-        "strongs": "3318"
+        "strongs": "3318",
+        "morph": "HVhi3fs"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "הָ/אֲדָמָ֑ה",
-        "strongs": "127"
+        "strongs": "127",
+        "morph": "HTd/Ncfsa"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "וְ/עַל",
-        "strongs": "5921"
+        "strongs": "5921a",
+        "morph": "HC/R"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "הָֽ/אָדָם֙",
-        "strongs": "120"
+        "strongs": "120",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "וְ/עַל",
-        "strongs": "5921"
+        "strongs": "5921a",
+        "morph": "HC/R"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "הַ/בְּהֵמָ֔ה",
-        "strongs": "929"
+        "strongs": "929",
+        "morph": "HTd/Ncfsa"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "וְ/עַ֖ל",
-        "strongs": "5921"
+        "strongs": "5921a",
+        "morph": "HC/R"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "כָּל",
-        "strongs": "3605"
+        "strongs": "3605",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "יְגִ֥יעַ",
-        "strongs": "3018"
+        "strongs": "3018",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 11,
         "word": "כַּפָּֽיִם",
-        "strongs": "3709"
+        "strongs": "3709",
+        "morph": "HNcfda"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "וַ/יִּשְׁמַ֣ע",
-        "strongs": "8085"
+        "strongs": "8085",
+        "morph": "HC/Vqw3ms"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "זְרֻבָּבֶ֣ל",
-        "strongs": "2216"
+        "strongs": "2216",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "בֶּֽן",
-        "strongs": "1121"
+        "strongs": "1121a",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "שַׁלְתִּיאֵ֡ל",
-        "strongs": "7597"
+        "strongs": "7597b",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "וִ/יהוֹשֻׁ֣עַ",
-        "strongs": "3091"
+        "strongs": "3091",
+        "morph": "HC/Np"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "בֶּן",
-        "strongs": "1121"
+        "strongs": "1121a",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "יְהוֹצָדָק֩",
-        "strongs": "3087"
+        "strongs": "3087",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "הַ/כֹּהֵ֨ן",
-        "strongs": "3548"
+        "strongs": "3548",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "הַ/גָּד֜וֹל",
-        "strongs": "1419"
+        "strongs": "1419a",
+        "morph": "HTd/Aamsa"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "וְ/כֹ֣ל",
-        "strongs": "3605"
+        "strongs": "3605",
+        "morph": "HC/Ncmsc"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "שְׁאֵרִ֣ית",
-        "strongs": "7611"
+        "strongs": "7611",
+        "morph": "HNcfsc"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "הָ/עָ֗ם",
-        "strongs": "5971"
+        "strongs": "5971a",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "בְּ/קוֹל֙",
-        "strongs": "6963"
+        "strongs": "6963a",
+        "morph": "HR/Ncmsc"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "יְהוָ֣ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "אֱלֹֽהֵי/הֶ֔ם",
-        "strongs": "430"
+        "strongs": "430",
+        "morph": "HNcmpc/Sp3mp"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "וְ/עַל",
-        "strongs": "5921"
+        "strongs": "5921a",
+        "morph": "HC/R"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "דִּבְרֵי֙",
-        "strongs": "1697"
+        "strongs": "1697",
+        "morph": "HNcmpc"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "חַגַּ֣י",
-        "strongs": "2292"
+        "strongs": "2292a",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "הַ/נָּבִ֔יא",
-        "strongs": "5030"
+        "strongs": "5030",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "כַּ/אֲשֶׁ֥ר",
-        "strongs": "834"
+        "strongs": "834d",
+        "morph": "HR/Tr"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "שְׁלָח֖/וֹ",
-        "strongs": "7971"
+        "strongs": "7971",
+        "morph": "HVqp3ms/Sp3ms"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "יְהוָ֣ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "אֱלֹהֵי/הֶ֑ם",
-        "strongs": "430"
+        "strongs": "430",
+        "morph": "HNcmpc/Sp3mp"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "וַ/יִּֽירְא֥וּ",
-        "strongs": "3372"
+        "strongs": "3372",
+        "morph": "HC/Vqw3mp"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "הָ/עָ֖ם",
-        "strongs": "5971"
+        "strongs": "5971a",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "מִ/פְּנֵ֥י",
-        "strongs": "6440"
+        "strongs": "6440",
+        "morph": "HR/Ncbpc"
     },
     {
         "chapter": 1,
         "verse": 12,
         "word": "יְהוָֽה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 13,
         "word": "וַ֠/יֹּאמֶר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HC/Vqw3ms"
     },
     {
         "chapter": 1,
         "verse": 13,
         "word": "חַגַּ֞י",
-        "strongs": "2292"
+        "strongs": "2292a",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 13,
         "word": "מַלְאַ֧ךְ",
-        "strongs": "4397"
+        "strongs": "4397",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 13,
         "word": "יְהוָ֛ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 13,
         "word": "בְּ/מַלְאֲכ֥וּת",
-        "strongs": "4400"
+        "strongs": "4400",
+        "morph": "HR/Ncfsc"
     },
     {
         "chapter": 1,
         "verse": 13,
         "word": "יְהוָ֖ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 13,
         "word": "לָ/עָ֣ם",
-        "strongs": "5971"
+        "strongs": "5971a",
+        "morph": "HRd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 13,
         "word": "לֵ/אמֹ֑ר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HR/Vqc"
     },
     {
         "chapter": 1,
         "verse": 13,
         "word": "אֲנִ֥י",
-        "strongs": "589"
+        "strongs": "589",
+        "morph": "HPp1cs"
     },
     {
         "chapter": 1,
         "verse": 13,
         "word": "אִתְּ/כֶ֖ם",
-        "strongs": "854"
+        "strongs": "854",
+        "morph": "HR/Sp2mp"
     },
     {
         "chapter": 1,
         "verse": 13,
         "word": "נְאֻם",
-        "strongs": "5002"
+        "strongs": "5002",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 13,
         "word": "יְהוָֽה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "וַ/יָּ֣עַר",
-        "strongs": "5782"
+        "strongs": "5782",
+        "morph": "HC/Vhw3ms"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "יְהוָ֡ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "אֶת",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HTo"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "רוּחַ֩",
-        "strongs": "7307"
+        "strongs": "7307",
+        "morph": "HNcbsc"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "זְרֻבָּבֶ֨ל",
-        "strongs": "2216"
+        "strongs": "2216",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "בֶּן",
-        "strongs": "1121"
+        "strongs": "1121a",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "שַׁלְתִּיאֵ֜ל",
-        "strongs": "7597"
+        "strongs": "7597b",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "פַּחַ֣ת",
-        "strongs": "6346"
+        "strongs": "6346",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "יְהוּדָ֗ה",
-        "strongs": "3063"
+        "strongs": "3063",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "וְ/אֶת",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HC/To"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "ר֨וּחַ֙",
-        "strongs": "7307"
+        "strongs": "7307",
+        "morph": "HNcbsc"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "יְהוֹשֻׁ֤עַ",
-        "strongs": "3091"
+        "strongs": "3091",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "בֶּן",
-        "strongs": "1121"
+        "strongs": "1121a",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "יְהוֹצָדָק֙",
-        "strongs": "3087"
+        "strongs": "3087",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "הַ/כֹּהֵ֣ן",
-        "strongs": "3548"
+        "strongs": "3548",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "הַ/גָּד֔וֹל",
-        "strongs": "1419"
+        "strongs": "1419a",
+        "morph": "HTd/Aamsa"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "וְֽ/אֶת",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HC/To"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "ר֔וּחַ",
-        "strongs": "7307"
+        "strongs": "7307",
+        "morph": "HNcbsc"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "כֹּ֖ל",
-        "strongs": "3605"
+        "strongs": "3605",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "שְׁאֵרִ֣ית",
-        "strongs": "7611"
+        "strongs": "7611",
+        "morph": "HNcfsc"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "הָ/עָ֑ם",
-        "strongs": "5971"
+        "strongs": "5971a",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "וַ/יָּבֹ֨אוּ֙",
-        "strongs": "935"
+        "strongs": "935",
+        "morph": "HC/Vqw3mp"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "וַ/יַּעֲשׂ֣וּ",
-        "strongs": "6213"
+        "strongs": "6213a",
+        "morph": "HC/Vqw3mp"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "מְלָאכָ֔ה",
-        "strongs": "4399"
+        "strongs": "4399",
+        "morph": "HNcfsa"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "בְּ/בֵית",
-        "strongs": "1004"
+        "strongs": "1004b",
+        "morph": "HR/Ncmsc"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "יְהוָ֥ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "צְבָא֖וֹת",
-        "strongs": "6635"
+        "strongs": "6635b",
+        "morph": "HNcbpa"
     },
     {
         "chapter": 1,
         "verse": 14,
         "word": "אֱלֹהֵי/הֶֽם",
-        "strongs": "430"
+        "strongs": "430",
+        "morph": "HNcmpc/Sp3mp"
     },
     {
         "chapter": 1,
         "verse": 15,
         "word": "בְּ/י֨וֹם",
-        "strongs": "3117"
+        "strongs": "3117",
+        "morph": "HR/Ncmsc"
     },
     {
         "chapter": 1,
         "verse": 15,
         "word": "עֶשְׂרִ֧ים",
-        "strongs": "6242"
+        "strongs": "6242",
+        "morph": "HAcbpa"
     },
     {
         "chapter": 1,
         "verse": 15,
         "word": "וְ/אַרְבָּעָ֛ה",
-        "strongs": "702"
+        "strongs": "702",
+        "morph": "HC/Acmsa"
     },
     {
         "chapter": 1,
         "verse": 15,
         "word": "לַ/חֹ֖דֶשׁ",
-        "strongs": "2320"
+        "strongs": "2320",
+        "morph": "HRd/Ncmsa"
     },
     {
         "chapter": 1,
         "verse": 15,
         "word": "בַּ/שִּׁשִּׁ֑י",
-        "strongs": "8345"
+        "strongs": "8345",
+        "morph": "HRd/Aomsa"
     },
     {
         "chapter": 1,
         "verse": 15,
         "word": "בִּ/שְׁנַ֥ת",
-        "strongs": "8141"
+        "strongs": "8141",
+        "morph": "HR/Ncfsc"
     },
     {
         "chapter": 1,
         "verse": 15,
         "word": "שְׁתַּ֖יִם",
-        "strongs": "8147"
+        "strongs": "8147",
+        "morph": "HAcfda"
     },
     {
         "chapter": 1,
         "verse": 15,
         "word": "לְ/דָרְיָ֥וֶשׁ",
-        "strongs": "1867"
+        "strongs": "1867",
+        "morph": "HR/Np"
     },
     {
         "chapter": 1,
         "verse": 15,
         "word": "הַ/מֶּֽלֶךְ",
-        "strongs": "4428"
+        "strongs": "4428",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 1,
         "word": "בַּ/שְּׁבִיעִ֕י",
-        "strongs": "7637"
+        "strongs": "7637",
+        "morph": "HRd/Aomsa"
     },
     {
         "chapter": 2,
         "verse": 1,
         "word": "בְּ/עֶשְׂרִ֥ים",
-        "strongs": "6242"
+        "strongs": "6242",
+        "morph": "HR/Acbpa"
     },
     {
         "chapter": 2,
         "verse": 1,
         "word": "וְ/אֶחָ֖ד",
-        "strongs": "259"
+        "strongs": "259",
+        "morph": "HC/Acmsa"
     },
     {
         "chapter": 2,
         "verse": 1,
         "word": "לַ/חֹ֑דֶשׁ",
-        "strongs": "2320"
+        "strongs": "2320",
+        "morph": "HRd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 1,
         "word": "הָיָה֙",
-        "strongs": "1961"
+        "strongs": "1961",
+        "morph": "HVqp3ms"
     },
     {
         "chapter": 2,
         "verse": 1,
         "word": "דְּבַר",
-        "strongs": "1697"
+        "strongs": "1697",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 1,
         "word": "יְהוָ֔ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 1,
         "word": "בְּ/יַד",
-        "strongs": "3027"
+        "strongs": "3027",
+        "morph": "HR/Ncbsc"
     },
     {
         "chapter": 2,
         "verse": 1,
         "word": "חַגַּ֥י",
-        "strongs": "2292"
+        "strongs": "2292a",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 1,
         "word": "הַ/נָּבִ֖יא",
-        "strongs": "5030"
+        "strongs": "5030",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 1,
         "word": "לֵ/אמֹֽר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HR/Vqc"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "אֱמָר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HVqv2ms"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "נָ֗א",
-        "strongs": "4994"
+        "strongs": "4994",
+        "morph": "HTe"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HR"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "זְרֻבָּבֶ֤ל",
-        "strongs": "2216"
+        "strongs": "2216",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "בֶּן",
-        "strongs": "1121"
+        "strongs": "1121a",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "שַׁלְתִּיאֵל֙",
-        "strongs": "7597"
+        "strongs": "7597b",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "פַּחַ֣ת",
-        "strongs": "6346"
+        "strongs": "6346",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "יְהוּדָ֔ה",
-        "strongs": "3063"
+        "strongs": "3063",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "וְ/אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HC/R"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "יְהוֹשֻׁ֥עַ",
-        "strongs": "3091"
+        "strongs": "3091",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "בֶּן",
-        "strongs": "1121"
+        "strongs": "1121a",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "יְהוֹצָדָ֖ק",
-        "strongs": "3087"
+        "strongs": "3087",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "הַ/כֹּהֵ֣ן",
-        "strongs": "3548"
+        "strongs": "3548",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "הַ/גָּד֑וֹל",
-        "strongs": "1419"
+        "strongs": "1419a",
+        "morph": "HTd/Aamsa"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "וְ/אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HC/R"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "שְׁאֵרִ֥ית",
-        "strongs": "7611"
+        "strongs": "7611",
+        "morph": "HNcfsc"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "הָ/עָ֖ם",
-        "strongs": "5971"
+        "strongs": "5971a",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 2,
         "word": "לֵ/אמֹֽר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HR/Vqc"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "מִ֤י",
-        "strongs": "4310"
+        "strongs": "4310",
+        "morph": "HTi"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "בָ/כֶם֙",
-        "strongs": ""
+        "strongs": "",
+        "morph": "HR/Sp2mp"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "הַ/נִּשְׁאָ֔ר",
-        "strongs": "7604"
+        "strongs": "7604",
+        "morph": "HTd/VNrmsa"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "אֲשֶׁ֤ר",
-        "strongs": "834"
+        "strongs": "834a",
+        "morph": "HTr"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "רָאָה֙",
-        "strongs": "7200"
+        "strongs": "7200",
+        "morph": "HVqp3ms"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "אֶת",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HTo"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "הַ/בַּ֣יִת",
-        "strongs": "1004"
+        "strongs": "1004b",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "הַ/זֶּ֔ה",
-        "strongs": "2088"
+        "strongs": "2088",
+        "morph": "HTd/Pdxms"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "בִּ/כְבוֹד֖/וֹ",
-        "strongs": "3519"
+        "strongs": "3519",
+        "morph": "HR/Ncbsc/Sp3ms"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "הָ/רִאשׁ֑וֹן",
-        "strongs": "7223"
+        "strongs": "7223",
+        "morph": "HTd/Aomsa"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "וּ/מָ֨ה",
-        "strongs": "4100"
+        "strongs": "4100",
+        "morph": "HC/Ti"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "אַתֶּ֜ם",
-        "strongs": "859"
+        "strongs": "859d",
+        "morph": "HPp2mp"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "רֹאִ֤ים",
-        "strongs": "7200"
+        "strongs": "7200",
+        "morph": "HVqrmpa"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "אֹת/וֹ֙",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HTo/Sp3ms"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "עַ֔תָּה",
-        "strongs": "6258"
+        "strongs": "6258",
+        "morph": "HD"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "הֲ/ל֥וֹא",
-        "strongs": "3808"
+        "strongs": "3808",
+        "morph": "HTi/Tn"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "כָמֹ֛/הוּ",
-        "strongs": "3644"
+        "strongs": "3644",
+        "morph": "HR/Sp3ms"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "כְּ/אַ֖יִן",
-        "strongs": "369"
+        "strongs": "369",
+        "morph": "HR/Tn"
     },
     {
         "chapter": 2,
         "verse": 3,
         "word": "בְּ/עֵינֵי/כֶֽם",
-        "strongs": "5869"
+        "strongs": "5869a",
+        "morph": "HR/Ncbdc/Sp2mp"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "וְ/עַתָּ֣ה",
-        "strongs": "6258"
+        "strongs": "6258",
+        "morph": "HC/D"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "חֲזַ֣ק",
-        "strongs": "2388"
+        "strongs": "2388",
+        "morph": "HVqv2ms"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "זְרֻבָּבֶ֣ל",
-        "strongs": "2216"
+        "strongs": "2216",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "נְאֻם",
-        "strongs": "5002"
+        "strongs": "5002",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "יְהוָ֡ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "וַ/חֲזַ֣ק",
-        "strongs": "2388"
+        "strongs": "2388",
+        "morph": "HC/Vqv2ms"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "יְהוֹשֻׁ֣עַ",
-        "strongs": "3091"
+        "strongs": "3091",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "בֶּן",
-        "strongs": "1121"
+        "strongs": "1121a",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "יְהוֹצָדָק֩",
-        "strongs": "3087"
+        "strongs": "3087",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "הַ/כֹּהֵ֨ן",
-        "strongs": "3548"
+        "strongs": "3548",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "הַ/גָּד֜וֹל",
-        "strongs": "1419"
+        "strongs": "1419a",
+        "morph": "HTd/Aamsa"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "וַ/חֲזַ֨ק",
-        "strongs": "2388"
+        "strongs": "2388",
+        "morph": "HC/Vqv2ms"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "כָּל",
-        "strongs": "3605"
+        "strongs": "3605",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "עַ֥ם",
-        "strongs": "5971"
+        "strongs": "5971a",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "הָ/אָ֛רֶץ",
-        "strongs": "776"
+        "strongs": "776",
+        "morph": "HTd/Ncbsa"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "נְאֻם",
-        "strongs": "5002"
+        "strongs": "5002",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "יְהוָ֖ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "וַֽ/עֲשׂ֑וּ",
-        "strongs": "6213"
+        "strongs": "6213a",
+        "morph": "HC/Vqv2mp"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "כִּֽי",
-        "strongs": "3588"
+        "strongs": "3588a",
+        "morph": "HC"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "אֲנִ֣י",
-        "strongs": "589"
+        "strongs": "589",
+        "morph": "HPp1cs"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "אִתְּ/כֶ֔ם",
-        "strongs": "854"
+        "strongs": "854",
+        "morph": "HR/Sp2mp"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "נְאֻ֖ם",
-        "strongs": "5002"
+        "strongs": "5002",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "יְהוָ֥ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 4,
         "word": "צְבָאֽוֹת",
-        "strongs": "6635"
+        "strongs": "6635b",
+        "morph": "HNcbpa"
     },
     {
         "chapter": 2,
         "verse": 5,
         "word": "אֶֽת",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HTo"
     },
     {
         "chapter": 2,
         "verse": 5,
         "word": "הַ/דָּבָ֞ר",
-        "strongs": "1697"
+        "strongs": "1697",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 5,
         "word": "אֲשֶׁר",
-        "strongs": "834"
+        "strongs": "834a",
+        "morph": "HTr"
     },
     {
         "chapter": 2,
         "verse": 5,
         "word": "כָּרַ֤תִּי",
-        "strongs": "3772"
+        "strongs": "3772",
+        "morph": "HVqp1cs"
     },
     {
         "chapter": 2,
         "verse": 5,
         "word": "אִתְּ/כֶם֙",
-        "strongs": "854"
+        "strongs": "854",
+        "morph": "HR/Sp2mp"
     },
     {
         "chapter": 2,
         "verse": 5,
         "word": "בְּ/צֵאתְ/כֶ֣ם",
-        "strongs": "3318"
+        "strongs": "3318",
+        "morph": "HR/Vqc/Sp2mp"
     },
     {
         "chapter": 2,
         "verse": 5,
         "word": "מִ/מִּצְרַ֔יִם",
-        "strongs": "4714"
+        "strongs": "4714",
+        "morph": "HR/Np"
     },
     {
         "chapter": 2,
         "verse": 5,
         "word": "וְ/רוּחִ֖/י",
-        "strongs": "7307"
+        "strongs": "7307",
+        "morph": "HC/Ncbsc/Sp1cs"
     },
     {
         "chapter": 2,
         "verse": 5,
         "word": "עֹמֶ֣דֶת",
-        "strongs": "5975"
+        "strongs": "5975",
+        "morph": "HVqrfsa"
     },
     {
         "chapter": 2,
         "verse": 5,
         "word": "בְּ/תוֹכְ/כֶ֑ם",
-        "strongs": "8432"
+        "strongs": "8432",
+        "morph": "HR/Ncmsc/Sp2mp"
     },
     {
         "chapter": 2,
         "verse": 5,
         "word": "אַל",
-        "strongs": "408"
+        "strongs": "408",
+        "morph": "HTn"
     },
     {
         "chapter": 2,
         "verse": 5,
         "word": "תִּירָֽאוּ",
-        "strongs": "3372"
+        "strongs": "3372",
+        "morph": "HVqj2mp"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "כִּ֣י",
-        "strongs": "3588"
+        "strongs": "3588a",
+        "morph": "HC"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "כֹ֤ה",
-        "strongs": "3541"
+        "strongs": "3541",
+        "morph": "HD"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "אָמַר֙",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HVqp3ms"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "יְהוָ֣ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "צְבָא֔וֹת",
-        "strongs": "6635"
+        "strongs": "6635b",
+        "morph": "HNcbpa"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "ע֥וֹד",
-        "strongs": "5750"
+        "strongs": "5750",
+        "morph": "HD"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "אַחַ֖ת",
-        "strongs": "259"
+        "strongs": "259",
+        "morph": "HAcfsa"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "מְעַ֣ט",
-        "strongs": "4592"
+        "strongs": "4592",
+        "morph": "HNcmsa"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "הִ֑יא",
-        "strongs": "1931"
+        "strongs": "1931",
+        "morph": "HPp3fs"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "וַ/אֲנִ֗י",
-        "strongs": "589"
+        "strongs": "589",
+        "morph": "HC/Pp1cs"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "מַרְעִישׁ֙",
-        "strongs": "7493"
+        "strongs": "7493",
+        "morph": "HVhrmsa"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "אֶת",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HTo"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "הַ/שָּׁמַ֣יִם",
-        "strongs": "8064"
+        "strongs": "8064",
+        "morph": "HTd/Ncmpa"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "וְ/אֶת",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HC/To"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "הָ/אָ֔רֶץ",
-        "strongs": "776"
+        "strongs": "776",
+        "morph": "HTd/Ncbsa"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "וְ/אֶת",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HC/To"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "הַ/יָּ֖ם",
-        "strongs": "3220"
+        "strongs": "3220",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "וְ/אֶת",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HC/To"
     },
     {
         "chapter": 2,
         "verse": 6,
         "word": "הֶ/חָרָבָֽה",
-        "strongs": "2724"
+        "strongs": "2724",
+        "morph": "HR/Ncfsa"
     },
     {
         "chapter": 2,
         "verse": 7,
         "word": "וְ/הִרְעַשְׁתִּי֙",
-        "strongs": "7493"
+        "strongs": "7493",
+        "morph": "HC/Vhp1cs"
     },
     {
         "chapter": 2,
         "verse": 7,
         "word": "אֶת",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HTo"
     },
     {
         "chapter": 2,
         "verse": 7,
         "word": "כָּל",
-        "strongs": "3605"
+        "strongs": "3605",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 7,
         "word": "הַ/גּוֹיִ֔ם",
-        "strongs": "1471"
+        "strongs": "1471a",
+        "morph": "HTd/Ncmpa"
     },
     {
         "chapter": 2,
         "verse": 7,
         "word": "וּ/בָ֖אוּ",
-        "strongs": "935"
+        "strongs": "935",
+        "morph": "HC/Vqp3cp"
     },
     {
         "chapter": 2,
         "verse": 7,
         "word": "חֶמְדַּ֣ת",
-        "strongs": "2532"
+        "strongs": "2532a",
+        "morph": "HNcfsc"
     },
     {
         "chapter": 2,
         "verse": 7,
         "word": "כָּל",
-        "strongs": "3605"
+        "strongs": "3605",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 7,
         "word": "הַ/גּוֹיִ֑ם",
-        "strongs": "1471"
+        "strongs": "1471a",
+        "morph": "HTd/Ncmpa"
     },
     {
         "chapter": 2,
         "verse": 7,
         "word": "וּ/מִלֵּאתִ֞י",
-        "strongs": "4390"
+        "strongs": "4390",
+        "morph": "HC/Vpp1cs"
     },
     {
         "chapter": 2,
         "verse": 7,
         "word": "אֶת",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HTo"
     },
     {
         "chapter": 2,
         "verse": 7,
         "word": "הַ/בַּ֤יִת",
-        "strongs": "1004"
+        "strongs": "1004b",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 7,
         "word": "הַ/זֶּה֙",
-        "strongs": "2088"
+        "strongs": "2088",
+        "morph": "HTd/Pdxms"
     },
     {
         "chapter": 2,
         "verse": 7,
         "word": "כָּב֔וֹד",
-        "strongs": "3519"
+        "strongs": "3519",
+        "morph": "HNcbsa"
     },
     {
         "chapter": 2,
         "verse": 7,
         "word": "אָמַ֖ר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HVqp3ms"
     },
     {
         "chapter": 2,
         "verse": 7,
         "word": "יְהוָ֥ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 7,
         "word": "צְבָאֽוֹת",
-        "strongs": "6635"
+        "strongs": "6635b",
+        "morph": "HNcbpa"
     },
     {
         "chapter": 2,
         "verse": 8,
         "word": "לִ֥/י",
-        "strongs": ""
+        "strongs": "",
+        "morph": "HR/Sp1cs"
     },
     {
         "chapter": 2,
         "verse": 8,
         "word": "הַ/כֶּ֖סֶף",
-        "strongs": "3701"
+        "strongs": "3701",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 8,
         "word": "וְ/לִ֣/י",
-        "strongs": ""
+        "strongs": "",
+        "morph": "HC/R/Sp1cs"
     },
     {
         "chapter": 2,
         "verse": 8,
         "word": "הַ/זָּהָ֑ב",
-        "strongs": "2091"
+        "strongs": "2091",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 8,
         "word": "נְאֻ֖ם",
-        "strongs": "5002"
+        "strongs": "5002",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 8,
         "word": "יְהוָ֥ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 8,
         "word": "צְבָאֽוֹת",
-        "strongs": "6635"
+        "strongs": "6635b",
+        "morph": "HNcbpa"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "גָּד֣וֹל",
-        "strongs": "1419"
+        "strongs": "1419a",
+        "morph": "HAamsa"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "יִֽהְיֶ֡ה",
-        "strongs": "1961"
+        "strongs": "1961",
+        "morph": "HVqi3ms"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "כְּבוֹד֩",
-        "strongs": "3519"
+        "strongs": "3519",
+        "morph": "HNcbsc"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "הַ/בַּ֨יִת",
-        "strongs": "1004"
+        "strongs": "1004b",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "הַ/זֶּ֤ה",
-        "strongs": "2088"
+        "strongs": "2088",
+        "morph": "HTd/Pdxms"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "הָ/אַֽחֲרוֹן֙",
-        "strongs": "314"
+        "strongs": "314",
+        "morph": "HTd/Aamsa"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "מִן",
-        "strongs": "4480"
+        "strongs": "4480a",
+        "morph": "HR"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "הָ֣/רִאשׁ֔וֹן",
-        "strongs": "7223"
+        "strongs": "7223",
+        "morph": "HTd/Aomsa"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "אָמַ֖ר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HVqp3ms"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "יְהוָ֣ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "צְבָא֑וֹת",
-        "strongs": "6635"
+        "strongs": "6635b",
+        "morph": "HNcbpa"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "וּ/בַ/מָּק֤וֹם",
-        "strongs": "4725"
+        "strongs": "4725",
+        "morph": "HC/Rd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "הַ/זֶּה֙",
-        "strongs": "2088"
+        "strongs": "2088",
+        "morph": "HTd/Pdxms"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "אֶתֵּ֣ן",
-        "strongs": "5414"
+        "strongs": "5414",
+        "morph": "HVqi1cs"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "שָׁל֔וֹם",
-        "strongs": "7965"
+        "strongs": "7965",
+        "morph": "HNcmsa"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "נְאֻ֖ם",
-        "strongs": "5002"
+        "strongs": "5002",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "יְהוָ֥ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 9,
         "word": "צְבָאֽוֹת",
-        "strongs": "6635"
+        "strongs": "6635b",
+        "morph": "HNcbpa"
     },
     {
         "chapter": 2,
         "verse": 10,
         "word": "בְּ/עֶשְׂרִ֤ים",
-        "strongs": "6242"
+        "strongs": "6242",
+        "morph": "HR/Acbpa"
     },
     {
         "chapter": 2,
         "verse": 10,
         "word": "וְ/אַרְבָּעָה֙",
-        "strongs": "702"
+        "strongs": "702",
+        "morph": "HC/Acmsa"
     },
     {
         "chapter": 2,
         "verse": 10,
         "word": "לַ/תְּשִׁיעִ֔י",
-        "strongs": "8671"
+        "strongs": "8671",
+        "morph": "HRd/Aomsa"
     },
     {
         "chapter": 2,
         "verse": 10,
         "word": "בִּ/שְׁנַ֥ת",
-        "strongs": "8141"
+        "strongs": "8141",
+        "morph": "HR/Ncfsc"
     },
     {
         "chapter": 2,
         "verse": 10,
         "word": "שְׁתַּ֖יִם",
-        "strongs": "8147"
+        "strongs": "8147",
+        "morph": "HAcfda"
     },
     {
         "chapter": 2,
         "verse": 10,
         "word": "לְ/דָרְיָ֑וֶשׁ",
-        "strongs": "1867"
+        "strongs": "1867",
+        "morph": "HR/Np"
     },
     {
         "chapter": 2,
         "verse": 10,
         "word": "הָיָה֙",
-        "strongs": "1961"
+        "strongs": "1961",
+        "morph": "HVqp3ms"
     },
     {
         "chapter": 2,
         "verse": 10,
         "word": "דְּבַר",
-        "strongs": "1697"
+        "strongs": "1697",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 10,
         "word": "יְהוָ֔ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 10,
         "word": "אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HR"
     },
     {
         "chapter": 2,
         "verse": 10,
         "word": "חַגַּ֥י",
-        "strongs": "2292"
+        "strongs": "2292a",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 10,
         "word": "הַ/נָּבִ֖יא",
-        "strongs": "5030"
+        "strongs": "5030",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 10,
         "word": "לֵ/אמֹֽר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HR/Vqc"
     },
     {
         "chapter": 2,
         "verse": 11,
         "word": "כֹּ֥ה",
-        "strongs": "3541"
+        "strongs": "3541",
+        "morph": "HD"
     },
     {
         "chapter": 2,
         "verse": 11,
         "word": "אָמַ֖ר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HVqp3ms"
     },
     {
         "chapter": 2,
         "verse": 11,
         "word": "יְהוָ֣ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 11,
         "word": "צְבָא֑וֹת",
-        "strongs": "6635"
+        "strongs": "6635b",
+        "morph": "HNcbpa"
     },
     {
         "chapter": 2,
         "verse": 11,
         "word": "שְׁאַל",
-        "strongs": "7592"
+        "strongs": "7592",
+        "morph": "HVqv2ms"
     },
     {
         "chapter": 2,
         "verse": 11,
         "word": "נָ֧א",
-        "strongs": "4994"
+        "strongs": "4994",
+        "morph": "HTe"
     },
     {
         "chapter": 2,
         "verse": 11,
         "word": "אֶת",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HTo"
     },
     {
         "chapter": 2,
         "verse": 11,
         "word": "הַ/כֹּהֲנִ֛ים",
-        "strongs": "3548"
+        "strongs": "3548",
+        "morph": "HTd/Ncmpa"
     },
     {
         "chapter": 2,
         "verse": 11,
         "word": "תּוֹרָ֖ה",
-        "strongs": "8451"
+        "strongs": "8451",
+        "morph": "HNcfsa"
     },
     {
         "chapter": 2,
         "verse": 11,
         "word": "לֵ/אמֹֽר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HR/Vqc"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "הֵ֣ן",
-        "strongs": "2005"
+        "strongs": "2005",
+        "morph": "HTm"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "יִשָּׂא",
-        "strongs": "5375"
+        "strongs": "5375",
+        "morph": "HVqi3ms"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "אִ֨ישׁ",
-        "strongs": "376"
+        "strongs": "376",
+        "morph": "HNcmsa"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "בְּשַׂר",
-        "strongs": "1320"
+        "strongs": "1320",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "קֹ֜דֶשׁ",
-        "strongs": "6944"
+        "strongs": "6944",
+        "morph": "HNcmsa"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "בִּ/כְנַ֣ף",
-        "strongs": "3671"
+        "strongs": "3671",
+        "morph": "HR/Ncfsc"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "בִּגְד֗/וֹ",
-        "strongs": "899"
+        "strongs": "899b",
+        "morph": "HNcmsc/Sp3ms"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "וְ/נָגַ֣ע",
-        "strongs": "5060"
+        "strongs": "5060",
+        "morph": "HC/Vqp3ms"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "בִּ֠/כְנָפ/וֹ",
-        "strongs": "3671"
+        "strongs": "3671",
+        "morph": "HR/Ncfsc/Sp3ms"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HR"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "הַ/לֶּ֨חֶם",
-        "strongs": "3899"
+        "strongs": "3899",
+        "morph": "HTd/Ncbsa"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "וְ/אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HC/R"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "הַ/נָּזִ֜יד",
-        "strongs": "5138"
+        "strongs": "5138",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "וְ/אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HC/R"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "הַ/יַּ֧יִן",
-        "strongs": "3196"
+        "strongs": "3196",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "וְ/אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HC/R"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "שֶׁ֛מֶן",
-        "strongs": "8081"
+        "strongs": "8081",
+        "morph": "HNcmsa"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "וְ/אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HC/R"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "כָּל",
-        "strongs": "3605"
+        "strongs": "3605",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "מַאֲכָ֖ל",
-        "strongs": "3978"
+        "strongs": "3978",
+        "morph": "HNcmsa"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "הֲ/יִקְדָּ֑שׁ",
-        "strongs": "6942"
+        "strongs": "6942",
+        "morph": "HTi/Vqi3ms"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "וַ/יַּעֲנ֧וּ",
-        "strongs": "6030"
+        "strongs": "6030b",
+        "morph": "HC/Vqw3mp"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "הַ/כֹּהֲנִ֛ים",
-        "strongs": "3548"
+        "strongs": "3548",
+        "morph": "HTd/Ncmpa"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "וַ/יֹּאמְר֖וּ",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HC/Vqw3mp"
     },
     {
         "chapter": 2,
         "verse": 12,
         "word": "לֹֽא",
-        "strongs": "3808"
+        "strongs": "3808",
+        "morph": "HTn"
     },
     {
         "chapter": 2,
         "verse": 13,
         "word": "וַ/יֹּ֣אמֶר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HC/Vqw3ms"
     },
     {
         "chapter": 2,
         "verse": 13,
         "word": "חַגַּ֔י",
-        "strongs": "2292"
+        "strongs": "2292a",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 13,
         "word": "אִם",
-        "strongs": "518"
+        "strongs": "518a",
+        "morph": "HC"
     },
     {
         "chapter": 2,
         "verse": 13,
         "word": "יִגַּ֧ע",
-        "strongs": "5060"
+        "strongs": "5060",
+        "morph": "HVqi3ms"
     },
     {
         "chapter": 2,
         "verse": 13,
         "word": "טְמֵא",
-        "strongs": "2931"
+        "strongs": "2931",
+        "morph": "HAamsc"
     },
     {
         "chapter": 2,
         "verse": 13,
         "word": "נֶ֛פֶשׁ",
-        "strongs": "5315"
+        "strongs": "5315",
+        "morph": "HNcbsa"
     },
     {
         "chapter": 2,
         "verse": 13,
         "word": "בְּ/כָל",
-        "strongs": "3605"
+        "strongs": "3605",
+        "morph": "HR/Ncmsc"
     },
     {
         "chapter": 2,
         "verse": 13,
         "word": "אֵ֖לֶּה",
-        "strongs": "428"
+        "strongs": "428",
+        "morph": "HPdxcp"
     },
     {
         "chapter": 2,
         "verse": 13,
         "word": "הֲ/יִטְמָ֑א",
-        "strongs": "2930"
+        "strongs": "2930a",
+        "morph": "HTi/Vqi3ms"
     },
     {
         "chapter": 2,
         "verse": 13,
         "word": "וַ/יַּעֲנ֧וּ",
-        "strongs": "6030"
+        "strongs": "6030b",
+        "morph": "HC/Vqw3mp"
     },
     {
         "chapter": 2,
         "verse": 13,
         "word": "הַ/כֹּהֲנִ֛ים",
-        "strongs": "3548"
+        "strongs": "3548",
+        "morph": "HTd/Ncmpa"
     },
     {
         "chapter": 2,
         "verse": 13,
         "word": "וַ/יֹּאמְר֖וּ",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HC/Vqw3mp"
     },
     {
         "chapter": 2,
         "verse": 13,
         "word": "יִטְמָֽא",
-        "strongs": "2930"
+        "strongs": "2930a",
+        "morph": "HVqi3ms"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "וַ/יַּ֨עַן",
-        "strongs": "6030"
+        "strongs": "6030b",
+        "morph": "HC/Vqw3ms"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "חַגַּ֜י",
-        "strongs": "2292"
+        "strongs": "2292a",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "וַ/יֹּ֗אמֶר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HC/Vqw3ms"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "כֵּ֣ן",
-        "strongs": "3651"
+        "strongs": "3651c",
+        "morph": "HTm"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "הָֽ/עָם",
-        "strongs": "5971"
+        "strongs": "5971a",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "הַ֠/זֶּה",
-        "strongs": "2088"
+        "strongs": "2088",
+        "morph": "HTd/Pdxms"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "וְ/כֵן",
-        "strongs": "3651"
+        "strongs": "3651c",
+        "morph": "HC/Tm"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "הַ/גּ֨וֹי",
-        "strongs": "1471"
+        "strongs": "1471a",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "הַ/זֶּ֤ה",
-        "strongs": "2088"
+        "strongs": "2088",
+        "morph": "HTd/Pdxms"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "לְ/פָנַ/י֙",
-        "strongs": "6440"
+        "strongs": "6440",
+        "morph": "HR/Ncbpc/Sp1cs"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "נְאֻם",
-        "strongs": "5002"
+        "strongs": "5002",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "יְהוָ֔ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "וְ/כֵ֖ן",
-        "strongs": "3651"
+        "strongs": "3651c",
+        "morph": "HC/Tm"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "כָּל",
-        "strongs": "3605"
+        "strongs": "3605",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "מַעֲשֵׂ֣ה",
-        "strongs": "4639"
+        "strongs": "4639",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "יְדֵי/הֶ֑ם",
-        "strongs": "3027"
+        "strongs": "3027",
+        "morph": "HNcbdc/Sp3mp"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "וַ/אֲשֶׁ֥ר",
-        "strongs": "834"
+        "strongs": "834a",
+        "morph": "HC/Tr"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "יַקְרִ֛יבוּ",
-        "strongs": "7126"
+        "strongs": "7126",
+        "morph": "HVhi3mp"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "שָׁ֖ם",
-        "strongs": "8033"
+        "strongs": "8033",
+        "morph": "HD"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "טָמֵ֥א",
-        "strongs": "2931"
+        "strongs": "2931",
+        "morph": "HAamsa"
     },
     {
         "chapter": 2,
         "verse": 14,
         "word": "הֽוּא",
-        "strongs": "1931"
+        "strongs": "1931",
+        "morph": "HPp3ms"
     },
     {
         "chapter": 2,
         "verse": 15,
         "word": "וְ/עַתָּה֙",
-        "strongs": "6258"
+        "strongs": "6258",
+        "morph": "HC/D"
     },
     {
         "chapter": 2,
         "verse": 15,
         "word": "שִֽׂימוּ",
-        "strongs": "7760"
+        "strongs": "7760a",
+        "morph": "HVqv2mp"
     },
     {
         "chapter": 2,
         "verse": 15,
         "word": "נָ֣א",
-        "strongs": "4994"
+        "strongs": "4994",
+        "morph": "HTe"
     },
     {
         "chapter": 2,
         "verse": 15,
         "word": "לְבַבְ/כֶ֔ם",
-        "strongs": "3824"
+        "strongs": "3824",
+        "morph": "HNcmsc/Sp2mp"
     },
     {
         "chapter": 2,
         "verse": 15,
         "word": "מִן",
-        "strongs": "4480"
+        "strongs": "4480a",
+        "morph": "HR"
     },
     {
         "chapter": 2,
         "verse": 15,
         "word": "הַ/יּ֥וֹם",
-        "strongs": "3117"
+        "strongs": "3117",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 15,
         "word": "הַ/זֶּ֖ה",
-        "strongs": "2088"
+        "strongs": "2088",
+        "morph": "HTd/Pdxms"
     },
     {
         "chapter": 2,
         "verse": 15,
         "word": "וָ/מָ֑עְלָ/ה",
-        "strongs": "4605"
+        "strongs": "4605",
+        "morph": "HC/D/Sd"
     },
     {
         "chapter": 2,
         "verse": 15,
         "word": "מִ/טֶּ֧רֶם",
-        "strongs": "2962"
+        "strongs": "2962",
+        "morph": "HR/D"
     },
     {
         "chapter": 2,
         "verse": 15,
         "word": "שֽׂוּם",
-        "strongs": "7760"
+        "strongs": "7760a",
+        "morph": "HVqc"
     },
     {
         "chapter": 2,
         "verse": 15,
         "word": "אֶ֛בֶן",
-        "strongs": "68"
+        "strongs": "68",
+        "morph": "HNcfsa"
     },
     {
         "chapter": 2,
         "verse": 15,
         "word": "אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HR"
     },
     {
         "chapter": 2,
         "verse": 15,
         "word": "אֶ֖בֶן",
-        "strongs": "68"
+        "strongs": "68",
+        "morph": "HNcfsa"
     },
     {
         "chapter": 2,
         "verse": 15,
         "word": "בְּ/הֵיכַ֥ל",
-        "strongs": "1964"
+        "strongs": "1964",
+        "morph": "HR/Ncmsc"
     },
     {
         "chapter": 2,
         "verse": 15,
         "word": "יְהוָֽה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 16,
         "word": "מִֽ/הְיוֹתָ֥/ם",
-        "strongs": "1961"
+        "strongs": "1961",
+        "morph": "HR/Vqc/Sp3mp"
     },
     {
         "chapter": 2,
         "verse": 16,
         "word": "בָּא֙",
-        "strongs": "935"
+        "strongs": "935",
+        "morph": "HVqp3ms"
     },
     {
         "chapter": 2,
         "verse": 16,
         "word": "אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HR"
     },
     {
         "chapter": 2,
         "verse": 16,
         "word": "עֲרֵמַ֣ת",
-        "strongs": "6194"
+        "strongs": "6194",
+        "morph": "HNcfsc"
     },
     {
         "chapter": 2,
         "verse": 16,
         "word": "עֶשְׂרִ֔ים",
-        "strongs": "6242"
+        "strongs": "6242",
+        "morph": "HAcbpa"
     },
     {
         "chapter": 2,
         "verse": 16,
         "word": "וְ/הָיְתָ֖ה",
-        "strongs": "1961"
+        "strongs": "1961",
+        "morph": "HC/Vqp3fs"
     },
     {
         "chapter": 2,
         "verse": 16,
         "word": "עֲשָׂרָ֑ה",
-        "strongs": "6235"
+        "strongs": "6235",
+        "morph": "HAcmsa"
     },
     {
         "chapter": 2,
         "verse": 16,
         "word": "בָּ֣א",
-        "strongs": "935"
+        "strongs": "935",
+        "morph": "HVqp3ms"
     },
     {
         "chapter": 2,
         "verse": 16,
         "word": "אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HR"
     },
     {
         "chapter": 2,
         "verse": 16,
         "word": "הַ/יֶּ֗קֶב",
-        "strongs": "3342"
+        "strongs": "3342",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 16,
         "word": "לַ/חְשֹׂף֙",
-        "strongs": "2834"
+        "strongs": "2834",
+        "morph": "HR/Vqc"
     },
     {
         "chapter": 2,
         "verse": 16,
         "word": "חֲמִשִּׁ֣ים",
-        "strongs": "2572"
+        "strongs": "2572",
+        "morph": "HAcbpa"
     },
     {
         "chapter": 2,
         "verse": 16,
         "word": "פּוּרָ֔ה",
-        "strongs": "6333"
+        "strongs": "6333",
+        "morph": "HNcfsa"
     },
     {
         "chapter": 2,
         "verse": 16,
         "word": "וְ/הָיְתָ֖ה",
-        "strongs": "1961"
+        "strongs": "1961",
+        "morph": "HC/Vqp3fs"
     },
     {
         "chapter": 2,
         "verse": 16,
         "word": "עֶשְׂרִֽים",
-        "strongs": "6242"
+        "strongs": "6242",
+        "morph": "HAcbpa"
     },
     {
         "chapter": 2,
         "verse": 17,
         "word": "הִכֵּ֨יתִי",
-        "strongs": "5221"
+        "strongs": "5221",
+        "morph": "HVhp1cs"
     },
     {
         "chapter": 2,
         "verse": 17,
         "word": "אֶתְ/כֶ֜ם",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HTo/Sp2mp"
     },
     {
         "chapter": 2,
         "verse": 17,
         "word": "בַּ/שִּׁדָּפ֤וֹן",
-        "strongs": "7711"
+        "strongs": "7711b",
+        "morph": "HRd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 17,
         "word": "וּ/בַ/יֵּֽרָקוֹן֙",
-        "strongs": "3420"
+        "strongs": "3420",
+        "morph": "HC/Rd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 17,
         "word": "וּ/בַ/בָּרָ֔ד",
-        "strongs": "1259"
+        "strongs": "1259",
+        "morph": "HC/Rd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 17,
         "word": "אֵ֖ת",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HTo"
     },
     {
         "chapter": 2,
         "verse": 17,
         "word": "כָּל",
-        "strongs": "3605"
+        "strongs": "3605",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 17,
         "word": "מַעֲשֵׂ֣ה",
-        "strongs": "4639"
+        "strongs": "4639",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 17,
         "word": "יְדֵי/כֶ֑ם",
-        "strongs": "3027"
+        "strongs": "3027",
+        "morph": "HNcbdc/Sp2mp"
     },
     {
         "chapter": 2,
         "verse": 17,
         "word": "וְ/אֵין",
-        "strongs": "369"
+        "strongs": "369",
+        "morph": "HC/Tn"
     },
     {
         "chapter": 2,
         "verse": 17,
         "word": "אֶתְ/כֶ֥ם",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HTo/Sp2mp"
     },
     {
         "chapter": 2,
         "verse": 17,
         "word": "אֵלַ֖/י",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HR/Sp1cs"
     },
     {
         "chapter": 2,
         "verse": 17,
         "word": "נְאֻם",
-        "strongs": "5002"
+        "strongs": "5002",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 17,
         "word": "יְהוָֽה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "שִׂימוּ",
-        "strongs": "7760"
+        "strongs": "7760a",
+        "morph": "HVqv2mp"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "נָ֣א",
-        "strongs": "4994"
+        "strongs": "4994",
+        "morph": "HTe"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "לְבַבְ/כֶ֔ם",
-        "strongs": "3824"
+        "strongs": "3824",
+        "morph": "HNcmsc/Sp2mp"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "מִן",
-        "strongs": "4480"
+        "strongs": "4480a",
+        "morph": "HR"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "הַ/יּ֥וֹם",
-        "strongs": "3117"
+        "strongs": "3117",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "הַ/זֶּ֖ה",
-        "strongs": "2088"
+        "strongs": "2088",
+        "morph": "HTd/Pdxms"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "וָ/מָ֑עְלָ/ה",
-        "strongs": "4605"
+        "strongs": "4605",
+        "morph": "HC/D/Sd"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "מִ/יּוֹם֩",
-        "strongs": "3117"
+        "strongs": "3117",
+        "morph": "HR/Ncmsc"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "עֶשְׂרִ֨ים",
-        "strongs": "6242"
+        "strongs": "6242",
+        "morph": "HAcbpa"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "וְ/אַרְבָּעָ֜ה",
-        "strongs": "702"
+        "strongs": "702",
+        "morph": "HC/Acmsa"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "לַ/תְּשִׁיעִ֗י",
-        "strongs": "8671"
+        "strongs": "8671",
+        "morph": "HRd/Aomsa"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "לְ/מִן",
-        "strongs": "4480"
+        "strongs": "4480a",
+        "morph": "HR/R"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "הַ/יּ֛וֹם",
-        "strongs": "3117"
+        "strongs": "3117",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "אֲשֶׁר",
-        "strongs": "834"
+        "strongs": "834a",
+        "morph": "HTr"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "יֻסַּ֥ד",
-        "strongs": "3245"
+        "strongs": "3245",
+        "morph": "HVPp3ms"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "הֵֽיכַל",
-        "strongs": "1964"
+        "strongs": "1964",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "יְהוָ֖ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "שִׂ֥ימוּ",
-        "strongs": "7760"
+        "strongs": "7760a",
+        "morph": "HVqv2mp"
     },
     {
         "chapter": 2,
         "verse": 18,
         "word": "לְבַבְ/כֶֽם",
-        "strongs": "3824"
+        "strongs": "3824",
+        "morph": "HNcmsc/Sp2mp"
     },
     {
         "chapter": 2,
         "verse": 19,
         "word": "הַ/ע֤וֹד",
-        "strongs": "5750"
+        "strongs": "5750",
+        "morph": "HTi/D"
     },
     {
         "chapter": 2,
         "verse": 19,
         "word": "הַ/זֶּ֨רַע֙",
-        "strongs": "2233"
+        "strongs": "2233",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 19,
         "word": "בַּ/מְּגוּרָ֔ה",
-        "strongs": "4035"
+        "strongs": "4035",
+        "morph": "HRd/Ncfsa"
     },
     {
         "chapter": 2,
         "verse": 19,
         "word": "וְ/עַד",
-        "strongs": "5704"
+        "strongs": "5704",
+        "morph": "HC/R"
     },
     {
         "chapter": 2,
         "verse": 19,
         "word": "הַ/גֶּ֨פֶן",
-        "strongs": "1612"
+        "strongs": "1612",
+        "morph": "HTd/Ncbsa"
     },
     {
         "chapter": 2,
         "verse": 19,
         "word": "וְ/הַ/תְּאֵנָ֧ה",
-        "strongs": "8384"
+        "strongs": "8384",
+        "morph": "HC/Td/Ncfsa"
     },
     {
         "chapter": 2,
         "verse": 19,
         "word": "וְ/הָ/רִמּ֛וֹן",
-        "strongs": "7416"
+        "strongs": "7416",
+        "morph": "HC/Td/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 19,
         "word": "וְ/עֵ֥ץ",
-        "strongs": "6086"
+        "strongs": "6086",
+        "morph": "HC/Ncmsc"
     },
     {
         "chapter": 2,
         "verse": 19,
         "word": "הַ/זַּ֖יִת",
-        "strongs": "2132"
+        "strongs": "2132",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 19,
         "word": "לֹ֣א",
-        "strongs": "3808"
+        "strongs": "3808",
+        "morph": "HTn"
     },
     {
         "chapter": 2,
         "verse": 19,
         "word": "נָשָׂ֑א",
-        "strongs": "5375"
+        "strongs": "5375",
+        "morph": "HVqp3ms"
     },
     {
         "chapter": 2,
         "verse": 19,
         "word": "מִן",
-        "strongs": "4480"
+        "strongs": "4480a",
+        "morph": "HR"
     },
     {
         "chapter": 2,
         "verse": 19,
         "word": "הַ/יּ֥וֹם",
-        "strongs": "3117"
+        "strongs": "3117",
+        "morph": "HTd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 19,
         "word": "הַ/זֶּ֖ה",
-        "strongs": "2088"
+        "strongs": "2088",
+        "morph": "HTd/Pdxms"
     },
     {
         "chapter": 2,
         "verse": 19,
         "word": "אֲבָרֵֽךְ",
-        "strongs": "1288"
+        "strongs": "1288",
+        "morph": "HVpi1cs"
     },
     {
         "chapter": 2,
         "verse": 20,
         "word": "וַ/יְהִ֨י",
-        "strongs": "1961"
+        "strongs": "1961",
+        "morph": "HC/Vqw3ms"
     },
     {
         "chapter": 2,
         "verse": 20,
         "word": "דְבַר",
-        "strongs": "1697"
+        "strongs": "1697",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 20,
         "word": "יְהוָ֤ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 20,
         "word": "שֵׁנִית֙",
-        "strongs": "8145"
+        "strongs": "8145",
+        "morph": "HAofsa"
     },
     {
         "chapter": 2,
         "verse": 20,
         "word": "אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HR"
     },
     {
         "chapter": 2,
         "verse": 20,
         "word": "חַגַּ֔י",
-        "strongs": "2292"
+        "strongs": "2292a",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 20,
         "word": "בְּ/עֶשְׂרִ֧ים",
-        "strongs": "6242"
+        "strongs": "6242",
+        "morph": "HR/Acbpa"
     },
     {
         "chapter": 2,
         "verse": 20,
         "word": "וְ/אַרְבָּעָ֛ה",
-        "strongs": "702"
+        "strongs": "702",
+        "morph": "HC/Acmsa"
     },
     {
         "chapter": 2,
         "verse": 20,
         "word": "לַ/חֹ֖דֶשׁ",
-        "strongs": "2320"
+        "strongs": "2320",
+        "morph": "HRd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 20,
         "word": "לֵ/אמֹֽר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HR/Vqc"
     },
     {
         "chapter": 2,
         "verse": 21,
         "word": "אֱמֹ֕ר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HVqv2ms"
     },
     {
         "chapter": 2,
         "verse": 21,
         "word": "אֶל",
-        "strongs": "413"
+        "strongs": "413",
+        "morph": "HR"
     },
     {
         "chapter": 2,
         "verse": 21,
         "word": "זְרֻבָּבֶ֥ל",
-        "strongs": "2216"
+        "strongs": "2216",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 21,
         "word": "פַּֽחַת",
-        "strongs": "6346"
+        "strongs": "6346",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 21,
         "word": "יְהוּדָ֖ה",
-        "strongs": "3063"
+        "strongs": "3063",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 21,
         "word": "לֵ/אמֹ֑ר",
-        "strongs": "559"
+        "strongs": "559",
+        "morph": "HR/Vqc"
     },
     {
         "chapter": 2,
         "verse": 21,
         "word": "אֲנִ֣י",
-        "strongs": "589"
+        "strongs": "589",
+        "morph": "HPp1cs"
     },
     {
         "chapter": 2,
         "verse": 21,
         "word": "מַרְעִ֔ישׁ",
-        "strongs": "7493"
+        "strongs": "7493",
+        "morph": "HVhrmsa"
     },
     {
         "chapter": 2,
         "verse": 21,
         "word": "אֶת",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HTo"
     },
     {
         "chapter": 2,
         "verse": 21,
         "word": "הַ/שָּׁמַ֖יִם",
-        "strongs": "8064"
+        "strongs": "8064",
+        "morph": "HTd/Ncmpa"
     },
     {
         "chapter": 2,
         "verse": 21,
         "word": "וְ/אֶת",
-        "strongs": "853"
+        "strongs": "853",
+        "morph": "HC/To"
     },
     {
         "chapter": 2,
         "verse": 21,
         "word": "הָ/אָֽרֶץ",
-        "strongs": "776"
+        "strongs": "776",
+        "morph": "HTd/Ncbsa"
     },
     {
         "chapter": 2,
         "verse": 22,
         "word": "וְ/הָֽפַכְתִּי֙",
-        "strongs": "2015"
+        "strongs": "2015",
+        "morph": "HC/Vqq1cs"
     },
     {
         "chapter": 2,
         "verse": 22,
         "word": "כִּסֵּ֣א",
-        "strongs": "3678"
+        "strongs": "3678",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 22,
         "word": "מַמְלָכ֔וֹת",
-        "strongs": "4467"
+        "strongs": "4467",
+        "morph": "HNcfpa"
     },
     {
         "chapter": 2,
         "verse": 22,
         "word": "וְ/הִ֨שְׁמַדְתִּ֔י",
-        "strongs": "8045"
+        "strongs": "8045",
+        "morph": "HC/Vhq1cs"
     },
     {
         "chapter": 2,
         "verse": 22,
         "word": "חֹ֖זֶק",
-        "strongs": "2392"
+        "strongs": "2392",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 22,
         "word": "מַמְלְכ֣וֹת",
-        "strongs": "4467"
+        "strongs": "4467",
+        "morph": "HNcfpc"
     },
     {
         "chapter": 2,
         "verse": 22,
         "word": "הַ/גּוֹיִ֑ם",
-        "strongs": "1471"
+        "strongs": "1471a",
+        "morph": "HTd/Ncmpa"
     },
     {
         "chapter": 2,
         "verse": 22,
         "word": "וְ/הָפַכְתִּ֤י",
-        "strongs": "2015"
+        "strongs": "2015",
+        "morph": "HC/Vqq1cs"
     },
     {
         "chapter": 2,
         "verse": 22,
         "word": "מֶרְכָּבָה֙",
-        "strongs": "4818"
+        "strongs": "4818",
+        "morph": "HNcfsa"
     },
     {
         "chapter": 2,
         "verse": 22,
         "word": "וְ/רֹ֣כְבֶ֔י/הָ",
-        "strongs": "7392"
+        "strongs": "7392",
+        "morph": "HC/Vqrmpc/Sp3fs"
     },
     {
         "chapter": 2,
         "verse": 22,
         "word": "וְ/יָרְד֤וּ",
-        "strongs": "3381"
+        "strongs": "3381",
+        "morph": "HC/Vqq3cp"
     },
     {
         "chapter": 2,
         "verse": 22,
         "word": "סוּסִים֙",
-        "strongs": "5483"
+        "strongs": "5483b",
+        "morph": "HNcmpa"
     },
     {
         "chapter": 2,
         "verse": 22,
         "word": "וְ/רֹ֣כְבֵי/הֶ֔ם",
-        "strongs": "7392"
+        "strongs": "7392",
+        "morph": "HC/Vqrmpc/Sp3mp"
     },
     {
         "chapter": 2,
         "verse": 22,
         "word": "אִ֖ישׁ",
-        "strongs": "376"
+        "strongs": "376",
+        "morph": "HNcmsa"
     },
     {
         "chapter": 2,
         "verse": 22,
         "word": "בְּ/חֶ֥רֶב",
-        "strongs": "2719"
+        "strongs": "2719",
+        "morph": "HR/Ncfsc"
     },
     {
         "chapter": 2,
         "verse": 22,
         "word": "אָחִֽי/ו",
-        "strongs": "251"
+        "strongs": "251",
+        "morph": "HNcmsc/Sp3ms"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "בַּ/יּ֣וֹם",
-        "strongs": "3117"
+        "strongs": "3117",
+        "morph": "HRd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "הַ/ה֣וּא",
-        "strongs": "1931"
+        "strongs": "1931",
+        "morph": "HTd/Pp3ms"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "נְאֻם",
-        "strongs": "5002"
+        "strongs": "5002",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "יְהוָ֣ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "צְבָא֡וֹת",
-        "strongs": "6635"
+        "strongs": "6635b",
+        "morph": "HNcbpa"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "אֶ֠קָּחֲ/ךָ",
-        "strongs": "3947"
+        "strongs": "3947",
+        "morph": "HVqi1cs/Sp2ms"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "זְרֻבָּבֶ֨ל",
-        "strongs": "2216"
+        "strongs": "2216",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "בֶּן",
-        "strongs": "1121"
+        "strongs": "1121a",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "שְׁאַלְתִּיאֵ֤ל",
-        "strongs": "7597"
+        "strongs": "7597a",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "עַבְדִּ/י֙",
-        "strongs": "5650"
+        "strongs": "5650",
+        "morph": "HNcmsc/Sp1cs"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "נְאֻם",
-        "strongs": "5002"
+        "strongs": "5002",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "יְהוָ֔ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "וְ/שַׂמְתִּ֖י/ךָ",
-        "strongs": "7760"
+        "strongs": "7760a",
+        "morph": "HC/Vqp1cs/Sp2ms"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "כַּֽ/חוֹתָ֑ם",
-        "strongs": "2368"
+        "strongs": "2368",
+        "morph": "HRd/Ncmsa"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "כִּֽי",
-        "strongs": "3588"
+        "strongs": "3588a",
+        "morph": "HC"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "בְ/ךָ֣",
-        "strongs": ""
+        "strongs": "",
+        "morph": "HR/Sp2ms"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "בָחַ֔רְתִּי",
-        "strongs": "977"
+        "strongs": "977",
+        "morph": "HVqp1cs"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "נְאֻ֖ם",
-        "strongs": "5002"
+        "strongs": "5002",
+        "morph": "HNcmsc"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "יְהוָ֥ה",
-        "strongs": "3068"
+        "strongs": "3068",
+        "morph": "HNp"
     },
     {
         "chapter": 2,
         "verse": 23,
         "word": "צְבָאֽוֹת",
-        "strongs": "6635"
+        "strongs": "6635b",
+        "morph": "HNcbpa"
     }
 ]
