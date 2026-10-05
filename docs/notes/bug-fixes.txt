@@ -1,2 +1,4 @@
 
 - userId for comments is hard coded until we add sessions
+
+- need to download all bible chapter audios

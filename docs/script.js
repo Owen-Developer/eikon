@@ -1904,6 +1904,13 @@ document.querySelector(".bib-right-open").addEventListener("click", () => {
     document.querySelector(".bib-right").classList.add("bib-right-show");
     document.querySelector(".bib-opt").style.right = "392px";
 });
+function initializeSideNavs(){
+    document.querySelectorAll(".bib-right, .bib-left").forEach(wrapper => {
+        wrapper.classList.remove("bib-right-show");
+        wrapper.classList.remove("bib-left-show");
+    });
+}
+initializeSideNavs();
 document.querySelector("i.bib-left-xmark").addEventListener("click", () => {
     document.querySelector(".bib-left").classList.remove("bib-left-show");
 });
@@ -1983,9 +1990,14 @@ document.querySelectorAll(".bib-left-search input").forEach((input, idx) => {
     });
 });
 document.querySelector(".bib-opt-range").addEventListener("change", () => {
-    document.querySelector(".bib-mid-title").style.fontSize = Number(46 * document.querySelector(".bib-opt-range").value) + "px";
-    document.querySelectorAll(".p, .nb, .d, .q1, .q2").forEach(verse => verse.style.fontSize = Number(20 * document.querySelector(".bib-opt-range").value) + "px");
-    document.querySelectorAll(".s1, .s2").forEach(subheading => subheading.style.fontSize = Number(22 * document.querySelector(".bib-opt-range").value) + "px");
+    let fontSizes = [46, 20, 24];
+    if(window.innerWidth <= 1440){
+        fontSizes = [40, 16, 20];
+    }
+
+    document.querySelector(".bib-mid-title").style.fontSize = Number(fontSizes[0] * document.querySelector(".bib-opt-range").value) + "px";
+    document.querySelectorAll(".p, .nb, .d, .q1, .q2").forEach(verse => verse.style.fontSize = Number(fontSizes[1] * document.querySelector(".bib-opt-range").value) + "px");
+    document.querySelectorAll(".s1, .s2").forEach(subheading => subheading.style.fontSize = Number(fontSizes[2] * document.querySelector(".bib-opt-range").value) + "px");
 });
 document.querySelector(".bib-opt-family").querySelectorAll(".bib-opt-btn").forEach((btn, idx) => {
     btn.addEventListener("click", () => {
@@ -2104,7 +2116,7 @@ async function getVerse(translation, book, chapter, verses){
 }
 
 async function loadBible(){
-    loadComments();
+    //loadComments();
     document.querySelector(".bib-mid-mid").style.opacity = "0";
     let isNewBook = false;
     if(document.querySelector(".bib-book-txt").textContent != currentBook) isNewBook = true;

@@ -15,6 +15,7 @@ const openaiClient = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+/* 
 const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -50,6 +51,7 @@ app.use(session({
         sameSite: "lax"    // allow cross-site cookies
     }
 }));
+*/
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
