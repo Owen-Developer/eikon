@@ -830,6 +830,23 @@ i.bib-note-xmark {
 i.bib-note-xmark:hover {
     color: hsl(0, 0%, 10%);
 }
+.bib-note-save {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background-color: #4b6653;
+    border: 1px solid hsl(0, 0%, 85%);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.bib-note-save:hover {
+    background-color: hsl(138, 15%, 45%);
+}
 
 .bib-right-verse-col {
     padding-bottom: 20px;
@@ -1801,6 +1818,10 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
 @media only screen and (max-width: 1130px){
     .bib-left-open, .bib-right-open {
         display: none !important;
+    }
+    .bib-left {
+        left: auto;
+        right: -340px;
     }
     .bib-left-show {
         left: auto !important;

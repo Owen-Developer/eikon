@@ -1896,6 +1896,18 @@ const psalmDoubleSubscriptions = [
     51, 52, 54, 60
 ]
 
+async function fakeSignUp(){
+    try {
+        const response = await fetch(`${url}/api/signup`, {
+            method: 'GET',
+        });
+        const data = await response.json(); 
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+fakeSignUp();
+
 
 document.querySelector(".bib-left-open").addEventListener("click", () => {
     document.querySelector(".bib-left").classList.add("bib-left-show");
@@ -1918,11 +1930,15 @@ initializeSideNavs();
 
 document.querySelector("i.bib-left-xmark").addEventListener("click", () => {
     document.querySelector(".bib-left").classList.remove("bib-left-show");
+    document.querySelector(".bib-mobile-shadow").style.pointerEvents = "none";
+    document.querySelector(".bib-mobile-shadow").style.opacity = "0";
 });
 document.querySelector("i.bib-right-close").addEventListener("click", () => {
     document.querySelector(".bib-right").classList.remove("bib-right-show");
     document.querySelector(".bib-opt").style.right = "55px";
     document.querySelector(".bib-right-btn span").click();
+    document.querySelector(".bib-mobile-shadow").style.pointerEvents = "none";
+    document.querySelector(".bib-mobile-shadow").style.opacity = "0";
 });
 document.querySelector(".bib-header-settings").addEventListener("click", () => {
     document.querySelector(".bib-opt").style.opacity = "1";
@@ -2003,6 +2019,8 @@ document.querySelector(".bib-opt-range").addEventListener("change", () => {
     document.querySelector(".bib-mid-title").style.fontSize = Number(fontSizes[0] * document.querySelector(".bib-opt-range").value) + "px";
     document.querySelectorAll(".p, .nb, .d, .q1, .q2").forEach(verse => verse.style.fontSize = Number(fontSizes[1] * document.querySelector(".bib-opt-range").value) + "px");
     document.querySelectorAll(".s1, .s2").forEach(subheading => subheading.style.fontSize = Number(fontSizes[2] * document.querySelector(".bib-opt-range").value) + "px");
+
+    saveSettings();
 });
 document.querySelector(".bib-opt-family").querySelectorAll(".bib-opt-btn").forEach((btn, idx) => {
     btn.addEventListener("click", () => {
@@ -2015,6 +2033,8 @@ document.querySelector(".bib-opt-family").querySelectorAll(".bib-opt-btn").forEa
             //document.querySelectorAll("div, span").forEach(el => el.classList.add("font-sans"));
             document.querySelectorAll(".p, .nb, .d, .q1, .q2, .s1, .s2, .bib-mid-title").forEach(el => el.classList.add("font-sans"));
         }
+
+        saveSettings();
     });
 });
 document.querySelector(".bib-opt-spacing").querySelectorAll(".bib-opt-btn").forEach((btn, idx) => {
@@ -2022,6 +2042,7 @@ document.querySelector(".bib-opt-spacing").querySelectorAll(".bib-opt-btn").forE
         document.querySelector(".bib-opt-spacing").querySelector(".bib-opt-btn-active")?.classList.remove("bib-opt-btn-active");
         btn.classList.add("bib-opt-btn-active");
         document.querySelectorAll(".p, .nb, .d, .q1, .q2").forEach(verse => verse.style.lineHeight = 1 + (.3 * idx));
+        saveSettings();
     });
 });
 document.querySelectorAll(".bib-opt-theme .bib-opt-col").forEach((col, idx) => {
@@ -2043,12 +2064,46 @@ document.querySelectorAll(".bib-opt-theme .bib-opt-col").forEach((col, idx) => {
                 el.classList.add("dark-theme");
             }
         });
+
+        saveSettings();
     });
 
     if(idx == 1){
-        col.click();
+        //col.click();
     }
 });
+function initializeTranslations(){
+    translations.forEach(tran => {
+        let newPill = document.createElement("div");
+        newPill.classList.add("bib-opt-pill");
+        newPill.innerHTML = tran.name;
+
+        document.querySelector(".bib-opt-tran").appendChild(newPill);
+
+        newPill.addEventListener("click", async () => {
+            document.querySelectorAll(".bib-opt-pill").forEach(other => {
+                other.classList.remove("bib-opt-pill-active");
+            });
+            newPill.classList.add("bib-opt-pill-active");
+
+            currentTranslation = tran;
+            let wasShown = document.querySelector(".bib-opt").style.opacity == "1";
+            if(localStorage.getItem("bibleSaveData")){
+                currentBook = JSON.parse(localStorage.getItem("bibleSaveData")).book;
+                currentChapterIdx = JSON.parse(localStorage.getItem("bibleSaveData")).chapter;
+            }
+            saveSettings();
+            await loadBible();
+            if(wasShown){
+                document.querySelector(".bib-opt").style.opacity = "1";
+                document.querySelector(".bib-opt").style.pointerEvents = "auto";
+                document.querySelector(".bib-mobile-shadow").style.opacity = "1";
+                document.querySelector(".bib-mobile-shadow").style.pointerEvents = "auto";
+            }
+        });
+    });
+}
+initializeTranslations();
 document.addEventListener("click", (e) => {
     document.querySelectorAll(".bib-book-drop").forEach((drop, idx) => {
         if(!drop.contains(e.target) && !e.target.classList.contains("drop-chev") && !e.target.parentElement.classList.contains("drop-chev")){
@@ -2058,7 +2113,7 @@ document.addEventListener("click", (e) => {
         }
     });
 
-    if(document.querySelector(".bib-opt").style.opacity == "1" && !document.querySelector(".bib-opt").contains(e.target) && !e.target.classList.contains("bib-header-settings")){
+    if(document.querySelector(".bib-opt").style.opacity == "1" && !document.querySelector(".bib-opt").contains(e.target) && !e.target.classList.contains("bib-header-settings") && !e.target.classList.contains("bib-bottom-settings")){
         document.querySelector(".bib-opt").style.opacity = "0";
         document.querySelector(".bib-opt").style.pointerEvents = "none";
     }
@@ -2121,7 +2176,7 @@ async function getVerse(translation, book, chapter, verses){
 }
 
 async function loadBible(){
-    //loadComments();
+    loadComments();
     document.querySelector(".bib-mid-mid").style.opacity = "0";
     let isNewBook = false;
     if(document.querySelector(".bib-book-txt").textContent != currentBook) isNewBook = true;
@@ -2131,7 +2186,7 @@ async function loadBible(){
 
     const dataToSend = { translation: currentTranslation.id, book: getBookSlug(currentBook), chapterIdx: currentChapterIdx + 1 };
     try {
-        const response = await fetch(url + `/api/bible`, {
+        const response = await fetch(url + `/api/load-bible`, {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json', 
@@ -2191,6 +2246,12 @@ async function loadBible(){
         resetChapterArrows();
         document.querySelector(".bib-right-btn-active").click();
         document.querySelector(".bib-mid").scrollTop = 0;
+
+        let bibleSaveData = {
+            "book": currentBook,
+            "chapter": currentChapterIdx,
+        }
+        localStorage.setItem("bibleSaveData", JSON.stringify(bibleSaveData));
 
     } catch (error) {
         console.error('Error posting data:', error);
@@ -2316,41 +2377,32 @@ document.querySelectorAll(".bib-mid-chev").forEach((chev, idx) => {
     });
 });
 
-function initializeTranslations(){
-    translations.forEach(tran => {
-        let newPill = document.createElement("div");
-        newPill.classList.add("bib-opt-pill");
-        newPill.innerHTML = tran.name;
-
-        document.querySelector(".bib-opt-tran").appendChild(newPill);
-
-        newPill.addEventListener("click", async () => {
-            document.querySelectorAll(".bib-opt-pill").forEach(other => {
-                other.classList.remove("bib-opt-pill-active");
-            });
-            newPill.classList.add("bib-opt-pill-active");
-
-            currentTranslation = tran;
-            let wasShown = document.querySelector(".bib-opt").style.opacity == "1";
-            await loadBible();
-            if(wasShown){
-                document.querySelector(".bib-opt").style.opacity = "1";
-                document.querySelector(".bib-opt").style.pointerEvents = "auto";
-                document.querySelector(".bib-mobile-shadow").style.opacity = "1";
-                document.querySelector(".bib-mobile-shadow").style.pointerEvents = "auto";
-            }
-        });
-    });
-
-    document.querySelector(".bib-opt-pill").click();
-}
-initializeTranslations();
-
 document.querySelector(".bib-bottom-book").addEventListener("click", () => {
-    document.querySelector(".bib-left").style.opacity = "1";
-    document.querySelector(".bib-left").style.pointerEvents = "auto";
+    document.querySelector(".bib-left").classList.add("bib-left-show");
+    document.querySelector(".bib-mobile-shadow").style.pointerEvents = "auto";
     document.querySelector(".bib-mobile-shadow").style.opacity = "1";
-    document.querySelector(".bib-moblile-shadow").style.pointerEvents = "auto";
+});
+document.querySelector(".bib-bottom-high").addEventListener("click", () => {
+    document.querySelector(".bib-right").classList.add("bib-right-show");
+    document.querySelector(".bib-mobile-shadow").style.pointerEvents = "auto";
+    document.querySelector(".bib-mobile-shadow").style.opacity = "1";
+});
+document.querySelector(".bib-bottom-audio").addEventListener("click", () => {
+    showAudio(currentBook, currentChapterIdx + 1);
+});
+document.querySelector(".bib-bottom-settings").addEventListener("click", () => {
+    document.querySelector(".bib-opt").style.opacity = "1";
+    document.querySelector(".bib-opt").style.pointerEvents = "auto";
+    document.querySelector(".bib-mobile-shadow").style.pointerEvents = "auto";
+    document.querySelector(".bib-mobile-shadow").style.opacity = "1";
+});
+document.querySelector(".bib-mobile-shadow").addEventListener("click", () => {
+    document.querySelector(".bib-left").classList.remove("bib-left-show");
+    document.querySelector(".bib-right").classList.remove("bib-right-show");
+    document.querySelector(".bib-opt").style.opacity = "0";
+    document.querySelector(".bib-opt").style.pointerEvents = "none";
+    document.querySelector(".bib-mobile-shadow").style.opacity = "0";
+    document.querySelector(".bib-mobile-shadow").style.pointerEvents = "none";
 });
 
 function addNote(){
@@ -2361,6 +2413,8 @@ function addNote(){
 		<textarea placeholder="Enter Heading..." class="bib-note-head-area" spellcheck="false"></textarea>
 		<textarea placeholder="Type here..." class="bib-note-txt-area" spellcheck="false"></textarea>
 		<div class="bib-note-time">Today <span></span> ${getTime()}</div>
+
+        <div class="bib-note-save">Save</div>
 	`;
 	document.querySelector(".bib-right-note-col").insertBefore(newNote, document.querySelector(".bib-note"));
 
@@ -2371,6 +2425,37 @@ function addNote(){
 	newNote.querySelector(".bib-note-txt-area").addEventListener("scroll", () => {
 		newNote.querySelector(".bib-note-txt-area").style.resize = "vertical";
 	});
+    
+    newNote.querySelectorAll(".bib-note-head-area, .bib-note-txt-area").forEach(inp => {
+        inp.addEventListener("input", () => {
+            newNote.querySelector(".bib-note-save").classList.remove("none");
+        });
+    });
+
+    newNote.querySelector(".bib-note-save").addEventListener("click", async () => {
+        newNote.querySelector(".bib-note-save").classList.add("none");
+
+        const dataToSend = { heading: document.querySelector(".bib-note-head-area").value, txt: document.querySelector(".bib-note-txt-area").value };
+        try {
+            const response = await fetch(url + `/api/save-note`, {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json', 
+                },
+                body: JSON.stringify(dataToSend), 
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('Error:', errorData.message);
+                return;
+            }
+
+            const data = await response.json();
+        } catch (error) {
+            console.error('Error posting data:', error);
+        }
+    });
 }
 
 function resetVerseColor(){
@@ -3053,7 +3138,6 @@ document.querySelector(".bib-chat-input textarea").addEventListener("scroll", ()
 document.querySelector(".bib-chat-send").addEventListener("click", async () => {
     await postComment(document.querySelector(".bib-chat-input textarea").value, 0);
     /*
-    console.log("e");
     document.querySelector(".bib-com-rep").addEventListener("click", () => {
         document.querySelector(".bib-com-input-container").classList.remove("none");
     });
@@ -3701,6 +3785,38 @@ document.querySelectorAll(".bib-audio-chev").forEach((chev, idx) => {
         showAudio(currentAudioBook, currentAudioChapter + 1);
     });
 });
+
+function getSavedSettings(){
+    let savedSettings = JSON.parse(localStorage.getItem("savedSettings"));
+    if(savedSettings){
+        document.querySelector(".bib-opt-range").value = savedSettings.fontSizeValue;
+        document.querySelectorAll(".bib-opt-family .bib-opt-btn")[savedSettings.familyBtnIdx].click();
+        document.querySelectorAll(".bib-opt-spacing .bib-opt-btn")[savedSettings.spacingBtnIdx].click();
+        document.querySelectorAll(".bib-opt-theme .bib-opt-col")[savedSettings.themeBtnIdx].click();
+        document.querySelectorAll(".bib-opt-tran .bib-opt-pill")[savedSettings.tranBtnIdx].click();
+    } else {
+        let currentSettings = {
+            "fontSizeValue": 1,
+            "familyBtnIdx": 0,
+            "spacingBtnIdx": 1,
+            "themeBtnIdx": 1,
+            "tranBtnIdx": 0,
+        }
+        localStorage.setItem("savedSettings", JSON.stringify(currentSettings));
+        getSavedSettings();
+    }
+}
+getSavedSettings();
+function saveSettings(){
+    let currentSettings = {
+        "fontSizeValue": document.querySelector(".bib-opt-range").value,
+        "familyBtnIdx": Array.from(document.querySelectorAll(".bib-opt-family .bib-opt-btn")).indexOf(document.querySelector(".bib-opt-family .bib-opt-btn-active")),
+        "spacingBtnIdx": Array.from(document.querySelectorAll(".bib-opt-spacing .bib-opt-btn")).indexOf(document.querySelector(".bib-opt-spacing .bib-opt-btn-active")),
+        "themeBtnIdx": Array.from(document.querySelectorAll(".bib-opt-theme .bib-opt-col")).indexOf(document.querySelector(".bib-opt-theme .bib-opt-col-active")),
+        "tranBtnIdx": Array.from(document.querySelectorAll(".bib-opt-tran .bib-opt-pill")).indexOf(document.querySelector(".bib-opt-tran .bib-opt-pill-active")),
+    }
+    localStorage.setItem("savedSettings", JSON.stringify(currentSettings));
+}
 
 async function convertHebrew(){
     const tempHeadings = [

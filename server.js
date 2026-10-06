@@ -15,7 +15,6 @@ const openaiClient = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-/* 
 const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -47,11 +46,10 @@ app.use(session({
     cookie: {
         httpOnly: true,
         maxAge: 24 * 60 * 60 * 1000, 
-        secure: false,       // HTTPS only
-        sameSite: "lax"    // allow cross-site cookies
+        secure: false, // HTTPS only
+        sameSite: "lax" // allow cross-site cookies
     }
 }));
-*/
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -181,7 +179,17 @@ function getCurrentDateFormal(){
 
 
 /*///////////////////////// APIS ROUTES /////////////////////////*/
-app.post("/api/bible", async (req, res) => {
+
+/*///////////////////////// SIGN UP /////////////////////////////*/
+app.get("/api/signup", (req, res) => {
+    req.session.userId = 1;
+
+    return res.json({ message: 'success' });
+});
+/*///////////////////////////////////////////////////////////////*/
+
+/*///////////////////////// BIBLE STUDY APP /////////////////////////////*/
+app.post("/api/load-bible", async (req, res) => {
     let { translation, book, chapterIdx } = req.body;
 
     const bookResponse = await fetch(
@@ -490,6 +498,11 @@ app.post("/api/get-topic-scriptures", async (req, res) => {
 
     return res.json({ verses: data.verses });
 });
+
+app.post("/api/save-note", async (req, res) => {
+    
+});
+/*////////////////////////////////////////////////////////////////////////*/
 
 
 

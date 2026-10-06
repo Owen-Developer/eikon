@@ -1,4 +1,6 @@
 
 EIKON BIBLE
 
-- just download audios
+- download audios
+
+- save user data

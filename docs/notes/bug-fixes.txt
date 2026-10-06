@@ -1,4 +1,8 @@
 
+- bible text some paragraphs small
+
+- cannot click green search btn
+
 - userId for comments is hard coded until we add sessions
 
 - need to download all bible chapter audios
