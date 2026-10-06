@@ -1909,8 +1909,13 @@ function initializeSideNavs(){
         wrapper.classList.remove("bib-right-show");
         wrapper.classList.remove("bib-left-show");
     });
+    if(window.innerWidth > 1440){
+        document.querySelector(".bib-right").classList.add("bib-right-show");
+        document.querySelector(".bib-left").classList.add("bib-left-show");  
+    }
 }
 initializeSideNavs();
+
 document.querySelector("i.bib-left-xmark").addEventListener("click", () => {
     document.querySelector(".bib-left").classList.remove("bib-left-show");
 });
@@ -2319,20 +2324,34 @@ function initializeTranslations(){
 
         document.querySelector(".bib-opt-tran").appendChild(newPill);
 
-        newPill.addEventListener("click", () => {
+        newPill.addEventListener("click", async () => {
             document.querySelectorAll(".bib-opt-pill").forEach(other => {
                 other.classList.remove("bib-opt-pill-active");
             });
             newPill.classList.add("bib-opt-pill-active");
 
             currentTranslation = tran;
-            loadBible();
+            let wasShown = document.querySelector(".bib-opt").style.opacity == "1";
+            await loadBible();
+            if(wasShown){
+                document.querySelector(".bib-opt").style.opacity = "1";
+                document.querySelector(".bib-opt").style.pointerEvents = "auto";
+                document.querySelector(".bib-mobile-shadow").style.opacity = "1";
+                document.querySelector(".bib-mobile-shadow").style.pointerEvents = "auto";
+            }
         });
     });
 
     document.querySelector(".bib-opt-pill").click();
 }
 initializeTranslations();
+
+document.querySelector(".bib-bottom-book").addEventListener("click", () => {
+    document.querySelector(".bib-left").style.opacity = "1";
+    document.querySelector(".bib-left").style.pointerEvents = "auto";
+    document.querySelector(".bib-mobile-shadow").style.opacity = "1";
+    document.querySelector(".bib-moblile-shadow").style.pointerEvents = "auto";
+});
 
 function addNote(){
 	let newNote = document.createElement("div");

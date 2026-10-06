@@ -1059,7 +1059,7 @@ i.bib-verse-xmark:hover {
 }
 
 .bib-opt {
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     top: 90px;
     right: calc(380px + 12px);
@@ -1588,7 +1588,7 @@ i.bib-opt-close:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: hsla(0, 0%, 0%, 0.2);
+    background-color: hsla(0, 0%, 0%, 0.6);
     z-index: 99;
     opacity: 0;
     pointer-events: none;
@@ -1694,6 +1694,43 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
     color: white;
 }
 
+.bib-bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 200px;
+    height: 60px;
+    display: flex;
+    gap: 10px;
+    background-color: hsla(0, 0%, 0%, 0.4);
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.2);
+    padding: 6px;
+    opacity: 0;
+    pointer-events: none;
+}
+.bib-bottom-wrapper {
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+    cursor: pointer;
+    height: 100%;
+    width: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dcc2a2;
+    transition: 0.2s ease;
+}
+.bib-bottom-wrapper i {
+    font-size: 17px;
+    color: hsl(0, 0%, 20%);
+}
+.bib-bottom-wrapper:hover {
+    background-color: hsl(33, 45%, 60%);
+}
+
+
 /*//////////////// COLOUR THEME /////////////////*/
 .bib-header.light-theme {
     background-color: hsl(40, 9%, 85%);
@@ -1739,6 +1776,9 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
 
 
 @media only screen and (max-width: 1440px){
+    .bib-mid-mid {
+        padding: 0 12px;
+    }
     .bib-txt {
         width: 400px;
         max-width: 100%;
@@ -1761,10 +1801,6 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
 @media only screen and (max-width: 1130px){
     .bib-left-open, .bib-right-open {
         display: none !important;
-    }
-    .bib-left {
-        left: auto !important;
-        right: -340px !important;
     }
     .bib-left-show {
         left: auto !important;
@@ -1789,6 +1825,9 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
         padding: 15px 10px;
         height: 75px;
     }
+    .bib-flex {
+        height: calc(100% - 75px);
+    }
     .bib-header-audio, .bib-header-focus, .bib-header-settings {
         display: none !important;
     }
@@ -1812,5 +1851,18 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
     }
     .bib-logo {
         font-size: 22px;
+    }
+    .bib-bottom {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .bib-txt {
+        padding-bottom: 80px;
+    }
+    .bib-opt {
+        right: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
