@@ -1906,7 +1906,7 @@ async function fakeSignUp(){
         console.error('Error fetching data:', error);
     }
 }
-fakeSignUp();
+//fakeSignUp();
 
 
 document.querySelector(".bib-left-open").addEventListener("click", () => {
@@ -2176,7 +2176,7 @@ async function getVerse(translation, book, chapter, verses){
 }
 
 async function loadBible(){
-    loadComments();
+    //loadComments();
     document.querySelector(".bib-mid-mid").style.opacity = "0";
     let isNewBook = false;
     if(document.querySelector(".bib-book-txt").textContent != currentBook) isNewBook = true;
@@ -2432,12 +2432,12 @@ function addNote(){
         });
     });
 
-    newNote.querySelector(".bib-note-save").addEventListener("click", async () => {
+    newNote.querySelector(".bib-note-save").onclick = async () => {
         newNote.querySelector(".bib-note-save").classList.add("none");
 
         const dataToSend = { heading: document.querySelector(".bib-note-head-area").value, txt: document.querySelector(".bib-note-txt-area").value };
         try {
-            const response = await fetch(url + `/api/save-note`, {
+            const response = await fetch(url + `/api/create-note`, {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json', 
@@ -2452,11 +2452,65 @@ function addNote(){
             }
 
             const data = await response.json();
+
+            newNote.dataset.noteId = data.noteId;
+
+            newNote.querySelector(".bib-note-save").textContent = "Update";
+            newNote.querySelector(".bib-note-save").onclick = () => {
+                updateNote(data.noteId, newNote);
+            }
+
         } catch (error) {
             console.error('Error posting data:', error);
         }
-    });
+    }
 }
+async function updateNote(noteId, noteELement){
+    noteELement.querySelector(".bib-note-save").classList.add("none");
+
+    const dataToSend = { noteId: noteId, heading: document.querySelector(".bib-note-head-area").value, txt: document.querySelector(".bib-note-txt-area").value };
+    try {
+        const response = await fetch(url + `/api/update-note`, {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(dataToSend), 
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Error:', errorData.message);
+            return;
+        }
+
+        const data = await response.json();
+
+
+    } catch (error) {
+        console.error('Error posting data:', error);
+    }
+}
+async function displayNotes(){
+    try {
+        const response = await fetch(url + `api/get-notes`, {
+            method: 'GET',
+        });
+        const data = await response.json();
+
+        data.notes.forEach(note => {
+            let newNote = document.createElement("div");
+            newNote.classList.add("bib-note");
+            newNote.innerHTML = `
+            
+            `;
+        });
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+// check how db works locally
 
 function resetVerseColor(){
 	document.querySelectorAll(".yv-vlbl").forEach(num => {

@@ -15,6 +15,7 @@ const openaiClient = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+/*
 const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -50,6 +51,8 @@ app.use(session({
         sameSite: "lax" // allow cross-site cookies
     }
 }));
+*/
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -499,8 +502,44 @@ app.post("/api/get-topic-scriptures", async (req, res) => {
     return res.json({ verses: data.verses });
 });
 
-app.post("/api/save-note", async (req, res) => {
+app.post("/api/create-note", (req, res) => {
+    const { heading, txt } = req.body;
     
+    /*
+    db.query("insert into notes (user_id, heading, last_updated, txt) values (?, ?, ?)", [req.session.userId, heading, getCurrentDateFormal(), txt], (err, result) => {
+        if(err){
+            console.error(err);
+        }
+
+        return res.json({ noteId: result.insertId });
+    });
+    */
+   return res.json({ noteId: 1 });
+});
+
+app.post("/api/update-note", (req, res) => {
+    const { noteId, heading, txt } = req.body;
+
+    /*
+    db.query("update notes set heading = ?, txt = ?, last_updated = ? where id = ?", [heading, txt, getCurrentDateFormal(), noteId], (err, result) => {
+        if(err){
+            console.error(err);
+        }
+
+        return res.json({ message: 'success' });
+    });
+    */
+   return res.json({ message: 'success' });
+});
+
+app.get("/api/get-notes", (req, res) => {
+    db.query("select * from notes where user_id = ?", (err, result) => {
+        if(err){
+            console.error(err);
+        }
+
+        return res.json({ notes: result });
+    });
 });
 /*////////////////////////////////////////////////////////////////////////*/
 
