@@ -1906,7 +1906,7 @@ async function fakeSignUp(){
         console.error('Error fetching data:', error);
     }
 }
-//fakeSignUp();
+fakeSignUp();
 
 
 document.querySelector(".bib-left-open").addEventListener("click", () => {
@@ -1971,6 +1971,8 @@ function focusBible(){
 document.querySelector("i.bib-opt-close").addEventListener("click", () => {
     document.querySelector(".bib-opt").style.opacity = "0";
     document.querySelector(".bib-opt").style.pointerEvents = "none";
+    document.querySelector(".bib-mobile-shadow").style.opacity = "0";
+    document.querySelector(".bib-mobile-shadow").style.pointerEvents = "none";
 });
 document.querySelector(".bib-book-book").addEventListener("click", () => {
     if(document.querySelector("i.bib-book-chev").style.transform != "rotate(-180deg)"){
@@ -2176,7 +2178,8 @@ async function getVerse(translation, book, chapter, verses){
 }
 
 async function loadBible(){
-    //loadComments();
+    loadComments();
+    displayNotes();
     document.querySelector(".bib-mid-mid").style.opacity = "0";
     let isNewBook = false;
     if(document.querySelector(".bib-book-txt").textContent != currentBook) isNewBook = true;
@@ -2409,61 +2412,17 @@ function addNote(){
 	let newNote = document.createElement("div");
 	newNote.classList.add("bib-note");
 	newNote.innerHTML = `
-		<i class="fa-solid fa-xmark bib-note-xmark"></i>
+		<i class="fa-solid fa-trash-can bib-note-xmark none"></i>
 		<textarea placeholder="Enter Heading..." class="bib-note-head-area" spellcheck="false"></textarea>
 		<textarea placeholder="Type here..." class="bib-note-txt-area" spellcheck="false"></textarea>
 		<div class="bib-note-time">Today <span></span> ${getTime()}</div>
 
         <div class="bib-note-save">Save</div>
 	`;
-	document.querySelector(".bib-right-note-col").insertBefore(newNote, document.querySelector(".bib-note"));
+    document.querySelector(".bib-right-note-err").classList.add("none");
+	document.querySelector(".bib-right-note-col").prepend(newNote);
 
-	newNote.querySelector("i.bib-note-xmark").addEventListener("click", () => {
-		document.querySelector(".bib-right-note-col").removeChild(newNote);
-	});
-
-	newNote.querySelector(".bib-note-txt-area").addEventListener("scroll", () => {
-		newNote.querySelector(".bib-note-txt-area").style.resize = "vertical";
-	});
-    
-    newNote.querySelectorAll(".bib-note-head-area, .bib-note-txt-area").forEach(inp => {
-        inp.addEventListener("input", () => {
-            newNote.querySelector(".bib-note-save").classList.remove("none");
-        });
-    });
-
-    newNote.querySelector(".bib-note-save").onclick = async () => {
-        newNote.querySelector(".bib-note-save").classList.add("none");
-
-        const dataToSend = { heading: document.querySelector(".bib-note-head-area").value, txt: document.querySelector(".bib-note-txt-area").value };
-        try {
-            const response = await fetch(url + `/api/create-note`, {
-                method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json', 
-                },
-                body: JSON.stringify(dataToSend), 
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                console.error('Error:', errorData.message);
-                return;
-            }
-
-            const data = await response.json();
-
-            newNote.dataset.noteId = data.noteId;
-
-            newNote.querySelector(".bib-note-save").textContent = "Update";
-            newNote.querySelector(".bib-note-save").onclick = () => {
-                updateNote(data.noteId, newNote);
-            }
-
-        } catch (error) {
-            console.error('Error posting data:', error);
-        }
-    }
+    setNoteInputs(newNote);
 }
 async function updateNote(noteId, noteELement){
     noteELement.querySelector(".bib-note-save").classList.add("none");
@@ -2486,31 +2445,153 @@ async function updateNote(noteId, noteELement){
 
         const data = await response.json();
 
-
     } catch (error) {
         console.error('Error posting data:', error);
     }
 }
 async function displayNotes(){
+    document.querySelector(".bib-right-note-col").innerHTML = "Loading...";
     try {
         const response = await fetch(url + `api/get-notes`, {
             method: 'GET',
         });
         const data = await response.json();
 
-        data.notes.forEach(note => {
+        let notes = data.notes;
+        if(document.querySelector(".bib-right-note-filter-txt").textContent.toLowerCase() == "this book"){
+            notes = notes.filter(note => note.book == currentBook);
+        } else if(document.querySelector(".bib-right-note-filter-txt").textContent.toLowerCase() == "this chapter"){
+            notes = notes.filter(note => note.book == currentBook && note.chapter == currentChapterIdx + 1);
+        } else if(document.querySelector(".bib-right-note-filter-txt").textContent.toLowerCase() == "new testament"){
+            notes = notes.filter(note => chapterHeadings.indexOf(chapterHeadings.find(book => book.name == note.book)) >= 39 );
+        } else if(document.querySelector(".bib-right-note-filter-txt").textContent.toLowerCase() == "old testament"){
+            notes = notes.filter(note => chapterHeadings.indexOf(chapterHeadings.find(book => book.name == note.book)) <= 38 );
+        }
+
+        document.querySelector(".bib-right-note-col").innerHTML = "";
+        document.querySelector(".bib-right-note-err").classList.add("none");
+        notes.forEach(note => {
             let newNote = document.createElement("div");
             newNote.classList.add("bib-note");
+            newNote.dataset.noteId = note.id;
+
+            let noteDate = note.note_date;
+            if(getSlashDate(noteDate) == getCurrentDate()){
+                noteDate = "Today";
+            }
             newNote.innerHTML = `
-            
+                <i class="fa-solid fa-trash-can bib-note-xmark"></i>
+                <textarea placeholder="Enter Heading..." class="bib-note-head-area" spellcheck="false">${note.heading}</textarea>
+                <textarea placeholder="Type here..." class="bib-note-txt-area" spellcheck="false">${note.txt}</textarea>
+                <div class="bib-note-time">${noteDate} <span></span> ${note.note_time}</div>
+
+                <div class="bib-note-save none">Save</div>
             `;
+            document.querySelector(".bib-right-note-col").prepend(newNote);
+
+            setNoteInputs(newNote);
         });
+
+        if(notes.length == 0){
+            document.querySelector(".bib-right-note-err").classList.remove("none");
+        }
 
     } catch (error) {
         console.error('Error fetching data:', error);
     }
 }
-// check how db works locally
+function setNoteInputs(noteElement){
+	noteElement.querySelector("i.bib-note-xmark").addEventListener("click", async () => {
+		document.querySelector(".bib-right-note-col").removeChild(noteElement);
+
+        console.log(document.querySelector(".bib-note"));
+        if(!document.querySelector(".bib-note")){
+            document.querySelector(".bib-right-note-err").classList.remove("none");
+        }
+
+        const dataToSend = { id: noteElement.dataset.noteId };
+        try {
+            const response = await fetch(url + `/api/delete-note`, {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json', 
+                },
+                body: JSON.stringify(dataToSend), 
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('Error:', errorData.message);
+                return;
+            }
+
+            const data = await response.json();
+        } catch (error) {
+            console.error('Error posting data:', error);
+        }
+	});
+
+	noteElement.querySelector(".bib-note-txt-area").addEventListener("scroll", () => {
+		noteElement.querySelector(".bib-note-txt-area").style.resize = "vertical";
+	});
+    
+    noteElement.querySelectorAll(".bib-note-head-area, .bib-note-txt-area").forEach(inp => {
+        inp.addEventListener("input", () => {
+            noteElement.querySelector(".bib-note-save").classList.remove("none");
+        });
+    });
+
+    noteElement.querySelector(".bib-note-save").onclick = async () => {
+        if(noteElement.querySelector(".bib-note-save").textContent == "Save"){
+            const dataToSend = { heading: document.querySelector(".bib-note-head-area").value, txt: document.querySelector(".bib-note-txt-area").value, book: currentBook, chapter: currentChapterIdx + 1 };
+            try {
+                const response = await fetch(url + `/api/create-note`, {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json', 
+                    },
+                    body: JSON.stringify(dataToSend), 
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    console.error('Error:', errorData.message);
+                    return;
+                }
+
+                const data = await response.json();
+
+                noteElement.dataset.noteId = data.noteId;
+                noteElement.querySelector(".bib-note-save").textContent = "Update";
+                noteElement.querySelector("i.bib-note-xmark").classList.remove("none");
+
+            } catch (error) {
+                console.error('Error posting data:', error);
+            }
+        }
+
+        else {
+            updateNote(data.noteId, noteElement);
+        }
+        noteElement.querySelector(".bib-note-save").classList.add("none");
+    }
+}
+document.querySelector(".bib-right-note-filter-txt").addEventListener("click", () => {
+    document.querySelector(".bib-right-note-filter-drop").style.opacity = "1";
+    document.querySelector(".bib-right-note-filter-drop").style.pointerEvents = "auto";
+});
+document.addEventListener("click", (e) => {
+    if(!document.querySelector(".bib-right-note-filter-txt").contains(e.target)){
+        document.querySelector(".bib-right-note-filter-drop").style.opacity = "0";
+        document.querySelector(".bib-right-note-filter-drop").style.pointerEvents = "none";
+    }
+});
+document.querySelectorAll(".bib-right-note-filter-drop div").forEach(opt => {
+    opt.addEventListener("click", () => {
+        document.querySelector(".bib-right-note-filter-txt").textContent = opt.textContent;
+        displayNotes();
+    });
+});
 
 function resetVerseColor(){
 	document.querySelectorAll(".yv-vlbl").forEach(num => {
@@ -2518,7 +2599,6 @@ function resetVerseColor(){
 		num.classList.remove("bib-verse-idx-active");
 	});
 }
-
 function setVerseAdding(){
 	document.querySelectorAll(".yv-vlbl").forEach(num => {
 		num.classList.add("bib-verse-idx-highlighted");
@@ -2541,6 +2621,57 @@ function resetVerseBtn(){
 		document.querySelector(".bib-right-verse-add").classList.add("inactive-el");
 	}
 }
+async function displayVerses(){
+    document.querySelector(".bib-right-verse-err").classList.add("none");
+    try {
+        const response = await fetch(`${url}/api/get-verses`, {
+            method: 'GET',
+        });
+        const data = await response.json(); 
+
+        let verses = data.verses;
+        if(document.querySelector(".bib-right-verse-filter-txt").textContent.toLowerCase() == "new testament"){
+            verses = verses.filter(verse => chapterHeadings.indexOf(chapterHeadings.find(book => book.name == verse.book)) >= 39 );
+        } else if(document.querySelector(".bib-right-verse-filter-txt").textContent.toLowerCase() == "old testament"){
+            verses = verses.filter(verse => chapterHeadings.indexOf(chapterHeadings.find(book => book.name == verse.book)) <= 38 );
+        }
+
+        document.querySelector(".bib-right-verse-col").innerHTML = "";
+        verses.forEach(verse => {
+            let newVerse = document.createElement("div");
+            newVerse.classList.add("bib-verse");
+            newVerse.dataset.verseId = verse.id;
+
+            let verseDate = verse.verse_date;
+            if(getSlashDate(verseDate) == getCurrentDate()){
+                verseDate = "Today";
+            }
+            newVerse.innerHTML = `
+                <i class="fa-solid fa-trash bib-verse-xmark"></i>
+                <div class="bib-verse-head">${verse.book} ${verse.chapter}:${verse.verse_ref}</div>
+                <div class="bib-verse-txt">${verse.verse_txt}</div>
+                <div class="bib-verse-time">${verseDate} <span></span> ${verse.verse_time}</div>
+
+                <div class="bib-verse-tran">
+                    <div class="bib-verse-tran-txt">${verse.translation}</div>
+
+                    <div class="bib-verse-tran-drop"></div>
+                </div>
+            `;
+            document.querySelector(".bib-right-verse-col").prepend(newVerse);
+
+            setVerseInputs(newVerse);
+        });
+
+        if(verses.length == 0){
+            document.querySelector(".bib-right-verse-err").classList.remove("none");
+        }
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+displayVerses();
 async function addVerse(){
 	let verseIdxs = [];
 	let verseStr = "";
@@ -2560,22 +2691,156 @@ async function addVerse(){
 		}
 	});
 
+    document.querySelector(".bib-right-verse-err").classList.add("none");
+    document.querySelector(".bib-right-verse-load").classList.remove("none");
     let fullVerse = await getVerse(currentTranslation.id, getBookSlug(currentBook), currentChapterIdx + 1, verseIdxs);
+    document.querySelector(".bib-right-verse-load").classList.add("none");
 
     let newVerse = document.createElement("div");
     newVerse.classList.add("bib-verse");
     newVerse.innerHTML = `
-    <i class="fa-solid fa-xmark bib-verse-xmark"></i>
+        <i class="fa-solid fa-trash bib-verse-xmark"></i>
         <div class="bib-verse-head">${currentBook} ${currentChapterIdx + 1}:${verseStr}</div>
         <div class="bib-verse-txt">${fullVerse}</div>
         <div class="bib-verse-time">Today <span></span> ${getTime()}</div>
+
+        <div class="bib-verse-tran">
+            <div class="bib-verse-tran-txt">${currentTranslation.name}</div>
+
+            <div class="bib-verse-tran-drop"></div>
+        </div>
     `;
     document.querySelector(".bib-right-verse-col").insertBefore(newVerse, document.querySelector(".bib-verse"));
 
-    newVerse.querySelector("i.bib-verse-xmark").addEventListener("click", () => {
-        document.querySelector(".bib-right-verse-col").removeChild(newVerse);
+    await saveVerseDb(newVerse, currentBook, currentChapterIdx + 1, verseStr, fullVerse, getTime(), currentTranslation.name);
+
+    setVerseInputs(newVerse);
+}
+async function saveVerseDb(verseElement, book, chapter, verseRef, verseTxt, time, translation){
+    const dataToSend = { book: book, chapter: chapter, verseRef: verseRef, verseTxt: verseTxt, time: time, translation: translation };
+    try {
+        const response = await fetch(url + `/api/create-verse`, {
+            method: 'POST',
+            
+            headers: { 
+                
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(dataToSend), 
+        });
+
+        if(!response.ok){
+            const errorData = await response.json();
+            console.error('Error:', errorData.message);
+            return;
+        }
+
+        const data = await response.json();
+
+        verseElement.dataset.verseId = data.id;
+
+    } catch (error) {
+        console.error('Error posting data:', error);
+    }
+}
+function setVerseInputs(verseElement){
+    verseElement.querySelector(".bib-verse-tran-txt").addEventListener("click", () => {
+        verseElement.querySelector(".bib-verse-tran-drop").style.opacity = "1";
+        verseElement.querySelector(".bib-verse-tran-drop").style.pointerEvents = "auto";
+    });
+
+    translations.forEach(tran => {
+        let newTran = document.createElement("div");
+        newTran.innerHTML = `${tran.name}`;
+        verseElement.querySelector(".bib-verse-tran-drop").appendChild(newTran);
+
+        newTran.addEventListener("click", async () => {
+            verseElement.querySelector(".bib-verse-tran-txt").textContent = tran.name;
+
+            let verseIdxs = [];
+            verseElement.querySelector(".bib-verse-head").textContent.split(":")[1].split(", ").forEach(verse => {
+                verseIdxs.push(verse);
+            });
+            verseElement.querySelector(".bib-verse-txt").textContent = "Loading...";
+            let diffVerse = await getVerse(translations.find(translation => translation.name == tran.name).id, getBookSlug(currentBook), currentChapterIdx + 1, verseIdxs);
+            verseElement.querySelector(".bib-verse-txt").textContent = diffVerse;
+
+            const dataToSend = { id: verseElement.dataset.verseId, verse: diffVerse, translation: tran.name };
+            try {
+                const response = await fetch(url + `/api/change-verse-translation`, {
+                    method: 'POST',
+                    
+                    headers: { 
+                        
+                        'Content-Type': 'application/json', 
+                    },
+                    body: JSON.stringify(dataToSend), 
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    console.error('Error:', errorData.message);
+                    return;
+                }
+
+                const data = await response.json();
+            } catch (error) {
+                console.error('Error posting data:', error);
+            }
+        });
+    });
+    document.addEventListener("click", (e) => {
+        if(!verseElement.querySelector(".bib-verse-tran-txt").contains(e.target)){
+            verseElement.querySelector(".bib-verse-tran-drop").style.opacity = "0";
+            verseElement.querySelector(".bib-verse-tran-drop").style.pointerEvents = "none";
+        }
+    });
+
+    verseElement.querySelector("i.bib-verse-xmark").addEventListener("click", async () => {
+        document.querySelector(".bib-right-verse-col").removeChild(verseElement);
+
+        if(!document.querySelector(".bib-verse")){
+            document.querySelector(".bib-right-verse-err").classList.remove("none");
+        }
+
+        const dataToSend = { id: verseElement.dataset.verseId };
+        try {
+            const response = await fetch(url + `/api/delete-verse`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json', 
+                },
+                body: JSON.stringify(dataToSend), 
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('Error:', errorData.message);
+                return;
+            }
+
+            const data = await response.json();
+        } catch (error) {
+            console.error('Error posting data:', error);
+        }
     });
 }
+document.querySelector(".bib-right-verse-filter-txt").addEventListener("click", () => {
+    document.querySelector(".bib-right-verse-filter-drop").style.opacity = "1";
+    document.querySelector(".bib-right-verse-filter-drop").style.pointerEvents = "auto";
+});
+document.addEventListener("click", (e) => {
+    if(!document.querySelector(".bib-right-verse-filter-txt").contains(e.target)){
+        document.querySelector(".bib-right-verse-filter-drop").style.opacity = "0";
+        document.querySelector(".bib-right-verse-filter-drop").style.pointerEvents = "none";
+    }
+});
+document.querySelectorAll(".bib-right-verse-filter-drop div").forEach(opt => {
+    opt.addEventListener("click", () => {
+        document.querySelector(".bib-right-verse-filter-txt").textContent = opt.textContent;
+        displayVerses();
+    });
+});
 
 function setVerseRelated(){
 	document.querySelectorAll(".yv-vlbl").forEach(num => {
@@ -3558,7 +3823,7 @@ document.querySelector(".bib-search-input").addEventListener("input", () => {
                 if(phraseVerses.length == 0){
                     document.querySelector(".bib-header-verse-drop .bib-header-verse-drop-label").textContent = `No verses found including the phrase: "${phrase}"`;
                 } else {
-                    document.querySelector(".bib-header-verse-drop .bib-header-verse-drop-label").textContent = `${phraseVerses.length} verses including "${phrase}":`;
+                    document.querySelector(".bib-header-verse-drop .bib-header-verse-drop-label").textContent = `${phraseVerses.length} occurences of "${phrase}":`;
                 }
             }
         }
@@ -3995,6 +4260,18 @@ function getTime(){
 function getTextDate(date){
     return `${date.split("-")[2]} ${shortMonths[Number(date.split("-")[1]) - 1]} ${date.split("-")[0]}`;
 }
+function getSlashDate(date){
+    return `${date.split("-")[2]}/${date.split("-")[1]}/${date.split("-")[0]}`;
+}
 function getTextDateNoYear(date){
     return `${date.split("-")[2]} ${shortMonths[Number(date.split("-")[1]) - 1]}`;
+}
+function getCurrentDate(){
+    const today = new Date();
+
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+    const yyyy = today.getFullYear();
+
+    return `${dd}/${mm}/${yyyy}`;
 }

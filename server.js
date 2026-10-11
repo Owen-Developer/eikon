@@ -16,6 +16,7 @@ const openaiClient = new OpenAI({
 });
 
 /*
+*/
 const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -51,7 +52,6 @@ app.use(session({
         sameSite: "lax" // allow cross-site cookies
     }
 }));
-*/
 
 
 app.use(express.json());
@@ -503,24 +503,20 @@ app.post("/api/get-topic-scriptures", async (req, res) => {
 });
 
 app.post("/api/create-note", (req, res) => {
-    const { heading, txt } = req.body;
+    const { heading, txt, book, chapter } = req.body;
     
-    /*
-    db.query("insert into notes (user_id, heading, last_updated, txt) values (?, ?, ?)", [req.session.userId, heading, getCurrentDateFormal(), txt], (err, result) => {
+    db.query("insert into notes (user_id, heading, note_date, txt, book, chapter, note_time) values (?, ?, ?, ?, ?, ?, ?)", [req.session.userId, heading, getCurrentDateFormal(), txt, book, chapter, getTime()], (err, result) => {
         if(err){
             console.error(err);
         }
 
         return res.json({ noteId: result.insertId });
     });
-    */
-   return res.json({ noteId: 1 });
 });
 
 app.post("/api/update-note", (req, res) => {
     const { noteId, heading, txt } = req.body;
 
-    /*
     db.query("update notes set heading = ?, txt = ?, last_updated = ? where id = ?", [heading, txt, getCurrentDateFormal(), noteId], (err, result) => {
         if(err){
             console.error(err);
@@ -528,17 +524,73 @@ app.post("/api/update-note", (req, res) => {
 
         return res.json({ message: 'success' });
     });
-    */
-   return res.json({ message: 'success' });
 });
 
 app.get("/api/get-notes", (req, res) => {
-    db.query("select * from notes where user_id = ?", (err, result) => {
+    db.query("select * from notes where user_id = ? order by id asc", [req.session.userId], (err, result) => {
         if(err){
             console.error(err);
         }
 
         return res.json({ notes: result });
+    });
+});
+
+app.post("/api/delete-note", (req, res) => {
+    const { id } = req.body;
+
+    db.query("delete from notes where id = ?", [id], (err, result) => {
+        if(err){
+            console.error(err);
+        }
+
+        return res.json({ message: 'success' });
+    });
+});
+
+app.post("/api/create-verse", (req, res) => {
+    const { book, chapter, verseRef, verseTxt, time, translation } = req.body;
+
+    db.query("insert into verses (user_id, book, chapter, verse_ref, verse_txt, verse_date, verse_time, translation) values (?, ?, ?, ?, ?, ?, ?, ?)", [req.session.userId, book, chapter, verseRef, verseTxt, getCurrentDateFormal(), time, translation], (err, result) => {
+        if(err){
+            console.error(err);
+        }
+
+        return res.json({ id: result.insertId });
+    });
+});
+
+app.get("/api/get-verses", (req, res) => {
+    db.query("select * from verses where user_id = ?", [req.session.userId], (err, result) => {
+        if(err){
+            console.error(err);
+        }
+
+        return res.json({ verses: result });
+    });
+});
+
+app.post("/api/change-verse-translation", (req, res) => {
+    const { id, verse, translation } = req.body;
+
+    db.query("update verses set verse_txt = ?, translation = ? where id = ?", [verse, translation, id], (err, result) => {
+        if(err){
+            console.error(err);
+        }
+
+        return res.json({ message: 'success' });
+    });
+});
+
+app.post("/api/delete-verse", (req, res) => {
+    const { id } = req.body;
+
+    db.query("delete from verses where id = ?", [id], (err, result) => {
+        if(err){
+            console.error(err);
+        }
+
+        return res.json({ message: 'success' });
     });
 });
 /*////////////////////////////////////////////////////////////////////////*/

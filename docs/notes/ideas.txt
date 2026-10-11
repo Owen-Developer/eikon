@@ -3,3 +3,5 @@
 - how do I know Christianity is true app under Apologetics
 
 - Christian authors/books suggestion app
+
+- be able to click 'memorize verse' from one app, then direct user to memorization app

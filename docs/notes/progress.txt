@@ -2,5 +2,3 @@
 EIKON BIBLE
 
 - download audios
-
-- save user data

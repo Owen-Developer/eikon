@@ -736,7 +736,7 @@ i.bib-right-close:hover {
     position: relative;
     border-radius: 4px;
     width: 100%;
-    padding: 18px 15px;
+    padding: 18px 15px 15px;
     border: 1px solid hsl(35, 66%, 75%);
 }
 .bib-note-head {
@@ -752,6 +752,12 @@ i.bib-right-close:hover {
 .bib-note-time {
     font-size: 16px;
     color: hsl(0, 0%, 40%);
+}
+.bib-right-note-flex {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .bib-right-note-add, .bib-right-verse-add, .bib-right-rel-add, .bib-right-lang-add, .bib-right-ai-add {
     align-self: flex-start;
@@ -847,7 +853,55 @@ i.bib-note-xmark:hover {
 .bib-note-save:hover {
     background-color: hsl(138, 15%, 45%);
 }
+.bib-right-note-filter, .bib-right-verse-filter {
+    z-index: 3;
+    position: relative;
+}
+.bib-right-note-filter-txt, .bib-right-verse-filter-txt {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.bib-right-note-filter-txt:hover, .bib-right-verse-filter-txt:hover {
+    color: hsl(0, 0%, 0%);
+}
+.bib-right-note-filter-drop, .bib-right-verse-filter-drop {
+    padding: 4px 0;
+    overflow: hidden;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 220px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid hsl(0, 0%, 85%);
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+.bib-right-note-filter-drop div, .bib-right-verse-filter-drop div {
+    cursor: pointer;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+    cursor: pointer;
+}
+.bib-right-note-filter-drop div:hover, .bib-right-verse-filter-drop div:hover {
+    background-color: hsl(0, 0%, 94%);
+}
 
+.bib-right-verse-load, .bib-right-verse-err, .bib-right-note-err {
+    margin-bottom: 8px;
+    font-size: 17px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
+}
 .bib-right-verse-col {
     padding-bottom: 20px;
     scrollbar-width: none;
@@ -862,7 +916,7 @@ i.bib-note-xmark:hover {
     position: relative;
     border-radius: 4px;
     width: 100%;
-    padding: 18px 15px;
+    padding: 18px 15px 15px;
     border: 1px solid hsl(35, 66%, 75%);
 }
 .bib-verse-head {
@@ -912,6 +966,50 @@ i.bib-verse-xmark {
 }
 i.bib-verse-xmark:hover {
     color: hsl(0, 0%, 10%);
+}
+.bib-verse-tran {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    transition: 0.2s ease;
+}
+.bib-verse-tran-txt {
+    border-radius: 200px;
+    padding: 5px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #4b6653;
+    color: white;
+}
+.bib-verse-tran-drop {
+    padding: 4px 0;
+    overflow: hidden;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    width: 180px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid hsl(0, 0%, 85%);
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+.bib-verse-tran-drop div {
+    cursor: pointer;
+    width: 100%;
+    padding: 8px 12px;
+    color: hsl(0, 0%, 20%);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.bib-verse-tran-drop div:hover {
+    background-color: hsl(0, 0%, 94%);
 }
 
 .bib-right-rel-col {
@@ -1354,6 +1452,7 @@ i.bib-opt-close:hover {
     height: 120px;
     border-radius: 5px;
     font-size: 18px;
+    background-color: transparent;
     color: hsl(0, 0%, 20%);
     padding: 8px 12px;
     margin-bottom: 50px;
@@ -1764,6 +1863,12 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
 .bib-mid.light-theme {
     background-color: hsl(36, 20%, 95%);
 }
+.bib-bottom-wrapper.light-theme {
+    background-color: hsl(40, 9%, 95%);
+}
+.bib-verse, .bib-note {
+    border: 1px solid hsl(36, 20%, 75%);
+}
 
 .bib-header.sepia-theme {
     background-color: #dcc2a2;
@@ -1772,21 +1877,31 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
 
 .bib-header.dark-theme {
     background-color: hsl(40, 15%, 68%);
-    border-bottom: 1px solid hsl(36, 20%, 50%);
+    border-bottom: 1px solid hsl(36, 20%, 58%);
 }
 .bib-left.dark-theme {
     background-color: hsl(36, 20%, 83%);
-    border-right: 1px solid hsl(36, 20%, 50%);
+    border-right: 1px solid hsl(36, 20%, 58%);
 }
 .bib-right.dark-theme {
     background-color: hsl(36, 20%, 83%);
-    border-left: 1px solid hsl(36, 20%, 50%);
+    border-left: 1px solid hsl(36, 20%, 58%);
 }
 .bib-mid.dark-theme {
     background-color: hsl(36, 20%, 75%);
 }
 .bib-verse-idx-highlighted.dark-theme {
     background-color: hsla(0, 0%, 100%, 0.4);
+}
+.bib-bottom-wrapper.dark-theme {
+    background-color: hsl(40, 15%, 68%);
+}
+.bib-verse.dark-theme, .bib-note.dark-theme {
+    border: 1px solid hsl(36, 20%, 68%);
+}
+.bib-right-btn.dark-theme span, .bib-ai-sel.dark-theme, .bib-ai-ques-area.dark-theme, .bib-ai-ques-area i.dark-theme, .bib-chat-input textarea.dark-theme {
+    background-color: hsl(36, 20%, 93%);
+    border: 1px solid hsl(36, 20%, 68%);
 }
 /*///////////////////////////////////////////////*/
 
@@ -1886,4 +2001,173 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
         left: 50%;
         transform: translate(-50%, -50%);
     }
+}
+
+
+
+
+.mem-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.mem-header {
+    background-color: #dcc2a2;
+    border-bottom: 1px solid hsl(33, 45%, 65%);
+    z-index: 3;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 30px;
+}
+.mem-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 26px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.mem-logo img {
+    height: 42px;
+    width: auto;
+}
+.mem-table-container {
+    margin-bottom: 20px;
+    width: 100%;
+    height: calc(100% - 115px);
+    padding: 0 30px 0;
+    display: flex;
+    flex-direction: column;
+}
+.mem-top {
+    margin: 35px 0 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.mem-top-title {
+    margin-right: auto;
+    font-size: 46px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.mem-top-btn {
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 17px;
+    font-weight: 500;
+    background-color: #4b6653;
+    color: white;
+    border: 1px solid #4b6653;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: 0.2s ease;
+}
+.mem-top-btn i {
+    color: white;
+    font-size: 15px;
+}
+.mem-top-btn-cat {
+    background-color: white !important;
+    border: 1px solid hsl(0, 0%, 85%) !important;
+}
+.mem-top-btn-cat span {
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.mem-cat-drop {
+    padding: 4px 0;
+    overflow: hidden;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 220px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid hsl(0, 0%, 85%);
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+.mem-cat-drop div {
+    cursor: pointer;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+    cursor: pointer;
+}
+.mem-cat-drop div:hover {
+    background-color: hsl(0, 0%, 94%);
+}
+.mem-table {
+    width: 100%;
+    height: calc(100% - 110px + 20px);
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid hsl(0, 0%, 85%);
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+    padding: 25px 25px;
+    display: flex;
+    flex-direction: column;
+}
+.mem-table-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+.mem-table-top-txt {
+    width: 200px;
+    font-size: 19px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.mem-table-col {
+    margin-top: 22px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+.mem-table-row {
+    border-top: 1px solid hsl(0, 0%, 85%);
+    padding: 22px 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+.mem-table-txt {
+    width: 200px;
+    font-size: 19px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.mem-table-top, .mem-table-row {
+    gap: 50px;
+}
+.mem-table-top-txt, .mem-table-txt {
+    width: 200px;
+}
+.mem-table-verse {
+    width: 600px;
+    overflow: hidden;
 }

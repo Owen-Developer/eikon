@@ -574,19 +574,68 @@
                     <span class="bib-right-btn-active">Notes</span>
                     <span>Verses</span>
                     <span>Related</span>
-                    <span class="bib-right-btn-greek">Greek</span>
+                    <span class="bib-right-btn-greek"></span>
                     <span>AI Analysis</span>
                     <span>Community</span>
                 </div>
 
                 <div class="bib-right-col bib-right-note-container ">
-                    <div class="bib-right-note-add" onclick="addNote()">Add note <i class="fa-solid fa-plus"></i></div>
+                    <div class="bib-right-note-flex">
+                        <div class="bib-right-note-add" onclick="addNote()">Add note <i class="fa-solid fa-plus"></i></div>
+
+                        <div class="bib-right-note-filter">
+                            <div class="bib-right-note-filter-txt">All notes</div>
+
+                            <div class="bib-right-note-filter-drop">
+                                <div>All notes</div>
+                                <div>This book</div>
+                                <div>This chapter</div>
+                                <div>New Testament</div>
+                                <div>Old Testament</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bib-right-note-err none">No notes found.</div>
                     <div class="bib-right-note-col">
                     </div>
                 </div>
                 <div class="bib-right-col bib-right-verse-container none">
-                    <div class="bib-right-verse-add inactive-el" onclick="addVerse()">Add verse <i class="fa-solid fa-plus"></i></div>
+                    <div class="bib-right-note-flex">
+                        <div class="bib-right-verse-add inactive-el" onclick="addVerse()">Add verse <i class="fa-solid fa-plus"></i></div>
+
+                        <div class="bib-right-verse-filter">
+                            <div class="bib-right-verse-filter-txt">All verses</div>
+
+                            <div class="bib-right-verse-filter-drop">
+                                <div>All verses</div>
+                                <div>New Testament</div>
+                                <div>Old Testament</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bib-right-verse-load none">Loading...</div>
+                    <div class="bib-right-verse-err none">No verses found.</div>
                     <div class="bib-right-verse-col">
+                        <!-- 
+                            <div class="bib-verse">
+                                <i class="fa-solid fa-xmark bib-verse-xmark"></i>
+                                <div class="bib-verse-head">Genesis 1</div>
+                                <div class="bib-verse-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                <div class="bib-verse-time">Today <span></span> 9:43am</div>
+    
+                                <div class="bib-verse-tran">
+                                    <div class="bib-verse-tran-txt">KJV</div>
+    
+                                    <div class="bib-verse-tran-drop">
+                                        <div>KJV</div>
+                                        <div>KJV</div>
+                                        <div>KJV</div>
+                                        <div>KJV</div>
+                                        <div>KJV</div>
+                                    </div>
+                                </div>
+                            </div>
+                         -->
                     </div>
                 </div>
                 <div class="bib-right-col bib-right-rel-container none">

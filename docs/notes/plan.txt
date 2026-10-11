@@ -20,6 +20,15 @@ SCRIPTURE:
 - option to go fullscreen with no distractions
 
 2. Memorisation
+- add verses
+- search verses by category
+- practice:
+  - read
+  - blank (type/choose word)
+  - type (free/first letter)
+- exam on all saved verses (show verse or reference)
+
+- we are gonna have one main table, which shows all 'my verses' and will display category verses on request. See dribbble
 
 3. Bible books
 
