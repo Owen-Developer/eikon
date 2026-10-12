@@ -595,6 +595,18 @@ app.post("/api/delete-verse", (req, res) => {
 });
 /*////////////////////////////////////////////////////////////////////////*/
 
+/*/////////////////////// MEMORIZATION APP ///////////////////////////*/
+app.get("/api/get-saved-verses", (req, res) => {
+    db.query("select * from mem_saved_verses where user_id = ? order by id asc", [req.session.userId], (err, result) => {
+        if(err){
+            console.error(err);
+        }
+
+        return res.json({ verses: result });
+    });
+});
+/*////////////////////////////////////////////////////////////////////*/
+
 
 
 

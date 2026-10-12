@@ -866,7 +866,7 @@ i.bib-note-xmark:hover {
 .bib-right-note-filter-txt:hover, .bib-right-verse-filter-txt:hover {
     color: hsl(0, 0%, 0%);
 }
-.bib-right-note-filter-drop, .bib-right-verse-filter-drop {
+.bib-right-note-filter-drop, .bib-right-verse-filter-drop, .mem-table-tran-drop {
     padding: 4px 0;
     overflow: hidden;
     position: absolute;
@@ -883,7 +883,7 @@ i.bib-note-xmark:hover {
     opacity: 0;
     pointer-events: none;
 }
-.bib-right-note-filter-drop div, .bib-right-verse-filter-drop div {
+.bib-right-note-filter-drop div, .bib-right-verse-filter-drop div, .mem-table-tran-drop div {
     cursor: pointer;
     width: 100%;
     padding: 8px 12px;
@@ -892,7 +892,7 @@ i.bib-note-xmark:hover {
     color: hsl(0, 0%, 20%);
     cursor: pointer;
 }
-.bib-right-note-filter-drop div:hover, .bib-right-verse-filter-drop div:hover {
+.bib-right-note-filter-drop div:hover, .bib-right-verse-filter-drop div:hover, .mem-table-tran-drop div:hover {
     background-color: hsl(0, 0%, 94%);
 }
 
@@ -2091,9 +2091,12 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
     padding: 4px 0;
     overflow: hidden;
     position: absolute;
-    top: 30px;
-    right: 0;
-    width: 220px;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    max-height: 280px;
+    scrollbar-width: 0;
+    overflow: auto;
     border-radius: 5px;
     background-color: white;
     border: 1px solid hsl(0, 0%, 85%);
@@ -2103,6 +2106,9 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
     transition: 0.2s ease;
     opacity: 0;
     pointer-events: none;
+}
+.mem-cat-drop::-webkit-scrollbar {
+    display: none;
 }
 .mem-cat-drop div {
     cursor: pointer;
@@ -2150,7 +2156,7 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
 }
 .mem-table-row {
     border-top: 1px solid hsl(0, 0%, 85%);
-    padding: 22px 0;
+    padding: 26px 0;
     width: 100%;
     display: flex;
     align-items: flex-start;
@@ -2161,6 +2167,21 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
     font-weight: 500;
     color: hsl(0, 0%, 20%);
 }
+.mem-table-tran {
+    z-index: 1;
+    position: relative;
+}
+.mem-table-tran span {
+    cursor: pointer;
+    font-size: 19px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+    background-color: hsl(0, 0%, 94%);
+    padding: 6px 15px;
+}
+.mem-table-tran-drop {
+    z-index: 2;
+}
 .mem-table-top, .mem-table-row {
     gap: 50px;
 }
@@ -2170,4 +2191,32 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
 .mem-table-verse {
     width: 600px;
     overflow: hidden;
+}
+.mem-table-save {
+    display: flex;
+    flex-direction: column;
+}
+.mem-table-save div {
+    align-self: flex-start;
+    background-color: #4b6653;
+    padding: 6px 15px;
+    border-radius: 5px;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.2s ease;
+}
+.mem-table-save div:hover {
+    background-color: hsl(138, 15%, 45%);
+}
+.mem-table-save div i {
+    color: white;
+    font-size: 13px;
+}
+.mem-table-save-active {
+    
 }
