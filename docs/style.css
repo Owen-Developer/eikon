@@ -2087,16 +2087,24 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
     font-weight: 500;
     color: hsl(0, 0%, 20%);
 }
+.mem-add-drop {
+    width: 250px;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    top: 50px;
+    right: 0;
+    left: auto;
+}
 .mem-cat-drop {
     padding: 4px 0;
-    overflow: hidden;
+    overflow: auto;
     position: absolute;
     top: 45px;
     left: 0;
     width: 100%;
     max-height: 280px;
     scrollbar-width: 0;
-    overflow: auto;
     border-radius: 5px;
     background-color: white;
     border: 1px solid hsl(0, 0%, 85%);
@@ -2183,7 +2191,7 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
     z-index: 2;
 }
 .mem-table-top, .mem-table-row {
-    gap: 50px;
+    gap: 70px;
 }
 .mem-table-top-txt, .mem-table-txt {
     width: 200px;
@@ -2217,6 +2225,9 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
     color: white;
     font-size: 13px;
 }
-.mem-table-save-active {
-    
+.mem-table-forget div {
+    background-color: hsl(0, 100%, 50%);
+}
+.mem-table-forget div:hover {
+    background-color: hsl(0, 100%, 40%);
 }
