@@ -36,6 +36,7 @@ async function getSavedVerses(){
         verses.forEach(verse => {
             let newRow = document.createElement("div");
             newRow.classList.add("mem-table-row");
+            newRow.dataset.verseId = verse.id;
             newRow.dataset.book = verse.book;
             newRow.dataset.chapter = verse.chapter;
             newRow.dataset.verse = verse.verse;
@@ -73,9 +74,12 @@ function setRowInputs(element){
 			element.querySelector(".mem-table-tran-drop").appendChild(newTran);
 
             newTran.addEventListener("click", async () => {
-                let newVerseTxt = await getVerse(tran.id, getBookSlug(element.datasaet.book), Number(element.datasaet.chapter), [element.dataset.verse]);
+                let newVerseTxt = await getVerse(tran.id, getBookSlug(element.dataset.book), Number(element.dataset.chapter), [element.dataset.verse]);
 
-                const dataToSend = { newVerseTxt: newVerseTxt };
+                element.querySelector(".mem-table-verse").textContent = newVerseTxt;
+                element.querySelector(".mem-table-tran span").textContent = tran.name;
+
+                const dataToSend = { id: element.dataset.verseId, verse: newVerseTxt, translation: tran.name };
                 try {
                     const response = await fetch(url + `/api/change-mem-translation`, {
                         method: 'POST',

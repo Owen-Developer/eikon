@@ -607,10 +607,23 @@ app.get("/api/get-saved-verses", (req, res) => {
         return res.json({ verses: result });
     });
 });
+
 app.post("/api/add-mem-verse", (req, res) => {
     const { book, chapter, verse, verseTxt } = req.body;
 
     db.query("insert into mem_saved_verses (user_id, book, chapter, verse, verse_txt, translation, date_added) values (?, ?, ?, ?, ?, ?, ?)", [req.session.userId, book, chapter, verse, verseTxt, "ASV", getCurrentDateFormal()], (err, result) => {
+        if(err){
+            console.error(err);
+        }
+
+        return res.json({ message: 'success' });
+    });
+});
+
+app.post("/api/change-mem-translation", (req, res) => {
+    const { id, verse, translation } = req.body;
+
+    db.query("update mem_saved_verses set verse_txt = ?, translation = ? where id = ?", [verse, translation, id], (err, result) => {
         if(err){
             console.error(err);
         }
