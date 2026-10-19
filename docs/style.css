@@ -2075,7 +2075,7 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
     gap: 12px;
     transition: 0.2s ease;
 }
-.mem-top-btn i {
+i.mem-top-btn-icon {
     color: white;
     font-size: 15px;
 }
@@ -2090,11 +2090,48 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
 .mem-add-drop {
     width: 250px;
     transform: none;
-    opacity: 1;
-    pointer-events: auto;
     top: 50px;
     right: 0;
     left: auto;
+}
+.mem-add-drop-chap .mem-add-book {
+    display: none !important;
+}
+.mem-add-drop-chap .mem-add-chap {
+    display: flex !important;
+}
+.mem-add-chap {
+    cursor: auto;
+    padding: 15px;
+    display: flex;
+    display: none;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.mem-add-chap span {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+    margin-bottom: 10px;
+}
+.mem-add-chap div {
+    cursor: pointer;
+    width: 27px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    color: hsl(0, 0%, 20%);
+    border: 1px solid hsl(0, 0%, 85%);
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+}
+.mem-add-chap div:hover {
+    background-color: hsl(0, 0%, 94%);
 }
 .mem-cat-drop {
     padding: 4px 0;
@@ -2176,19 +2213,27 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
     color: hsl(0, 0%, 20%);
 }
 .mem-table-tran {
-    z-index: 1;
     position: relative;
 }
 .mem-table-tran span {
     cursor: pointer;
+    border-radius: 5px;
     font-size: 19px;
     font-weight: 500;
     color: hsl(0, 0%, 20%);
     background-color: hsl(0, 0%, 94%);
     padding: 6px 15px;
+    transition: 0.2s ease;
+}
+.mem-table-tran span:hover {
+    background-color: hsl(0, 0%, 85%);
 }
 .mem-table-tran-drop {
-    z-index: 2;
+    top: 40px;
+    right: auto;
+    left: 0;
+    width: 200px;
+    z-index: 4 !important;
 }
 .mem-table-top, .mem-table-row {
     gap: 70px;

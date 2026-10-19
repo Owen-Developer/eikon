@@ -5,3 +5,5 @@
 - Christian authors/books suggestion app
 
 - be able to click 'memorize verse' from one app, then direct user to memorization app
+
+- an app that lets people dive deep into a range of theological topics, perhaps showing them the different positions, theologians, etc

@@ -1,0 +1,2011 @@
+
+let url = "";
+
+const chapterHeadings = [
+    {
+        "name": "Genesis",
+        "headings": [
+        "The Creation",
+        "Adam and Eve",
+        "The Fall of Man",
+        "Cain and Abel",
+        "The Generations of Adam",
+        "The Wickedness of Man",
+            "The Flood",
+            "The Floodwaters",
+            "The Covenant with Noah",
+            "The Nations from Noah",
+        "The Tower of Babel",
+        "The Call of Abram",
+        "Abram in Egypt",
+        "Abram and Lot Separate",
+        "God's Covenant with Abram",
+                "The Birth of Ishmael",
+        "The Covenant of Circumcision",
+        "Abraham Intercedes for Sodom",
+        "The Destruction of Sodom and Gomorrah",
+        "Abraham and Abimelech",
+                "The Birth of Isaac",
+        "The Binding of Isaac",
+        "The Burial of Sarah",
+        "Isaac and Rebekah",
+        "Jacob and Esau",
+                "Isaac and Abimelech",
+        "Jacob Receives Isaac's Blessing",
+        "Jacob's Ladder",
+        "Jacob Marries Leah and Rachel",
+        "Jacob's Children and Prosperity",
+                "Jacob Flees from Laban",
+        "Jacob and Laban's Covenant",
+        "Jacob Wrestles with God",
+        "Jacob and Esau Reconcile",
+        "Dinah and Shechem",
+                "The Generations of Esau",
+        "Joseph's Dreams",
+        "Judah and Tamar",
+        "Joseph Sold into Egypt",
+        "Joseph in Potiphar's House",
+                "Joseph Interprets Pharaoh's Dreams",
+        "Joseph's Brothers Go to Egypt",
+        "Joseph's Brothers Return to Egypt",
+        "Joseph Reveals Himself",
+        "Joseph's Brothers Return to Canaan",
+                "Jacob Goes to Egypt",
+        "Jacob Blesses Pharaoh and His Sons",
+        "Jacob Blesses His Sons",
+        "The Death of Jacob",
+        "The Death of Joseph",
+        ]
+    },
+
+    {
+        "name": "Exodus",
+        "headings": [
+    "The Israelites Oppressed in Egypt",
+    "The Birth of Moses",
+    "Moses and the Burning Bush",
+    "Moses Performs Signs",
+    "Moses Returns to Egypt",
+        "God Renews His Covenant",
+        "The Miraculous Staff",
+        "The Ten Plagues Begin",
+        "The Plague of Frogs",
+        "The Plague of Flies",
+        "The Final Plague Announced",
+        "The Passover and the Exodus",
+        "The Feast of Unleavened Bread",
+        "The Consecration of the Firstborn",
+        "The Pillar of Cloud and Fire",
+        "The Provision of Manna",
+        "Water from the Rock",
+        "The Ten Commandments Given",
+        "The Covenant Confirmed",
+        "Instructions for Worship",
+        "Laws Concerning Servants and Property",
+        "The Covenant Confirmed",
+        "The Sabbath and Annual Festivals",
+        "The Angel and the Conquest of Canaan",
+        "Instructions for the Tabernacle",
+        "The Tabernacle Curtains",
+        "The Tabernacle Framework",
+        "The Tabernacle Altar",
+        "The Priestly Garments",
+        "The Priestly Consecration",
+        "The Sabbath Commanded",
+        "The Golden Calf",
+        "Moses Intercedes for Israel",
+        "The Covenant Renewed",
+        "The Tabernacle Contributions",
+        "The Tabernacle Completed",
+        "The Priestly Garments Completed",
+        "The Tabernacle Set Up",
+        "The Tabernacle Dedicated",
+        "The Glory of the Lord Fills the Tabernacle",
+        ]
+    },
+
+    {
+        "name": "Leviticus",
+        "headings": [
+        "The Burnt Offering",
+        "The Grain Offering",
+        "The Peace Offering",
+        "The Sin Offering",
+        "The Guilt Offering",
+        "The Priests' Duties and Offerings", 
+        "The Ordination of Aaron and His Sons", 
+        "The Consecration of the Priests", 
+        "The Death of Nadab and Abihu", 
+        "Clean and Unclean Animals",
+        "Clean and Unclean Animals",
+        "Purification After Childbirth",
+        "Laws Concerning Skin Diseases",
+        "Cleansing from Skin Diseases",
+        "Bodily Discharges",
+        "The Day of Atonement",
+        "Laws Concerning Sacrifices",
+        "Laws Concerning Sexual Purity",
+        "The Holiness of God's People",
+        "Punishments for Blasphemy and Other Sins",
+        "The Holiness of the Priests",
+        "The Regulations for Offerings",
+        "The Appointed Festivals",
+        "The Sabbath Year and Jubilee",
+        "Blessings for Obedience and Warnings for Disobedience",
+        "Blessings for Obedience and Warnings for Disobedience",
+        "Laws Concerning Vows and Dedications",
+        ]
+    },
+
+    {
+        "name": "Numbers",
+        "headings": [
+        "The Census of Israel",
+        "The Arrangement of the Camps",
+        "The Duties of the Levites",
+        "The Purity of the Camp",
+        "The Nazirite Vow and Priestly Blessing",
+        "The Offerings of the Leaders",
+        "The Dedication of the Levites",
+        "The Passover Celebrated",
+        "The Cloud Over the Tabernacle",
+        "The Silver Trumpets and the Departure from Sinai",
+        "The People Complain and God Sends Quail",
+        "Miriam and Aaron Oppose Moses",
+        "The Twelve Spies and the Rebellion",
+        "The Israelites' Rebellion and Judgment",
+        "Laws for Offerings and the Sabbath",
+        "Korah's Rebellion",
+        "Aaron's Staff Buds",
+        "Duties of the Priests and Levites",
+        "The Water from the Rock",
+        "The Death of Aaron",
+        "The Bronze Serpent and Victories",
+        "Balak Summons Balaam",
+        "Balaam Blesses Israel",
+        "Balaam's Final Oracles",
+        "Israel's Sin with Baal of Peor",
+        "The Second Census of Israel",
+        "The Daughters of Zelophehad",
+        "Joshua Commissioned as Moses' Successor",
+        "The Daily Offerings",
+        "Laws Concerning Vows",
+        "The Defeat of Midian",
+        "The Settlement of the Transjordan Tribes",
+        "The Journey from Egypt to Moab",
+        "Cities of Refuge and the Levites",
+        "The Inheritance of Zelophehad's Daughters",
+        "The Inheritance of Zelophehad's Daughters",
+        ]
+    },
+
+    {
+        "name": "Deuteronomy",
+        "headings": [
+        "The Previous Journey Recounted",
+        "Moses Appoints Leaders and Judges",
+        "Israel's Rebellion at Kadesh-barnea",
+        "The Conquest of the Amorite Kings",
+        "The Ten Commandments Repeated",
+        "The Greatest Commandment",
+        "A Chosen People",
+        "The Lord's Chosen Place of Worship",
+        "The Wilderness Years Remembered",
+        "The Covenant Renewed",
+        "Love and Obey the Lord",
+        "The One Place of Worship",
+        "Warnings Against Idolatry",
+        "Clean and Unclean Foods",
+        "The Year of Release",
+        "The Passover and the Feast of Unleavened Bread",
+        "Laws Concerning Judges and Kings",
+        "Laws Concerning Priests and Prophets",
+        "Cities of Refuge and Laws of Justice",
+        "Laws Concerning Warfare",
+        "Laws Concerning Family and Justice",
+        "Laws Concerning the Protection of the Vulnerable",
+        "The Levirate Marriage",
+        "Weights, Measures, and Remembering Amalek",
+        "The Firstfruits and Tithes",
+        "The Covenant Renewed at Mount Ebal",
+        "The Covenant Renewed in Moab",
+        "The Choice Between Life and Death",
+        "Joshua Commissioned to Lead Israel",
+        "The Song of Moses",
+        "Moses' Final Instructions",
+        "Moses' Final Words",
+        "Moses' Final Blessing",
+        "The Death of Moses",
+        ]
+    },
+
+    {
+        "name": "Joshua",
+        "headings": [
+        "The Lord Commissions Joshua",
+        "Rahab and the Two Spies",
+        "Israel Crosses the Jordan",
+        "The Memorial Stones",
+        "The Commander of the Lord's Army",
+        "The Fall of Jericho",
+        "The Sin of Achan",
+        "The Covenant Renewed at Mount Ebal",
+        "The Southern Campaign",
+        "The Conquest of the Northern Kings",
+        "The Northern Campaign",
+        "The Kings Defeated by Moses and Joshua",
+        "The Land Yet to Be Conquered",
+        "The Land Allotted to Caleb",
+        "The Allotment of the Land of Canaan",
+        "The Allotment of Ephraim",
+        "The Allotment of Manasseh",
+        "The Tabernacle Set Up at Shiloh",
+        "The Cities of Refuge",
+        "The Levitical Cities",
+        "The Levitical Cities",
+        "The Altar of Witness",
+        "Joshua's Final Exhortation",
+        "Joshua's Farewell and the Covenant Renewed",
+        ]
+    },
+
+    {
+        "name": "Judges",
+        "headings": [
+        "Israel Fails to Complete the Conquest",
+        "The Angel of the Lord at Bokim",
+        "Israel's Disobedience and the Judges",
+        "Othniel, Ehud, and Shamgar",
+        "Deborah and Barak",
+        "Gideon Called by God",
+        "Gideon's Signs and the Defeat of Midian",
+        "Gideon and the Ephraimites",
+        "Abimelech's Rise and Fall",
+        "Tola, Jair, Jephthah, and Ibzan",
+        "Jephthah's Vow and Victory",
+        "Jephthah and Ephraim",
+        "Samson's Birth Foretold",
+        "Samson's Marriage and Riddle",
+        "Samson's Vengeance on the Philistines",
+        "Samson and Delilah",
+        "Israel's War with Benjamin",
+        "The Battle Against Benjamin",
+        "The Wives for the Benjaminites",
+        "Israel's Idolatry and Its Consequences",
+        "The Wives for the Benjaminites",
+        ]
+    },
+
+    {
+        "name": "Ruth",
+        "headings": [
+        "Naomi and Ruth Return to Bethlehem",
+        "Ruth Gleans in Boaz's Field",
+        "Ruth and Boaz at the Threshing Floor",
+        "Boaz Redeems Ruth"
+        ]
+    },
+
+    {
+        "name": "1 Samuel",
+        "headings": [
+          "Samuel's Birth and Dedication",
+          "Hannah's Prayer and Samuel's Service",
+          "The Lord Calls Samuel",
+          "The Ark Captured by the Philistines",
+          "The Ark Among the Philistines",
+          "The Ark Returned to Israel",
+          "Samuel Leads Israel to Repentance",
+          "Israel Demands a King",
+          "Saul Anointed as King",
+          "Saul Proclaimed King",
+          "Saul Rescues Jabesh-gilead",
+          "Samuel's Farewell Address",
+          "Saul's War with the Philistines",
+          "Jonathan's Victory and Saul's Rash Oath",
+          "Saul Rejected as King",
+          "David Anointed as King",
+          "David and Goliath",
+          "Saul's Jealousy of David",
+          "Jonathan's Covenant with David",
+          "David Flees from Saul",
+          "David at Nob",
+          "David Flees from Saul",
+          "David Spares Saul",
+          "David, Nabal, and Abigail",
+          "David and Saul at the Camp",
+                    "David Spares Saul Again",
+          "David Among the Philistines",
+          "Saul and the Medium at Endor",
+          "David Dismissed by the Philistines",
+          "David's Victory over the Amalekites",
+                    "Saul and His Sons Die in Battle"
+        ]
+    },
+
+    {
+        "name": "2 Samuel",
+        "headings": [
+          "David Hears of Saul's Death",
+          "David Anointed King of Judah",
+          "David Grows Stronger",
+          "David Captures Jerusalem",
+          "David Anointed King over All Israel",
+          "The Ark Brought to Jerusalem",
+          "God's Covenant with David",
+          "David's Victories",
+          "David's Kindness to Mephibosheth",
+          "David Defeats the Ammonites and Syrians",
+          "David and Bathsheba",
+          "Nathan Rebukes David",
+          "Amnon and Tamar",
+          "Absalom's Return",
+          "Absalom's Conspiracy",
+          "David and Ziba",
+          "David Flees from Jerusalem",
+          "David Receives Counsel",
+          "Joab Rebukes David",
+          "Sheba's Rebellion",
+          "The Gibeonites Avenged",
+          "David's Mighty Men",
+          "David's Song of Praise",
+          "David's Census and the Plague",
+        ]
+    },
+
+    {
+        "name": "1 Kings",
+        "headings": [
+          "Solomon Anointed King",
+          "David's Final Days and Solomon's Accession",
+          "Solomon's Reign Established",
+          "Solomon Asks for Wisdom",
+          "Solomon's Officials and Prosperity",
+          "Solomon Builds the Temple",
+          "Solomon Builds His Palace",
+          "Solomon's Palace and Temple Furnishings",
+          "The Ark Brought into the Temple",
+          "Solomon's Dedication of the Temple",
+          "Solomon's Foreign Wives and Idolatry",
+          "Jeroboam's Rebellion",
+          "Rehoboam's Reign and the Divided Kingdom",
+          "Jeroboam's Idolatry and Judgment",
+          "Abijah's Reign and War with Jeroboam",
+          "Baasha Conspires Against Nadab",
+          "Elah's Reign and Zimri's Revolt",
+          "Omri Reigns in Israel",
+          "Ahab Reigns in Israel",
+          "Elijah Announces the Drought",
+          "Naboth's Vineyard",
+          "Ahab's Defeat and Death",
+        ]
+    },
+
+    {
+        "name": "2 Kings",
+        "headings": [
+          "Elijah Taken Up to Heaven",
+          "The Moabite Rebellion",
+          "Elisha and the Widow's Oil",
+          "The Shunammite Woman's Son",
+          "Naaman Healed of Leprosy",
+          "Elisha and the Floating Ax Head",
+          "The Siege of Samaria",
+          "The Siege Is Lifted",
+          "Jehu Anointed King of Israel",
+          "Jehu Destroys the House of Ahab",
+          "Athaliah Reigns in Judah",
+          "Joash Repairs the Temple",
+          "Joash's Reign and Death",
+          "Jehoahaz Reigns in Israel",
+          "Jeroboam II Reigns in Israel",
+          "Ahaziah's Reign in Judah",
+          "Jehoash Reigns in Israel",
+          "Amaziah Reigns in Judah",
+          "The Fall of Samaria",
+          "Hezekiah Reigns in Judah",
+          "Manasseh's Reign and Idolatry",
+          "Amon's Reign and Death",
+          "Josiah's Reign and the Book of the Law",
+          "Josiah's Reforms and the Passover",
+          "The Fall of Jerusalem",
+        ]
+    },
+
+    {
+        "name": "1 Chronicles",
+        "headings": [
+          "The Genealogy from Adam to Abraham",
+          "The Descendants of Israel",
+          "The Descendants of Judah",
+          "The Descendants of David",
+          "The Descendants of Reuben, Gad, and Manasseh",
+          "The Genealogy of Levi",
+          "The Genealogy of Issachar, Benjamin, Naphtali, Manasseh, Ephraim, and Asher",
+          "The Genealogy of Benjamin",
+          "The First Inhabitants of Jerusalem",
+          "Saul's Family and Death",
+          "David's Mighty Men",
+          "David's Warriors Gather at Hebron",
+          "David Brings the Ark to Jerusalem",
+          "David Prepares to Bring the Ark to Jerusalem",
+          "David Brings the Ark into Jerusalem",
+          "David's Psalm of Praise",
+          "God's Covenant with David",
+          "David's Victories",
+          "David's Census",
+          "David Prepares for the Temple",
+          "David's Preparations for the Temple",
+          "The Divisions of the Levites",
+          "The Divisions of the Priests",
+          "The Divisions of the Gatekeepers",
+          "The Divisions of the Musicians",
+          "The Gatekeepers",
+          "The Military Divisions",
+          "David Charges Solomon to Build the Temple",
+          "David's Offerings and Death",
+        ]
+    },
+
+    {
+        "name": "2 Chronicles",
+        "headings": [
+          "Solomon Asks for Wisdom",
+          "Solomon Prepares to Build the Temple",
+          "Solomon Begins Building the Temple",
+          "The Temple's Furnishings",
+          "The Ark Brought into the Temple",
+          "Solomon's Prayer of Dedication",
+          "The Lord Appears to Solomon",
+          "Solomon's Achievements and Prosperity",
+          "The Queen of Sheba Visits Solomon",
+          "Rehoboam's Reign and the Division of the Kingdom",
+          "Rehoboam Strengthens Judah",
+          "Shemaiah's Prophecy and Shishak's Invasion",
+          "Abijah's Reign and Victory over Jeroboam",
+          "Asa's Reforms and Victory",
+          "Asa's Covenant with the Lord",
+          "Asa's Alliance with Syria",
+          "Jehoshaphat's Reign and Reforms",
+          "Jehoshaphat's Alliance with Ahab",
+          "Jehoshaphat Appoints Judges",
+          "Jehoshaphat's Victory over Moab and Ammon",
+          "Jehoram's Reign in Judah",
+          "Ahaziah's Reign in Judah",
+          "Joash Reigns in Judah",
+          "Amaziah's Reign in Judah",
+          "Uzziah Reigns in Judah",
+          "Uzziah's Reign and Pride",
+          "Jotham Reigns in Judah",
+          "Ahaz Reigns in Judah",
+          "Hezekiah Reigns in Judah",
+          "Hezekiah Purifies the Temple",
+          "Hezekiah Organizes Worship",
+          "Hezekiah's Reforms and Prosperity",
+          "Sennacherib Invades Judah",
+          "Manasseh's Repentance and Reforms",
+          "Josiah's Reign and Reforms",
+          "The Fall of Jerusalem and the Exile",
+        ]
+    },
+
+    {
+        "name": "Ezra",
+        "headings": [
+      "Cyrus's Decree to Rebuild the Temple",
+      "The Exiles Return to Jerusalem",
+      "The Altar and Temple Foundations Restored",
+      "Opposition to the Rebuilding of the Temple",
+      "The Temple Work Resumed",
+"The Decree of Darius",
+      "Ezra Comes to Jerusalem",
+      "List of the Family Heads Returning With Ezra",
+      "Ezra's Prayer About Intermarriage",
+      "The People's Confession of Sin",
+        ]
+    },
+
+    {
+        "name": "Nehemiah",
+        "headings": [
+      "Nehemiah's Prayer",
+      "Artaxerxes Sends Nehemiah to Jerusalem",
+      "Builders of the Wall",
+      "Opposition to the Rebuilding",
+      "Nehemiah Helps the Poor",
+      "The Wall Is Finished",
+      "The List of the Exiles Who Returned",
+      "Ezra Reads the Law",
+      "The Israelites Confess Their Sins",
+      "The People Who Sealed the Covenant",
+    
+"The People Occupy Jerusalem",          "The Priests and Levites",          "Nehemiah Reforms the Community"
+        ]
+    },
+
+    {
+        "name": "Esther",
+        "headings": [
+"Queen Vashti Refuses the King",          "Esther Becomes Queen",          "Mordecai Uncovers a Plot",          "Haman Plots Against the Jews",          "Esther Invites the King and Haman",
+"Mordecai Is Honored",          "Haman Is Hanged",          "The Jews Prepare to Defend Themselves",          "The Jews Triumph Over Their Enemies",          "The Feast of Purim Instituted"
+        ]
+    },
+
+    {
+        "name": "Job",
+        "headings": [
+  "Job's Character and Testing",
+  "Job's First Trial",
+  "Job's Lament",
+  "Eliphaz Speaks",
+  "Eliphaz Continues His Speech",
+    "Job Responds to Eliphaz",
+  "Bildad Speaks",
+  "Job Responds to Bildad",
+  "Job Continues His Response",
+  "Job Questions God's Justice",
+    "Zophar Speaks",
+  "Job Responds to His Friends",
+  "Job Continues His Response",
+  "Job's Hope in God",
+  "Eliphaz Speaks Again",
+    "Job Responds to His Friends",
+  "Job's Confidence in His Redeemer",
+  "Bildad Speaks of the Wicked",
+  "Job Responds to Bildad",
+  "Zophar Speaks of the Wicked",
+    "Job Questions the Prosperity of the Wicked",
+  "Eliphaz Accuses Job of Sin",
+  "Job Longs to Present His Case Before God",
+  "Job Describes the Wicked",
+  "Bildad Speaks of God's Greatness",
+    "Job Describes God's Greatness",
+  "Job's Final Defense",
+  "Job Remembers His Former Honor",
+  "Job's Present Suffering",
+  "Job's Final Appeal",
+    "Job's Final Appeal",
+  "Elihu Speaks",
+  "Elihu Declares God's Justice",
+  "Elihu Rebukes Job",
+  "Elihu Continues His Speech",
+    "Elihu Proclaims God's Greatness",
+  "Elihu Describes God's Wonders",
+  "God Speaks to Job",
+  "God Questions Job About Creation",
+  "God Describes His Power",
+    "God Describes Leviathan",
+  "Job Repents and Is Restored"
+        ]
+    },
+
+    {
+        "name": "Psalm",
+        "headings": [
+  "The Way of the Righteous and the Wicked", 
+  "The Reign of God's Anointed King", 
+  "A Prayer for Protection Against Enemies", 
+  "A Prayer for Help and Guidance", 
+  "A Prayer for God's Favor",
+    "A Prayer for Mercy",
+  "The Lord Is a Righteous Judge",
+  "God's Glory and Human Dignity",
+  "A Prayer for Justice",
+  "The Lord Is a Refuge for the Oppressed",
+    "The Lord Tests the Righteous",
+  "A Prayer Against Deceitful People",
+  "A Prayer of Trust in God's Mercy",
+  "The Fool Says There Is No God",
+  "The Character of Those Who Dwell With God",
+    "The Joy of God's Presence",
+  "A Prayer for Protection",
+  "The King of Glory",
+  "A Prayer for Victory",
+  "Thanksgiving for Victory",
+    "The King Rejoices in God's Strength",
+  "The Suffering Servant's Cry",
+  "The Lord Is My Shepherd",
+  "The King of Glory Enters",
+  "A Prayer for Guidance and Forgiveness",
+    "A Prayer of Integrity and Trust",
+  "The Lord Is My Light and Salvation",
+  "A Prayer for Help",
+  "A Call to Worship the Lord",
+  "Thanksgiving for Deliverance",
+    "A Prayer of Trust in God",
+  "The Joy of Forgiveness",
+  "Praise to the Creator",
+  "A Prayer for Deliverance",
+  "The Goodness of God",
+    "The Wickedness of Man and the Love of God",
+  "Do Not Fret Because of Evildoers",
+  "The Suffering of the Righteous",
+  "A Prayer for God's Help",
+  "A Prayer of Patience and Trust",
+    "Blessed Are Those Who Care for the Poor",
+  "A Longing for God",
+  "A Prayer for Deliverance",
+  "A Song of Praise to God",
+  "A Royal Wedding Song",
+    "God Is Our Refuge and Strength",
+  "The Lord Is King Over All the Earth",
+  "The Glory of Mount Zion",
+  "The Folly of Trusting in Riches",
+  "A Call to True Worship",
+    "A Prayer for Forgiveness",
+  "The Wickedness of the Proud",
+  "Trust in God's Unfailing Love",
+  "The Foolishness of the Wicked",
+  "A Prayer for Deliverance from Enemies",
+    "A Prayer for Protection from Enemies",
+  "A Prayer for Deliverance from the Wicked",
+  "A Prayer for Refuge in God",
+  "A Prayer for God's Mercy",
+  "A Prayer for Victory and Deliverance",
+    "A Prayer for Protection",
+  "A Prayer for God's Justice",
+  "Rest in God Alone",
+  "Praise for God's Blessings",
+  "A Song of Praise for God's Goodness",
+    "A Call to Praise God",
+  "God's Universal Reign",
+  "A Song of Triumph",
+  "A Prayer for Deliverance",
+  "A Prayer for God's Help",
+    "A Prayer for God's Protection in Old Age",
+  "The Reign of the Righteous King",
+  "The Prosperity of the Wicked",
+  "A Prayer for the Sanctuary",
+  "God Is the Judge",
+    "God Is Known in Judah",
+  "A Call to Remember God's Works",
+  "God's Faithfulness to Israel",
+  "A Prayer for Restoration",
+  "The Shepherd of Israel",
+    "A Call to Celebrate God's Faithfulness",
+  "God Judges the Rulers",
+  "A Prayer Against Israel's Enemies",
+  "The Joy of Dwelling in God's House",
+  "A Prayer for Restoration and Peace",
+    "A Prayer for God's Mercy",
+  "The Glory of Zion",
+  "A Prayer of Lament",
+  "God's Covenant with David",
+  "A Prayer for God's Mercy and Guidance",
+    "He Who Dwells in the Shelter of the Most High",
+  "A Song of Praise for God's Faithfulness",
+  "The Majesty of the Lord",
+  "The Lord Reigns in Majesty",
+  "A Call to Worship and Obey God",
+    "Sing to the Lord a New Song",
+  "The Lord Reigns in Righteousness",
+  "The Lord Is King",
+  "A Call to Worship the Lord",
+  "A Psalm of Thanksgiving",
+    "A Vow of Integrity",
+  "The Eternal Love of the Lord",
+  "A Prayer for Restoration",
+  "The Lord's Faithfulness to His People",
+  "Remembering God's Covenant with Abraham",
+    "God's Mercy and Israel's Rebellion",
+  "Thanksgiving for God's Deliverance",
+  "A Call to Give Thanks to the Lord",
+  "The Lord Is Exalted in Zion",
+  "The Lord's Anointed King",
+    "Praise for God's Great Works",
+  "The Blessings of the Righteous",
+  "The Majesty and Mercy of God",
+  "God's Deliverance of Israel",
+    "The Glory of God Over Idols",
+  "Thanksgiving for Deliverance",
+  "A Song of Love and Gratitude",
+  "Praise for God's Faithfulness",
+  "A Prayer for Deliverance",
+  "A Song of Ascents",
+    "The Lord Watches Over His People",
+  "A Song of Ascents",
+  "The Lord Builds the House",
+  "A Song of Ascents",
+  "Those Who Trust in the Lord",
+    "The Lord Has Done Great Things",
+  "Unless the Lord Builds the House",
+  "Children Are a Heritage from the Lord",
+  "Blessed Are Those Who Fear the Lord",
+  "Out of the Depths I Cry to You",
+    "A Prayer of Humility and Contentment",
+  "The Lord's Chosen Dwelling Place",
+  "The Blessing of Unity",
+  "A Call to Praise the Lord",
+  "Praise for God's Greatness and Love",
+    "God's Steadfast Love Endures Forever",
+  "By the Rivers of Babylon",
+  "The Lord's Greatness and Faithfulness",
+  "A Prayer for God's Protection",
+  "A Prayer for Deliverance from the Wicked",
+    "A Prayer for Protection from Sin",
+  "A Prayer for Deliverance from Persecution",
+  "A Prayer for Mercy and Guidance",
+  "A Prayer for Victory and Blessing",
+  "A Psalm of Praise to God",
+    "Praise the Lord, O My Soul",
+  "Praise the Lord for His Goodness",
+  "Praise the Lord, O Jerusalem",
+  "Praise the Lord for His Greatness",
+  "Let Everything Praise the Lord"
+        ]
+    },
+
+    {
+        "name": "Proverbs",
+        "headings": [
+  "The Purpose of Proverbs",
+  "The Beginning of Wisdom",
+  "Trust in the Lord",
+  "The Path of Wisdom",
+  "Warning Against Adultery",
+    "Warnings Against Folly",
+  "The Call of Wisdom",
+  "Warning Against Adultery",
+  "The Way of Wisdom",
+  "The Proverbs of Solomon",
+    "The Righteous and the Wicked",
+  "The Value of Wisdom",
+  "The Wise and the Foolish",
+  "A Gentle Answer Turns Away Wrath",
+  "A Wise Son Makes a Glad Father",
+    "The Lord's Sovereignty",
+  "The Lord Tests the Heart",
+  "The Value of Wisdom",
+  "Better Is a Little With Righteousness",
+  "Wine Is a Mocker",
+    "The Lord Examines the Heart",
+  "A Good Name Is Better Than Riches",
+  "Train Up a Child",
+  "Do Not Rob the Poor",
+  "These Also Are Proverbs of Solomon",
+    "The Fool and His Folly",
+  "Boasting About Tomorrow",
+  "The Way of the Wicked",
+  "Sayings of Agur",
+  "The Words of King Lemuel",
+    "The Virtuous Woman"
+        ]
+    },
+
+    {
+        "name": "Ecclesiastes",
+        "headings": [
+  "Everything Is Meaningless",
+  "The Vanity of Pleasure and Wisdom",
+  "A Time for Everything",
+  "The Vanity of Oppression and Toil",
+  "Approaching God with Reverence",
+    "The Vanity of Riches and Life",
+  "The Value of Wisdom",
+  "The Contrast Between Wisdom and Folly",
+  "Wisdom and Folly in Leadership",
+  "Wisdom for Life",
+    "Cast Your Bread Upon the Waters",
+  "Remember Your Creator in Youth"
+        ]
+    },
+
+    {
+        "name": "Song of Solomon",
+        "headings": [
+"Longing for the Beloved",
+"The Bridegroom and His Bride",
+"Seeking and Finding the Beloved",
+"The Beauty of the Beloved",
+"Love Awakens",
+"Love's Unfailing Strength",
+"The Beloved's Garden",
+"Love's Delight and Devotion",
+        ]
+    },
+
+    {
+        "name": "Isaiah",
+        "headings": [
+  "The Rebellion of God's People",
+  "The Mountain of the Lord",
+  "Judgment on Jerusalem and Judah",
+  "The Branch of the Lord",
+  "The Song of the Vineyard",
+    "Isaiah's Vision and Calling",
+  "The Sign of Immanuel",
+  "The Coming of the Great Light",
+  "The Lord's Anger Against Israel",
+  "The Lord's Judgment on Assyria",
+    "The Branch from Jesse",
+  "Songs of Praise and Salvation",
+  "The Lord's Judgment on Babylon",
+  "The Fall of the King of Babylon",
+  "The Judgment on Moab",
+    "The Judgment on Moab",
+  "The Judgment on Damascus and Israel",
+  "The Judgment on Cush",
+  "The Judgment on Egypt",
+  "Isaiah Walks Barefoot as a Sign",
+    "The Fall of Babylon",
+  "The Valley of Vision",
+  "The Judgment on Shebna",
+  "The Judgment on Tyre",
+  "A Song of Praise for God's Salvation",
+    "A Song of Trust in God",
+  "The Lord's Judgment and Restoration",
+  "Woe to Ephraim and Jerusalem",
+  "The Judgment on Jerusalem",
+  "Woe to the Rebellious Nation",
+    "Woe to Those Who Rely on Egypt",
+  "The Righteous King",
+  "The Spirit Poured Out on God's People",
+  "The Judgment of the Nations",
+  "The Joy of the Redeemed",
+    "Sennacherib Threatens Jerusalem",
+  "Hezekiah Prays for Deliverance",
+  "Hezekiah's Illness and Recovery",
+  "Hezekiah Shows His Treasures",
+  "Comfort for God's People",
+    "God Helps Israel",
+  "The Servant of the Lord",
+  "Israel's Redemption",
+  "The Creator and Redeemer",
+  "God's Sovereignty and Salvation",
+    "Babylon's Idols and the Living God",
+  "The Fall of Babylon Foretold",
+  "Israel's Stubbornness and God's Promise",
+  "The Servant of the Lord",
+  "The Servant's Obedience and Trust",
+    "Comfort for God's People",
+  "The Lord's Salvation and Righteousness",
+  "The Lord's Redeemed People",
+  "The Suffering Servant Exalted",
+  "An Invitation to Abundant Life",
+    "Salvation for All People",
+  "Israel's Sin and Redemption",
+  "The Sins of God's People",
+  "The Redeemer Comes to Zion",
+  "The Glory of Zion",
+    "The Year of the Lord's Favor",
+  "The Glory of Zion",
+  "The Day of Vengeance",
+  "God's Mercy and Judgment",
+  "The New Heavens and New Earth",
+    "The Lord's Judgment and the Glory of Zion"
+        ]
+    },
+
+    {
+        "name": "Jeremiah",
+        "headings": [
+  "The Call of Jeremiah",
+  "Judgment on Judah",
+  "Israel's Unfaithfulness",
+  "The Coming Judgment",
+  "Jerusalem's Sin and Rebellion",
+    "The Coming Destruction of Jerusalem",
+  "The Temple Sermon",
+  "Judgment and Mourning",
+  "The Covenant Is Broken",
+  "The Folly of Idolatry",
+    "The Broken Covenant",
+  "Jeremiah Questions God's Justice",
+  "The Sign of the Linen Waistband",
+  "The Drought and the People's Sin",
+  "The Lord Rejects Intercession",
+    "The Coming Judgment and Exile",
+  "The Sin of Judah",
+  "The Potter and the Clay",
+  "Jeremiah's Prayer Against His Enemies",
+  "The Broken Pot and the Coming Judgment",
+    "The Lord Rejects Zedekiah's Request",
+  "The Righteous King",
+  "The Coming Judgment on Judah",
+  "The Two Baskets of Figs",
+  "The Seventy Years of Captivity",
+    "Jeremiah Threatened with Death",
+  "The Yoke of Babylon",
+  "Hananiah's False Prophecy",
+  "Jeremiah's Letter to the Exiles",
+  "The Restoration of Israel",
+    "The New Covenant",
+  "Jeremiah Buys a Field",
+  "The Promise of Restoration",
+  "Zedekiah Breaks the Covenant",
+  "The Obedience of the Rechabites",
+    "Jehoiakim Burns Jeremiah's Scroll",
+  "The Siege of Jerusalem",
+  "Jeremiah in the Courtyard Prison",
+  "The Fall of Jerusalem",
+  "Jeremiah Freed by Nebuzaradan",
+    "The Assassination of Gedaliah",
+  "Jeremiah's Warning Against Going to Egypt",
+  "Johanan Takes the Remnant to Egypt",
+  "Judgment on the Jews in Egypt",
+  "God's Promise to Baruch",
+    "The Judgment on Egypt",
+  "The Judgment on the Philistines",
+  "The Judgment on Moab",
+  "Judgment on the Nations",
+  "The Judgment on Babylon",
+    "The Fall of Babylon",
+  "The Fall of Jerusalem"
+        ]
+    },
+
+    {
+        "name": "Lamentations",
+        "headings": [
+  "The Suffering of Jerusalem",
+  "The Lord's Anger Against Jerusalem",
+  "Hope in God's Faithfulness",
+  "The Siege and Fall of Jerusalem",
+  "A Prayer for Restoration"
+        ]
+    },
+
+    {
+        "name": "Ezekiel",
+        "headings": [
+  "Ezekiel's Vision of the Living Creatures",
+  "Ezekiel's Call to Be a Prophet",
+  "The Siege of Jerusalem Portrayed",
+  "The Sign of the Barley Bread",
+  "Judgment Against Jerusalem",
+    "Judgment Against the Mountains of Israel",
+  "The End Has Come",
+  "The Glory of the Lord Departs",
+  "The Vision of the Abominations",
+  "The Cherubim and the Glory of the Lord",
+    "Judgment on the Wicked Leaders",
+  "Ezekiel's Exile Symbol",
+  "False Prophets Condemned",
+  "Idolatry and Judgment",
+  "Jerusalem as a Useless Vine",
+    "Jerusalem's Unfaithfulness",
+  "The Parable of the Two Eagles",
+  "The Soul Who Sins Shall Die",
+  "A History of Israel's Rebellion",
+  "The Lord's Judgment Against Israel",
+    "The Sword of the Lord",
+  "The Sins of Jerusalem",
+  "The Two Adulterous Sisters",
+  "The Boiling Pot",
+  "Judgment on the Nations",
+    "The Judgment Against Tyre",
+  "Lament Over Tyre",
+  "The Prince of Tyre",
+  "The Judgment Against Sidon",
+  "The Judgment Against Egypt",
+    "Pharaoh Like a Great Cedar",
+  "A Lament Over Pharaoh",
+  "A Lament Over Pharaoh and Egypt",
+  "The Watchman of Israel",
+  "Judgment Against the Shepherds of Israel",
+    "The Restoration of Israel",
+  "The Valley of Dry Bones",
+  "The Defeat of Gog",
+  "The Glory of God Returns",
+  "The Vision of the Temple",
+    "The Inner Temple",
+  "The Temple Chambers",
+  "The Temple Area",
+  "The River Flowing from the Temple",
+  "The Sacred Offerings",
+    "The Prince's Worship and Offerings",
+  "The Tribal Allotments",
+  "The New Name of the City"
+        ]
+    },
+
+    {
+        "name": "Daniel",
+        "headings": [
+  "Daniel and His Friends in Babylon",
+  "Nebuchadnezzar's Dream",
+  "The Fiery Furnace",
+  "Nebuchadnezzar's Humiliation",
+  "The Writing on the Wall",
+    "Daniel in the Lions' Den",
+  "Daniel's Vision of Four Beasts",
+  "Daniel's Vision of the Ram and the Goat",
+  "Daniel's Prayer for Jerusalem",
+  "Daniel's Vision of the Heavenly Messenger",
+    "The Kings of the North and the South",
+  "The Time of the End"
+        ]
+    },
+
+    {
+        "name": "Hosea",
+        "headings": [
+  "Hosea's Marriage to Gomer",
+  "Israel's Unfaithfulness",
+  "Israel's Judgment and Restoration",
+  "The Lord's Charges Against Israel",
+  "Judgment Against Israel and Judah",
+    "Israel's Unfaithfulness and God's Desire for Mercy",
+  "Israel's Corruption and Idolatry",
+  "Israel Reaps the Consequences of Sin",
+  "Israel's Idolatry and Judgment",
+  "Israel's Empty Vine and Coming Judgment",
+    "God's Love for Israel",
+  "Israel's Sin and God's Faithfulness",
+  "Israel's Guilt and Coming Judgment",
+  "A Call to Repentance and Restoration"
+        ]
+    },
+
+    {
+        "name": "Joel",
+        "headings": [
+  "The Plague of Locusts",
+  "The Day of the Lord",
+  "The Outpouring of God's Spirit"
+        ]
+    },
+
+    {
+        "name": "Amos",
+        "headings": [
+  "Judgment on the Nations",
+  "Judgment on Israel",
+  "A Lament for Israel",
+  "The Coming Judgment",
+  "Seek the Lord and Live",
+    "Woe to Those at Ease in Zion",
+  "The Visions of Amos",
+  "The Basket of Summer Fruit",
+  "The Restoration of Israel"
+        ]
+    },
+
+    {
+        "name": "Obadiah",
+        "headings": [
+  "The Judgment of Edom"
+        ]
+    },
+
+    {
+        "name": "Jonah",
+        "headings": [
+  "Jonah Flees from the Lord",
+  "Jonah's Prayer from the Fish",
+  "Jonah Preaches to Nineveh",
+  "Jonah's Anger and God's Mercy"
+        ]
+    },
+
+    {
+        "name": "Micah",
+        "headings": [
+  "Judgment Against Samaria and Jerusalem",
+  "Woe to the Oppressors",
+  "Leaders Condemned",
+  "The Mountain of the Lord",
+  "The Ruler from Bethlehem",
+    "The Lord's Case Against Israel",
+  "A Prayer for God's Mercy"
+        ]
+    },
+
+    {
+        "name": "Nahum",
+        "headings": [
+  "The Lord's Wrath Against Nineveh",
+  "The Siege of Nineveh",
+  "The Fall of Nineveh"
+        ]
+    },
+
+    {
+        "name": "Habakkuk",
+        "headings": [
+  "Habakkuk's First Complaint",
+  "Habakkuk's Second Complaint",
+  "Habakkuk's Prayer of Trust"
+        ]
+    },
+
+    {
+        "name": "Zephaniah",
+        "headings": [
+  "The Day of the Lord",
+  "Judgment on the Nations",
+  "The Restoration of God's People"
+        ]
+    },
+
+    {
+        "name": "Haggai",
+        "headings": [
+  "The Call to Rebuild the Temple",
+  "The Glory of the New Temple"
+        ]
+    },
+
+    {
+        "name": "Zechariah",
+        "headings": [
+  "The Call to Return to the Lord",
+  "The Four Horns and Four Craftsmen",
+  "The Man with the Measuring Line",
+  "The Vision of Joshua the High Priest",
+  "The Gold Lampstand and Two Olive Trees",
+    "The Vision of the Four Chariots",
+  "The Crown for Joshua",
+  "The Call to Justice and Mercy",
+  "The Coming Salvation of Zion",
+  "The Coming King and the Restoration of Israel",
+    "The Rejected Shepherd",
+  "The Future Glory of Jerusalem",
+  "The Fountain for Sin and Impurity",
+  "The Lord Comes and Reigns"
+        ]
+    },
+
+    {
+        "name": "Malachi",
+        "headings": [
+  "God's Love for Israel",
+  "The Priests' Corruption",
+  "The Priests' Unfaithfulness",
+  "The Day of the Lord"
+        ]
+    },
+
+    //////////////////////////////////////
+
+    {
+        "name": "Matthew",
+        "headings": [
+"The Genealogy and Birth of Jesus",
+
+"The Birth of Jesus and the Flight to Egypt",
+
+"John the Baptist Prepares the Way",
+
+"Jesus Is Tempted in the Wilderness",
+
+"Jesus Begins His Ministry and Teaches the Crowd",
+
+"The Sermon on the Mount",
+
+"Jesus Heals and Calls His Disciples",
+
+"Jesus Sends Out the Twelve",
+
+"John the Baptist and the Invitation of Jesus",
+
+"Jesus Sends Out the Twelve and Faces Opposition",
+
+"The Ministry and Message of Jesus",
+
+"Jesus and the Pharisees",
+
+"Parables of the Kingdom",
+
+"Jesus Performs Miracles",
+
+"Jesus Feeds the Five Thousand and Walks on Water",
+
+"The Confession of Peter and the Transfiguration",
+
+"Jesus Teaches About Humility and Forgiveness",
+
+"Jesus Teaches About Marriage and Eternal Life",
+
+"Jesus Teaches About Greatness and Grace",
+
+"Jesus Enters Jerusalem and Teaches About Servanthood",
+
+"The Triumphal Entry and Jesus Cleanses the Temple",
+
+"Jesus Teaches in the Temple",
+
+"Parables and Warnings Against the Pharisees",
+
+"Jesus Teaches About the Destruction of the Temple",
+
+"The Olivet Discourse and the Coming of the Son of Man",
+
+"The Last Supper and Jesus Is Arrested",
+
+"Jesus Is Tried and Crucified",
+
+"The Resurrection and the Great Commission",
+
+        ]
+    },
+
+    {
+        "name": "Mark",
+        "headings": [
+"The Beginning of the Gospel of Jesus Christ",
+
+"Jesus Heals and Teaches with Authority",
+
+"Jesus Heals the Paralytic and Calls Levi",
+
+"Parables and Miracles of Jesus",
+
+"Jesus Delivers the Demon-Possessed Man",
+"The Rejection of Jesus and the Sending of the Twelve",
+
+"Jesus Feeds the Five Thousand and Walks on Water",
+
+"Jesus Teaches About True Cleanliness",
+
+"Jesus Heals and Feeds the Four Thousand",
+
+"Jesus Teaches About Discipleship and Greatness",
+"The Triumphal Entry and Cleansing of the Temple",
+
+"Jesus Teaches in the Temple",
+
+"Parables and Teachings About the Kingdom",
+
+"Jesus Predicts the Destruction of the Temple",
+
+"Jesus Is Anointed, Betrayed, and Arrested",
+"The Resurrection of Jesus and the Great Commission",
+
+        ]
+    },
+
+    {
+        "name": "Luke",
+        "headings": [
+"Gabriel Announces the Birth of Jesus",
+
+"The Birth and Childhood of Jesus",
+
+"John the Baptist Prepares the Way",
+
+"Jesus Is Tempted and Begins His Ministry",
+
+"Jesus Calls His Disciples and Performs Miracles",
+"Jesus Teaches the Crowd and Chooses the Twelve",
+
+"Jesus Teaches and Performs Miracles",
+
+"Jesus Sends Out the Twelve and Feeds the Five Thousand",
+
+"Jesus Reveals His Glory and Teaches His Disciples",
+
+"Jesus Sends Out the Seventy-Two and Teaches About Love",
+"Jesus Teaches His Disciples to Pray",
+
+"Jesus Warns Against Hypocrisy and Greed",
+
+"Jesus Teaches About Readiness and Repentance",
+
+"Jesus Heals on the Sabbath and Teaches About the Kingdom",
+
+"Parables of the Lost and Found",
+"Jesus Teaches About Wealth and Faithfulness",
+
+"Jesus Teaches About Forgiveness and Faith",
+
+"Jesus Heals Ten Lepers and Teaches About the Kingdom",
+
+"Jesus Teaches About Prayer and Eternal Life",
+
+"Jesus Enters Jerusalem and Teaches in the Temple",
+"The Triumphal Entry and Jesus Teaches in the Temple",
+
+"Jesus Teaches About the Destruction of Jerusalem",
+
+"Jesus Is Betrayed, Tried, and Crucified",
+
+"The Resurrection and the Road to Emmaus",
+        ]
+    },
+
+    {
+        "name": "John",
+        "headings": [
+"The Word Becomes Flesh",
+
+"Jesus Performs His First Miracles",
+
+"Jesus Teaches Nicodemus About New Birth",
+
+"Jesus and the Samaritan Woman",
+
+"Jesus Heals the Official's Son",
+"The Feeding of the Five Thousand and the Bread of Life",
+
+"Jesus Teaches at the Feast of Booths",
+
+"Jesus Forgives the Adulterous Woman and Reveals His Identity",
+
+"Jesus Heals a Man Born Blind",
+
+"Jesus the Good Shepherd",
+"Lazarus Is Raised from the Dead",
+
+"Jesus Is Anointed and Enters Jerusalem",
+
+"Jesus Washes His Disciples' Feet",
+
+"Jesus the Way, Truth and Life",
+
+"Jesus Teaches About the Vine and His Love",
+"Jesus Teaches About the Holy Spirit",
+
+"Jesus Prays for Himself, His Disciples, and All Believers",
+
+"Jesus Is Arrested and Tried",
+
+"Jesus Is Crucified and Buried",
+
+"Jesus Rises from the Dead",
+"Jesus Appears to His Disciples and Restores Peter",
+
+        ]
+    },
+
+    {
+        "name": "Acts",
+        "headings": [
+"Jesus Ascends and the Disciples Await the Holy Spirit",
+
+"The Holy Spirit Comes at Pentecost",
+
+"Peter Heals a Lame Man and Preaches to the Crowd",
+
+"Peter and John Face Opposition",
+
+"Ananias and Sapphira and the Apostles Face Persecution",
+"The Seven Servants and Stephen's Ministry",
+
+"Stephen's Martyrdom and the Scattering of Believers",
+
+"Philip Proclaims Christ in Samaria",
+
+"Saul Encounters Jesus and Begins to Preach",
+
+"Peter Preaches to Cornelius and the Gentiles",
+"The Gospel Spreads to the Gentiles",
+
+"Peter Is Rescued and Herod Is Struck Down",
+
+"Paul and Barnabas Begin Their First Missionary Journey",
+
+"Paul and Barnabas Preach and Face Opposition",
+
+"The Jerusalem Council on Gentile Believers",
+"Paul's Second Missionary Journey Begins",
+
+"Paul Preaches in Athens and Corinth",
+
+"Paul's Ministry in Ephesus",
+
+"Paul Travels Through Macedonia and Raises Eutychus",
+
+"Paul's Farewell to the Ephesian Elders",
+"Paul Arrives in Jerusalem and Is Arrested",
+
+"Paul Gives His Testimony to the Crowd",
+
+"Paul Before the Sanhedrin",
+
+"Paul Is Taken to Caesarea",
+
+"Paul's Trial Before Governor Felix",
+"Paul's Defense Before King Agrippa",
+
+"Paul's Journey to Rome and Shipwreck",
+
+"Paul Proclaims the Kingdom in Rome",
+
+        ]
+    },
+
+    {
+        "name": "Romans",
+        "headings": [
+"Paul's Greeting and the Righteousness of God",
+
+"God's Judgment on Sin",
+
+"God's Righteousness Through Faith",
+
+"Justified by Faith Like Abraham",
+
+"Peace with God Through Jesus Christ",
+"Dead to Sin and Alive to God",
+
+"Released from the Law and United with Christ",
+
+"Life Through the Spirit",
+
+"God's Sovereign Purpose for Israel",
+
+"Salvation Through Faith in Christ",
+"God's Mercy and the Remnant of Israel",
+
+"Living Sacrifices and Serving Others",
+
+"Submitting to Governing Authorities and Loving Others",
+
+"Do Not Judge Your Brother",
+
+"Living to Please Others and Glorify God",
+"Paul's Greetings and Final Exhortations",
+
+        ]
+    },
+
+    {
+        "name": "1 Corinthians",
+        "headings": [
+"Christ the Power and Wisdom of God",
+
+"God's Wisdom Revealed Through the Spirit",
+
+"Servants of Christ and Stewards of God's Mysteries",
+
+"Paul's Example and Warning Against Pride",
+
+"Discipline for Immorality in the Church",
+"Do Not Take Your Brothers to Court",
+
+"Marriage and Singleness",
+
+"Food Offered to Idols and Christian Freedom",
+
+"Paul's Rights as an Apostle",
+
+"Warnings from Israel's History",
+"Order in Worship and the Lord's Supper",
+
+"Spiritual Gifts and the Body of Christ",
+
+"Love Is the Greatest Gift",
+
+"Prophecy and Speaking in the Church",
+
+"The Resurrection of Christ and the Hope of Believers",
+"Paul's Final Instructions and Farewell",
+
+        ]
+    },
+
+    {
+        "name": "2 Corinthians",
+        "headings": [
+"Comfort in Suffering and Paul's Ministry",
+
+"Forgiveness and the Triumph of Christ",
+
+"Ministers of the New Covenant",
+
+"Treasure in Jars of Clay",
+
+"Living by Faith and Reconciled to God",
+"Do Not Be Unequally Yoked",
+
+"Godly Grief and Joyful Repentance",
+
+"Generosity and Giving",
+
+"Paul Defends His Apostleship",
+
+"Paul's Authority and Spiritual Warfare",
+"Paul's Suffering and Defense of His Apostleship",
+
+"Paul's Vision and Weakness",
+
+"Final Warnings and Exhortations",
+
+        ]
+    },
+
+    {
+        "name": "Galatians",
+        "headings": [
+"Paul's Gospel and Apostleship",
+
+"Justification by Faith and Not by Works",
+
+"Faith in Christ and the Promise of the Spirit",
+
+"Freedom in Christ and the Law",
+
+"Walking by the Spirit and Bearing Fruit",
+"Doing Good to All and Boasting in the Cross",
+
+        ]
+    },
+
+    {
+        "name": "Ephesians",
+        "headings": [
+"Every Spiritual Blessing in Christ",
+
+"Made Alive by Grace Through Faith",
+
+"The Mystery of Christ and the Unity of the Church",
+
+"Walk in Love and Live as Children of Light",
+
+"Wives, Husbands, Children, and Spiritual Warfare",
+"Children, Servants, and the Armor of God",
+
+        ]
+    },
+
+    {
+        "name": "Philippians",
+        "headings": [
+"Paul's Joy and Prayer in Suffering",
+
+"Christ's Humility and the Call to Shine",
+
+"Knowing Christ and Pressing Toward the Goal",
+
+"Rejoice in the Lord and Be Content",
+
+        ]
+    },
+
+    {
+        "name": "Colossians",
+        "headings": [
+"Christ Is Supreme and the Head of the Church",
+
+"Alive with Christ and Free from Human Traditions",
+
+"Set Your Minds on Things Above",
+"Devote Yourselves to Prayer and Walk in Wisdom",
+
+        ]
+    },
+
+    {
+        "name": "1 Thessalonians",
+        "headings": [
+"The Thessalonians' Faith and Example",
+
+"Paul's Ministry Among the Thessalonians",
+
+"Timothy's Report and Paul's Encouragement",
+
+"Living to Please God and the Coming of Christ",
+
+"Living in the Light of Christ's Return",
+
+        ]
+    },
+
+    {
+        "name": "2 Thessalonians",
+        "headings": [
+"Thanksgiving for Faith and Perseverance",
+
+"Christ's Return and the Man of Lawlessness",
+
+"Prayer, Work, and Standing Firm in the Lord",
+
+        ]
+    },
+
+    {
+        "name": "1 Timothy",
+        "headings": [
+"Guard the Gospel and Fight the Good Fight",
+
+"Prayer and God's Desire for All People",
+
+"Qualifications for Church Leaders",
+
+"Warnings About False Teachers",
+
+"Instructions for Various Groups in the Church",
+
+"Godliness, Contentment, and the Love of Money",
+
+        ]
+    },
+
+    {
+        "name": "2 Timothy",
+        "headings": [
+"Guard the Good Deposit",
+
+"Endure Hardship as a Good Soldier of Christ",
+
+"Godliness and the Truth in the Last Days",
+
+"Preach the Word and Finish the Race",
+
+        ]
+    },
+
+    {
+        "name": "Titus",
+        "headings": [
+"Appoint Elders and Guard Against False Teachers",
+
+"Teach Sound Doctrine and Live Godly Lives",
+
+"Saved by Grace and Devoted to Good Works",
+
+        ]
+    },
+
+    {
+        "name": "Philemon",
+        "headings": [
+"Paul Appeals for Onesimus",
+
+        ]
+    },
+
+    {
+        "name": "Hebrews",
+        "headings": [
+"The Son Is Greater Than the Angels",
+
+"Jesus Is Greater Than Moses",
+
+"Enter God's Rest Through Faith",
+
+"Jesus the Great High Priest",
+
+"Jesus the Source of Eternal Salvation",
+"Press On to Maturity and the Hope of God's Promise",
+
+"Jesus the Eternal High Priest",
+
+"The New Covenant and the Heavenly Sanctuary",
+
+"Christ's Sacrifice Once for All",
+
+"Draw Near to God and Hold Fast to Faith",
+"Faith and the Heroes of the Old Testament",
+
+"Run the Race and Look to Jesus",
+
+"Final Exhortations and Blessings",
+
+        ]
+    },
+
+    {
+        "name": "James",
+        "headings": [
+"Trials, Wisdom, and Hearing God's Word",
+
+"Faith Shown by Works and Love",
+
+"Controlling the Tongue and Seeking God's Wisdom",
+
+"Humility, Submission to God, and Patience",
+
+"Prayer, Suffering, and Restoring the Wandering",
+
+        ]
+    },
+
+    {
+        "name": "1 Peter",
+        "headings": [
+"Living Hope and Holiness Through Christ",
+
+"Living as God's Holy People",
+
+"Submission and Following Christ's Example",
+
+"Living for God in a Hostile World",
+
+"Humility and Standing Firm in Faith",
+
+        ]
+    },
+
+    {
+        "name": "2 Peter",
+        "headings": [
+"Growing in Grace and the Knowledge of Christ",
+
+"False Teachers and the Judgment of God",
+
+"The Day of the Lord and God's Promise",
+
+        ]
+    },
+
+    {
+        "name": "1 John",
+        "headings": [
+"Walking in the Light and Confessing Sin",
+
+"Knowing God Through Obedience and Love",
+
+"Children of God and the Test of Righteousness",
+
+"Testing the Spirits and Living in God's Love",
+
+"Faith in Jesus Christ and Eternal Life",
+
+        ]
+    },
+
+    {
+        "name": "2 John",
+        "headings": [
+"Walking in Truth and Love",
+
+        ]
+    },
+
+    {
+        "name": "3 John",
+        "headings": [
+"Walking Faithfully and Supporting God's Workers",
+
+        ]
+    },
+
+    {
+        "name": "Jude",
+        "headings": [
+"Contend for the Faith and Beware of False Teachers",
+
+        ]
+    },
+
+    {
+        "name": "Revelation",
+        "headings": [
+"Jesus Reveals Himself to John",
+
+"Messages to the Seven Churches",
+
+"The Throne of God in Heaven",
+
+"The Lamb and the Seven-Sealed Scroll",
+
+"The Lamb Opens the First Six Seals",
+"The Seals and the Great Multitude",
+
+"The Seventh Seal and the Seven Trumpets",
+
+"The Seven Trumpets and the Two Witnesses",
+
+"The Dragon, the Beasts, and the Lamb",
+
+"The Seven Angels and the Seven Bowls",
+"The Two Witnesses and the Seventh Trumpet",
+
+"The Woman, the Dragon, and the Beasts",
+
+"The Lamb and the 144,000",
+
+"The Harvest of the Earth",
+
+"The Seven Bowls of God's Wrath",
+"The Seven Bowls of God's Wrath",
+
+"The Fall of Babylon the Great",
+
+"The Rider on the White Horse",
+
+"The Thousand Years and the Final Judgment",
+
+"The Defeat of Satan and the Great White Throne",
+"The New Heaven, the New Earth, and the New Jerusalem",
+
+"The River of Life and the Return of Christ",
+
+        ]
+    },
+
+
+];
+
+const translations = [
+    {
+        "name": "ASV",
+        "id": "12"
+    },
+    {
+        "name": "WEBUS",
+        "id": "206"
+    },
+    {
+        "name": "BSB",
+        "id": "3034"
+    },
+    {
+        "name": "GNV",
+        "id": "2163"
+    },
+];
+let currentTranslation = translations[0];
+
+const shortMonths = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec"
+];
+
+const jsonBibles = {
+    "12": "esv.json"
+}
+
+async function fakeSignUp(){
+    try {
+        const response = await fetch(`${url}/api/signup`, {
+            method: 'GET',
+        });
+        const data = await response.json(); 
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+fakeSignUp();
+
+function getTime(){
+    const now = new Date();
+    let timeString = now.toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false
+    });
+    if(Number(timeString.slice(0, 2)) > 12){
+        timeString = String(Number(Number(timeString.slice(0, 2)) - 12)) + timeString.slice(2) + "pm";
+    } else if(Number(timeString.slice(0, 2)) == 12){
+        timeString = timeString + "pm";
+    } else {
+        timeString = timeString + "am";
+    }
+    return timeString;
+}
+function getTextDate(date){
+    return `${date.split("-")[2]} ${shortMonths[Number(date.split("-")[1]) - 1]} ${date.split("-")[0]}`;
+}
+function getSlashDate(date){
+    return `${date.split("-")[2]}/${date.split("-")[1]}/${date.split("-")[0]}`;
+}
+function getTextDateNoYear(date){
+    return `${date.split("-")[2]} ${shortMonths[Number(date.split("-")[1]) - 1]}`;
+}
+function getCurrentDate(){
+    const today = new Date();
+
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+    const yyyy = today.getFullYear();
+
+    return `${dd}/${mm}/${yyyy}`;
+}
+
+async function getVerse(translation, book, chapter, verses){
+    const dataToSend = { translation: translation, book: book, chapter: chapter, verses: verses };
+
+    try {
+        const response = await fetch(url + `/api/get-verses`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(dataToSend),
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Error:', errorData.message);
+            return;
+        }
+
+        const data = await response.json();
+        
+        return data.verse;
+
+    } catch (error) {
+        console.error('Error posting data:', error);
+    }
+}
+async function getFullBible(){
+    let bibleName = jsonBibles[String(currentTranslation.id)];
+    try {
+        const response = await fetch(`${url}/json_bibles/${bibleName}`, {
+            method: 'GET',
+        });
+        const data = await response.json();
+
+        return data;
+    }
+    catch (err){
+        console.error(err);
+    }
+}
+
+function getBookSlug(fullName){
+    const bibleBooks = [
+  { name: "Genesis", id: "GEN" },
+  { name: "Exodus", id: "EXO" },
+  { name: "Leviticus", id: "LEV" },
+  { name: "Numbers", id: "NUM" },
+  { name: "Deuteronomy", id: "DEU" },
+  { name: "Joshua", id: "JOS" },
+  { name: "Judges", id: "JDG" },
+  { name: "Ruth", id: "RUT" },
+  { name: "1 Samuel", id: "1SA" },
+  { name: "2 Samuel", id: "2SA" },
+  { name: "1 Kings", id: "1KI" },
+  { name: "2 Kings", id: "2KI" },
+  { name: "1 Chronicles", id: "1CH" },
+  { name: "2 Chronicles", id: "2CH" },
+  { name: "Ezra", id: "EZR" },
+  { name: "Nehemiah", id: "NEH" },
+  { name: "Esther", id: "EST" },
+  { name: "Job", id: "JOB" },
+  { name: "Psalm", id: "PSA" },
+  { name: "Proverbs", id: "PRO" },
+  { name: "Ecclesiastes", id: "ECC" },
+  { name: "Song of Solomon", id: "SNG" },
+  { name: "Isaiah", id: "ISA" },
+  { name: "Jeremiah", id: "JER" },
+  { name: "Lamentations", id: "LAM" },
+  { name: "Ezekiel", id: "EZK" },
+  { name: "Daniel", id: "DAN" },
+  { name: "Hosea", id: "HOS" },
+  { name: "Joel", id: "JOL" },
+  { name: "Amos", id: "AMO" },
+  { name: "Obadiah", id: "OBA" },
+  { name: "Jonah", id: "JON" },
+  { name: "Micah", id: "MIC" },
+  { name: "Nahum", id: "NAM" },
+  { name: "Habakkuk", id: "HAB" },
+  { name: "Zephaniah", id: "ZEP" },
+  { name: "Haggai", id: "HAG" },
+  { name: "Zechariah", id: "ZEC" },
+  { name: "Malachi", id: "MAL" },
+
+  { name: "Matthew", id: "MAT" },
+  { name: "Mark", id: "MRK" },
+  { name: "Luke", id: "LUK" },
+  { name: "John", id: "JHN" },
+  { name: "Acts", id: "ACT" },
+  { name: "Romans", id: "ROM" },
+  { name: "1 Corinthians", id: "1CO" },
+  { name: "2 Corinthians", id: "2CO" },
+  { name: "Galatians", id: "GAL" },
+  { name: "Ephesians", id: "EPH" },
+  { name: "Philippians", id: "PHP" },
+  { name: "Colossians", id: "COL" },
+  { name: "1 Thessalonians", id: "1TH" },
+  { name: "2 Thessalonians", id: "2TH" },
+  { name: "1 Timothy", id: "1TI" },
+  { name: "2 Timothy", id: "2TI" },
+  { name: "Titus", id: "TIT" },
+  { name: "Philemon", id: "PHM" },
+  { name: "Hebrews", id: "HEB" },
+  { name: "James", id: "JAS" },
+  { name: "1 Peter", id: "1PE" },
+  { name: "2 Peter", id: "2PE" },
+  { name: "1 John", id: "1JN" },
+  { name: "2 John", id: "2JN" },
+  { name: "3 John", id: "3JN" },
+  { name: "Jude", id: "JUD" },
+  { name: "Revelation", id: "REV" }
+];
+
+    return bibleBooks.find(book => book.name.toLowerCase() == fullName.toLowerCase()).id;
+}

@@ -2,3 +2,17 @@
 EIKON BIBLE
 
 - download audios
+
+
+
+EIKON MEMORIZATION
+
+- edit translation
+
+- delete verse
+
+- practice verse
+
+- whole test
+
+- add verse category data 

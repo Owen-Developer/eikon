@@ -233,6 +233,8 @@ app.post("/api/get-verses", async (req, res) => {
         );
         const data = await response.json();
 
+        console.log(data);
+
         wholeVerse += data.content + " ";
     }
 
@@ -560,7 +562,7 @@ app.post("/api/create-verse", (req, res) => {
     });
 });
 
-app.get("/api/get-verses", (req, res) => {
+app.get("/api/get-user-verses", (req, res) => {
     db.query("select * from verses where user_id = ?", [req.session.userId], (err, result) => {
         if(err){
             console.error(err);
@@ -603,6 +605,17 @@ app.get("/api/get-saved-verses", (req, res) => {
         }
 
         return res.json({ verses: result });
+    });
+});
+app.post("/api/add-mem-verse", (req, res) => {
+    const { book, chapter, verse, verseTxt } = req.body;
+
+    db.query("insert into mem_saved_verses (user_id, book, chapter, verse, verse_txt, translation, date_added) values (?, ?, ?, ?, ?, ?, ?)", [req.session.userId, book, chapter, verse, verseTxt, "ASV", getCurrentDateFormal()], (err, result) => {
+        if(err){
+            console.error(err);
+        }
+
+        return res.json({ message: 'success' });
     });
 });
 /*////////////////////////////////////////////////////////////////////*/
