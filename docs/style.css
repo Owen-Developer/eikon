@@ -2109,6 +2109,24 @@ i.mem-top-btn-icon {
     column-gap: 10px;
     row-gap: 10px;
 }
+.mem-add-chap-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 8px 0;
+    background-color: #4b6653;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 8px;
+    transition: 0.2s ease;
+}
+.mem-add-chap-btn:hover {
+    background-color: hsl(138, 15%, 45%);
+}
 .mem-add-chap span {
     width: 100%;
     font-size: 18px;
@@ -2116,7 +2134,7 @@ i.mem-top-btn-icon {
     color: hsl(0, 0%, 20%);
     margin-bottom: 10px;
 }
-.mem-add-chap div {
+.mem-add-chap-idx {
     cursor: pointer;
     width: 27px;
     height: 27px;
@@ -2130,8 +2148,12 @@ i.mem-top-btn-icon {
     border: 1px solid hsl(0, 0%, 85%);
     box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
 }
-.mem-add-chap div:hover {
+.mem-add-chap-idx:hover {
     background-color: hsl(0, 0%, 94%);
+}
+.mem-add-chap-idx-active, .mem-add-chap-idx-active:hover {
+    background-color: #4b6653;
+    color: white;
 }
 .mem-cat-drop {
     padding: 4px 0;
@@ -2275,4 +2297,45 @@ i.mem-top-btn-icon {
 }
 .mem-table-forget div:hover {
     background-color: hsl(0, 100%, 40%);
+}
+.mem-table-edit {
+    position: relative;
+}
+i.mem-table-edit {
+    cursor: pointer;
+}
+i.mem-table-edit:hover {
+    color: black;
+}
+.mem-table-edit-drop {
+    position: absolute;
+    top: 34px;
+    left: 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 50px;
+    padding: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+.mem-table-edit-drop i {
+    height: 100%;
+    width: auto;
+    font-size: 16px;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: hsl(0, 0%, 94%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(0, 0%, 20%);    
+}
+.mem-table-edit-drop i:hover {
+    background-color: hsl(0, 0%, 90%);
 }

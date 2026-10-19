@@ -631,6 +631,18 @@ app.post("/api/change-mem-translation", (req, res) => {
         return res.json({ message: 'success' });
     });
 });
+
+app.post("/api/delete-mem-verse", (req, res) => {
+    const { id } = req.body;
+
+    db.query("delete from mem_saved_verses where id = ?", [id], (err, result) => {
+        if(err){
+            console.error(err);
+        }
+
+        return res.json({ message: 'success' });
+    });
+});
 /*////////////////////////////////////////////////////////////////////*/
 
 
