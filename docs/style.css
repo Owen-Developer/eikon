@@ -2088,6 +2088,7 @@ i.mem-top-btn-icon {
     color: hsl(0, 0%, 20%);
 }
 .mem-add-drop {
+    z-index: 2;
     width: 250px;
     transform: none;
     top: 50px;
@@ -2158,6 +2159,7 @@ i.mem-top-btn-icon {
 .mem-cat-drop {
     padding: 4px 0;
     overflow: auto;
+    z-index: 2;
     position: absolute;
     top: 45px;
     left: 0;
@@ -2299,6 +2301,7 @@ i.mem-top-btn-icon {
     background-color: hsl(0, 100%, 40%);
 }
 .mem-table-edit {
+    z-index: 1;
     position: relative;
 }
 i.mem-table-edit {
