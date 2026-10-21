@@ -233,8 +233,6 @@ app.post("/api/get-verses", async (req, res) => {
         );
         const data = await response.json();
 
-        console.log(data);
-
         wholeVerse += data.content + " ";
     }
 

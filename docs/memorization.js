@@ -302,89 +302,126 @@ async function fakeSignUp(){
 fakeSignUp();
 
 let userVerses = [];
-async function getSavedVerses(){
+async function displaySavedVerses(){
     document.querySelector(".mem-table-col").innerHTML = "";
+        
+    userVerses = await getSavedVerses();
+    userVerses.forEach(verse => {
+        let newRow = document.createElement("div");
+        newRow.classList.add("mem-table-row");
+        newRow.dataset.verseId = verse.id;
+        newRow.dataset.book = verse.book;
+        newRow.dataset.chapter = verse.chapter;
+        newRow.dataset.verse = verse.verse;
+        newRow.innerHTML = `
+            <div class="mem-table-txt">${verse.book} ${verse.chapter}:${verse.verse}</div>
+            <div class="mem-table-txt mem-table-verse">${verse.verse_txt}</div>
+            <div class="mem-table-txt mem-table-tran">
+                <span>${verse.translation}</span>
+
+                <div class="mem-table-tran-drop">
+
+                </div>
+            </div>
+            <div class="mem-table-txt">${getSlashDate(verse.date_added)}</div>
+            <div class="mem-table-txt mem-table-icons mem-table-edit">
+                <i class="fa-solid fa-ellipsis mem-table-edit"></i>
+
+                <div class="mem-table-edit-drop">
+                    <i class="fa-solid fa-trash-can mem-edit-delete"></i>
+                    <i class="fa-solid fa-pen-to-square mem-edit-practice"></i>
+                </div>
+
+                <div class="mem-table-practice-drop">
+                    <div>Read</div>
+                    <div>Blanks</div>
+                    <div>Type</div>
+                </div>
+
+            </div>
+        `;
+        document.querySelector(".mem-table-col").prepend(newRow);
+
+        newRow.querySelector(".mem-table-edit").addEventListener("click", (e) => {
+            if(!newRow.querySelector("i.mem-edit-practice").contains(e.target)){
+                newRow.querySelector(".mem-table-edit-drop").style.opacity = "1";
+                newRow.querySelector(".mem-table-edit-drop").style.pointerEvents = "auto";
+            }
+        });
+        document.addEventListener("click", (e) => {
+            if(!newRow.querySelector(".mem-table-edit").contains(e.target)){
+                newRow.querySelector(".mem-table-edit-drop").style.opacity = "0";
+                newRow.querySelector(".mem-table-edit-drop").style.pointerEvents = "none";  
+            }
+        });
+        
+        newRow.querySelector("i.mem-edit-delete").addEventListener("click", async () => {
+            const dataToSend = { id: verse.id };
+            try {
+                const response = await fetch(url + `/api/delete-mem-verse`, {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json', 
+                    },
+                    body: JSON.stringify(dataToSend), 
+                });
+
+                if(!response.ok){
+                    const errorData = await response.json();
+                    console.error('Error:', errorData.message);
+                    return;
+                }
+
+                const data = await response.json();
+
+                document.querySelector(".mem-table-col").removeChild(newRow);
+                userVerses = userVerses.filter(uv => uv.id != verse.id);
+
+            } catch (error) {
+                console.error('Error posting data:', error);
+            }
+        });
+
+        newRow.querySelector("i.mem-edit-practice").addEventListener("click", () => {
+            newRow.querySelector(".mem-table-edit-drop").style.opacity = "0";
+            newRow.querySelector(".mem-table-edit-drop").style.pointerEvents = "none";
+            newRow.querySelector(".mem-table-practice-drop").style.opacity = "1";
+            newRow.querySelector(".mem-table-practice-drop").style.pointerEvents = "auto";
+        });
+
+        newRow.querySelectorAll(".mem-table-practice-drop div").forEach((opt, idx) => {
+            document.querySelector(".mem-table").classList.add("none");
+            document.querySelector(".mem-pra").classList.remove("none");
+
+            if(idx == 0){
+                document.querySelector(".mem-pra-read").classList.remove("none");
+            } else if(idx == 1){
+
+            } else {
+
+            }
+        });
+
+        setRowInputs(newRow);
+    });
+}
+displaySavedVerses();
+async function getSavedVerses(){
     try {
         const response = await fetch(`${url}/api/get-saved-verses`, {
             method: 'GET',
         });
         const data = await response.json(); 
-        
-        userVerses = data.verses;
-        userVerses.forEach(verse => {
-            let newRow = document.createElement("div");
-            newRow.classList.add("mem-table-row");
-            newRow.dataset.verseId = verse.id;
-            newRow.dataset.book = verse.book;
-            newRow.dataset.chapter = verse.chapter;
-            newRow.dataset.verse = verse.verse;
-            newRow.innerHTML = `
-                <div class="mem-table-txt">${verse.book} ${verse.chapter}:${verse.verse}</div>
-                <div class="mem-table-txt mem-table-verse">${verse.verse_txt}</div>
-                <div class="mem-table-txt mem-table-tran">
-                    <span>${verse.translation}</span>
 
-                    <div class="mem-table-tran-drop">
-
-                    </div>
-                </div>
-                <div class="mem-table-txt">${getSlashDate(verse.date_added)}</div>
-                <div class="mem-table-txt mem-table-icons mem-table-edit">
-                    <i class="fa-solid fa-ellipsis mem-table-edit"></i>
-
-                    <div class="mem-table-edit-drop">
-                        <i class="fa-solid fa-trash-can mem-edit-delete"></i>
-                        <i class="fa-solid fa-pen-to-square mem-edit-practice"></i>
-                    </div>
-                </div>
-            `;
-            document.querySelector(".mem-table-col").prepend(newRow);
-
-            newRow.querySelector(".mem-table-edit").addEventListener("click", () => {
-                newRow.querySelector(".mem-table-edit-drop").style.opacity = "1";
-                newRow.querySelector(".mem-table-edit-drop").style.pointerEvents = "auto";
-            });
-            document.addEventListener("click", (e) => {
-                if(!newRow.querySelector(".mem-table-edit").contains(e.target)){
-                    newRow.querySelector(".mem-table-edit-drop").style.opacity = "0";
-                    newRow.querySelector(".mem-table-edit-drop").style.pointerEvents = "none";  
-                }
-            });
-            
-            newRow.querySelector("i.mem-edit-delete").addEventListener("click", async () => {
-                const dataToSend = { id: verse.id };
-                try {
-                    const response = await fetch(url + `/api/delete-mem-verse`, {
-                        method: 'POST',
-                        headers: { 
-                            'Content-Type': 'application/json', 
-                        },
-                        body: JSON.stringify(dataToSend), 
-                    });
-
-                    if(!response.ok){
-                        const errorData = await response.json();
-                        console.error('Error:', errorData.message);
-                        return;
-                    }
-
-                    const data = await response.json();
-
-                    document.querySelector(".mem-table-col").removeChild(newRow);
-
-                } catch (error) {
-                    console.error('Error posting data:', error);
-                }
-            });
-
-			setRowInputs(newRow);
-        });
+        return data.verses;
 
     } catch (error) {
         console.error('Error fetching data:', error);
     }
 }
-getSavedVerses();
+function memHome(){
+    displaySavedVerses();
+}
 function setRowInputs(element){
     let verseArr = [];
     element.dataset.verse.split(", ").forEach(verse => {
@@ -441,7 +478,7 @@ function setRowInputs(element){
 
     element.querySelector(".mem-table-save")?.addEventListener("click", () => {
         document.querySelector(".mem-table-col").removeChild(element);
-        addVerse(element.dataset.book, element.dataset.chapter, verseArr, element.dataset.verse);
+        addVerse(element.dataset.book, element.dataset.chapter, verseArr, element.dataset.verse, element.querySelector(".mem-table-tran span").textContent);
     });
 }
 
@@ -571,17 +608,15 @@ document.querySelectorAll(".mem-add-drop .bib-left-drop-li").forEach((bookOpt, i
                         }
                     });
 
-                    console.log(verseArr, verseStr);
-
-                    await addVerse(bookOpt.textContent, i + 1, verseArr, verseStr);
-                    getSavedVerses();
+                    await addVerse(bookOpt.textContent, i + 1, verseArr, verseStr, "ASV");
+                    displaySavedVerses();
                 });
             });
         }
     });
 });
 async function addVerse(book, chapter, verseArr, verseStr, translation){
-	let verseTxt = await getVerse(currentTranslation.id, getBookSlug(book), chapter, verseArr);
+	let verseTxt = await getVerse(translations.find(tran => tran.name == translation).id, getBookSlug(book), chapter, verseArr);
 
     const dataToSend = { book: book, chapter: chapter, verse: verseStr, verseTxt: verseTxt, translation: translation };
     try {
@@ -600,6 +635,8 @@ async function addVerse(book, chapter, verseArr, verseStr, translation){
         }
 
         const data = await response.json();
+
+        userVerses = await getSavedVerses();
 
     } catch (error) {
         console.error('Error posting data:', error);

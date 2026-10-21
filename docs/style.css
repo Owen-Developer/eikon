@@ -866,7 +866,7 @@ i.bib-note-xmark:hover {
 .bib-right-note-filter-txt:hover, .bib-right-verse-filter-txt:hover {
     color: hsl(0, 0%, 0%);
 }
-.bib-right-note-filter-drop, .bib-right-verse-filter-drop, .mem-table-tran-drop {
+.bib-right-note-filter-drop, .bib-right-verse-filter-drop, .mem-table-tran-drop, .mem-table-practice-drop {
     padding: 4px 0;
     overflow: hidden;
     position: absolute;
@@ -883,8 +883,7 @@ i.bib-note-xmark:hover {
     opacity: 0;
     pointer-events: none;
 }
-.bib-right-note-filter-drop div, .bib-right-verse-filter-drop div, .mem-table-tran-drop div {
-    cursor: pointer;
+.bib-right-note-filter-drop div, .bib-right-verse-filter-drop div, .mem-table-tran-drop div, .mem-table-practice-drop div {
     width: 100%;
     padding: 8px 12px;
     font-size: 16px;
@@ -892,7 +891,7 @@ i.bib-note-xmark:hover {
     color: hsl(0, 0%, 20%);
     cursor: pointer;
 }
-.bib-right-note-filter-drop div:hover, .bib-right-verse-filter-drop div:hover, .mem-table-tran-drop div:hover {
+.bib-right-note-filter-drop div:hover, .bib-right-verse-filter-drop div:hover, .mem-table-tran-drop div:hover, .mem-table-practice-drop div:hover {
     background-color: hsl(0, 0%, 94%);
 }
 
@@ -2075,17 +2074,30 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
     gap: 12px;
     transition: 0.2s ease;
 }
+.mem-top-btn:hover {
+    background-color: hsl(138, 15%, 45%);
+}
 i.mem-top-btn-icon {
     color: white;
     font-size: 15px;
 }
-.mem-top-btn-cat {
-    background-color: white !important;
-    border: 1px solid hsl(0, 0%, 85%) !important;
+.mem-top-btn-cat, .mem-top-btn-home {
+    background-color: white;
+    border: 1px solid hsl(0, 0%, 85%);
 }
-.mem-top-btn-cat span {
+.mem-top-btn-cat span, .mem-top-btn-home span {
     font-weight: 500;
     color: hsl(0, 0%, 20%);
+}
+.mem-top-btn-home i {
+    font-size: 15px;
+    color: hsl(0, 0%, 20%);
+    height: 21px;
+    display: flex;
+    align-items: center;
+}
+.mem-top-btn-cat:hover, .mem-top-btn-home:hover {
+    background-color: hsl(0, 0%, 94%);
 }
 .mem-add-drop {
     z-index: 2;
@@ -2305,6 +2317,8 @@ i.mem-top-btn-icon {
     position: relative;
 }
 i.mem-table-edit {
+    position: relative;
+    z-index: 1;
     cursor: pointer;
 }
 i.mem-table-edit:hover {
@@ -2341,4 +2355,40 @@ i.mem-table-edit:hover {
 }
 .mem-table-edit-drop i:hover {
     background-color: hsl(0, 0%, 90%);
+}
+.mem-table-practice-drop {
+    left: 30px;
+    z-index: 2;
+    top: 34px;
+    top: 0;
+}
+
+.mem-pra {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.mem-pra-read {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 150px;
+}
+
+.mem-pra-read-verse, .mem-pra-read-click {
+    text-align: center;
+    width: 600px;
+    font-size: 20px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+}
+.mem-pra-read-ref {
+    margin-top: 20px;
+    font-size: 26px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
 }
