@@ -609,9 +609,9 @@ app.get("/api/get-saved-verses", (req, res) => {
 });
 
 app.post("/api/add-mem-verse", (req, res) => {
-    const { book, chapter, verse, verseTxt } = req.body;
+    const { book, chapter, verse, verseTxt, translation } = req.body;
 
-    db.query("insert into mem_saved_verses (user_id, book, chapter, verse, verse_txt, translation, date_added) values (?, ?, ?, ?, ?, ?, ?)", [req.session.userId, book, chapter, verse, verseTxt, "ASV", getCurrentDateFormal()], (err, result) => {
+    db.query("insert into mem_saved_verses (user_id, book, chapter, verse, verse_txt, translation, date_added) values (?, ?, ?, ?, ?, ?, ?)", [req.session.userId, book, chapter, verse, verseTxt, translation, getCurrentDateFormal()], (err, result) => {
         if(err){
             console.error(err);
         }

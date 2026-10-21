@@ -19,32 +19,8 @@ let catVerses = {
         {
             "book": "1 Corinthians",
             "chapter": 13,
-            "verse": "4",
+            "verse": "4-8",
             "verseTxt": "Love is patient and kind; love does not envy or boast; it is not arrogant."
-        },
-        {
-            "book": "1 Corinthians",
-            "chapter": 13,
-            "verse": "5",
-            "verseTxt": "It does not insist on its own way; it is not irritable or resentful."
-        },
-        {
-            "book": "1 Corinthians",
-            "chapter": 13,
-            "verse": "6",
-            "verseTxt": "It does not rejoice at wrongdoing, but rejoices with the truth."
-        },
-        {
-            "book": "1 Corinthians",
-            "chapter": 13,
-            "verse": "7",
-            "verseTxt": "Love bears all things, believes all things, hopes all things, endures all things."
-        },
-        {
-            "book": "1 Corinthians",
-            "chapter": 13,
-            "verse": "8",
-            "verseTxt": "Love never ends. As for prophecies, they will pass away; as for tongues, they will cease; as for knowledge, it will pass away."
         },
         {
             "book": "1 Corinthians",
@@ -325,6 +301,7 @@ async function fakeSignUp(){
 }
 fakeSignUp();
 
+let userVerses = [];
 async function getSavedVerses(){
     document.querySelector(".mem-table-col").innerHTML = "";
     try {
@@ -333,8 +310,8 @@ async function getSavedVerses(){
         });
         const data = await response.json(); 
         
-        let verses = data.verses;
-        verses.forEach(verse => {
+        userVerses = data.verses;
+        userVerses.forEach(verse => {
             let newRow = document.createElement("div");
             newRow.classList.add("mem-table-row");
             newRow.dataset.verseId = verse.id;
@@ -409,6 +386,11 @@ async function getSavedVerses(){
 }
 getSavedVerses();
 function setRowInputs(element){
+    let verseArr = [];
+    element.dataset.verse.split(", ").forEach(verse => {
+        verseArr.push(verse);
+    });
+
 	element.querySelector(".mem-table-tran span")?.addEventListener("click", () => {
         element.querySelector(".mem-table-tran-drop").innerHTML = "";
 		translations.forEach(tran => {
@@ -417,10 +399,6 @@ function setRowInputs(element){
 			element.querySelector(".mem-table-tran-drop").appendChild(newTran);
 
             newTran.addEventListener("click", async () => {
-                let verseArr = [];
-                element.dataset.verse.split(", ").forEach(verse => {
-                    verseArr.push(verse);
-                });
                 let newVerseTxt = await getVerse(tran.id, getBookSlug(element.dataset.book), Number(element.dataset.chapter), verseArr);
 
                 element.querySelector(".mem-table-verse").textContent = newVerseTxt;
@@ -460,6 +438,11 @@ function setRowInputs(element){
             element.querySelector(".mem-table-tran-drop").style.pointerEvents = "none";
         }
     });
+
+    element.querySelector(".mem-table-save")?.addEventListener("click", () => {
+        document.querySelector(".mem-table-col").removeChild(element);
+        addVerse(element.dataset.book, element.dataset.chapter, verseArr, element.dataset.verse);
+    });
 }
 
 document.querySelector(".mem-top-btn-cat").addEventListener("click", () => {
@@ -484,28 +467,33 @@ document.querySelectorAll(".mem-cat-drop div").forEach(opt => {
         document.querySelector(".mem-table-col").innerHTML = "";
 
         catVerses[opt.textContent.toLowerCase()].forEach(verse => {
-            let newVerse = document.createElement("div");
-            newVerse.classList.add("mem-table-row");
-            newVerse.classList.add("mem-table-row-cat");
-            newVerse.innerHTML = `
-                <div class="mem-table-txt">${verse.book} ${verse.chapter}:${verse.verse}</div>
-                <div class="mem-table-txt mem-table-verse">${verse.verseTxt}</div>
-                <div class="mem-table-txt mem-table-tran">
-                    <span>ASV</span>
-
-                    <div class="mem-table-tran-drop">
+            if(!userVerses.find(uv => uv.book == verse.book && uv.chapter == verse.chapter && uv.verse == verse.verse)){
+                let newVerse = document.createElement("div");
+                newVerse.classList.add("mem-table-row");
+                newVerse.classList.add("mem-table-row-cat");
+                newVerse.dataset.book = verse.book;
+                newVerse.dataset.chapter = verse.chapter;
+                newVerse.dataset.verse = verse.verse;
+                newVerse.innerHTML = `
+                    <div class="mem-table-txt">${verse.book} ${verse.chapter}:${verse.verse}</div>
+                    <div class="mem-table-txt mem-table-verse">${verse.verseTxt}</div>
+                    <div class="mem-table-txt mem-table-tran">
+                        <span>ASV</span>
+    
+                        <div class="mem-table-tran-drop">
+                        </div>
                     </div>
-                </div>
-                <div class="mem-table-txt mem-table-save">
-                    <div>
-                        Save verse
-                        <i class="fa-solid fa-plus"></i>
+                    <div class="mem-table-txt mem-table-save">
+                        <div>
+                            Save verse
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
                     </div>
-                </div>
-            `;
-            document.querySelector(".mem-table-col").appendChild(newVerse);
-
-            setRowInputs(newVerse);
+                `;
+                document.querySelector(".mem-table-col").appendChild(newVerse);
+    
+                setRowInputs(newVerse);
+            }
         });
     });
 });
@@ -592,10 +580,10 @@ document.querySelectorAll(".mem-add-drop .bib-left-drop-li").forEach((bookOpt, i
         }
     });
 });
-async function addVerse(book, chapter, verseArr, verseStr){
+async function addVerse(book, chapter, verseArr, verseStr, translation){
 	let verseTxt = await getVerse(currentTranslation.id, getBookSlug(book), chapter, verseArr);
 
-    const dataToSend = { book: book, chapter: chapter, verse: verseStr, verseTxt: verseTxt };
+    const dataToSend = { book: book, chapter: chapter, verse: verseStr, verseTxt: verseTxt, translation: translation };
     try {
         const response = await fetch(url + `/api/add-mem-verse`, {
             method: 'POST',
