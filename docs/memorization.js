@@ -1,5 +1,9 @@
 
 
+let praReadVerse = {
+    "text": "Whom thou art; I am not.",
+    "ref": "John 5:16"
+};
 
 let catVerses = {
 
@@ -352,6 +356,8 @@ async function displaySavedVerses(){
             if(!newRow.querySelector(".mem-table-edit").contains(e.target)){
                 newRow.querySelector(".mem-table-edit-drop").style.opacity = "0";
                 newRow.querySelector(".mem-table-edit-drop").style.pointerEvents = "none";  
+                newRow.querySelector(".mem-table-practice-drop").style.opacity = "0";
+                newRow.querySelector(".mem-table-practice-drop").style.pointerEvents = "none";  
             }
         });
         
@@ -390,16 +396,25 @@ async function displaySavedVerses(){
         });
 
         newRow.querySelectorAll(".mem-table-practice-drop div").forEach((opt, idx) => {
-            document.querySelector(".mem-table").classList.add("none");
-            document.querySelector(".mem-pra").classList.remove("none");
-
-            if(idx == 0){
-                document.querySelector(".mem-pra-read").classList.remove("none");
-            } else if(idx == 1){
-
-            } else {
-
-            }
+            opt.addEventListener("click", () => {
+                document.querySelector(".mem-table-container").classList.add("none");
+                document.querySelector(".mem-pra-container").classList.remove("none");
+                
+                if(idx == 0){
+                    praReadVerse.text = newRow.querySelector(".mem-table-verse").textContent;
+                    praReadVerse.ref = `${verse.book} ${verse.chapter}:${verse.verse}`;
+                    document.querySelector(".mem-pra-read-click").classList.remove("none");
+                    document.querySelector(".mem-pra-read-verse").textContent = "";
+                    document.querySelector(".mem-pra-read-ref").textContent = "";
+                    document.querySelector(".mem-pra-read-btn").style.pointerEvents = "none";
+                    document.querySelector(".mem-pra-read-btn").style.opacity = "0";
+                    document.querySelector(".mem-pra-read").classList.remove("none");
+                } else if(idx == 1){
+                    setBlank(newRow.querySelector(".mem-table-verse").textContent, `${verse.book} ${verse.chapter}:${verse.verse}`);
+                } else {
+    
+                }
+            });
         });
 
         setRowInputs(newRow);
@@ -420,6 +435,13 @@ async function getSavedVerses(){
     }
 }
 function memHome(){
+    document.querySelector(".mem-table-container").classList.remove("none");
+    document.querySelector(".mem-pra-container").classList.add("none");
+    document.querySelector(".mem-pra-read-click").classList.remove("none");
+    document.querySelector(".mem-pra-read-verse").textContent = "";
+    document.querySelector(".mem-pra-read-ref").textContent = "";
+    document.querySelector(".mem-pra-read-btn").style.pointerEvents = "none";
+    document.querySelector(".mem-pra-read-btn").style.opacity = "0";
     displaySavedVerses();
 }
 function setRowInputs(element){
@@ -476,10 +498,12 @@ function setRowInputs(element){
         }
     });
 
-    element.querySelector(".mem-table-save")?.addEventListener("click", () => {
-        document.querySelector(".mem-table-col").removeChild(element);
-        addVerse(element.dataset.book, element.dataset.chapter, verseArr, element.dataset.verse, element.querySelector(".mem-table-tran span").textContent);
-    });
+    if(element.querySelector(".mem-table-save")){
+        element.querySelector(".mem-table-save").onclick = () => {
+            document.querySelector(".mem-table-col").removeChild(element);
+            addVerse(element.dataset.book, element.dataset.chapter, verseArr, element.dataset.verse, element.querySelector(".mem-table-tran span").textContent);
+        }
+    }
 }
 
 document.querySelector(".mem-top-btn-cat").addEventListener("click", () => {
@@ -597,9 +621,9 @@ document.querySelectorAll(".mem-add-drop .bib-left-drop-li").forEach((bookOpt, i
 
                         if(verseStr == ""){
                             verseStr = num.textContent;
-                        } else if(Number(num.textContent) == Number(verseStr[verseStr.length - 1]) + 1){
-                            if(verseStr[verseStr.length - 2] == "-"){
-                                verseStr = verseStr.slice(0, -1) + num.textContent;
+                        } else if(Number(num.textContent) == Number(verseArr[verseArr.length - 2]) + 1){
+                            if(verseStr.slice(-4).includes("-")){
+                                verseStr = verseStr.slice(0, verseStr.lastIndexOf("-") + 1) + num.textContent;
                             } else {
                                 verseStr += "-" + num.textContent;
                             }
@@ -670,8 +694,153 @@ document.addEventListener("click", (e) => {
     });
 });
 
+document.querySelector(".mem-pra").addEventListener("click", () => {
+    document.querySelector(".mem-pra-read-click").classList.add("none");
 
+    let verseArr = praReadVerse.text.split(/(?<=[,.;:])/);
+    let currentDisplay = document.querySelector(".mem-pra-read-verse").textContent;
+    
+    let newLine = verseArr.find(line => currentDisplay.split(/(?<=[,.;:])/).length == verseArr.indexOf(line));
+    if(currentDisplay == "") newLine = verseArr[0];
 
+    if(currentDisplay + " " != praReadVerse.text){
+        document.querySelector(".mem-pra-read-verse").textContent += newLine;
+    } else if(document.querySelector(".mem-pra-read-ref").textContent == ""){
+        document.querySelector(".mem-pra-read-ref").textContent = praReadVerse.ref;
+    } else {
+        document.querySelector(".mem-pra-read-btn").style.pointerEvents = "auto";
+        document.querySelector(".mem-pra-read-btn").style.opacity = "1";
+    }
+});
+document.querySelector(".mem-pra-read-btn").addEventListener("click", () => {
+    memHome();
+});
+
+function setBlank(verseTxt, verseRef){
+    document.querySelector(".mem-pra-bla").classList.remove("none");
+
+    document.querySelector(".mem-pra-bla-bar span").style.width = "0";
+    document.querySelector(".mem-pra-bla-verse").innerHTML = "";
+    let totalVerse = `${verseTxt} ${verseRef}`;
+
+    verseTxt.split(" ").forEach(word => {
+        let newWord = document.createElement("div");
+        newWord.classList.add("mem-pra-bla-input-container");
+        newWord.classList.add("mem-pra-bla-empty");
+        newWord.innerHTML = `
+            <div>${word}</div>
+            <input type="text" />
+        `;
+        document.querySelector(".mem-pra-bla-verse").appendChild(newWord);
+    });
+    document.querySelector(".mem-pra-bla-verse").innerHTML += "<span></span>";
+    verseRef.split(" ").forEach(word => {
+        let newWord = document.createElement("div");
+        newWord.classList.add("mem-pra-bla-input-container");
+        newWord.classList.add("mem-pra-bla-book");
+        newWord.classList.add("mem-pra-bla-empty");
+        newWord.innerHTML = `
+            <div>${word}</div>
+            <input type="text" />
+        `;
+        document.querySelector(".mem-pra-bla-verse").appendChild(newWord);
+    });
+
+    let amountOfGiven = Math.ceil(totalVerse.split(" ").length * 0.25);
+    let givenElements = [];
+    let possibleIdxs = [];
+    for(let i = 0; i < totalVerse.split(" ").length; i++){
+        possibleIdxs.push(i);
+    }
+    for(let i = 0; i < amountOfGiven; i++){
+        let randomPossIdx = Math.floor(0 + Math.random() * possibleIdxs.length);
+        givenElements.push(document.querySelectorAll(".mem-pra-bla-input-container")[randomPossIdx]);
+        possibleIdxs.splice(randomPossIdx, 1);
+    }
+
+    givenElements.forEach(given => {
+        given.classList.remove("mem-pra-bla-empty");
+        given.querySelector("input").value = totalVerse.split(" ")[Array.from(document.querySelectorAll(".mem-pra-bla-input-container")).indexOf(given)];
+    });
+
+    newBlankWord(document.querySelector(".mem-pra-bla-empty"), totalVerse);
+}
+setBlank("For God so loved the world, he gave his only son, that whoever believes in him should not perish, but have everlasting life. Amen.", "John 3:16");
+
+function newBlankWord(element, fullVerse){
+    document.querySelector(".mem-pra-bla-active")?.classList.remove("mem-pra-bla-active");
+    element.classList.add("mem-pra-bla-active");
+    element.querySelector("input").focus();
+
+    document.querySelector(".mem-pra-bla-pill").innerHTML = "";
+
+    let wrongSuggs = [];
+    if(element.classList.contains("mem-pra-bla-book")){
+        chapterHeadings.forEach(book => {
+            wrongSuggs.push(book.name.toLowerCase());
+        });
+        for(let i = 1; i <= 100; i++){
+            wrongSuggs.push(i + ":" + Math.floor(1 + Math.random() * 176));
+        }
+        wrongSuggs = shuffleArray(wrongSuggs);
+    } else {
+        wrongSuggs = shuffleArray(fullVerse.split(" ").filter(word => word != element.querySelector("div").textContent));
+    }
+
+    wrongSuggs.forEach((word, wordIdx) => {
+        if(wordIdx < 8){
+            let newSugg = document.createElement("span");
+            newSugg.textContent = word.toLowerCase().replace(/[,.;]/g, "");
+            document.querySelector(".mem-pra-bla-pill").appendChild(newSugg);
+
+            newSugg.addEventListener("click", () => {
+                newSugg.style.border = "1px solid red";
+                setTimeout(() => {
+                    newSugg.style.border = "";
+                }, 1200);
+            });
+        }
+    });
+
+    let correctSugg = document.createElement("span");
+    correctSugg.dataset.correctSugg = "true";
+    correctSugg.textContent = element.querySelector("div").textContent.toLowerCase().replace(/[,.;]/g, "");
+    document.querySelector(".mem-pra-bla-pill").insertBefore(correctSugg, document.querySelectorAll(".mem-pra-bla-pill span")[Math.floor(0 + Math.random() * document.querySelectorAll(".mem-pra-bla-pill span").length)]);
+    
+    correctSugg.addEventListener("click", () => {
+        submitWord();
+    });
+
+    element.querySelector("input").addEventListener("keydown", (e) => {
+        if(e.key == "Enter"){
+            if(element.querySelector("input").value.toLowerCase().replace(/[,.;]/g, "") == element.querySelector("div").textContent.toLowerCase().replace(/[,.;]/g, "")){
+                submitWord();
+            } else {
+                element.style.border = "1px solid red";
+                setTimeout(() => {
+                    element.style.border = "1px solid hsl(0, 0%, 85%)";
+                }, 1200);
+            }
+        }
+    });
+
+    function submitWord(){
+        element.classList.remove("mem-pra-bla-empty");
+        element.classList.remove("mem-pra-bla-active");
+        element.classList.add("mem-pra-bla-filled");
+        element.querySelector("input").value = element.querySelector("div").textContent;
+        setTimeout(() => {
+            element.style.border = "1px solid transparent";
+        }, 1200);
+        
+        if(document.querySelector(".mem-pra-bla-empty")){
+            newBlankWord(document.querySelector(".mem-pra-bla-empty"), fullVerse);
+        } else {
+            document.querySelector(".mem-pra-bla-pill").classList.add("none");
+            document.querySelector(".mem-pra-bla-btn").classList.remove("none");
+        }
+    }
+}
 
 
 

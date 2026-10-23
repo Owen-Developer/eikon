@@ -2037,7 +2037,7 @@ i.bib-audio-chev:hover, i.bib-audio-forward:hover {
     height: 42px;
     width: auto;
 }
-.mem-table-container {
+.mem-table-container, .mem-pra-container {
     margin-bottom: 20px;
     width: 100%;
     height: calc(100% - 115px);
@@ -2368,6 +2368,7 @@ i.mem-table-edit:hover {
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .mem-pra-read {
     height: 100%;
@@ -2376,10 +2377,10 @@ i.mem-table-edit:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-bottom: 150px;
+    padding-bottom: 90px;
 }
-
 .mem-pra-read-verse, .mem-pra-read-click {
+    user-select: none;
     text-align: center;
     width: 600px;
     font-size: 20px;
@@ -2387,8 +2388,130 @@ i.mem-table-edit:hover {
     color: hsl(0, 0%, 20%);
 }
 .mem-pra-read-ref {
+    transition: 0.2s ease;
+    height: 34px;
     margin-top: 20px;
     font-size: 26px;
     font-weight: 500;
     color: hsl(0, 0%, 20%);
+}
+.mem-pra-read-btn {
+    opacity: 0;
+    transition: 0.2s ease;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    background-color: #4b6653;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s ease;
+}
+
+.mem-pra-bla {
+    height: 100%;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 120px;
+}
+.mem-pra-bla-bar {
+    width: 100%;
+    height: 8px;
+    border-radius: 200px;
+    display: flex;
+    overflow: hidden;
+    background-color: hsla(138, 15%, 35%, 0.3);
+}
+.mem-pra-bla-bar span {
+    height: 100%;
+    width: 20%;
+    background-color: #4b6653;
+    border-radius: 200px;
+}
+.mem-pra-bla-verse {
+    margin: 35px 0 60px;
+    width: 100%;
+    display: flex;
+    column-gap: 4px;
+    row-gap: 5px;
+    flex-wrap: wrap;
+}
+.mem-pra-bla-input-container {
+    position: relative;
+    overflow: hidden;
+    padding: 4px 4px;
+    border: 1px solid transparent;
+}
+.mem-pra-bla-input-container div {
+    opacity: 0;
+    pointer-events: none;
+    font-size: 18px;
+    color: hsl(0, 0%, 20%);
+    font-weight: 500;
+}
+.mem-pra-bla-input-container input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 4px;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    color: hsl(0, 0%, 20%);
+    font-weight: 500;
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+    pointer-events: none;
+}
+.mem-pra-bla-empty {
+    background-color: hsla(0, 0%, 100%, 0.75);
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+}
+.mem-pra-bla-active {
+    border: 1px solid hsl(0, 0%, 75%);
+}
+.mem-pra-bla-active input {
+    pointer-events: auto;
+}
+.mem-pra-bla-filled input {
+    color: hsl(138, 15%, 35%);
+}
+.mem-pra-bla-verse span {
+    width: 100%;
+}
+.mem-pra-bla-pill {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.mem-pra-bla-pill span {
+    min-width: 100px;
+    padding: 6px 15px;
+    cursor: pointer;
+    border-radius: 200px;
+    font-size: 18px;
+    font-weight: 500;
+    color: hsl(0, 0%, 20%);
+    background-color: white;
+    border: 1px solid hsl(0, 0%, 85%);
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: 0.2s ease;
+}
+.mem-pra-bla-pill span:hover {
+    background-color: hsl(0, 0%, 94%);
 }
